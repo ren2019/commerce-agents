@@ -20,12 +20,14 @@ import {
   titleCase,
   useChangeActions,
   useResource,
+  useDemoLanguage,
 } from "web-shared";
 import { fetchListingDetail } from "@/lib/api";
 import type { ChangeItem, ChangePreviewPayload, StagedChange } from "@/lib/types";
 
 /** Days of cover = new stock / (sales_last_30d / 30). */
 function RestockMath({ item }: { item: ChangeItem }) {
+  const { language } = useDemoLanguage();
   const { data: detail } = useResource(() => fetchListingDetail(item.target), [item.target]);
   const sales30 = detail?.listing.sales_last_30d ?? null;
   if (typeof item.before !== "number" || typeof item.after !== "number") return null;
@@ -35,8 +37,7 @@ function RestockMath({ item }: { item: ChangeItem }) {
   const coverDays = item.after / perDay;
   return (
     <p className="mx-3.5 mt-2 text-[12.5px] tabular-nums text-(--ink-soft)">
-      +{added} units · sells <b className="font-semibold text-(--ink)">{perDay.toFixed(1)} a day</b> · {item.after} on hand ≈{" "}
-      <b className="font-semibold text-(--ink)">{coverLabel(coverDays)}</b>
+      {language === "zh" ? `增加${added}件 · 日均销售${perDay.toFixed(1)}件 · 库存${item.after}件，约可销售${Math.round(coverDays)}天` : <>+{added} units · sells <b className="font-semibold text-(--ink)">{perDay.toFixed(1)} a day</b> · {item.after} on hand ≈{" "}<b className="font-semibold text-(--ink)">{coverLabel(coverDays)}</b></>}
     </p>
   );
 }
@@ -49,6 +50,7 @@ export default function ChangePreviewCard({
   payload: ChangePreviewPayload;
   onAct?: (changeId: string, action: ChangeAction) => Promise<StagedChange | null>;
 }) {
+  const { language, t } = useDemoLanguage();
   const { change, busy, error, act, canAct } = useChangeActions(payload.change, onAct);
   const shortItems = change.items.filter((item) => !isLongTextDiff(item));
   const longItems = change.items.filter(isLongTextDiff);
@@ -56,15 +58,15 @@ export default function ChangePreviewCard({
   return (
     <GenCard>
       <GenCardHeader
-        title={payload.headline ?? "Proposed change"}
+        title={payload.headline ?? t("Proposed change")}
         meta={
           <>
             <ChangeStatusPill status={change.status} />
-            <span>{titleCase(change.kind)}</span>
+            <span>{t(titleCase(change.kind))}</span>
             <span aria-hidden>·</span>
-            <span>{describeProposer(change)}</span>
+            <span>{language === "zh" ? `提案人：${change.created_by}${change.created_by_kind === "agent" ? "的助手" : ""}` : describeProposer(change)}</span>
             <span aria-hidden>·</span>
-            <span>{formatDate(change.created_at)}</span>
+            <span>{formatDate(change.created_at, language === "zh" ? "zh-CN" : "en-US")}</span>
           </>
         }
       />

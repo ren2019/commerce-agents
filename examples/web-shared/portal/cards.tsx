@@ -9,6 +9,7 @@ import { type ReactNode, useEffect, useState } from "react";
 import { type FieldKinds, formatDate, formatFieldValue, formatMoney, humanizeField } from "../format";
 import { Icon, type IconName } from "../icons";
 import { AskButton, Button, KindIcon, Pill, type Tone } from "../ui";
+import { useDemoLanguage } from "../language";
 import type { ChangeAction } from "./merchant";
 
 export function GenCard({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -87,10 +88,11 @@ export const CHANGE_STATUS: Record<ChangeLike["status"], { tone: Tone; label: st
 };
 
 export function ChangeStatusPill({ status }: { status: ChangeLike["status"] }) {
+  const { t } = useDemoLanguage();
   const { tone, label } = CHANGE_STATUS[status];
   return (
     <Pill tone={tone} dot>
-      {label}
+      {t(label)}
     </Pill>
   );
 }
@@ -137,29 +139,32 @@ export function ApproveBar({
   canAct: boolean;
   onAct: (action: ChangeAction) => void;
 }) {
+  const { language, t } = useDemoLanguage();
   return (
     <div className="px-3.5 pb-3.5 pt-3">
       {change.status === "staged" ? (
         <div className="flex flex-wrap items-center gap-2">
           <Button variant="accent" size="sm" icon="check" onClick={() => onAct("apply")} disabled={busy !== null || !canAct}>
-            {busy === "apply" ? "Applying…" : "Approve"}
+            {t(busy === "apply" ? "Applying…" : "Approve")}
           </Button>
           <Button variant="secondary" size="sm" onClick={() => onAct("discard")} disabled={busy !== null || !canAct}>
-            {busy === "discard" ? "Dismissing…" : "Dismiss"}
+            {t(busy === "discard" ? "Dismissing…" : "Dismiss")}
           </Button>
-          <span className="text-[11.5px] leading-tight text-(--ink-soft)">Nothing applies until you approve.</span>
+          <span className="text-[11.5px] leading-tight text-(--ink-soft)">{t("Nothing applies until you approve.")}</span>
         </div>
       ) : (
         <div className="flex items-center gap-2 text-[13px] text-(--ink-soft)">
           <Icon name={change.status === "applied" ? "check" : "x"} size={15} className={change.status === "applied" ? "text-(--ok)" : "text-(--ink-faint)"} />
-          {change.status === "applied"
+          {language === "zh" ? (change.status === "applied"
+            ? `已批准${change.applied_by ? `，操作人：${change.applied_by}` : ""}${change.applied_at ? `，${formatDate(change.applied_at, "zh-CN")}` : ""}。`
+            : `已放弃${change.discarded_by ? `，操作人：${change.discarded_by}${change.discarded_by_kind === "agent" ? "的助手" : ""}` : ""}。未执行任何变更。`) : change.status === "applied"
             ? `Approved${change.applied_by ? ` by ${change.applied_by}` : ""}${change.applied_at ? ` on ${formatDate(change.applied_at)}` : ""}.`
             : `Dismissed${
                 change.discarded_by ? ` by ${change.discarded_by}${change.discarded_by_kind === "agent" ? "'s assistant" : ""}` : ""
               }. Nothing was changed.`}
         </div>
       )}
-      {error ? <div className="mt-2 text-[13px] text-(--danger)">{error}</div> : null}
+      {error ? <div className="mt-2 text-[13px] text-(--danger)">{t(error)}</div> : null}
     </div>
   );
 }
@@ -192,6 +197,7 @@ export function DiffRows({
   /** Names a target id, e.g. the record's title; the id shows beside it. */
   targetLabel?: (target: string) => string | null | undefined;
 }) {
+  const { t } = useDemoLanguage();
   if (!items.length) return null;
   const formatValue = (field: string, value: unknown) => formatFieldValue(field, value, fields);
   return (
@@ -203,7 +209,7 @@ export function DiffRows({
             <div className="min-w-0 text-[12.5px] text-(--ink-soft)">
               {name ? <span className="font-semibold text-(--ink)">{name} </span> : null}
               <span className="tabular-nums">{item.target}</span>
-              <span> · {humanizeField(item.field)}</span>
+              <span> · {t(humanizeField(item.field))}</span>
             </div>
             <div className="flex min-w-0 flex-wrap items-baseline gap-x-1.5 text-[14px] tabular-nums break-words">
               <s className="min-w-0 text-(--ink-soft) decoration-(--ink-faint)">{formatValue(item.field, item.before)}</s>
@@ -218,20 +224,21 @@ export function DiffRows({
 }
 
 export function LongTextDiff({ item }: { item: DiffItem }) {
+  const { t } = useDemoLanguage();
   const formatValue = (field: string, value: unknown) => formatFieldValue(field, value);
   return (
     <div className="mx-3.5 mt-2.5 overflow-hidden rounded-[11px] border border-(--line)">
       <div className="flex items-baseline gap-2 border-b border-(--line) bg-(--ground) px-3 py-1.5 text-[12px]">
-        <span className="font-semibold text-(--ink)">{humanizeField(item.field)}</span>
+        <span className="font-semibold text-(--ink)">{t(humanizeField(item.field))}</span>
         <span className="tabular-nums text-(--ink-soft)">{item.target}</span>
       </div>
       <div className="grid gap-2 px-3 py-2.5 text-[13px] leading-snug">
         <div>
-          <div className="text-[11.5px] font-semibold text-(--ink-soft)">Before</div>
+          <div className="text-[11.5px] font-semibold text-(--ink-soft)">{t("Before")}</div>
           <p className="mt-0.5 whitespace-pre-line break-words text-(--ink-soft)">{formatValue(item.field, item.before)}</p>
         </div>
         <div>
-          <div className="text-[11.5px] font-semibold text-(--ink)">After</div>
+          <div className="text-[11.5px] font-semibold text-(--ink)">{t("After")}</div>
           <p className="mt-0.5 whitespace-pre-line break-words font-medium text-(--ink)">{formatValue(item.field, item.after)}</p>
         </div>
       </div>

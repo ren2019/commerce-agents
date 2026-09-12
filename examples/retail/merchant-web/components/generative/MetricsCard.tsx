@@ -1,7 +1,7 @@
 // Copyright 2026 Anthropic PBC
 // SPDX-License-Identifier: Apache-2.0
 
-import { ChangeChip, formatMoney, formatNumber, formatPeriodLabel, formatRate, GenCard, GenCardHeader, Sparkline, titleCase } from "web-shared";
+import { ChangeChip, formatMoney, formatNumber, formatPeriodLabel, formatRate, GenCard, GenCardHeader, Sparkline, titleCase, useDemoLanguage } from "web-shared";
 import type { MetricEntry, MetricsPayload } from "@/lib/types";
 
 const CURRENCY_METRICS = new Set(["sales", "average_order_value", "revenue", "spend"]);
@@ -20,22 +20,23 @@ function metricValue(entry: MetricEntry): string | null {
 }
 
 export default function MetricsCard({ payload }: { payload: MetricsPayload }) {
+  const { language, t } = useDemoLanguage();
   const metrics = payload.metrics ?? [];
   return (
     <GenCard>
-      <GenCardHeader title={payload.title ?? "Performance"} aside={payload.period ? formatPeriodLabel(payload.period) : null} />
+      <GenCardHeader title={payload.title ?? t("Performance")} aside={payload.period ? t(formatPeriodLabel(payload.period)) : null} />
       <div className="mt-2 grid grid-cols-2 border-t border-(--line) [&>*:nth-child(even)]:border-l [&>*:nth-child(n+3)]:border-t [&>*]:border-(--line)">
         {metrics.map((entry, index) => {
           const value = metricValue(entry);
           const points = entry.series?.points?.map((point) => point.value);
           return (
             <div key={`${entry.metric}-${index}`} className="px-3.5 py-3">
-              <div className="text-[12px] font-medium text-(--ink-soft)">{metricLabel(entry.metric)}</div>
+              <div className="text-[12px] font-medium text-(--ink-soft)">{t(metricLabel(entry.metric))}</div>
               <div className="mt-1 flex items-baseline gap-2">
                 {value != null ? <span className="text-[20px] font-semibold leading-none tracking-[-0.02em] tabular-nums text-(--ink)">{value}</span> : null}
                 <ChangeChip changePct={entry.change_pct} />
               </div>
-              {points && points.length > 1 ? <Sparkline points={points} height={34} label={`${metricLabel(entry.metric)} trend`} className="mt-2" /> : null}
+              {points && points.length > 1 ? <Sparkline points={points} height={34} label={`${t(metricLabel(entry.metric))} trend`} className="mt-2" /> : null}
               {entry.note ? <div className="mt-1.5 text-[11.5px] leading-snug text-(--ink-soft)">{entry.note}</div> : null}
             </div>
           );
