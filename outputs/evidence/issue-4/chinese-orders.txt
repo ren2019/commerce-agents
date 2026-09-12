@@ -1,0 +1,69 @@
+Browser tab: 12, Title: "ACME", URL: "http://localhost:3014/".
+0 AXWebArea ACME, URL: localhost:3014/
+	1 container
+		2 text ACME Simulated data / 模拟数据
+		3 container 页面
+			4 button 购物助手
+			5 button 订单, 2 延误
+				6 text 订单
+				7 text 2
+		8 button Description: 切换为英文, Help: 切换界面与后续回复的语言；历史对话保留原语言。
+		9 button 活动记录 1
+			185 text 活动记录
+			186 text 1
+		10 button Priya：资料与记忆
+			11 text Priya
+			12 text ACME订阅会员
+	187 container
+		188 heading 订单, Value: 1
+			189 text 订单
+		190 text 2笔订单延误。可以询问原因，也可以咨询已收货商品的退货。
+		191 container 筛选订单
+			192 checkbox 全部5, Value: 1
+			193 checkbox 配送中4, Value: 0
+			194 checkbox 延误2, Value: 0
+			195 checkbox 历史订单1, Value: 0
+		196 content list
+			197 container
+				198 text ACME 美容眼影盘 等2件商品 AR-79236 送达于 9月19日周六 已发货 $53.00
+				199 button 询问
+			200 container
+				201 text ACME Select 低矮型机械键盘 等2件商品 AR-78214 送达于 9月14日周一 已发货 $138.00
+				202 button 询问
+			203 container
+				204 image ACME Paws 骨科记忆棉狗床，大号
+				205 text ACME Paws 骨科记忆棉狗床，大号 AR-77903
+				206 container 因承运商延误而更新，未能在原预计的9月10日送达
+					207 text 预计 9月16日周三
+				208 text 因承运商延误而更新，未能在原预计的9月10日送达 延误 $79.00
+				209 button 询问原因
+			210 container
+				211 text ACME Sleep 大号平台床架 等2件商品 AR-79102
+				212 container 因仓库延误而更新，未能在原预计的9月1日送达
+					213 text 预计 9月14日周一
+				214 text 因仓库延误而更新，未能在原预计的9月1日送达 延误 $928.00
+				215 button 询问原因
+			216 container
+				217 text ACME Fit 6毫米防滑瑜伽垫 等2件商品 AR-77410 已送达 6月5日周五 已送达 $66.00
+				218 button 咨询退货
+	99 container
+		100 text entry area (settable) 发送消息给ACME 购物助手
+		101 button (disabled) 发送
+	102 container 购物车
+		103 heading 购物车, Value: 2
+			104 text 购物车
+		174 text 1件商品
+		175 content list
+			176 container
+				177 image ACME Paws 骨科记忆棉狗床，大号
+				178 text ACME PAWS ACME Paws 骨科记忆棉狗床，大号 $79.00 预计9月16日送达
+				179 button 减少ACME Paws 骨科记忆棉狗床，大号数量
+				180 text 1
+				181 button 增加ACME Paws 骨科记忆棉狗床，大号数量
+				182 button 移除ACME Paws 骨科记忆棉狗床，大号
+		183 text 此订单包邮 ✓
+		109 text 小计 · 1件商品 $79.00
+		110 button 查看结算摘要
+		184 button 询问购物车
+
+The focused UI element is 5 button 订单, 2 延误
