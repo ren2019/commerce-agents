@@ -1,0 +1,71 @@
+Browser tab: 15, Title: "ACME Merchant", URL: "http://localhost:3114/".
+0 AXWebArea ACME Merchant, URL: localhost:3114/
+	1 container
+		2 text ACME 商家工作台
+		3 container 工作台页面
+			4 button 首页
+			5 button 商品
+			6 button 订单
+				7 text 订单
+				8 text 5
+			9 button 库存
+				10 text 库存
+				11 text 9
+		12 checkbox Description: 收起助手, Value: 1
+		13 text Avery 店铺经理
+	14 container
+		15 button Description: 切换为英文, Help: 切换界面与后续回复的语言；历史对话保留原语言。
+		16 text ACME  · Simulated data / 模拟数据
+		117 heading 库存, Value: 1
+			118 text 库存
+		119 text 7项库存不足或售罄 · 2项滞销，积压99件
+		120 heading 库存不足, Value: 2
+			121 text 库存不足
+		122 text 按预计售罄时间排序
+		123 content list
+			124 container
+				125 text ACME Signature 15巴意式浓缩咖啡机（带蒸汽棒） AR-1002 ·  近30天售出17件 ·  补货阈值8件 ·  顾客端已隐藏 0 件库存 售罄
+				126 button 准备补货
+			127 container
+				128 text ACME Paws 10加仑水族箱入门套装 AR-1508 ·  近30天售出11件 ·  补货阈值6件 ·  顾客端已隐藏 0 件库存 售罄
+				129 button 准备补货
+			130 container
+				131 text ACME 混合床垫  ·  full AR-1902-FULL ·  近30天售出6件 ·  补货阈值4件 ·  顾客端已隐藏 0 件库存 售罄
+				132 button 准备补货
+			133 container
+				134 text ACME Rest 桑蚕丝枕套  ·  特大尺寸 · 腮红粉 AR-1606-KING-BLUSH ·  近30天售出4件 ·  补货阈值5件 ·  顾客端已隐藏 0 件库存 售罄
+				135 button 准备补货
+			136 container
+				137 text ACME 儿童即撕即贴海洋墙贴（36件） AR-2102 ·  近30天售出52件 ·  补货阈值12件 顾客端显示“仅剩3件” 3 件库存 约可销售2天
+				138 button 准备补货
+			139 container
+				140 text ACME 儿童玩具收纳箱（3件套） AR-2106 ·  近30天售出38件 ·  补货阈值10件 顾客端显示“仅剩4件” 4 件库存 约可销售3天
+				141 button 准备补货
+			142 container
+				143 text ACME 混合床垫  ·  特大尺寸 AR-1902-KING ·  近30天售出9件 ·  补货阈值4件 顾客端显示“仅剩3件” 3 件库存 约可销售10天
+				144 button 准备补货
+		145 heading 滞销商品, Value: 2
+			146 text 滞销商品
+		147 text 库存明显高于近30天销量
+		148 content list
+			149 container
+				150 text ACME Sleep 水洗棉被套套装，Queen AR-1903 ·  近30天售出6件 35 件库存 约可销售175天
+				151 button 准备降价
+			152 container
+				153 text ACME Journey 55L 徒步背包 AR-1207 ·  近30天售出3件 64 件库存 约可销售640天
+				154 button 准备降价
+	104 container
+		105 splitter 调整助手面板宽度
+		106 text 经营助手 每项变更均由你批准
+		107 button 活动记录
+		108 button 全屏
+		109 button 收起助手
+		110 text 询问经营表现、库存、价格或营销活动。
+		111 button 今天早上有哪些事项需要我关注？
+		112 button 本周销量与上周相比如何？
+		113 button 哪些商品库存不足？
+		114 button 哪些滞销商品适合降价？
+		115 text entry area (settable) 向经营助手发送消息
+		116 button (disabled) 发送
+
+The focused UI element is 9 button 库存

@@ -32,6 +32,7 @@ import {
   Thumb,
   titleCase,
   useResource,
+  useDemoLanguage,
 } from "web-shared";
 import { api, fetchAlerts, fetchListingDetail, fetchListings } from "@/lib/api";
 import { formatCategoryLabel } from "@/lib/format";
@@ -41,18 +42,20 @@ import type { InventoryAlert, Listing } from "@/lib/types";
 type Filter = "all" | "active" | "low_stock" | "content" | "inactive";
 
 function StatusPill({ status }: { status: Listing["status"] }) {
+  const { t } = useDemoLanguage();
   const style = LISTING_STATUS[status];
   return (
     <Pill tone={style.tone} dot>
-      {style.label}
+      {t(style.label)}
     </Pill>
   );
 }
 
 function ContentCell({ quality }: { quality: Listing["content_quality"] }) {
-  if (quality === "poor") return <Pill tone="danger">Poor content</Pill>;
-  if (quality === "needs_work") return <Pill tone="warn">Needs work</Pill>;
-  return <span className="text-[12.5px] text-(--ink-soft)">Good</span>;
+  const { t } = useDemoLanguage();
+  if (quality === "poor") return <Pill tone="danger">{t("Poor content")}</Pill>;
+  if (quality === "needs_work") return <Pill tone="warn">{t("Needs work")}</Pill>;
+  return <span className="text-[12.5px] text-(--ink-soft)">{t("Good")}</span>;
 }
 
 /** Why a listing sorts into the attention group; lower ranks list first. */
@@ -66,15 +69,16 @@ function attentionRank(listing: Listing, alert: InventoryAlert | undefined): num
 }
 
 function StockCell({ listing, alert }: { listing: Listing; alert?: InventoryAlert }) {
+  const { language, t } = useDemoLanguage();
   const soldOut = listing.stock === 0;
   const low = alert?.kind === "low_stock" && !soldOut;
   return (
     <div className={`text-right tabular-nums ${soldOut ? "text-(--danger)" : low ? "text-(--warn)" : "text-(--ink)"}`}>
       <div className={soldOut || low ? "font-semibold" : ""}>{formatNumber(listing.stock)}</div>
       {low && alert?.days_of_cover != null ? (
-        <div className="whitespace-nowrap text-[11.5px] font-medium text-(--ink-soft)">{coverLabel(alert.days_of_cover)}</div>
+        <div className="whitespace-nowrap text-[11.5px] font-medium text-(--ink-soft)">{language === "zh" ? `约可销售${Math.round(alert.days_of_cover)}天` : coverLabel(alert.days_of_cover)}</div>
       ) : soldOut && alert?.sales_last_30d ? (
-        <div className="whitespace-nowrap text-[11.5px] font-medium text-(--ink-soft)">{formatNumber(alert.sales_last_30d)} sold in 30 days</div>
+        <div className="whitespace-nowrap text-[11.5px] font-medium text-(--ink-soft)">{language === "zh" ? `近30天售出${formatNumber(alert.sales_last_30d)}件` : `${formatNumber(alert.sales_last_30d)} sold in 30 days`}</div>
       ) : null}
     </div>
   );
@@ -91,7 +95,8 @@ function ListingSheet({
   onClose: () => void;
   onAskAssistant: (text: string) => void;
 }) {
-  const { data: detail, failed } = useResource(() => fetchListingDetail(listingId), [listingId]);
+  const { language, t } = useDemoLanguage();
+  const { data: detail, failed } = useResource(() => fetchListingDetail(listingId), [listingId, language]);
   const listing = detail?.listing;
   const pricing = detail?.pricing;
   const ref = listing ? `${listing.title} (${listing.listing_id})` : listingId;
@@ -102,27 +107,23 @@ function ListingSheet({
 
   return (
     <Sheet
-      title="Listing"
+      title={t("Listing")}
       detail={listingId}
       onClose={onClose}
-      closeLabel="Close listing detail"
+      closeLabel={t("Close listing detail")}
       footer={
         listing ? (
           <>
-            <Button variant="primary" icon="spark" className="flex-1" onClick={() => ask(`Tell me how ${ref} is doing and what you would change.`)}>
-              Ask about this listing
-            </Button>
+            <Button variant="primary" icon="spark" className="flex-1" onClick={() => ask(language === "zh" ? `分析${ref}的经营表现并提出改进建议。` : `Tell me how ${ref} is doing and what you would change.`)}>{t("Ask about this listing")}</Button>
             {alert?.kind === "low_stock" ? (
-              <Button variant="secondary" onClick={() => ask(`Draft a restock plan for ${ref}.`)}>
-                Draft restock
-              </Button>
+              <Button variant="secondary" onClick={() => ask(language === "zh" ? `为${ref}准备补货方案。` : `Draft a restock plan for ${ref}.`)}>{t("Draft restock")}</Button>
             ) : null}
           </>
         ) : null
       }
     >
       {failed ? (
-        <p className="text-[13.5px] text-(--ink-soft)">Couldn&apos;t load this listing.</p>
+        <p className="text-[13.5px] text-(--ink-soft)">{t("Could not load this listing.")}</p>
       ) : !listing ? (
         <>
           <Skeleton className="h-24" />
@@ -138,19 +139,19 @@ function ListingSheet({
               <div className="mt-2 flex flex-wrap gap-1.5">
                 <StatusPill status={listing.status} />
                 {listing.content_quality && listing.content_quality !== "good" ? (
-                  <Pill tone={listing.content_quality === "poor" ? "danger" : "warn"}>Content {listing.content_quality === "poor" ? "is poor" : "needs work"}</Pill>
+                  <Pill tone={listing.content_quality === "poor" ? "danger" : "warn"}>{t(listing.content_quality === "poor" ? "Poor content" : "Needs work")}</Pill>
                 ) : null}
-                {listing.category ? <Pill>{formatCategoryLabel(listing.category)}</Pill> : null}
+                {listing.category ? <Pill>{t(formatCategoryLabel(listing.category))}</Pill> : null}
               </div>
             </div>
           </div>
 
           <Facts>
-            <Fact label={hasOptions(listing) ? "Price from" : "Price"} value={formatMoney(listing.price, listing.currency)} />
-            <Fact label="In stock" value={formatNumber(listing.stock)} tone={listing.stock === 0 ? "danger" : alert?.kind === "low_stock" ? "warn" : undefined} />
-            <Fact label="Sold, 30 days" value={listing.sales_last_30d != null ? formatNumber(listing.sales_last_30d) : null} />
+            <Fact label={t(hasOptions(listing) ? "Price from" : "Price")} value={formatMoney(listing.price, listing.currency)} />
+            <Fact label={t("In stock")} value={formatNumber(listing.stock)} tone={listing.stock === 0 ? "danger" : alert?.kind === "low_stock" ? "warn" : undefined} />
+            <Fact label={t("Sold, 30 days")} value={listing.sales_last_30d != null ? formatNumber(listing.sales_last_30d) : null} />
             <Fact
-              label={pricing?.margin_pct != null ? "Margin" : "Return rate"}
+              label={t(pricing?.margin_pct != null ? "Margin" : "Return rate")}
               value={pricing?.margin_pct != null ? formatRate(pricing.margin_pct) : listing.return_rate_pct != null ? formatRate(listing.return_rate_pct) : null}
             />
           </Facts>
@@ -161,34 +162,32 @@ function ListingSheet({
             <section>
               <SectionTitle
                 aside={[
-                  pricing.unit_cost != null ? `unit cost ${formatMoney(pricing.unit_cost)}` : "",
-                  pricing.demand_signal ? `demand ${titleCase(pricing.demand_signal).toLowerCase()}` : "",
-                  pricing.last_changed ? `changed ${formatDate(pricing.last_changed)}` : "",
+                  pricing.unit_cost != null ? `${t("unit cost")} ${formatMoney(pricing.unit_cost)}` : "",
+                  pricing.demand_signal ? `${t("demand")} ${t(titleCase(pricing.demand_signal).toLowerCase())}` : "",
+                  pricing.last_changed ? `${t("changed")} ${formatDate(pricing.last_changed, language === "zh" ? "zh-CN" : "en-US")}` : "",
                 ]
                   .filter(Boolean)
                   .join(" · ")}
-              >
-                Pricing
-              </SectionTitle>
+              >{t("Pricing")}</SectionTitle>
               {pricing.min_price != null && pricing.max_price != null ? <PriceBand current={pricing.current_price} floor={pricing.min_price} ceiling={pricing.max_price} /> : null}
               {listing.return_rate_pct != null && pricing.margin_pct != null ? (
-                <p className="mt-2 text-[12.5px] tabular-nums text-(--ink-soft)">Return rate {formatRate(listing.return_rate_pct)}</p>
+                <p className="mt-2 text-[12.5px] tabular-nums text-(--ink-soft)">{t("Return rate")} {formatRate(listing.return_rate_pct)}</p>
               ) : null}
             </section>
           ) : null}
 
           {listing.missing_attributes?.length ? (
             <section>
-              <SectionTitle>Missing from the listing</SectionTitle>
+              <SectionTitle>{t("Missing from the listing")}</SectionTitle>
               <div className="flex flex-wrap items-center gap-1.5">
                 {listing.missing_attributes.map((attribute) => (
                   <Pill key={attribute} tone="warn">
-                    + {attribute}
+                    + {t(attribute)}
                   </Pill>
                 ))}
                 <AskButton
-                  label="Draft these attributes"
-                  onClick={() => ask(`Draft the missing attributes (${listing.missing_attributes?.join(", ")}) for ${ref}.`)}
+                  label={t("Draft these attributes")}
+                  onClick={() => ask(language === "zh" ? `查看${ref}缺失的属性（${listing.missing_attributes?.join("、")}），仅根据已有资料准备修订，不要编造。` : `Draft the missing attributes (${listing.missing_attributes?.join(", ")}) for ${ref}.`)}
                 />
               </div>
             </section>
@@ -196,7 +195,7 @@ function ListingSheet({
 
           {listing.review_snippets?.length ? (
             <section>
-              <SectionTitle aside={<QuotedAsData subject="Customer-written" />}>What buyers say</SectionTitle>
+              <SectionTitle aside={<QuotedAsData subject={t("Customer-written")} />}>{t("What buyers say")}</SectionTitle>
               <div className="flex flex-col gap-1.5">
                 {listing.review_snippets.map((snippet, index) => (
                   <blockquote key={index} className="rounded-[10px] bg-(--ground) px-3 py-2 text-[13px] leading-snug text-(--ink-2)">
@@ -209,7 +208,7 @@ function ListingSheet({
 
           {listing.long_description ? (
             <section>
-              <SectionTitle>Description</SectionTitle>
+              <SectionTitle>{t("Description")}</SectionTitle>
               <p className="whitespace-pre-line text-[13px] leading-relaxed text-(--ink-2)">{listing.long_description}</p>
             </section>
           ) : null}
@@ -221,17 +220,18 @@ function ListingSheet({
 
 /** A family listing's variants: what price and stock are read and written against. */
 function VariantsTable({ variants, onAsk }: { variants: Listing[]; onAsk: (text: string) => void }) {
+  const { language, t } = useDemoLanguage();
   return (
     <section>
-      <SectionTitle aside={`${variants.length} variants · priced and stocked per variant`}>Variants</SectionTitle>
+      <SectionTitle aside={language === "zh" ? `${variants.length}种规格 · 分规格定价与管理库存` : `${variants.length} variants · priced and stocked per variant`}>{t("Variants")}</SectionTitle>
       <div className="overflow-x-auto rounded-[10px] border border-(--line)">
         <table className="w-full border-collapse text-[13px]">
           <thead>
             <tr className="bg-(--ground) text-left text-[11.5px] font-medium uppercase tracking-[0.04em] text-(--ink-soft)">
-              <th className="px-3 py-1.5">Variant</th>
-              <th className="px-3 py-1.5 text-right">Stock</th>
-              <th className="px-3 py-1.5 text-right">Price</th>
-              <th className="px-3 py-1.5">Status</th>
+              <th className="px-3 py-1.5">{t("Variant")}</th>
+              <th className="px-3 py-1.5 text-right">{t("Stock")}</th>
+              <th className="px-3 py-1.5 text-right">{t("Price")}</th>
+              <th className="px-3 py-1.5">{t("Status")}</th>
             </tr>
           </thead>
           <tbody>
@@ -241,9 +241,9 @@ function VariantsTable({ variants, onAsk }: { variants: Listing[]; onAsk: (text:
                   <button
                     type="button"
                     className="text-left text-(--ink) hover:underline"
-                    onClick={() => onAsk(`How is ${variant.title} in ${optionValuesLabel(variant)} (${variant.listing_id}) priced, and would you change it?`)}
+                    onClick={() => onAsk(language === "zh" ? `分析${variant.title} ${optionValuesLabel(variant, t)}（${variant.listing_id}）的定价，是否建议调整？` : `How is ${variant.title} in ${optionValuesLabel(variant, t)} (${variant.listing_id}) priced, and would you change it?`)}
                   >
-                    <div className="font-medium">{optionValuesLabel(variant)}</div>
+                    <div className="font-medium">{optionValuesLabel(variant, t)}</div>
                     <div className="text-[11.5px] tabular-nums text-(--ink-soft)">{variant.listing_id}</div>
                   </button>
                 </td>
@@ -262,6 +262,7 @@ function VariantsTable({ variants, onAsk }: { variants: Listing[]; onAsk: (text:
 }
 
 function ListingRow({ listing, alert, onOpen }: { listing: Listing; alert?: InventoryAlert; onOpen: () => void }) {
+  const { language, t } = useDemoLanguage();
   return (
     <tr
       onClick={onOpen}
@@ -272,7 +273,7 @@ function ListingRow({ listing, alert, onOpen }: { listing: Listing; alert?: Inve
         }
       }}
       tabIndex={0}
-      aria-label={`Open ${listing.title}`}
+      aria-label={language === "zh" ? `打开${listing.title}` : `Open ${listing.title}`}
       className="cursor-pointer border-t border-(--line) transition-colors hover:bg-(--ground)/70 focus-visible:bg-(--ground)/70 focus-visible:outline-none"
     >
       <td className="py-2 pl-[18px] pr-3">
@@ -282,17 +283,17 @@ function ListingRow({ listing, alert, onOpen }: { listing: Listing; alert?: Inve
             <div className="text-[13.5px] font-medium leading-snug text-(--ink)">{listing.title}</div>
             <div className="text-[12px] tabular-nums text-(--ink-soft)">
               {listing.listing_id}
-              {hasOptions(listing) ? <span> · {optionSummary(listing)}</span> : null}
-              {alert?.kind === "slow_mover" ? <span> · {INVENTORY_KINDS.slow_mover.label.toLowerCase()}</span> : null}
+              {hasOptions(listing) ? <span> · {optionSummary(listing, t)}</span> : null}
+              {alert?.kind === "slow_mover" ? <span> · {t(INVENTORY_KINDS.slow_mover.label)}</span> : null}
             </div>
           </div>
         </div>
       </td>
-      <td className="hidden px-3 py-2 text-[13px] text-(--ink-soft) @4xl:table-cell">{listing.category ? formatCategoryLabel(listing.category) : "—"}</td>
+      <td className="hidden px-3 py-2 text-[13px] text-(--ink-soft) @4xl:table-cell">{listing.category ? t(formatCategoryLabel(listing.category)) : "—"}</td>
       <td className="px-3 py-2">
         <StockCell listing={listing} alert={alert} />
       </td>
-      <td className="px-3 py-2 text-right text-[13.5px] tabular-nums text-(--ink)">{priceLabel(listing)}</td>
+      <td className="px-3 py-2 text-right text-[13.5px] tabular-nums text-(--ink)">{language === "zh" ? `${formatMoney(listing.price, listing.currency)}${hasOptions(listing) ? "起" : ""}` : priceLabel(listing)}</td>
       <td className="px-3 py-2">
         <StatusPill status={listing.status} />
       </td>
@@ -304,17 +305,18 @@ function ListingRow({ listing, alert, onOpen }: { listing: Listing; alert?: Inve
 }
 
 function ListingTable({ listings, alerts, onOpen }: { listings: Listing[]; alerts: Map<string, InventoryAlert>; onOpen: (id: string) => void }) {
+  const { t } = useDemoLanguage();
   return (
     <div className="panel-scroll @container overflow-x-auto">
       <table className="w-full border-collapse">
         <thead>
           <tr className="text-left text-[12px] font-semibold text-(--ink-soft)">
-            <th className="py-2.5 pl-[18px] pr-3 font-semibold">Listing</th>
-            <th className="hidden px-3 py-2.5 font-semibold @4xl:table-cell">Category</th>
-            <th className="px-3 py-2.5 text-right font-semibold">Stock</th>
-            <th className="px-3 py-2.5 text-right font-semibold">Price</th>
-            <th className="px-3 py-2.5 font-semibold">Status</th>
-            <th className="hidden py-2.5 pl-3 pr-[18px] font-semibold @2xl:table-cell">Content</th>
+            <th className="py-2.5 pl-[18px] pr-3 font-semibold">{t("Listing")}</th>
+            <th className="hidden px-3 py-2.5 font-semibold @4xl:table-cell">{t("Category")}</th>
+            <th className="px-3 py-2.5 text-right font-semibold">{t("Stock")}</th>
+            <th className="px-3 py-2.5 text-right font-semibold">{t("Price")}</th>
+            <th className="px-3 py-2.5 font-semibold">{t("Status")}</th>
+            <th className="hidden py-2.5 pl-3 pr-[18px] font-semibold @2xl:table-cell">{t("Content")}</th>
           </tr>
         </thead>
         <tbody>
@@ -328,9 +330,10 @@ function ListingTable({ listings, alerts, onOpen }: { listings: Listing[]; alert
 }
 
 export default function CatalogView({ refreshKey, onAskAssistant }: { refreshKey: number; onAskAssistant: (text: string) => void }) {
-  const { data: listingData, failed } = useResource(fetchListings, [refreshKey]);
+  const { language, t } = useDemoLanguage();
+  const { data: listingData, failed } = useResource(fetchListings, [refreshKey, language]);
   // Inventory alerts annotate the rows with days of cover and the slow-mover mark.
-  const { data: alertData } = useResource(fetchAlerts, [refreshKey]);
+  const { data: alertData } = useResource(fetchAlerts, [refreshKey, language]);
   const listings = listingData?.listings ?? null;
   const total = listingData ? (listingData.total ?? listingData.listings.length) : null;
   const alerts = useMemo(() => new Map((alertData?.inventory ?? []).map((alert) => [alert.listing_id, alert])), [alertData]);
@@ -375,7 +378,7 @@ export default function CatalogView({ refreshKey, onAskAssistant }: { refreshKey
   }, [listings, alerts, query, filter]);
 
   const summary = listings
-    ? [
+    ? language === "zh" ? `${formatNumber(listings.length)}项商品${total != null && total > listings.length ? `（共${formatNumber(total)}项）` : ""} · ${counts.low_stock}项库存不足或售罄 · ${counts.content}项内容待完善` : [
         total != null && total > listings.length ? `${formatNumber(listings.length)} of ${formatNumber(total)} listings` : `${formatNumber(total ?? listings.length)} listings`,
         counts.low_stock ? `${counts.low_stock} low or out of stock` : "",
         counts.content ? `${counts.content} need content work` : "",
@@ -386,46 +389,44 @@ export default function CatalogView({ refreshKey, onAskAssistant }: { refreshKey
 
   return (
     <div className="ac-reveal flex flex-col gap-4">
-      <PageHeader title="Catalog" subtitle={summary}>
-        <Button variant="secondary" icon="spark" onClick={() => onAskAssistant("Which listings need the most work right now, and why?")}>
-          Ask about the catalog
-        </Button>
+      <PageHeader title={t("Catalog")} subtitle={summary}>
+        <Button variant="secondary" icon="spark" onClick={() => onAskAssistant(language === "zh" ? "哪些商品最需要完善？原因是什么？" : "Which listings need the most work right now, and why?")}>{t("Ask about the catalog")}</Button>
       </PageHeader>
 
       {failed && !listings ? (
-        <Notice>The merchant API isn&apos;t reachable, so listings can&apos;t load.</Notice>
+        <Notice>{t("Listings could not be loaded.")}</Notice>
       ) : !listings ? (
         <Skeleton className="h-96" />
       ) : (
         <>
           <div className="flex flex-wrap items-center gap-2.5">
-            <SearchField value={query} onChange={setQuery} placeholder="Search by title, ID, or attribute" label="Search listings" className="min-w-[260px] flex-1 sm:max-w-sm" />
+            <SearchField value={query} onChange={setQuery} placeholder={t("Search by title, ID, or attribute")} label={t("Search listings")} className="min-w-[260px] flex-1 sm:max-w-sm" />
             <Segmented<Filter>
-              label="Filter listings"
+              label={t("Filter listings")}
               value={filter}
               onChange={setFilter}
               options={[
-                { id: "all", label: "All", count: counts.all },
-                { id: "active", label: "Active", count: counts.active },
-                { id: "low_stock", label: "Low stock", count: counts.low_stock },
-                { id: "content", label: "Needs content", count: counts.content },
-                { id: "inactive", label: "Inactive", count: counts.inactive },
+                { id: "all", label: t("All"), count: counts.all },
+                { id: "active", label: t("Active"), count: counts.active },
+                { id: "low_stock", label: t("Low stock"), count: counts.low_stock },
+                { id: "content", label: t("Needs content"), count: counts.content },
+                { id: "inactive", label: t("Inactive"), count: counts.inactive },
               ]}
             />
           </div>
 
           {attention.length === 0 && rest.length === 0 ? (
-            <Notice>No listings match.</Notice>
+            <Notice>{t("No listings match.")}</Notice>
           ) : null}
 
           {attention.length ? (
-            <Panel title="Needs attention" subtitle={`${attention.length} · sold out and low stock first`}>
+            <Panel title={t("Needs attention")} subtitle={language === "zh" ? `${attention.length}项 · 售罄和库存不足优先` : `${attention.length} · sold out and low stock first`}>
               <ListingTable listings={attention} alerts={alerts} onOpen={setOpenListing} />
             </Panel>
           ) : null}
 
           {rest.length ? (
-            <Panel title={attention.length ? "Everything else" : "All listings"} subtitle={formatNumber(rest.length)}>
+            <Panel title={t(attention.length ? "Everything else" : "All listings")} subtitle={formatNumber(rest.length)}>
               <ListingTable listings={rest} alerts={alerts} onOpen={setOpenListing} />
             </Panel>
           ) : null}

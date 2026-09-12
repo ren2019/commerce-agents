@@ -1,0 +1,29 @@
+		953 container 商品AR-2102
+			954 container
+				955 text 商品 AR-2102
+			956 button 关闭商品详情
+			957 heading ACME 儿童即撕即贴海洋墙贴（36件）, Value: 2
+				958 text ACME 儿童即撕即贴海洋墙贴（36件）
+			959 text 36张海洋主题墙贴
+			960 text 在售 儿童房
+			961 container
+				962 text 价格 $24.00 库存 3 近30天销量 52 毛利率 56.2%
+			963 container
+				964 heading 定价 单位成本 $10.50 · 需求 rising, Value: 3
+					965 text 定价 单位成本 $10.50 · 需求 rising
+				966 container $24.00 now, floor $12.07, ceiling $32.40
+			967 container
+				968 heading 商品缺失资料, Value: 3
+					969 text 商品缺失资料
+				970 text +  wall coverage +  material
+				971 button 准备这些属性
+			972 container
+				973 heading 买家评价 顾客提供的内容, shown as written., Value: 3
+					974 text 买家评价 顾客提供的内容 , shown as written.
+				975 text “ 二十分钟就贴好了，从我们租的房子墙上撕下来干干净净 ” “ 床上方的大鲸鱼是整个房间的亮点 ” “ 贴上去没有气泡——我们家孩子一个人贴了半面墙 ”
+			976 container
+				977 heading 描述, Value: 3
+					978 text 描述
+				979 text 三十六张哑光贴纸：一只鲸鱼、海豚、海龟、海马和成群的鱼，外加珊瑚和气泡散布其间。每张都可重新放置而不损伤漆面，因此无论何时灵感涌现，都能重建这片礁石。
+			980 button 询问此商品
+			981 button 准备补货

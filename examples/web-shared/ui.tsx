@@ -426,7 +426,7 @@ export function Sheet({
           </div>
           <IconButton icon="x" label={t(closeLabel)} onClick={onClose} />
         </div>
-        <div className="panel-scroll flex flex-1 flex-col gap-4 overflow-y-auto p-[18px]">{children}</div>
+        <div className="panel-scroll flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-[18px] [&>*]:shrink-0">{children}</div>
         {footer ? <div className="flex items-center gap-2 border-t border-(--line) px-[18px] py-3">{footer}</div> : null}
       </aside>
     </>,

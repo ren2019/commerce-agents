@@ -102,15 +102,15 @@ export function hasOptions(product: Pick<OptionFields, "options">): boolean {
 }
 
 /** "twin · full · queen · king", one group per option separated by " / "; empty for a plain product. */
-export function optionSummary(product: Pick<OptionFields, "options">): string {
+export function optionSummary(product: Pick<OptionFields, "options">, t: (text: string) => string = (text) => text): string {
   return Object.values(product.options ?? {})
-    .map((values) => values.join(" · "))
+    .map((values) => values.map(t).join(" · "))
     .join(" / ");
 }
 
 /** "king · slate" for a variant or a cart line; empty when nothing was chosen. */
-export function optionValuesLabel(item: Pick<OptionFields, "option_values">): string {
-  return Object.values(item.option_values ?? {}).join(" · ");
+export function optionValuesLabel(item: Pick<OptionFields, "option_values">, t: (text: string) => string = (text) => text): string {
+  return Object.values(item.option_values ?? {}).map(t).join(" · ");
 }
 
 /** "From $349" on a family record, whose price is its lowest variant's; the plain price otherwise. */
