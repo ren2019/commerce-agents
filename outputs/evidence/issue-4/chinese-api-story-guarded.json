@@ -1,0 +1,1021 @@
+[
+  {
+    "message": "下个月我准备和伴侣、6岁的孩子第一次露营。想买一顶帐篷，别太重，预算最好在250美元以内。",
+    "events": [
+      {
+        "type": "tool_call",
+        "data": {
+          "tool": "load_skill",
+          "id": "call_00_SMaIQw9FO9avazfwOHB37377",
+          "input": {
+            "skill_name": "search-discovery"
+          },
+          "label": "正在查看露营帐篷的挑选要点"
+        }
+      },
+      {
+        "type": "tool_call",
+        "data": {
+          "tool": "search_products",
+          "id": "call_01_lQliDmRcysqLwVyC8NmH5810",
+          "input": {
+            "query": "露营帐篷",
+            "filters": {
+              "category": "帐篷",
+              "max_price": 250
+            },
+            "limit": 8
+          },
+          "label": "正在查找250美元以内的帐篷"
+        }
+      },
+      {
+        "type": "tool_call",
+        "data": {
+          "tool": "recall_memories",
+          "id": "call_02_S6N9JfbkGyzvbaJ0hHxd0962",
+          "input": {
+            "topic": "露营装备偏好"
+          },
+          "label": "正在查看已有的露营偏好"
+        }
+      },
+      {
+        "type": "tool_result",
+        "data": {
+          "tool": "load_skill",
+          "id": "call_00_SMaIQw9FO9avazfwOHB37377",
+          "summary": "ok",
+          "is_error": false,
+          "status": "ok",
+          "excerpt": "# Search and discovery\n\nBelow, \"item\" means whatever this catalog sells: a product, a stay, a plan, or a seat.\n\nTurn the need the customer described into a few options and a recommendation, in as few turns as the request allows.\n\n## Read the request and phrase the search\n\n- Take the budget, the recipient, dates, sizes, intended use, and dealbreakers out of the message and apply them; let the results show that you did instead of reading them back.\n- Search by default; a budget, a size, or a recipient you were not given narrows the shortlist and is asked about beside the results. Ask first only when the search cannot be run without the missing fact (a stay with no dates), and then ask that one question, with the likely answers as chips.\n- Apply what the profile you were given already holds (household, saved limits, what they own) without asking about it again.\n- Word the query in the catalog's vocabulary and leave the customer's phrasing behind.\n- Run one search per distinct thing the request names, all in the same round. Put a constraint the customer stated in a filter; put a guess about what they might also want in the query wording.\n\n## Shortlist and recommendation\n\n- Show three t"
+        }
+      },
+      {
+        "type": "tool_result",
+        "data": {
+          "tool": "search_products",
+          "id": "call_01_lQliDmRcysqLwVyC8NmH5810",
+          "summary": "ok",
+          "is_error": false,
+          "status": "ok",
+          "excerpt": "Search returned 5 result(s): the catalog's closest text matches, which can include related items rather than the exact thing searched for. Treat a result as the requested item only if its title and attributes match; if none do, the item was not found, and anything you offer instead is named as a stand-in.\n<storefront_data>\n{\"query\": \"露营帐篷\", \"result_count\": 5, \"results\": [{\"product_id\": \"AR-1201\", \"title\": \"ACME Basecamp 双人背包帐篷\", \"brand\": \"ACME Basecamp\", \"price\": 149.0, \"currency\": \"USD\", \"rating\": 4.6, \"review_count\": 812, \"in_stock\": true, \"labels\": [\"bestseller\"], \"attributes\": {\"capacity\": \"2人\", \"weight\": \"2.1 kg\", \"season\": \"3季\", \"setup\": \"独立式\", \"delivery\": \"Get it by Wed, Sep 16\"}, \"short_description\": \"一款2.1公斤的独立式三季帐篷,约四分钟即可搭好。\"}, {\"product_id\": \"AR-1208\", \"title\": \"ACME Basecamp 重力式滤水器,3L\", \"brand\": \"ACME Basecamp\", \"price\": 74.0, \"currency\": \"USD\", \"rating\": 4.6, \"review_count\": 410, \"in_stock\": true, \"labels\": [\"eco-friendly\"], \"attributes\": {\"capacity\": \"3 L\", \"flow\": \"1.5 L/min\", \"filter_life\": \"1500 L\", \"weight\": \"310 g\", \"delivery\": \"Get it by Thu, Sep 17\"}, \"short_description\": \"挂在树枝上,让重力完成过滤——无需泵压,每分钟1.5升。\"}, {\"product_id\": \"AR-1202\", \"title\": \"ACME Basecamp 4人家庭帐篷\""
+        }
+      },
+      {
+        "type": "tool_result",
+        "data": {
+          "tool": "recall_memories",
+          "id": "call_02_S6N9JfbkGyzvbaJ0hHxd0962",
+          "summary": "<storefront_data>\n{\"topic\": \"露营装备偏好\", \"facts\": \"none matched\"}\n</storefront_data>",
+          "is_error": false,
+          "status": "ok"
+        }
+      },
+      {
+        "type": "text_delta",
+        "data": {
+          "text": "**三人（两大一小）露营需要至少 3 人的容量，所以 4 人家庭帐篷才装得下；双人款虽然更轻，但不符合你们的队伍人数。**"
+        }
+      },
+      {
+        "type": "tool_call",
+        "data": {
+          "tool": "get_product_details",
+          "id": "call_00_45XG97MB1DimyZKt9zBb4896",
+          "input": {
+            "product_id": "AR-1202"
+          },
+          "label": "正在查看4人家庭帐篷的规格"
+        }
+      },
+      {
+        "type": "tool_call",
+        "data": {
+          "tool": "get_product_details",
+          "id": "call_01_6BXjF3VVfi2C9l3lqeGj9381",
+          "input": {
+            "product_id": "AR-1201"
+          },
+          "label": "正在查看双人帐篷的规格"
+        }
+      },
+      {
+        "type": "tool_result",
+        "data": {
+          "tool": "get_product_details",
+          "id": "call_00_45XG97MB1DimyZKt9zBb4896",
+          "summary": "ok",
+          "is_error": false,
+          "status": "ok",
+          "excerpt": "<storefront_data>\n{\"product_id\": \"AR-1202\", \"title\": \"ACME Basecamp 4人家庭帐篷\", \"brand\": \"ACME Basecamp\", \"price\": 219.0, \"currency\": \"USD\", \"rating\": 4.5, \"review_count\": 1430, \"in_stock\": true, \"attributes\": {\"capacity\": \"4人\", \"weight\": \"7.4 kg\", \"standing_height\": \"183 cm\", \"setup\": \"8分钟\", \"delivery\": \"Get it by Thu, Sep 17\"}, \"short_description\": \"站立高度的家庭帐篷,带有房间隔断和门廊遮阳篷,可放置泥泞的靴子。\"}\n</storefront_data>"
+        }
+      },
+      {
+        "type": "tool_result",
+        "data": {
+          "tool": "get_product_details",
+          "id": "call_01_6BXjF3VVfi2C9l3lqeGj9381",
+          "summary": "ok",
+          "is_error": false,
+          "status": "ok",
+          "excerpt": "<storefront_data>\n{\"product_id\": \"AR-1201\", \"title\": \"ACME Basecamp 双人背包帐篷\", \"brand\": \"ACME Basecamp\", \"price\": 149.0, \"currency\": \"USD\", \"rating\": 4.6, \"review_count\": 812, \"in_stock\": true, \"labels\": [\"bestseller\"], \"attributes\": {\"capacity\": \"2人\", \"weight\": \"2.1 kg\", \"season\": \"3季\", \"setup\": \"独立式\", \"delivery\": \"Get it by Wed, Sep 16\"}, \"short_description\": \"一款2.1公斤的独立式三季帐篷,约四分钟即可搭好。\", \"long_description\": \"一款真正的双人背包帐篷,重量保持在2.1公斤,同时不牺牲居住舒适性:两个门、两个门厅,以及足够的头部空间,让您在雨夜也能坐起来打牌。颜色编码的铝制帐杆让首次搭建直观易懂,全罩式防雨罩带有压胶接缝,网眼帐身有助于减轻潮湿夜晚的凝露问题。收纳后仅相当于一条面包的大小。\", \"specs\": {\"floor_area\": \"2.9 平方米\", \"peak_height\": \"102 厘米\", \"doors\": \"2\", \"packed_size\": \"46 x 15 厘米\", \"rainfly\": \"全罩式,压胶接缝\", \"warranty\": \"终身\"}, \"review_highlights\": [\"在暴露的山脊上经历了一个多风的周末,帐篷纹丝不动\", \"前庭空间确实能容纳两个成年人外加靴子和背包\", \"地钉不结实——值得换成更好的\"]}\n</storefront_data>"
+        }
+      },
+      {
+        "type": "ui_partial",
+        "data": {
+          "component": "products",
+          "payload": {
+            "items": [],
+            "title": "三人露营帐篷（250美元以内）"
+          },
+          "stream_id": "call_00_ae3bFRoHRkmh4pvEVX4V5112"
+        }
+      },
+      {
+        "type": "ui_partial",
+        "data": {
+          "component": "products",
+          "payload": {
+            "items": [
+              {
+                "product": {
+                  "product_id": "AR-1202",
+                  "title": "ACME Basecamp 4人家庭帐篷",
+                  "brand": "ACME Basecamp",
+                  "price": 219.0,
+                  "currency": "USD",
+                  "rating": 4.5,
+                  "review_count": 1430,
+                  "category": "outdoor-camping",
+                  "labels": [],
+                  "attributes": {
+                    "capacity": "4人",
+                    "weight": "7.4 kg",
+                    "standing_height": "183 cm",
+                    "setup": "8分钟",
+                    "delivery": "Get it by Thu, Sep 17"
+                  },
+                  "in_stock": true,
+                  "short_description": "站立高度的家庭帐篷，带有房间隔断和门廊遮阳篷，可放置泥泞的靴子。",
+                  "options": {},
+                  "option_values": {},
+                  "specs": {},
+                  "review_highlights": [],
+                  "variants": []
+                }
+              }
+            ],
+            "title": "三人露营帐篷（250美元以内）",
+            "layout": "list"
+          },
+          "stream_id": "call_00_ae3bFRoHRkmh4pvEVX4V5112"
+        }
+      },
+      {
+        "type": "ui_partial",
+        "data": {
+          "component": "products",
+          "payload": {
+            "items": [
+              {
+                "product": {
+                  "product_id": "AR-1202",
+                  "title": "ACME Basecamp 4人家庭帐篷",
+                  "brand": "ACME Basecamp",
+                  "price": 219.0,
+                  "currency": "USD",
+                  "rating": 4.5,
+                  "review_count": 1430,
+                  "category": "outdoor-camping",
+                  "labels": [],
+                  "attributes": {
+                    "capacity": "4人",
+                    "weight": "7.4 kg",
+                    "standing_height": "183 cm",
+                    "setup": "8分钟",
+                    "delivery": "Get it by Thu, Sep 17"
+                  },
+                  "in_stock": true,
+                  "short_description": "站立高度的家庭帐篷，带有房间隔断和门廊遮阳篷，可放置泥泞的靴子。",
+                  "options": {},
+                  "option_values": {},
+                  "specs": {},
+                  "review_highlights": [],
+                  "variants": []
+                },
+                "reason": "4人容量适合你们一家三口,219美元在预算内,8分钟搭好且站立高度,首次露营更省力"
+              },
+              {
+                "product": {
+                  "product_id": "AR-1201",
+                  "title": "ACME Basecamp 双人背包帐篷",
+                  "brand": "ACME Basecamp",
+                  "price": 149.0,
+                  "currency": "USD",
+                  "rating": 4.6,
+                  "review_count": 812,
+                  "category": "outdoor-camping",
+                  "labels": [
+                    "bestseller"
+                  ],
+                  "attributes": {
+                    "capacity": "2人",
+                    "weight": "2.1 kg",
+                    "season": "3季",
+                    "setup": "独立式",
+                    "delivery": "Get it by Wed, Sep 16"
+                  },
+                  "in_stock": true,
+                  "short_description": "一款2.1公斤的独立式三季帐篷，约四分钟即可搭好。",
+                  "options": {},
+                  "option_values": {},
+                  "long_description": "一款真正的双人背包帐篷，重量保持在2.1公斤，同时不牺牲居住舒适性：两个门、两个门厅，以及足够的头部空间，让您在雨夜也能坐起来打牌。颜色编码的铝制帐杆让首次搭建直观易懂，全罩式防雨罩带有压胶接缝，网眼帐身有助于减轻潮湿夜晚的凝露问题。收纳后仅相当于一条面包的大小。",
+                  "specs": {
+                    "floor_area": "2.9 平方米",
+                    "peak_height": "102 厘米",
+                    "doors": "2",
+                    "packed_size": "46 x 15 厘米",
+                    "rainfly": "全罩式，压胶接缝",
+                    "warranty": "终身"
+                  },
+                  "review_highlights": [
+                    "在暴露的山脊上经历了一个多风的周末，帐篷纹丝不动",
+                    "前庭空间确实能容纳两个成年人外加靴子和背包",
+                    "地钉不结实——值得换成更好的"
+                  ],
+                  "variants": []
+                }
+              }
+            ],
+            "title": "三人露营帐篷（250美元以内）",
+            "layout": "list"
+          },
+          "stream_id": "call_00_ae3bFRoHRkmh4pvEVX4V5112"
+        }
+      },
+      {
+        "type": "tool_call",
+        "data": {
+          "tool": "present_products",
+          "id": "call_00_ae3bFRoHRkmh4pvEVX4V5112",
+          "input": {
+            "title": "三人露营帐篷（250美元以内）",
+            "layout": "list",
+            "picks": [
+              {
+                "product_id": "AR-1202",
+                "reason": "4人容量适合你们一家三口,219美元在预算内,8分钟搭好且站立高度,首次露营更省力"
+              },
+              {
+                "product_id": "AR-1201",
+                "reason": "2.1 kg 最轻、4分钟搭好、149美元,但只有2人容量,睡不下三个人"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "tool_call",
+        "data": {
+          "tool": "present_suggestions",
+          "id": "call_01_i2DxKWhD5dkv5yQYqgcM2744",
+          "input": {
+            "suggestions": [
+              "把4人家庭帐篷加入购物车",
+              "比较这两款的详细差异",
+              "看看配套的露营灯",
+              "还有更轻的三人帐篷吗"
+            ]
+          }
+        }
+      },
+      {
+        "type": "ui",
+        "data": {
+          "component": "products",
+          "payload": {
+            "title": "三人露营帐篷（250美元以内）",
+            "layout": "list",
+            "items": [
+              {
+                "product": {
+                  "product_id": "AR-1202",
+                  "title": "ACME Basecamp 4人家庭帐篷",
+                  "brand": "ACME Basecamp",
+                  "price": 219.0,
+                  "currency": "USD",
+                  "rating": 4.5,
+                  "review_count": 1430,
+                  "category": "outdoor-camping",
+                  "labels": [],
+                  "attributes": {
+                    "capacity": "4人",
+                    "weight": "7.4 kg",
+                    "standing_height": "183 cm",
+                    "setup": "8分钟",
+                    "delivery": "Get it by Thu, Sep 17"
+                  },
+                  "in_stock": true,
+                  "short_description": "站立高度的家庭帐篷，带有房间隔断和门廊遮阳篷，可放置泥泞的靴子。",
+                  "options": {},
+                  "option_values": {},
+                  "specs": {},
+                  "review_highlights": [],
+                  "variants": []
+                },
+                "reason": "4人容量适合你们一家三口,219美元在预算内,8分钟搭好且站立高度,首次露营更省力"
+              },
+              {
+                "product": {
+                  "product_id": "AR-1201",
+                  "title": "ACME Basecamp 双人背包帐篷",
+                  "brand": "ACME Basecamp",
+                  "price": 149.0,
+                  "currency": "USD",
+                  "rating": 4.6,
+                  "review_count": 812,
+                  "category": "outdoor-camping",
+                  "labels": [
+                    "bestseller"
+                  ],
+                  "attributes": {
+                    "capacity": "2人",
+                    "weight": "2.1 kg",
+                    "season": "3季",
+                    "setup": "独立式",
+                    "delivery": "Get it by Wed, Sep 16"
+                  },
+                  "in_stock": true,
+                  "short_description": "一款2.1公斤的独立式三季帐篷，约四分钟即可搭好。",
+                  "options": {},
+                  "option_values": {},
+                  "long_description": "一款真正的双人背包帐篷，重量保持在2.1公斤，同时不牺牲居住舒适性：两个门、两个门厅，以及足够的头部空间，让您在雨夜也能坐起来打牌。颜色编码的铝制帐杆让首次搭建直观易懂，全罩式防雨罩带有压胶接缝，网眼帐身有助于减轻潮湿夜晚的凝露问题。收纳后仅相当于一条面包的大小。",
+                  "specs": {
+                    "floor_area": "2.9 平方米",
+                    "peak_height": "102 厘米",
+                    "doors": "2",
+                    "packed_size": "46 x 15 厘米",
+                    "rainfly": "全罩式，压胶接缝",
+                    "warranty": "终身"
+                  },
+                  "review_highlights": [
+                    "在暴露的山脊上经历了一个多风的周末，帐篷纹丝不动",
+                    "前庭空间确实能容纳两个成年人外加靴子和背包",
+                    "地钉不结实——值得换成更好的"
+                  ],
+                  "variants": []
+                },
+                "reason": "2.1 kg 最轻、4分钟搭好、149美元,但只有2人容量,睡不下三个人"
+              }
+            ]
+          },
+          "stream_id": "call_00_ae3bFRoHRkmh4pvEVX4V5112"
+        }
+      },
+      {
+        "type": "tool_result",
+        "data": {
+          "tool": "present_products",
+          "id": "call_00_ae3bFRoHRkmh4pvEVX4V5112",
+          "summary": "Displayed to the customer.",
+          "is_error": false,
+          "status": "ok"
+        }
+      },
+      {
+        "type": "ui",
+        "data": {
+          "component": "suggestions",
+          "payload": {
+            "suggestions": [
+              "把4人家庭帐篷加入购物车",
+              "比较这两款的详细差异",
+              "看看配套的露营灯",
+              "还有更轻的三人帐篷吗"
+            ]
+          },
+          "stream_id": "call_01_i2DxKWhD5dkv5yQYqgcM2744"
+        }
+      },
+      {
+        "type": "tool_result",
+        "data": {
+          "tool": "present_suggestions",
+          "id": "call_01_i2DxKWhD5dkv5yQYqgcM2744",
+          "summary": "Displayed to the customer.",
+          "is_error": false,
+          "status": "ok"
+        }
+      },
+      {
+        "type": "turn_complete",
+        "data": {
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 8349,
+            "output_tokens": 594,
+            "cache_read_input_tokens": 17664,
+            "cache_creation_input_tokens": 0
+          },
+          "elapsed_ms": 4421,
+          "results_cleared": 0
+        }
+      }
+    ]
+  },
+  {
+    "message": "帮我比较前两款，主要看空间和搭建是否方便。",
+    "events": [
+      {
+        "type": "ui_partial",
+        "data": {
+          "component": "comparison",
+          "payload": {
+            "entries": [],
+            "dimensions": [],
+            "title": "空间与搭建方便程度对比"
+          },
+          "stream_id": "call_00_xsDN2MZ32HoHIycMol7v6495"
+        }
+      },
+      {
+        "type": "ui_partial",
+        "data": {
+          "component": "comparison",
+          "payload": {
+            "entries": [],
+            "dimensions": [
+              "容量"
+            ],
+            "title": "空间与搭建方便程度对比"
+          },
+          "stream_id": "call_00_xsDN2MZ32HoHIycMol7v6495"
+        }
+      },
+      {
+        "type": "ui_partial",
+        "data": {
+          "component": "comparison",
+          "payload": {
+            "entries": [],
+            "dimensions": [
+              "容量",
+              "重量"
+            ],
+            "title": "空间与搭建方便程度对比"
+          },
+          "stream_id": "call_00_xsDN2MZ32HoHIycMol7v6495"
+        }
+      },
+      {
+        "type": "ui_partial",
+        "data": {
+          "component": "comparison",
+          "payload": {
+            "entries": [],
+            "dimensions": [
+              "容量",
+              "重量",
+              "搭建时间"
+            ],
+            "title": "空间与搭建方便程度对比"
+          },
+          "stream_id": "call_00_xsDN2MZ32HoHIycMol7v6495"
+        }
+      },
+      {
+        "type": "ui_partial",
+        "data": {
+          "component": "comparison",
+          "payload": {
+            "entries": [],
+            "dimensions": [
+              "容量",
+              "重量",
+              "搭建时间",
+              "最高高度"
+            ],
+            "title": "空间与搭建方便程度对比"
+          },
+          "stream_id": "call_00_xsDN2MZ32HoHIycMol7v6495"
+        }
+      },
+      {
+        "type": "ui_partial",
+        "data": {
+          "component": "comparison",
+          "payload": {
+            "entries": [],
+            "dimensions": [
+              "容量",
+              "重量",
+              "搭建时间",
+              "最高高度",
+              "地面面积"
+            ],
+            "title": "空间与搭建方便程度对比"
+          },
+          "stream_id": "call_00_xsDN2MZ32HoHIycMol7v6495"
+        }
+      },
+      {
+        "type": "ui_partial",
+        "data": {
+          "component": "comparison",
+          "payload": {
+            "entries": [],
+            "dimensions": [
+              "容量",
+              "重量",
+              "搭建时间",
+              "最高高度",
+              "地面面积",
+              "价格"
+            ],
+            "title": "空间与搭建方便程度对比"
+          },
+          "stream_id": "call_00_xsDN2MZ32HoHIycMol7v6495"
+        }
+      },
+      {
+        "type": "ui_partial",
+        "data": {
+          "component": "comparison",
+          "payload": {
+            "entries": [
+              {
+                "product_id": "AR-1202",
+                "pros": [],
+                "cons": [],
+                "best_for": null,
+                "product": {
+                  "product_id": "AR-1202",
+                  "title": "ACME Basecamp 4人家庭帐篷",
+                  "brand": "ACME Basecamp",
+                  "price": 219.0,
+                  "currency": "USD",
+                  "rating": 4.5,
+                  "review_count": 1430,
+                  "category": "outdoor-camping",
+                  "labels": [],
+                  "attributes": {
+                    "capacity": "4人",
+                    "weight": "7.4 kg",
+                    "standing_height": "183 cm",
+                    "setup": "8分钟",
+                    "delivery": "Get it by Thu, Sep 17"
+                  },
+                  "in_stock": true,
+                  "short_description": "站立高度的家庭帐篷，带有房间隔断和门廊遮阳篷，可放置泥泞的靴子。",
+                  "options": {},
+                  "option_values": {}
+                }
+              }
+            ],
+            "dimensions": [
+              "容量",
+              "重量",
+              "搭建时间",
+              "最高高度",
+              "地面面积",
+              "价格"
+            ],
+            "title": "空间与搭建方便程度对比",
+            "recommended_product_id": "AR-1202"
+          },
+          "stream_id": "call_00_xsDN2MZ32HoHIycMol7v6495"
+        }
+      },
+      {
+        "type": "ui_partial",
+        "data": {
+          "component": "comparison",
+          "payload": {
+            "entries": [
+              {
+                "product_id": "AR-1202",
+                "pros": [
+                  "4人容量,两大一小住得宽松",
+                  "183 cm 站立高度,帐篷内可以站直",
+                  "带房间隔断和门廊遮阳篷,可放泥泞的靴子"
+                ],
+                "cons": [
+                  "7.4 kg,比双人款重不少",
+                  "搭建需约8分钟",
+                  "无室外储物空间时收纳占地更大"
+                ],
+                "best_for": "你们一家三口首次露营、以营地为主",
+                "product": {
+                  "product_id": "AR-1202",
+                  "title": "ACME Basecamp 4人家庭帐篷",
+                  "brand": "ACME Basecamp",
+                  "price": 219.0,
+                  "currency": "USD",
+                  "rating": 4.5,
+                  "review_count": 1430,
+                  "category": "outdoor-camping",
+                  "labels": [],
+                  "attributes": {
+                    "capacity": "4人",
+                    "weight": "7.4 kg",
+                    "standing_height": "183 cm",
+                    "setup": "8分钟",
+                    "delivery": "Get it by Thu, Sep 17"
+                  },
+                  "in_stock": true,
+                  "short_description": "站立高度的家庭帐篷，带有房间隔断和门廊遮阳篷，可放置泥泞的靴子。",
+                  "options": {},
+                  "option_values": {}
+                }
+              },
+              {
+                "product_id": "AR-1201",
+                "pros": [],
+                "cons": [],
+                "best_for": null,
+                "product": {
+                  "product_id": "AR-1201",
+                  "title": "ACME Basecamp 双人背包帐篷",
+                  "brand": "ACME Basecamp",
+                  "price": 149.0,
+                  "currency": "USD",
+                  "rating": 4.6,
+                  "review_count": 812,
+                  "category": "outdoor-camping",
+                  "labels": [
+                    "bestseller"
+                  ],
+                  "attributes": {
+                    "capacity": "2人",
+                    "weight": "2.1 kg",
+                    "season": "3季",
+                    "setup": "独立式",
+                    "delivery": "Get it by Wed, Sep 16"
+                  },
+                  "in_stock": true,
+                  "short_description": "一款2.1公斤的独立式三季帐篷，约四分钟即可搭好。",
+                  "options": {},
+                  "option_values": {}
+                }
+              }
+            ],
+            "dimensions": [
+              "容量",
+              "重量",
+              "搭建时间",
+              "最高高度",
+              "地面面积",
+              "价格"
+            ],
+            "title": "空间与搭建方便程度对比",
+            "recommended_product_id": "AR-1202"
+          },
+          "stream_id": "call_00_xsDN2MZ32HoHIycMol7v6495"
+        }
+      },
+      {
+        "type": "tool_call",
+        "data": {
+          "tool": "present_comparison",
+          "id": "call_00_xsDN2MZ32HoHIycMol7v6495",
+          "input": {
+            "title": "空间与搭建方便程度对比",
+            "dimensions": [
+              "容量",
+              "重量",
+              "搭建时间",
+              "最高高度",
+              "地面面积",
+              "价格"
+            ],
+            "recommended_product_id": "AR-1202",
+            "entries": [
+              {
+                "product_id": "AR-1202",
+                "pros": [
+                  "4人容量,两大一小住得宽松",
+                  "183 cm 站立高度,帐篷内可以站直",
+                  "带房间隔断和门廊遮阳篷,可放泥泞的靴子"
+                ],
+                "cons": [
+                  "7.4 kg,比双人款重不少",
+                  "搭建需约8分钟",
+                  "无室外储物空间时收纳占地更大"
+                ],
+                "best_for": "你们一家三口首次露营、以营地为主"
+              },
+              {
+                "product_id": "AR-1201",
+                "pros": [
+                  "仅 2.1 kg,收纳后约一条面包大小",
+                  "独立式结构,约4分钟搭好",
+                  "双门双门厅,防雨罩压胶接缝"
+                ],
+                "cons": [
+                  "只有2人容量,睡不下三个人",
+                  "最高 102 cm,只能坐起",
+                  "地面面积 2.9 平方米,三人会很挤"
+                ],
+                "best_for": "两人徒步背行,追求轻量与快速搭建"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "tool_call",
+        "data": {
+          "tool": "present_suggestions",
+          "id": "call_01_TKSW3Qha0hso6Wx5Ovhp4214",
+          "input": {
+            "suggestions": [
+              "把4人家庭帐篷加入购物车",
+              "这款帐篷怎么保养",
+              "看看配套的露营灯"
+            ]
+          }
+        }
+      },
+      {
+        "type": "ui",
+        "data": {
+          "component": "comparison",
+          "payload": {
+            "title": "空间与搭建方便程度对比",
+            "entries": [
+              {
+                "product_id": "AR-1202",
+                "pros": [
+                  "4人容量,两大一小住得宽松",
+                  "183 cm 站立高度,帐篷内可以站直",
+                  "带房间隔断和门廊遮阳篷,可放泥泞的靴子"
+                ],
+                "cons": [
+                  "7.4 kg,比双人款重不少",
+                  "搭建需约8分钟",
+                  "无室外储物空间时收纳占地更大"
+                ],
+                "best_for": "你们一家三口首次露营、以营地为主",
+                "product": {
+                  "product_id": "AR-1202",
+                  "title": "ACME Basecamp 4人家庭帐篷",
+                  "brand": "ACME Basecamp",
+                  "price": 219.0,
+                  "currency": "USD",
+                  "rating": 4.5,
+                  "review_count": 1430,
+                  "category": "outdoor-camping",
+                  "labels": [],
+                  "attributes": {
+                    "capacity": "4人",
+                    "weight": "7.4 kg",
+                    "standing_height": "183 cm",
+                    "setup": "8分钟",
+                    "delivery": "Get it by Thu, Sep 17"
+                  },
+                  "in_stock": true,
+                  "short_description": "站立高度的家庭帐篷，带有房间隔断和门廊遮阳篷，可放置泥泞的靴子。",
+                  "options": {},
+                  "option_values": {}
+                }
+              },
+              {
+                "product_id": "AR-1201",
+                "pros": [
+                  "仅 2.1 kg,收纳后约一条面包大小",
+                  "独立式结构,约4分钟搭好",
+                  "双门双门厅,防雨罩压胶接缝"
+                ],
+                "cons": [
+                  "只有2人容量,睡不下三个人",
+                  "最高 102 cm,只能坐起",
+                  "地面面积 2.9 平方米,三人会很挤"
+                ],
+                "best_for": "两人徒步背行,追求轻量与快速搭建",
+                "product": {
+                  "product_id": "AR-1201",
+                  "title": "ACME Basecamp 双人背包帐篷",
+                  "brand": "ACME Basecamp",
+                  "price": 149.0,
+                  "currency": "USD",
+                  "rating": 4.6,
+                  "review_count": 812,
+                  "category": "outdoor-camping",
+                  "labels": [
+                    "bestseller"
+                  ],
+                  "attributes": {
+                    "capacity": "2人",
+                    "weight": "2.1 kg",
+                    "season": "3季",
+                    "setup": "独立式",
+                    "delivery": "Get it by Wed, Sep 16"
+                  },
+                  "in_stock": true,
+                  "short_description": "一款2.1公斤的独立式三季帐篷，约四分钟即可搭好。",
+                  "options": {},
+                  "option_values": {}
+                }
+              }
+            ],
+            "dimensions": [
+              "容量",
+              "重量",
+              "搭建时间",
+              "最高高度",
+              "地面面积",
+              "价格"
+            ],
+            "recommended_product_id": "AR-1202",
+            "price_delta": {
+              "amount": 70.0,
+              "low_product_id": "AR-1201",
+              "low_price": 149.0,
+              "high_product_id": "AR-1202",
+              "high_price": 219.0
+            }
+          },
+          "stream_id": "call_00_xsDN2MZ32HoHIycMol7v6495"
+        }
+      },
+      {
+        "type": "tool_result",
+        "data": {
+          "tool": "present_comparison",
+          "id": "call_00_xsDN2MZ32HoHIycMol7v6495",
+          "summary": "Displayed to the customer.",
+          "is_error": false,
+          "status": "ok"
+        }
+      },
+      {
+        "type": "ui",
+        "data": {
+          "component": "suggestions",
+          "payload": {
+            "suggestions": [
+              "把4人家庭帐篷加入购物车",
+              "这款帐篷怎么保养",
+              "看看配套的露营灯"
+            ]
+          },
+          "stream_id": "call_01_TKSW3Qha0hso6Wx5Ovhp4214"
+        }
+      },
+      {
+        "type": "tool_result",
+        "data": {
+          "tool": "present_suggestions",
+          "id": "call_01_TKSW3Qha0hso6Wx5Ovhp4214",
+          "summary": "Displayed to the customer.",
+          "is_error": false,
+          "status": "ok"
+        }
+      },
+      {
+        "type": "turn_complete",
+        "data": {
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 251,
+            "output_tokens": 389,
+            "cache_read_input_tokens": 9728,
+            "cache_creation_input_tokens": 0
+          },
+          "elapsed_ms": 2353,
+          "results_cleared": 0
+        }
+      }
+    ]
+  },
+  {
+    "message": "家庭款听起来合适，帮我加入购物车，再告诉我退货政策。",
+    "events": [
+      {
+        "type": "tool_call",
+        "data": {
+          "tool": "add_to_cart",
+          "id": "call_00_yLeex1YSihBbPcHfpJy21107",
+          "input": {
+            "product_id": "AR-1202"
+          },
+          "label": "正在把4人家庭帐篷加入购物车"
+        }
+      },
+      {
+        "type": "tool_call",
+        "data": {
+          "tool": "search_policies",
+          "id": "call_01_2BuioipkiMQPM51K5nr81634",
+          "input": {
+            "query": "退货政策 退货时限 退款"
+          },
+          "label": "正在查询退货政策"
+        }
+      },
+      {
+        "type": "cart_update",
+        "data": {
+          "cart": {
+            "items": [
+              {
+                "product_id": "AR-1202",
+                "title": "ACME Basecamp 4人家庭帐篷",
+                "price": 219.0,
+                "quantity": 1,
+                "image_url": null,
+                "line_total": 219.0
+              }
+            ],
+            "item_count": 1,
+            "subtotal": 219.0,
+            "currency": "USD"
+          }
+        }
+      },
+      {
+        "type": "tool_result",
+        "data": {
+          "tool": "add_to_cart",
+          "id": "call_00_yLeex1YSihBbPcHfpJy21107",
+          "summary": "Added AR-1202 x1. Cart now has 1 item(s), subtotal 219.00 USD.",
+          "is_error": false,
+          "status": "ok"
+        }
+      },
+      {
+        "type": "tool_result",
+        "data": {
+          "tool": "search_policies",
+          "id": "call_01_2BuioipkiMQPM51K5nr81634",
+          "summary": "ok",
+          "is_error": false,
+          "status": "ok",
+          "excerpt": "<storefront_data>\n[{\"policy_id\": \"returns\", \"title\": \"退货与退款\", \"category\": \"returns\", \"content\": \"大多数商品可在送达后30天内以原始状态退回,退款将全额退还至原支付方式。已拆封的电子产品可在15天内退回。床垫、床上用品和个人护理用品必须未拆封。退款将在退货到达我们的仓库后5个工作日内到账。ACME Subscription会员可享受免费退货取件;否则,请将商品送至任意ACME门店,或使用订单页面中的预付标签。\"}, {\"policy_id\": \"shipping\", \"title\": \"配送选项与时效\", \"category\": \"shipping\", \"content\": \"标准配送为$5.99,订单满$49免费,3-5个工作日送达。快速配送2个工作日送达,ACME Subscription会员订单满$49免费,否则为$9.99。符合条件的商品在部分地区于下午2点前下单可享当日达。超大件商品通过货运配送,并包含预约送达时间窗口。\"}, {\"policy_id\": \"warranty\", \"title\": \"保修与保护计划\", \"category\": \"warranty\", \"content\": \"制造商保修适用于大多数产品;保修期限列在产品页面的规格下方。ACME Protect计划将保修期延长至3年,并涵盖电子产品的意外损坏。索赔通过应用内处理,大多数替换品在批准后2个工作日内发货。\"}]\n</storefront_data>"
+        }
+      },
+      {
+        "type": "text_delta",
+        "data": {
+          "text": "已把 **ACME Basecamp 4人家庭帐篷（AR-1202）** 加入购物车，1 件，小计 219.00 USD。\n\n关于退货：大多数商品可在送达后 30 天内以原始状态退回，退款全额退还至原支付方式；退款在退货到达仓库后 5 个工作日内到账。ACME Subscription 会员可享受免费退货取件，否则可送至任意 ACME 门店或使用订单页面中的预付标签。"
+        }
+      },
+      {
+        "type": "tool_call",
+        "data": {
+          "tool": "present_suggestions",
+          "id": "call_00_hCPm1Q9JxAADm2bB4ZuH6914",
+          "input": {
+            "suggestions": [
+              "这款帐篷什么时候能送到",
+              "查看购物车",
+              "结账",
+              "看看配套的露营灯"
+            ]
+          }
+        }
+      },
+      {
+        "type": "ui",
+        "data": {
+          "component": "suggestions",
+          "payload": {
+            "suggestions": [
+              "这款帐篷什么时候能送到",
+              "查看购物车",
+              "结账",
+              "看看配套的露营灯"
+            ]
+          },
+          "stream_id": "call_00_hCPm1Q9JxAADm2bB4ZuH6914"
+        }
+      },
+      {
+        "type": "tool_result",
+        "data": {
+          "tool": "present_suggestions",
+          "id": "call_00_hCPm1Q9JxAADm2bB4ZuH6914",
+          "summary": "Displayed to the customer.",
+          "is_error": false,
+          "status": "ok"
+        }
+      },
+      {
+        "type": "turn_complete",
+        "data": {
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 8230,
+            "output_tokens": 286,
+            "cache_read_input_tokens": 13184,
+            "cache_creation_input_tokens": 0
+          },
+          "elapsed_ms": 2558,
+          "results_cleared": 0
+        }
+      }
+    ]
+  }
+]

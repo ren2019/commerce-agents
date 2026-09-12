@@ -8,6 +8,7 @@
  * whose orders are something else (trips) passes its own nouns, status labels, and filters.
  */
 
+import { useDemoLanguage } from "../language";
 import { type ReactNode, useState } from "react";
 import { formatDayMonth, formatMoney, formatWeekday, plural } from "../format";
 import type { Order } from "../protocol";
@@ -42,14 +43,19 @@ export function upcoming(orders: Order[]): Order[] {
 }
 
 /** Splits an estimate like "2026-08-23 (revised; was 2026-08-17)" into the date and the note. */
-export function estimateOf(order: Order): { date: string; note: string | null } | null {
+export function estimateOf(order: Order, locale = "en-US"): { date: string; note: string | null } | null {
   const raw = order.estimated_delivery;
   if (!raw) return null;
   const match = /^(\S+)\s*\((.*)\)\s*$/.exec(raw);
   const date = match ? match[1] : raw;
+  let note = match ? match[2].replace(ISO_DAY, (day) => formatDayMonth(day, locale)) : null;
+  if (locale === "zh-CN" && note) {
+    note = note.replace(/^updated after a (warehouse|carrier) delay; the original (.*?) estimate was missed$/, (_, cause, date) =>
+      `因${cause === "warehouse" ? "仓库" : "承运商"}延误而更新，未能在原预计的${date}送达`);
+  }
   return {
-    date: /^\d{4}-\d{2}-\d{2}$/.test(date) ? formatWeekday(date) : date,
-    note: match ? match[2].replace(ISO_DAY, formatDayMonth) : null,
+    date: /^\d{4}-\d{2}-\d{2}$/.test(date) ? formatWeekday(date, locale) : date,
+    note,
   };
 }
 
@@ -59,9 +65,10 @@ export function orderStatusLabel(status: string, labels?: Record<string, string>
 }
 
 export function OrderStatusPill({ status, labels }: { status: string; labels?: Record<string, string> }) {
+  const { t } = useDemoLanguage();
   return (
     <Pill tone={STATUS[status]?.tone ?? "muted"} dot>
-      {orderStatusLabel(status, labels)}
+      {t(orderStatusLabel(status, labels))}
     </Pill>
   );
 }
@@ -114,32 +121,35 @@ export const ORDER_NOUNS: OrderNouns = {
   },
 };
 
-function orderTitle(order: Order): string {
+function orderTitle(order: Order, language: string): string {
   const [first, ...rest] = order.items;
   if (!first) return order.order_id;
-  return rest.length ? `${first.title} + ${rest.length} more` : first.title;
+  return rest.length ? (language === "zh" ? `${first.title} 等${rest.length + 1}件商品` : `${first.title} + ${rest.length} more`) : first.title;
 }
 
 function When({ order, nouns }: { order: Order; nouns: OrderNouns }) {
-  const estimate = estimateOf(order);
-  if (!estimate) return <span>Placed {formatDayMonth(order.placed_at)}</span>;
-  if (!isOpen(order)) return <span>{nouns.closedWhen(order, estimate.date)}</span>;
+  const { language, t } = useDemoLanguage();
+  const locale = language === "zh" ? "zh-CN" : "en-US";
+  const estimate = estimateOf(order, locale);
+  if (!estimate) return <span>{t("Placed")} {formatDayMonth(order.placed_at, locale)}</span>;
+  if (!isOpen(order)) return <span>{language === "zh" ? `${t(order.status === "delivered" ? "Delivered" : "Placed")} ${order.status === "delivered" ? estimate.date : formatDayMonth(order.placed_at, locale)}` : nouns.closedWhen(order, estimate.date)}</span>;
   return (
     <span className={order.status === "delayed" ? "font-semibold text-(--warn)" : ""} title={estimate.note ?? undefined}>
-      {order.status === "delayed" ? "Expected" : nouns.openVerb} {estimate.date}
+      {t(order.status === "delayed" ? "Expected" : nouns.openVerb)} {estimate.date}
     </span>
   );
 }
 
 function OrderRow({ order, nouns, thumb, compact = false }: { order: Order; nouns: OrderNouns; thumb: (order: Order) => ReactNode; compact?: boolean }) {
   const { ask } = useStoreFrame();
+  const { language, t } = useDemoLanguage();
   const handoff = nouns.handoff(order);
-  const estimate = estimateOf(order);
+  const estimate = estimateOf(order, language === "zh" ? "zh-CN" : "en-US");
   return (
     <li className="flex items-center gap-3 border-t border-(--line) px-[18px] py-3 first:border-t-0">
       {thumb(order)}
       <div className="min-w-0 flex-1">
-        <div className="truncate text-[14px] font-semibold text-(--ink)">{orderTitle(order)}</div>
+        <div className="truncate text-[14px] font-semibold text-(--ink)">{orderTitle(order, language)}</div>
         <div className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[12px] text-(--ink-soft)">
           {compact ? <OrderStatusPill status={order.status} labels={nouns.statusLabels} /> : <span className="tabular-nums">{order.order_id}</span>}
           <span aria-hidden>·</span>
@@ -153,7 +163,7 @@ function OrderRow({ order, nouns, thumb, compact = false }: { order: Order; noun
           {formatMoney(order.total, order.currency)}
         </span>
       )}
-      <AskButton label={handoff.label} onClick={() => ask(handoff.prompt)} />
+      <AskButton label={t(handoff.label)} onClick={() => ask(language === "zh" ? `请查询订单${order.order_id}：${t(handoff.label)}。` : handoff.prompt)} />
     </li>
   );
 }
@@ -172,16 +182,17 @@ export function ArrivingPanel({
   thumb: (order: Order) => ReactNode;
   onSeeAll?: () => void;
 }) {
-  if (!orders) return failed ? <Notice>Couldn&apos;t load your {nouns.title.toLowerCase()}.</Notice> : <Skeleton className="h-[188px]" />;
+  const { language, t } = useDemoLanguage();
+  if (!orders) return failed ? <Notice>{language === "zh" ? `无法加载${t(nouns.title)}。` : `Couldn't load your ${nouns.title.toLowerCase()}.`}</Notice> : <Skeleton className="h-[188px]" />;
   // A shopper with no history gets no card; one with nothing open sees the two most recent.
   if (!orders.length) return null;
   const open = upcoming(orders).slice(0, 3);
   const shown = open.length ? open : orders.slice(0, 2);
   return (
     <Panel
-      title={nouns.cardTitle}
-      subtitle={open.length ? plural(orders.length, nouns.one) : nouns.noneOpen}
-      action={onSeeAll ? <MoreLink label={`All ${nouns.title.toLowerCase()}`} onClick={onSeeAll} /> : null}
+      title={t(nouns.cardTitle)}
+      subtitle={open.length ? (language === "zh" ? `${orders.length}笔${t(nouns.one)}` : plural(orders.length, nouns.one)) : t(nouns.noneOpen)}
+      action={onSeeAll ? <MoreLink label={language === "zh" ? `全部${t(nouns.title)}` : `All ${nouns.title.toLowerCase()}`} onClick={onSeeAll} /> : null}
     >
       <ul>
         {shown.map((order) => (
@@ -206,6 +217,7 @@ export function OrdersView({
   subtitle?: ReactNode;
   thumb: (order: Order) => ReactNode;
 }) {
+  const { language, t } = useDemoLanguage();
   const [filter, setFilter] = useState("all");
   const all = orders ?? [];
   const active = nouns.filters.find((entry) => entry.id === filter);
@@ -213,20 +225,20 @@ export function OrdersView({
   const title = nouns.title.toLowerCase();
   return (
     <StorePage>
-      <PageHeader title={nouns.title} subtitle={subtitle}>
+      <PageHeader title={t(nouns.title)} subtitle={subtitle}>
         <Segmented
-          label={`Filter ${title}`}
+          label={language === "zh" ? `筛选${t(nouns.title)}` : `Filter ${title}`}
           value={filter}
           onChange={setFilter}
           options={[
-            { id: "all", label: "All", count: all.length },
-            ...nouns.filters.map((entry) => ({ id: entry.id, label: entry.label, count: all.filter(entry.match).length })),
+            { id: "all", label: t("All"), count: all.length },
+            ...nouns.filters.map((entry) => ({ id: entry.id, label: t(entry.label), count: all.filter(entry.match).length })),
           ]}
         />
       </PageHeader>
       {orders === null ? (
         failed ? (
-          <Notice>Couldn&apos;t load your {title}. The assistant can still look them up.</Notice>
+          <Notice>{language === "zh" ? `无法加载${t(nouns.title)}，仍可请助手查询。` : `Couldn't load your ${title}. The assistant can still look them up.`}</Notice>
         ) : (
           <Skeleton className="h-[320px]" />
         )
@@ -239,7 +251,7 @@ export function OrdersView({
           </ul>
         </Panel>
       ) : (
-        <Notice>No {title} here.</Notice>
+        <Notice>{language === "zh" ? `暂无${t(nouns.title)}。` : `No ${title} here.`}</Notice>
       )}
     </StorePage>
   );

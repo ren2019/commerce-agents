@@ -43,34 +43,34 @@ function parseDate(value: string): Date {
 
 const ISO_DAY = /\d{4}-\d{2}-\d{2}/g;
 
-function dayLabel(value: string): string {
+function dayLabel(value: string, locale = "en-US"): string {
   const date = parseDate(value);
   if (Number.isNaN(date.getTime())) return value;
-  return date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  return date.toLocaleDateString(locale, { month: "short", day: "numeric", year: "numeric" });
 }
 
 /** "Jun 24, 2026"; dates inside a trailing note ("(revised from ...)") are formatted too. */
-export function formatDate(value: string | null | undefined): string {
+export function formatDate(value: string | null | undefined, locale = "en-US"): string {
   if (!value) return "";
-  if (/^\d{4}-\d{2}-\d{2}(?!T)/.test(value)) return value.replace(ISO_DAY, dayLabel);
-  return dayLabel(value);
+  if (/^\d{4}-\d{2}-\d{2}(?!T)/.test(value)) return value.replace(ISO_DAY, (day) => dayLabel(day, locale));
+  return dayLabel(value, locale);
 }
 
 /** "Jun 24" */
-export function formatDayMonth(value: string | null | undefined): string {
+export function formatDayMonth(value: string | null | undefined, locale = "en-US"): string {
   if (!value) return "";
   const date = parseDate(value);
   if (Number.isNaN(date.getTime())) return value;
-  return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  return date.toLocaleDateString(locale, { month: "short", day: "numeric" });
 }
 
 /** "Fri, Aug 21", or "Fri, Jan 2, 2027" outside the current year. */
-export function formatWeekday(value: string | null | undefined): string {
+export function formatWeekday(value: string | null | undefined, locale = "en-US"): string {
   if (!value) return "";
   const date = parseDate(value);
   if (Number.isNaN(date.getTime())) return value;
   const year = date.getFullYear() === new Date().getFullYear() ? undefined : "numeric";
-  return date.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year });
+  return date.toLocaleDateString(locale, { weekday: "short", month: "short", day: "numeric", year });
 }
 
 /** "1 order", "3 orders". */

@@ -14,6 +14,8 @@ from demo_common import host_approval_default
 from merchant_agent import MerchantAgentConfig
 from shopping_agent import ShoppingAgentConfig
 
+from .deepseek import DeepSeekClient
+
 
 def build_model_client() -> AsyncAnthropic | None:
     """Use an explicit DeepSeek deployment without changing other examples."""
@@ -23,7 +25,7 @@ def build_model_client() -> AsyncAnthropic | None:
         raise ValueError("RETAIL_MODEL_PROVIDER must be anthropic or deepseek")
     if not os.environ.get("DEEPSEEK_API_KEY"):
         raise ValueError("Set DEEPSEEK_API_KEY locally before starting the DeepSeek demo")
-    return AsyncAnthropic(
+    return DeepSeekClient(
         api_key=os.environ["DEEPSEEK_API_KEY"],
         base_url="https://api.deepseek.com/anthropic",
         timeout=120.0,
@@ -48,10 +50,27 @@ def build_shopping_config(store_name: str = "ACME") -> ShoppingAgentConfig:
         brand_name=store_name,
         assistant_name=f"{store_name} Assistant",
         brand_voice=(
-            "professional, warm, and brief. Use Simplified Chinese for all replies and "
-            "presentation text when current_page.extra.locale is zh; otherwise use English. "
-            "Keep product IDs, amounts, and currency unchanged"
+            "professional, warm, and brief. Use Simplified Chinese for all visible text "
+            "when current_page.extra.locale is zh; otherwise use English. Preserve "
+            "product IDs, amounts and currency"
         ),
+        domain_search_notes=(
+            "When the customer names one product category, recommend only that category. "
+            "An occasion, trip or recipient describes the use case, not a request for "
+            "a coordinated equipment plan. Use search-discovery rather than planning-goals "
+            "for a single-product request; do not offer unrelated categories or infer "
+            "permission to outfit the whole event. Quote recorded dimensions, capacity "
+            "and weight directly; do not invent sleeping arrangements or calculated "
+            "weight ratios. A product below the stated party size does not fit that party."
+        ),
+        policy_intent_terms=ShoppingAgentConfig.model_fields["policy_intent_terms"].default
+        + ("退货", "退款", "退换", "保修", "运费", "配送费", "政策", "会员", "订阅", "取消"),
+        policy_intent_cues=ShoppingAgentConfig.model_fields["policy_intent_cues"].default
+        + ("？", "吗", "如何", "怎么", "告诉", "说明", "多久", "多少", "政策"),
+        order_intent_terms=ShoppingAgentConfig.model_fields["order_intent_terms"].default
+        + ("订单", "包裹", "物流", "快递"),
+        order_intent_cues=ShoppingAgentConfig.model_fields["order_intent_cues"].default
+        + ("？", "吗", "哪里", "状态", "取消", "退货", "延误", "何时", "查询", "多久"),
     )
 
 

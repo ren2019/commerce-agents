@@ -10,12 +10,14 @@ import {
   Greeting,
   greeting,
   HomeSection,
+  type DemoLanguage,
   type Order,
   plural,
   type Starter,
   Starters,
   upcoming,
   useCatalogIndex,
+  useDemoLanguage,
   useStoreFrame,
 } from "web-shared";
 import { fetchProducts } from "@/lib/api";
@@ -39,11 +41,13 @@ function featured(catalog: Record<string, Product>): Product[] {
 }
 
 function Brief({ orders }: { orders: Order[] | null }) {
-  if (!orders) return <>Ask about a product, a project, an order, or a return.</>;
+  const { language, t } = useDemoLanguage();
+  if (!orders) return <>{t("Ask about a product, a project, an order, or a return.")}</>;
   const open = upcoming(orders);
-  if (!open.length) return <>Nothing on the way right now. Ask about a product, a project, or a return.</>;
+  if (!open.length) return <>{t("Nothing on the way right now. Ask about a product, a project, or a return.")}</>;
   const late = open.filter((order) => order.status === "delayed");
-  const next = estimateOf(open.find((order) => order.status !== "delayed") ?? open[0])?.date;
+  const next = estimateOf(open.find((order) => order.status !== "delayed") ?? open[0], language === "zh" ? "zh-CN" : "en-US")?.date;
+  if (language === "zh") return <>{open.length}笔订单配送中{next ? `；下一笔预计${next}送达` : ""}。{late.length ? `${late.length}笔延误。` : ""}</>;
   return (
     <>
       {plural(open.length, "order")} on the way{next ? `; the next arrives ${next}` : ""}.{" "}
@@ -53,10 +57,13 @@ function Brief({ orders }: { orders: Order[] | null }) {
 }
 
 /** The clock is read after mount, so the prerendered page never disagrees with the browser's day. */
-function useNow(): Date | null {
-  const [now, setNow] = useState<Date | null>(null);
-  useEffect(() => setNow(new Date()), []);
-  return now;
+function useClock(language: DemoLanguage): { now: Date | null; heading: string } {
+  const [clock, setClock] = useState<{ now: Date | null; heading: string }>({ now: null, heading: "\u00a0" });
+  useEffect(() => {
+    const now = new Date();
+    setClock({ now, heading: now.toLocaleDateString(language === "zh" ? "zh-CN" : "en-US", { weekday: "long", month: "long", day: "numeric" }) });
+  }, [language]);
+  return clock;
 }
 
 export default function HomeView({
@@ -71,24 +78,25 @@ export default function HomeView({
   onSeeOrders: () => void;
 }) {
   const { ask } = useStoreFrame();
+  const { language, t } = useDemoLanguage();
   const catalog = useCatalogIndex(fetchProducts);
   const picks = featured(catalog);
-  const now = useNow();
+  const { now, heading } = useClock(language);
   return (
     <div className="flex flex-col gap-4">
       <Greeting
-        eyebrow={now ? now.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" }) : "\u00a0"}
-        title={<h1 className="text-[28px] font-semibold leading-tight tracking-[-0.02em] text-(--ink)">{`${now ? greeting(now) : "Hello"}, ${shopperName}`}</h1>}
+        eyebrow={heading}
+        title={<h1 className="text-[28px] font-semibold leading-tight tracking-[-0.02em] text-(--ink)">{`${t(now ? greeting(now) : "Hello")}, ${shopperName}`}</h1>}
       >
         <Brief orders={orders} />
       </Greeting>
-      <Starters items={STARTERS} />
+      <Starters items={STARTERS.map((item) => ({ ...item, prompt: t(item.prompt) }))} />
       <ArrivingPanel orders={orders} failed={ordersFailed} nouns={NOUNS} thumb={(order) => <OrderThumb order={order} />} onSeeAll={onSeeOrders} />
       {picks.length ? (
-        <HomeSection title="Popular right now" subtitle="Bestsellers and new arrivals; open one to ask about it">
+        <HomeSection title={t("Popular right now")} subtitle={t("Bestsellers and new arrivals; open one to ask about it")}>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             {picks.map((product) => (
-              <ProductTile key={product.product_id} product={product} fluid onOpen={(item) => ask(`Tell me about the ${item.title}.`)} />
+              <ProductTile key={product.product_id} product={product} fluid onOpen={(item) => ask(language === "zh" ? `请介绍${item.title}。` : `Tell me about the ${item.title}.`)} />
             ))}
           </div>
         </HomeSection>

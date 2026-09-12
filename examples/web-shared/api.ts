@@ -12,6 +12,7 @@ const SESSION_HEADER = "X-Session-Id";
  */
 export class AgentApi {
   session: string | null = null;
+  language: "en" | "zh" | null = null;
   readonly base: string;
 
   /** `root` is the API's URL; `prefix` the role's route prefix ("/api", "/api/merchant"). */
@@ -30,6 +31,7 @@ export class AgentApi {
 
   headers(json = false): Record<string, string> {
     const headers: Record<string, string> = {};
+    if (this.language) headers["X-Demo-Language"] = this.language;
     if (this.session) headers[SESSION_HEADER] = this.session;
     if (json) headers["Content-Type"] = "application/json";
     return headers;
@@ -109,7 +111,7 @@ export class AgentApi {
     const response = await fetch(`${this.base}/chat`, {
       method: "POST",
       headers: this.headers(true),
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ message, ...(this.language ? { page: { extra: { locale: this.language } } } : {}) }),
     });
     if (!response.ok || !response.body) throw new Error(`chat request failed: ${response.status}`);
     yield* readEventStream(response.body);

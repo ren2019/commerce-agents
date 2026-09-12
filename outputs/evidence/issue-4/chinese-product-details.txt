@@ -1,0 +1,82 @@
+Browser tab: 12, Title: "ACME", URL: "http://localhost:3014/".
+0 AXWebArea ACME, URL: localhost:3014/
+	1 container
+		2 text ACME Simulated data / 模拟数据
+		3 container 页面
+			4 button 购物助手
+			5 button 订单, 2 延误
+				6 text 订单
+				7 text 2
+		8 button Description: 切换为英文, Help: 切换界面与后续回复的语言；历史对话保留原语言。
+		9 button 活动记录
+		10 button Priya：资料与记忆
+			11 text Priya
+			12 text ACME订阅会员
+	120 container
+		121 text 请介绍ACME Paws 骨科记忆棉狗床，大号。 我来查一下这个产品。
+		122 heading ACME Paws 骨科记忆棉狗床, Value: 3
+			123 text ACME Paws 骨科记忆棉狗床
+		124 container
+			125 button ACME Paws 骨科记忆棉狗床，大号 ACME PAWS ACME Paws 骨科记忆棉狗床，大号 大号（90 x 70 厘米） 10 厘米记忆棉 可拆卸，可水洗 $79.00 ★ 4.6 (2,380) 预计9月16日送达 30天退货
+				126 image ACME Paws 骨科记忆棉狗床，大号
+				127 text ACME PAWS
+				128 text ACME Paws 骨科记忆棉狗床，大号
+				129 container
+					130 text 大号（90 x 70 厘米） 10 厘米记忆棉 可拆卸，可水洗
+				131 text $79.00
+				132 text ★
+				133 text 4.6
+				134 text  (
+				135 text 2,380
+				136 text )
+				137 text 预计9月16日送达
+				138 text 30天退货
+			139 button 将ACME Paws 骨科记忆棉狗床，大号加入购物车
+		140 container
+			141 image ACME Paws 骨科记忆棉狗床，大号
+			142 button 将ACME Paws 骨科记忆棉狗床，大号加入购物车
+			143 text ACME PAWS ACME Paws 骨科记忆棉狗床，大号 $79.00 ★ 4.6  ( 2,380 ) 预计9月16日送达
+			144 button 收起详情
+			145 text 大号(90 x 70 厘米),10 厘米记忆棉,可水洗床套与防滑底 $79.00为通常价格（90天区间：$72.25–$83.86） 处于该商品自身价格区间的常见水平 ·  最近90天 来自2,380条顾客评论
+			146 container 耐用性：366次提及中，89%为正面评价
+				147 text 耐用性 89 % 366 次提及
+			148 container 宠物舒适度：223次提及中，83%为正面评价
+				149 text 宠物舒适度 83 % 223 次提及
+			150 container 易清洁：223次提及中，88%为正面评价
+				151 text 易清洁 88 % 223 次提及
+			152 text 专为大型犬和老化关节打造：一块10厘米厚的高密度记忆棉，不会在第三个月就压扁成薄饼，外层包裹防水内衬和可机洗的微麂皮床套。防滑底座使其在硬地板上保持原位，低矮的前边缘让僵硬的老年犬更容易迈入。舒适适合体重约40公斤以内的狗。
+			153 definition list
+				154 container 尺寸
+					155 text 尺寸
+				156 text 90 x 70 x 20 厘米
+				157 container 泡棉
+					158 text 泡棉
+				159 text 高密度记忆棉，10 厘米
+				160 container 外罩
+					161 text 外罩
+				162 text 微麂皮，可机洗
+				163 container 内衬
+					164 text 内衬
+				165 text 防水
+				166 container 适用犬只最大体重
+					167 text 适用犬只最大体重
+				168 text 40 公斤
+			169 text “ 我们11岁的牧羊犬现在选它而不选沙发了 ” “ 罩子洗了十几次，拉链依然完好 ” “ 泡沫开箱后需要一天才能完全膨胀 ”
+		170 button 加入购物车
+		171 button 有其他尺码吗
+		172 button 查看狗床类商品
+		173 button 退换货规则是什么
+	99 container
+		100 text entry area (settable) 发送消息给ACME 购物助手
+		101 button (disabled) 发送
+	102 container 购物车
+		103 heading 购物车, Value: 2
+			104 text 购物车
+		119 text 0件商品
+		106 container
+			107 text 购物车还没有商品。
+			108 text 向购物助手询问店内的任何商品。
+		109 text 小计 $0.00
+		110 button (disabled) 结算
+
+The focused UI element is 125 button ACME Paws 骨科记忆棉狗床，大号 ACME PAWS ACME Paws 骨科记忆棉狗床，大号 大号（90 x 70 厘米） 10 厘米记忆棉 可拆卸，可水洗 $79.00 ★ 4.6 (2,380) 预计9月16日送达 30天退货

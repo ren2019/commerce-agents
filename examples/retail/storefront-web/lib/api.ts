@@ -8,9 +8,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
 export const api = new AgentApi(API_URL, "/api");
 
-export const UNREACHABLE =
-  "Couldn't reach the retail API on port 8000. Start it with " +
-  "`uvicorn retail.api.main:app --app-dir examples --port 8000` and try again.";
+export const UNREACHABLE = "Couldn't reach the demo service. Check that it is running and try again.";
 
 export async function fetchProducts(): Promise<Product[] | null> {
   const data = await api.get<{ products: Product[] }>("/products", { limit: "100" });

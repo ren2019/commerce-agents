@@ -33,3 +33,4 @@ export { Suggestions } from "./Suggestions";
 export { ActivityLine } from "./Transcript";
 export { type AgentTurn, useAgentTurn } from "./turn";
 export * from "./ui";
+export { DemoLanguageProvider, LanguageSwitch, useDemoLanguage, type DemoLanguage } from "./language";

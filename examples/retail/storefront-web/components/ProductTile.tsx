@@ -4,10 +4,10 @@
 "use client";
 
 import { useState } from "react";
-import { hasOptions, optionSummary, optionValuesLabel, priceLabel, useStoreFrame } from "web-shared";
+import { useDemoLanguage, hasOptions, optionSummary, optionValuesLabel, useStoreFrame } from "web-shared";
 import type { Product } from "@/lib/types";
 import { flyToCart } from "@/lib/flight";
-import { attributeChips, productGlyph, productTileClass } from "@/lib/format";
+import { attributeChips, localizedPrice, localizeOptionText, productGlyph, productTileClass } from "@/lib/format";
 import { STORE_POLICY } from "@/lib/storePolicy";
 
 /** A trailing parenthetical such as "(48-Pack)" is kept unbreakable so the clamp cuts before it. */
@@ -27,9 +27,10 @@ export function ProductTitle({ title, className = "" }: { title: string; classNa
 }
 
 function ReturnsPromise({ className = "" }: { className?: string }) {
+  const { t } = useDemoLanguage();
   return (
     <div className={`text-[11px] text-(--ink-soft) ${className}`}>
-      {STORE_POLICY.returnsShort}
+      {t(STORE_POLICY.returnsShort)}
     </div>
   );
 }
@@ -58,7 +59,15 @@ export function DeliveryPromise({
   product: Product;
   className?: string;
 }) {
-  const promise = product.attributes?.delivery;
+  const { language } = useDemoLanguage();
+  let promise = product.attributes?.delivery;
+  if (promise && language === "zh") {
+    const date = /^Get it by (Mon|Tue|Wed|Thu|Fri|Sat|Sun), ([A-Z][a-z]{2}) (\d+)$/.exec(promise);
+    if (date) {
+      const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      promise = `预计${months.indexOf(date[2]) + 1}月${date[3]}日送达`;
+    }
+  }
   if (!promise || product.in_stock === false) return null;
   return (
     <div className={`text-[11px] font-medium text-(--ok) ${className}`}>{promise}</div>
@@ -67,13 +76,14 @@ export function DeliveryPromise({
 
 /** `attributes.low_stock` is the inventory count the merchant portal shows. */
 function LowStockChip({ product, className = "" }: { product: Product; className?: string }) {
+  const { language } = useDemoLanguage();
   const count = product.attributes?.low_stock;
   if (!count || product.in_stock === false) return null;
   return (
     <span
       className={`whitespace-nowrap rounded-full bg-(--warn-soft) px-2 py-0.5 text-[11px] font-semibold text-(--warn) ${className}`}
     >
-      Only {count} left
+      {language === "zh" ? `仅剩${count}件` : `Only ${count} left`}
     </span>
   );
 }
@@ -97,7 +107,8 @@ function optionText(product: Product): string {
 }
 
 export function OptionLine({ product, className = "" }: { product: Product; className?: string }) {
-  const text = optionText(product);
+  const { t } = useDemoLanguage();
+  const text = localizeOptionText(optionText(product), t);
   if (!text) return null;
   return <div className={`truncate text-[11px] text-(--ink-soft) ${className}`}>{text}</div>;
 }
@@ -114,6 +125,7 @@ export function AddButton({
   product: Product;
   onAdd: (product: Product) => boolean | void | Promise<boolean | void>;
 }) {
+  const { language } = useDemoLanguage();
   const [phase, setPhase] = useState<"idle" | "busy" | "done" | "error">("idle");
   const { ask } = useStoreFrame();
   if (hasOptions(product)) {
@@ -122,10 +134,10 @@ export function AddButton({
         type="button"
         onClick={(event) => {
           event.stopPropagation();
-          ask(`Add the ${product.title} (${product.product_id}) to my cart.`);
+          ask(language === "zh" ? `将${product.title}（${product.product_id}）加入购物车。` : `Add the ${product.title} (${product.product_id}) to my cart.`);
         }}
-        aria-label={`Choose options for ${product.title}`}
-        className="pointer-events-auto absolute bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-(--ink) text-lg font-semibold leading-none text-(--surface) shadow-(--shadow-sm) transition-all hover:scale-105"
+        aria-label={language === "zh" ? `选择${product.title}的规格` : `Choose options for ${product.title}`}
+        className="pointer-events-auto absolute bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-(--ink) text-lg font-semibold leading-none text-(--surface) shadow-(--shadow-sm) transition-[transform,background-color] hover:scale-105"
       >
         +
       </button>
@@ -145,13 +157,48 @@ export function AddButton({
         if (added) flyToCart(product, source);
         window.setTimeout(() => setPhase("idle"), added ? 1200 : 1600);
       }}
-      aria-label={`Add ${product.title} to cart`}
-      className={`pointer-events-auto absolute bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full text-lg font-semibold leading-none text-(--surface) shadow-(--shadow-sm) transition-all hover:scale-105 ${
+      aria-label={language === "zh" ? `将${product.title}加入购物车` : `Add ${product.title} to cart`}
+      className={`pointer-events-auto absolute bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full text-lg font-semibold leading-none text-(--surface) shadow-(--shadow-sm) transition-[transform,background-color] hover:scale-105 ${
         phase === "done" ? "bg-(--ok)" : phase === "error" ? "bg-(--warn)" : "bg-(--ink)"
       } ${phase === "busy" ? "animate-pulse" : ""}`}
     >
       {phase === "done" ? "✓" : phase === "error" ? "!" : "+"}
     </button>
+  );
+}
+
+function ProductTileDetails({ product, compact }: { product: Product; compact: boolean }) {
+  const { language, t } = useDemoLanguage();
+  const chips = compact ? [] : attributeChips(product);
+  return (
+        <div className="flex flex-1 flex-col gap-0.5 p-2.5">
+          <div className="text-[11px] uppercase tracking-wide text-(--ink-soft)/80">{product.brand}</div>
+          <ProductTitle
+            title={product.title}
+            className={`line-clamp-2 text-[13px] font-medium leading-snug ${compact ? "" : "h-9"}`}
+          />
+          {compact ? null : optionText(product) ? (
+            <OptionLine product={product} className="h-[18px] pt-0.5 leading-4" />
+          ) : (
+            /* Fixed height keeps sibling cards aligned. */
+            <div className="flex h-[18px] flex-wrap gap-1 overflow-hidden pt-0.5" aria-hidden={chips.length === 0}>
+              {chips.map((chip) => (
+                <span
+                  key={t(chip)}
+                  className="whitespace-nowrap rounded-full bg-(--well) px-1.5 py-px text-[11px] leading-4 text-(--ink-soft)"
+                >
+                  {t(chip)}
+                </span>
+              ))}
+            </div>
+          )}
+          <div className="mt-auto flex items-center justify-between gap-1 pt-0.5">
+            <span className="text-sm font-semibold">{localizedPrice(product, language)}</span>
+            <Rating rating={product.rating} count={compact ? undefined : product.review_count} />
+          </div>
+          <DeliveryPromise product={product} />
+          {!compact && product.in_stock !== false ? <ReturnsPromise /> : null}
+        </div>
   );
 }
 
@@ -171,8 +218,8 @@ export default function ProductTile({
   onAdd?: (product: Product) => boolean | void | Promise<boolean | void>;
   onOpen?: (product: Product) => void;
 }) {
+  const { t } = useDemoLanguage();
   const clickable = Boolean(onOpen);
-  const chips = compact ? [] : attributeChips(product);
   const imageHeight = compact ? "h-16" : fluid ? "h-28" : "h-24";
   return (
     <div
@@ -193,40 +240,13 @@ export default function ProductTile({
           <ProductImage product={product} className={`w-full ${imageHeight}`} />
           {product.in_stock === false ? (
             <span className="absolute right-1.5 top-1.5 rounded-full bg-(--ink)/85 px-2 py-0.5 text-[11px] font-medium text-(--surface)">
-              Out of stock
+              {t("Out of stock")}
             </span>
           ) : (
             <LowStockChip product={product} className="absolute right-1.5 top-1.5" />
           )}
         </div>
-        <div className="flex flex-1 flex-col gap-0.5 p-2.5">
-          <div className="text-[11px] uppercase tracking-wide text-(--ink-soft)/80">{product.brand}</div>
-          <ProductTitle
-            title={product.title}
-            className={`line-clamp-2 text-[13px] font-medium leading-snug ${compact ? "" : "h-9"}`}
-          />
-          {compact ? null : optionText(product) ? (
-            <OptionLine product={product} className="h-[18px] pt-0.5 leading-4" />
-          ) : (
-            /* Fixed height keeps sibling cards aligned. */
-            <div className="flex h-[18px] flex-wrap gap-1 overflow-hidden pt-0.5" aria-hidden={chips.length === 0}>
-              {chips.map((chip) => (
-                <span
-                  key={chip}
-                  className="whitespace-nowrap rounded-full bg-(--well) px-1.5 py-px text-[11px] leading-4 text-(--ink-soft)"
-                >
-                  {chip}
-                </span>
-              ))}
-            </div>
-          )}
-          <div className="mt-auto flex items-center justify-between gap-1 pt-0.5">
-            <span className="text-sm font-semibold">{priceLabel(product)}</span>
-            <Rating rating={product.rating} count={compact ? undefined : product.review_count} />
-          </div>
-          <DeliveryPromise product={product} />
-          {!compact && product.in_stock !== false ? <ReturnsPromise /> : null}
-        </div>
+        <ProductTileDetails product={product} compact={compact} />
       </div>
       {onAdd && product.in_stock !== false ? (
         // Over the image but a sibling of the clickable area, so one control is not nested in another.
@@ -245,6 +265,7 @@ export function ProductRow({
   product: Product;
   onAdd?: (product: Product) => boolean | void | Promise<boolean | void>;
 }) {
+  const { language, t } = useDemoLanguage();
   return (
     <div className="flex w-full items-center gap-3 rounded-xl border border-(--line) bg-(--card) p-2 shadow-(--shadow-sm) transition-shadow hover:shadow-md">
       <div className="relative shrink-0">
@@ -264,11 +285,11 @@ export function ProductRow({
         />
         <OptionLine product={product} />
         <div className="flex items-center gap-2">
-          <span className="text-sm font-semibold">{priceLabel(product)}</span>
+          <span className="text-sm font-semibold">{localizedPrice(product, language)}</span>
           <Rating rating={product.rating} />
           {product.in_stock === false ? (
             <span className="rounded-full bg-(--ink)/85 px-2 py-0.5 text-[11px] font-medium text-(--surface)">
-              Out of stock
+              {t("Out of stock")}
             </span>
           ) : (
             <LowStockChip product={product} />

@@ -123,10 +123,27 @@ exposing the package's filesystem location. Keep customer packages outside Git.
 
 Optional `data/translations.json` stores `en` and `zh` maps keyed by stable product ID.
 Each product may contain `title`, `short_description`, `long_description` (strings),
-`attributes`, `specs` (string maps), and `aliases` (string list). Unknown product IDs,
+`attributes`, `specs` (string maps), and `aliases`, `review_highlights` (string lists). Unknown product IDs,
 locales or fields are rejected. This sidecar preserves language-neutral pricing and
-identity and is retained during import; bilingual rendering and search are delivered
-by the separate bilingual tickets.
+identity and is retained during import. `catalog.json.source_language` is `en` by
+default, or `zh` for Chinese source content. `api/language.py` projects request-scoped
+content selected by `X-Demo-Language`; search uses both language maps. Optional
+`data/policy-translations.json` maps locales and existing policy IDs to `title`,
+`content`, and `aliases`. It cannot override IDs or other policy fields.
+
+The shopper runtime in `api/agent.py` reprojects previously seen product content
+for each turn so subsequent cards follow the selected language; IDs, prices and
+write provenance stay intact. Existing conversation prose remains as originally spoken.
+
+The DeepSeek client in `api/deepseek.py` appends the host-selected output language
+after session context, preserving the cached prefix. The shopper also buffers visible
+text between tool events and translates language-mismatched segments through DeepSeek.
+The translator has no tools; numerical tokens, catalog IDs and brand names are checked
+before display. Its token usage is included in the turn totals. Stored conversation
+and tool data are not rewritten.
+
+The storefront language control uses the optional `web-shared/language.tsx` context.
+Changing language retains the session and cart, and refreshes catalog and order views.
 
 ### Switch and reset
 

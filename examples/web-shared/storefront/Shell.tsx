@@ -3,6 +3,7 @@
 
 "use client";
 
+import { useDemoLanguage } from "../language";
 import { type ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ActivityButton } from "../ActivityButton";
 import type { AgentApi } from "../api";
@@ -41,6 +42,7 @@ export function StorePage({ children }: { children: ReactNode }) {
  */
 export function StoreShell<V extends string>({
   brand,
+  actions,
   views,
   view,
   onViewChange,
@@ -60,6 +62,7 @@ export function StoreShell<V extends string>({
   children,
 }: {
   brand: ReactNode;
+  actions?: ReactNode;
   views: StoreView<V>[];
   view: V;
   onViewChange: (view: V) => void;
@@ -81,6 +84,7 @@ export function StoreShell<V extends string>({
   banner?: ReactNode;
   children: ReactNode;
 }) {
+  const { language, t } = useDemoLanguage();
   const [activityOpen, setActivityOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const bagButtonRef = useRef<HTMLButtonElement>(null);
@@ -123,7 +127,7 @@ export function StoreShell<V extends string>({
       <div className="flex h-dvh flex-col text-(--ink)">
         <header className="flex h-[58px] shrink-0 items-center gap-2 border-b border-(--line) bg-(--chrome) px-3 sm:gap-5 sm:px-5">
           <div className="flex shrink-0 items-center">{brand}</div>
-          <nav className="flex min-w-0 items-center gap-1" aria-label="Views">
+          <nav className="flex min-w-0 items-center gap-1" aria-label={t("Views")}>
             {views.map((item) => {
               const active = item.id === view;
               return (
@@ -149,6 +153,7 @@ export function StoreShell<V extends string>({
             })}
           </nav>
           <div className="ml-auto flex items-center gap-2">
+            {actions}
             <ActivityButton
               streaming={chat.streaming}
               newMemoryCount={chat.newMemoryKeys.size}
@@ -158,7 +163,7 @@ export function StoreShell<V extends string>({
               ref={bagButtonRef}
               type="button"
               onClick={() => onPanelOpenChange(true)}
-              aria-label={`Open ${bag.label.toLowerCase()}, ${bag.count} ${bag.noun}${bag.count === 1 ? "" : "s"}`}
+              aria-label={language === "zh" ? `打开${bag.label}，${bag.count}件商品` : `Open ${bag.label.toLowerCase()}, ${bag.count} ${bag.noun}${bag.count === 1 ? "" : "s"}`}
               className="flex h-[34px] items-center gap-2 rounded-full bg-(--ink) pl-3 pr-1.5 text-[13px] font-semibold text-(--surface) transition hover:brightness-110 xl:hidden"
             >
               <Icon name="bag" size={16} />
@@ -176,14 +181,14 @@ export function StoreShell<V extends string>({
             <button
               type="button"
               onClick={() => setAccountOpen(true)}
-              aria-label={`${shopper.name}: profile and memory`}
+              aria-label={language === "zh" ? `${shopper.name}：资料与记忆` : `${shopper.name}: profile and memory`}
               className="flex items-center gap-2.5 rounded-full py-0.5 pl-0.5 pr-1 text-left transition-colors hover:bg-(--well)/60 md:pr-3"
             >
               <Avatar name={shopper.name} />
               <span className="hidden min-w-0 md:block">
                 <span className="block truncate text-[13px] font-semibold leading-tight">{shopper.name}</span>
                 {shopper.tier ? (
-                  <span className="block truncate text-[11.5px] leading-tight text-(--ink-soft)">{shopper.tier}</span>
+                  <span className="block truncate text-[11.5px] leading-tight text-(--ink-soft)">{t(shopper.tier)}</span>
                 ) : null}
               </span>
             </button>
@@ -203,7 +208,7 @@ export function StoreShell<V extends string>({
                 send={ask}
                 ready={chat.ready}
                 busy={chat.busy}
-                label={`Message ${assistantName}`}
+                label={language === "zh" ? `发送消息给${assistantName}` : `Message ${assistantName}`}
                 placeholder={placeholder}
                 className="mx-auto max-w-[760px]"
               />
@@ -233,7 +238,7 @@ export function StoreShell<V extends string>({
         {accountOpen ? (
           <AccountSheet
             name={shopper.name}
-            detail={shopper.tier}
+            detail={shopper.tier ? t(shopper.tier) : undefined}
             api={api}
             profiles={profiles}
             profileId={profileId}
@@ -248,7 +253,7 @@ export function StoreShell<V extends string>({
             trace={chat.trace}
             memory={chat.memory}
             newMemoryKeys={chat.newMemoryKeys}
-            memoryTitle={`What ${assistantName} knows`}
+            memoryTitle={language === "zh" ? `${assistantName}记住的信息` : `What ${assistantName} knows`}
             onClose={() => setActivityOpen(false)}
           />
         ) : null}

@@ -30,7 +30,11 @@ async def test_english_query_finds_chinese_source(package, session):  # noqa: F8
     catalog = json.loads(path.read_text())
     catalog["source_language"] = "zh"
     product = next(p for p in catalog["products"] if p["product_id"] == "AR-1202")
-    product["title"] = "ACME 四人家庭帐篷"
+    translations = json.loads((package / "data/translations.json").read_text())
+    product.update(
+        {key: value for key, value in translations["zh"]["AR-1202"].items() if key != "aliases"}
+    )
+    assert "family tent" not in json.dumps(product).lower()
     path.write_text(json.dumps(catalog))
     backend = MockRetail(package / "data")
     results = await backend.search_products(session, "family tent", SearchFilters(max_price=250))
@@ -81,3 +85,43 @@ def test_policy_translation_cannot_override_identity(package):  # noqa: F811
     path.write_text(json.dumps({"zh": {"returns": {"policy_id": "shipping"}}}))
     with pytest.raises(ValueError, match="unsupported fields"):
         load_dataset(package)
+
+
+async def test_cached_comparison_follows_language_without_losing_provenance(
+    backend, session, monkeypatch
+):
+    from retail.api.agent import RetailShoppingAgent
+    from shopping_agent import ShoppingSessionState
+    from shopping_agent_runtime import ShoppingAgent
+
+    async def present_only(self, messages, session, state):
+        executor = self.executor_class(
+            backend=self.backend,
+            config=self.config,
+            skills=self.skills,
+            session=session,
+            state=state,
+            memory=self.memory,
+        )
+        result = await executor.execute(
+            "present_comparison",
+            {"entries": [{"product_id": "AR-1201"}, {"product_id": "AR-1202"}]},
+        )
+        assert not result.is_error
+        for event in result.events:
+            yield event
+
+    monkeypatch.setattr(ShoppingAgent, "stream_turn", present_only)
+    agent = RetailShoppingAgent(backend=backend, client=object())
+    state = ShoppingSessionState()
+    state.remember_products([backend.product("AR-1201"), backend.product("AR-1202")])
+    for locale, word in [("zh", "帐篷"), ("en", "Tent")]:
+        token = language.set(locale)
+        try:
+            events = [event async for event in agent.stream_turn([], session, state)]
+        finally:
+            language.reset(token)
+        payload = next(event.data["payload"] for event in events if event.type == "ui")
+        assert word in payload["entries"][1]["product"]["title"]
+        assert payload["entries"][1]["product"]["price"] == 219
+        assert set(state.seen_products) == {"AR-1201", "AR-1202"}

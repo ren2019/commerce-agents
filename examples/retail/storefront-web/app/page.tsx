@@ -4,12 +4,13 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { type AgentEvent, formatMoney, OrdersView, plural, StoreShell, type StoreView, upcoming, useAgentTurn, useResource, useSession } from "web-shared";
+import { DemoLanguageProvider, LanguageSwitch, useDemoLanguage, type AgentEvent, formatMoney, OrdersView, plural, StoreShell, type StoreView, upcoming, useAgentTurn, useResource, useSession } from "web-shared";
 import CartPanel from "@/components/CartPanel";
 import Chat from "@/components/Chat";
 import HomeView from "@/components/views/HomeView";
 import { api, fetchDataset, UNREACHABLE } from "@/lib/api";
 import { NOUNS, OrderThumb } from "@/lib/orders";
+import { chinese } from "@/lib/chinese";
 import type { CartPayload } from "@/lib/types";
 
 type View = "assistant" | "orders";
@@ -27,10 +28,21 @@ function Wordmark({ name, logo, simulated }: { name: string; logo: string | null
   );
 }
 
+function ordersSubtitle(upcomingCount: number, late: number, language: string): string {
+  if (language === "zh") return late ? `${late}笔订单延误。可以询问原因，也可以咨询已收货商品的退货。` : `${upcomingCount}笔订单配送中。可以询问订单，也可以咨询已收货商品的退货。`;
+  return late ? `${plural(late, "order")} running late. Ask why, or ask about a return on anything delivered.` : `${plural(upcomingCount, "order")} on the way. Ask about any of them, or about a return on anything delivered.`;
+}
+
 export default function StorefrontPage() {
+  return <DemoLanguageProvider api={api} chinese={chinese}><Storefront /></DemoLanguageProvider>;
+}
+
+function Storefront() {
+  const { language, t } = useDemoLanguage();
   const session = useSession(api);
   const { data: dataset } = useResource(fetchDataset, []);
-  const storeName = dataset?.store_name ?? "ACME";
+  const store = dataset ?? { store_name: "ACME", logo: null, simulated: false };
+  const storeName = store.store_name;
   const [view, setView] = useState<View>("assistant");
   const [cart, setCart] = useState<CartPayload | null>(null);
   // A staged checkout owns the panel's primary action until the cart changes again.
@@ -52,35 +64,37 @@ export default function StorefrontPage() {
 
   const chat = useAgentTurn(api, { ...session, unreachable: UNREACHABLE, onEvent });
   // A reply may have started a return, so orders re-read after each one.
-  const { data: orders, failed: ordersFailed } = useResource(session.sessionId ? () => api.fetchOrders() : null, [session.sessionId, chat.completed]);
+  const { data: orders, failed: ordersFailed } = useResource(session.sessionId ? () => api.fetchOrders() : null, [session.sessionId, chat.completed, language]);
 
   useEffect(() => {
     if (session.sessionId) void api.fetchCart<CartPayload>().then((next) => next && setCart(next));
-  }, [session.sessionId]);
+  }, [session.sessionId, language]);
 
-  const late = orders?.filter((order) => order.status === "delayed").length ?? 0;
+  const late = (orders ?? []).filter((order) => order.status === "delayed").length;
   const views: StoreView<View>[] = [
-    { id: "assistant", label: "Assistant", icon: "spark" },
-    { id: "orders", label: "Orders", icon: "box", attention: late ? { count: late, label: `${late} delayed` } : null },
+    { id: "assistant", label: t("Assistant"), icon: "spark" },
+    { id: "orders", label: t("Orders"), icon: "box", attention: late ? { count: late, label: `${late} ${t("delayed")}` } : null },
   ];
-  const shopper = session.shopper ?? { name: "Guest" };
-  const count = cart?.item_count ?? 0;
+  const shopper = session.shopper ?? { name: t("Guest") };
+  const cartSummary = cart ?? { item_count: 0, subtotal: 0, currency: "USD" };
+  const count = cartSummary.item_count;
 
   return (
     <StoreShell
-      brand={<Wordmark name={storeName} logo={dataset?.logo ?? null} simulated={dataset?.simulated ?? false} />}
+      brand={<Wordmark name={storeName} logo={store.logo} simulated={store.simulated} />}
+      actions={<LanguageSwitch disabled={chat.busy} />}
       views={views}
       view={view}
       onViewChange={setView}
       chat={chat}
       api={api}
-      assistantName={`${storeName} Assistant`}
+      assistantName={`${storeName} ${t("Assistant")}`}
       shopper={shopper}
-      bag={{ label: "Cart", count, noun: "item", figure: count ? formatMoney(cart?.subtotal ?? 0, cart?.currency) : null }}
+      bag={{ label: t("Cart"), count, noun: "item", figure: count ? formatMoney(cartSummary.subtotal, cartSummary.currency) : null }}
       panel={<CartPanel cart={cart} checkoutStaged={checkoutStaged} />}
       panelOpen={panelOpen}
       onPanelOpenChange={setPanelOpen}
-      placeholder={view === "orders" ? "Ask about an order, a return, a delivery…" : "Ask about a product, a project, an order…"}
+      placeholder={t(view === "orders" ? "Ask about an order, a return, a delivery…" : "Ask about a product, a project, an order…")}
     >
       {/* The conversation stays mounted under the other view so its cards keep their state. */}
       <div className={view === "assistant" ? "h-full" : "hidden"}>
@@ -91,13 +105,7 @@ export default function StorefrontPage() {
           orders={orders}
           failed={ordersFailed}
           nouns={NOUNS}
-          subtitle={
-            orders
-              ? late
-                ? `${plural(late, "order")} running late. Ask why, or ask about a return on anything delivered.`
-                : `${plural(upcoming(orders).length, "order")} on the way. Ask about any of them, or about a return on anything delivered.`
-              : undefined
-          }
+          subtitle={orders ? ordersSubtitle(upcoming(orders).length, late, language) : undefined}
           thumb={(order) => <OrderThumb order={order} />}
         />
       ) : null}

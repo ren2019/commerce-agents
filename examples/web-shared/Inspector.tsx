@@ -3,6 +3,7 @@
 
 "use client";
 
+import { useDemoLanguage } from "./language";
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 import type { MemoryFact, TraceEntry } from "./protocol";
 
@@ -87,6 +88,7 @@ function trailing(row: ToolRow, status: RowStatus): string {
 }
 
 function ToolCallRow({ row }: { row: ToolRow }) {
+  const { t } = useDemoLanguage();
   const [open, setOpen] = useState(false);
   const status = rowStatus(row);
   return (
@@ -100,10 +102,10 @@ function ToolCallRow({ row }: { row: ToolRow }) {
         <span className={`w-3.5 shrink-0 text-center text-[12px] leading-none ${TONE[status]}`} aria-hidden>
           {GLYPH[status]}
         </span>
-        {status === "ok" ? <span className="sr-only">ok</span> : null}
+        {status === "ok" ? <span className="sr-only">{t("ok")}</span> : null}
         <span className="min-w-0 flex-1 truncate font-mono text-[13px] text-(--ink)">{row.tool}</span>
         <span className={`ml-auto shrink-0 text-right font-mono text-[11px] tabular-nums ${TONE[status]}`}>
-          {trailing(row, status)}
+          {t(trailing(row, status))}
         </span>
       </button>
       {open ? (
@@ -121,9 +123,10 @@ function ToolCallRow({ row }: { row: ToolRow }) {
 }
 
 function Detail({ label, tone, text }: { label: string; tone: string; text: string }) {
+  const { t } = useDemoLanguage();
   return (
     <div>
-      <div className="text-[11px] font-semibold text-(--ink-soft)">{label}</div>
+      <div className="text-[11px] font-semibold text-(--ink-soft)">{t(label)}</div>
       <pre
         className={`panel-scroll mt-1 max-h-40 overflow-auto whitespace-pre-wrap break-all rounded p-2 font-mono text-[11px] leading-relaxed ${tone}`}
       >
@@ -159,6 +162,7 @@ export function Inspector({
   memoryTitle?: string;
   onClose: () => void;
 }) {
+  const { language, t } = useDemoLanguage();
   // null follows the newest reply; a number pins one.
   const [pinned, setPinned] = useState<number | null>(null);
   const turn = pinned ?? turnCount;
@@ -186,11 +190,11 @@ export function Inspector({
         <div className="flex items-start justify-between gap-3 border-b border-(--line) px-4 py-3">
           <div className="flex min-w-0 items-start gap-2">
             {turnCount > 1 ? (
-              <span className="flex shrink-0 items-center gap-0.5" role="group" aria-label="Reply">
-                <button type="button" onClick={() => stepTo(turn - 1)} disabled={turn <= 1} aria-label="Previous reply" className={stepButton}>
+              <span className="flex shrink-0 items-center gap-0.5" role="group" aria-label={t("Reply")}>
+                <button type="button" onClick={() => stepTo(turn - 1)} disabled={turn <= 1} aria-label={t("Previous reply")} className={stepButton}>
                   ‹
                 </button>
-                <button type="button" onClick={() => stepTo(turn + 1)} disabled={turn >= turnCount} aria-label="Next reply" className={stepButton}>
+                <button type="button" onClick={() => stepTo(turn + 1)} disabled={turn >= turnCount} aria-label={t("Next reply")} className={stepButton}>
                   ›
                 </button>
               </span>
@@ -198,19 +202,19 @@ export function Inspector({
             <div className="min-w-0">
               <h2 className="flex flex-wrap items-baseline gap-x-1.5 text-sm text-(--ink)">
                 {turnCount === 0 ? (
-                  <span className="font-bold">Activity</span>
+                  <span className="font-bold">{t("Activity")}</span>
                 ) : (
                   <>
                     <span className="font-bold">
-                      Reply {turn}
-                      {turnCount > 1 ? <span className="font-normal text-(--ink-soft)"> of {turnCount}</span> : null}
+                      {t("Reply")} {turn}
+                      {turnCount > 1 ? <span className="font-normal text-(--ink-soft)">{language === "zh" ? ` / 共${turnCount}条` : ` of ${turnCount}`}</span> : null}
                     </span>
                     <span className="font-normal text-(--ink-soft)">
                       {working ? (
-                        <span className="animate-pulse">· working…</span>
+                        <span className="animate-pulse">· {t("Working…")}</span>
                       ) : (
                         <>
-                          · {rows.length} step{rows.length === 1 ? "" : "s"}
+                          · {language === "zh" ? `${rows.length}步` : `${rows.length} step${rows.length === 1 ? "" : "s"}`}
                           {done?.elapsedMs && done.elapsedMs >= 100 ? ` · ${(done.elapsedMs / 1000).toFixed(1)}s` : ""}
                         </>
                       )}
@@ -226,7 +230,7 @@ export function Inspector({
           <button
             type="button"
             onClick={onClose}
-            aria-label="Close activity"
+            aria-label={t("Close activity")}
             className="rounded-md px-2 py-0.5 text-lg leading-none text-(--ink-soft) hover:text-(--ink)"
           >
             ×
@@ -235,11 +239,11 @@ export function Inspector({
 
         <div className="panel-scroll flex-1 overflow-y-auto px-4 py-3">
           <section>
-            <Heading>Steps</Heading>
+            <Heading>{t("Steps")}</Heading>
             {turnCount === 0 ? (
-              <Empty>No replies yet.</Empty>
+              <Empty>{t("No replies yet.")}</Empty>
             ) : rows.length === 0 ? (
-              <Empty>{working ? "Working…" : "No tool calls this reply."}</Empty>
+              <Empty>{t(working ? "Working…" : "No tool calls this reply.")}</Empty>
             ) : (
               <ul className="mt-1 divide-y divide-(--line)">
                 {rows.map((row, index) => (
@@ -251,17 +255,17 @@ export function Inspector({
 
           <section className="mt-5 border-t border-(--line) pt-4">
             <Heading>
-              {memoryTitle}
-              {newCount ? <span className="font-normal text-(--ink-soft)"> · {newCount} new this session</span> : null}
+              {t(memoryTitle)}
+              {newCount ? <span className="font-normal text-(--ink-soft)"> · {language === "zh" ? `本次新增${newCount}条` : `${newCount} new this session`}</span> : null}
             </Heading>
             {memory.length === 0 ? (
-              <Empty>Nothing saved yet.</Empty>
+              <Empty>{t("Nothing saved yet.")}</Empty>
             ) : (
               <ul className="mt-1 space-y-1">
                 {memory.map((fact) => (
                   <li key={fact.key} className="text-[13px] leading-snug text-(--ink)">
                     {fact.value}
-                    {newMemoryKeys.has(fact.key) ? <em className="ml-1.5 text-(--ink-soft)">new</em> : null}
+                    {newMemoryKeys.has(fact.key) ? <em className="ml-1.5 text-(--ink-soft)">{t("new")}</em> : null}
                   </li>
                 ))}
               </ul>

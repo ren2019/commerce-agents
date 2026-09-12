@@ -3,6 +3,7 @@
 
 "use client";
 
+import { useDemoLanguage } from "./language";
 import { type ButtonHTMLAttributes, type ReactNode, useEffect, useId, useState } from "react";
 import { createPortal } from "react-dom";
 import { formatChangePct } from "./format";
@@ -397,6 +398,7 @@ export function Sheet({
   children: ReactNode;
   closeLabel?: string;
 }) {
+  const { t } = useDemoLanguage();
   const [host, setHost] = useState<HTMLElement | null>(null);
   const titleId = useId();
   useEffect(() => {
@@ -422,7 +424,7 @@ export function Sheet({
             {title}
             {detail ? <span className="ml-2 font-normal tabular-nums text-(--ink-soft)">{detail}</span> : null}
           </div>
-          <IconButton icon="x" label={closeLabel} onClick={onClose} />
+          <IconButton icon="x" label={t(closeLabel)} onClick={onClose} />
         </div>
         <div className="panel-scroll flex flex-1 flex-col gap-4 overflow-y-auto p-[18px]">{children}</div>
         {footer ? <div className="flex items-center gap-2 border-t border-(--line) px-[18px] py-3">{footer}</div> : null}

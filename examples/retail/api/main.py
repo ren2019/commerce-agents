@@ -24,8 +24,8 @@ from demo_common import (
     load_demo_env,
 )
 from shopping_agent import ProductDetails
-from shopping_agent_runtime import ShoppingAgent
 
+from .agent import RetailShoppingAgent
 from .agent_config import build_model_client, build_shopping_config
 from .dataset import selected_dataset
 from .language import language
@@ -37,7 +37,7 @@ dataset = selected_dataset()
 PRODUCT_IMAGES = dataset.images
 
 backend = MockRetail(dataset.data_dir)
-agent = ShoppingAgent(
+agent = RetailShoppingAgent(
     backend=backend,
     skills_dir=REPO_ROOT / "shopping-agent" / "skills",
     config=build_shopping_config(backend.store_name),

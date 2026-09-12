@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { CSSProperties } from "react";
-import { formatMoney } from "web-shared";
+import { useDemoLanguage, formatMoney } from "web-shared";
 import type { ComparisonPayload } from "@/lib/types";
 import { ProductImage, ProductTitle, Rating } from "../ProductTile";
 
@@ -27,8 +27,10 @@ export default function ComparisonGrid({
   payload: ComparisonPayload;
   partial?: boolean;
 }) {
+  const { t } = useDemoLanguage();
   const entries = payload.entries ?? [];
   const delta = payload.price_delta;
+  const currency = entries[0]?.product.currency;
   // Each pro/con line is a subgrid row, padded to the longest list, so the k-th line of
   // every card shares a baseline.
   const maxPros = Math.max(0, ...entries.map((entry) => (entry.pros ?? []).length));
@@ -55,7 +57,7 @@ export default function ComparisonGrid({
                 <div className="min-w-0">
                   {recommended ? (
                     <div className="text-[11px] font-bold uppercase tracking-wide text-(--ink)">
-                      {RECOMMENDED_LABEL}
+                      {t(RECOMMENDED_LABEL)}
                     </div>
                   ) : null}
                   <ProductTitle
@@ -63,7 +65,7 @@ export default function ComparisonGrid({
                     className="line-clamp-2 text-sm font-medium leading-snug"
                   />
                   <div className="flex items-center gap-2 text-sm">
-                    <span className="font-semibold">{formatMoney(entry.product.price)}</span>
+                    <span className="font-semibold">{formatMoney(entry.product.price, entry.product.currency)}</span>
                     <Rating rating={entry.product.rating} count={entry.product.review_count} />
                   </div>
                 </div>
@@ -71,7 +73,7 @@ export default function ComparisonGrid({
               <div>
                 {entry.best_for ? (
                   <div className="rounded-md bg-(--well) px-2 py-1 text-[13px] text-(--ink)">
-                    Best for: {entry.best_for}
+                    {t("Best for:")} {entry.best_for}
                   </div>
                 ) : null}
               </div>
@@ -97,15 +99,15 @@ export default function ComparisonGrid({
       </div>
       {delta ? (
         <p className="mt-3 text-[13px] text-(--ink)">
-          Price difference:{" "}
-          <span className="font-semibold">{formatMoney(delta.amount)}</span>{" "}
+          {t("Price difference:")}{" "}
+          <span className="font-semibold">{formatMoney(delta.amount, currency)}</span>{" "}
           <span className="text-(--ink-soft)">
-            ({formatMoney(delta.low_price)} vs {formatMoney(delta.high_price)})
+            ({formatMoney(delta.low_price, currency)} vs {formatMoney(delta.high_price, currency)})
           </span>
         </p>
       ) : null}
       {payload.dimensions?.length ? (
-        <p className="mt-3 text-xs text-(--ink-soft)/80">Compared on: {payload.dimensions.join(" · ")}</p>
+        <p className="mt-3 text-xs text-(--ink-soft)/80">{t("Compared on:")} {payload.dimensions.join(" · ")}</p>
       ) : null}
     </section>
   );

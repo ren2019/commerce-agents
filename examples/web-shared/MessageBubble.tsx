@@ -1,6 +1,7 @@
 // Copyright 2026 Anthropic PBC
 // SPDX-License-Identifier: Apache-2.0
 
+import { useDemoLanguage } from "./language";
 import { Markdown } from "./Markdown";
 
 export function UserBubble({ text }: { text: string }) {
@@ -21,12 +22,13 @@ export function AssistantText({ text, streaming }: { text: string; streaming?: b
 }
 
 export function ErrorBubble({ text }: { text: string }) {
+  const { t } = useDemoLanguage();
   return (
     <div
       role="alert"
       className="rounded-lg border border-(--danger)/40 bg-(--danger-soft) px-3 py-2 text-[13px] leading-relaxed text-(--danger)"
     >
-      {text}
+      {t(text)}
     </div>
   );
 }
