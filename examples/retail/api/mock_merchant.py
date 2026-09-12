@@ -1028,11 +1028,20 @@ class MockRetailMerchant(MerchantBackend):
     async def get_merchant_context(self, session: MerchantSessionContext) -> dict[str, Any] | None:
         counts = self._alert_counts()
         latest = self._daily[-1]["date"]
-        week_start = (date.fromisoformat(latest) - timedelta(days=6)).isoformat()
+        latest_date = date.fromisoformat(latest)
+        week_start = (latest_date - timedelta(days=6)).isoformat()
         return {
             "store": self.storefront.store_name,
             "operator": session.operator,
             "current_period": f"{week_start}/{latest}",
+            "two_week_comparison": {
+                "current": f"{latest_date - timedelta(days=13)}/{latest}",
+                "previous": (
+                    f"{latest_date - timedelta(days=27)}/{latest_date - timedelta(days=14)}"
+                ),
+                "days_per_window": 14,
+                "bounds": "inclusive; verify row counts when querying",
+            },
             "catalog_size": len(self.storefront.products),
             # What this store's systems cannot supply, so the assistant says so instead
             # of reporting a zero.

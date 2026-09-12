@@ -134,6 +134,21 @@ async def test_merchant_context_reports_alert_counts(merchant, operator_session)
     assert context["alerts"]["low_stock"] >= 2
 
 
+async def test_two_week_context_selects_equal_nonoverlapping_source_windows(
+    merchant, operator_session
+):
+    context = await merchant.get_merchant_context(operator_session)
+    windows = context["two_week_comparison"]
+    selected = []
+    for name in ("previous", "current"):
+        start, end = windows[name].split("/")
+        dates = {row["date"] for row in merchant._daily if start <= row["date"] <= end}
+        assert len(dates) == windows["days_per_window"] == 14
+        selected.append(dates)
+    assert not selected[0] & selected[1]
+    assert selected[0] | selected[1] == {row["date"] for row in merchant._daily[-28:]}
+
+
 async def test_browse_filters_narrow_the_whole_catalog(merchant, operator_session):
     flagged = await merchant.search_listings(
         operator_session, "", ListingFilters(content_quality="needs_work"), limit=25

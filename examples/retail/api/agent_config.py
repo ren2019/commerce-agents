@@ -106,6 +106,9 @@ def build_merchant_config(store_name: str) -> MerchantAgentConfig:
             "Average order value alone does not establish price changes or category order value. "
             "Use translated category names in operator-facing Chinese prose and card labels "
             "(for example kids-room is 儿童房); retain exact schema names only inside queries."
+            " For the official two-week sales comparison, pass the exact inclusive current "
+            "and previous dates from merchant context's two_week_comparison to run_analysis. "
+            "A date omitted from the requested range is not missing source data."
         ),
         # This deployment runs the run_analysis delegate over MockRetailMerchant's
         # read-only SQL view of the fixtures. MERCHANT_ANALYSIS_CODE_EXECUTION=1 adds the

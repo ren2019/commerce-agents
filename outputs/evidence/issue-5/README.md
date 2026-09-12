@@ -102,3 +102,23 @@ Validation after extracting the shared language filter: 1136 passed, 1 skipped,
 two existing warnings. Merchant production build passed for the latest UI changes;
 React Doctor score 70 with eight complexity warnings and no correctness warnings.
 These checkpoints do not close issue 5.
+
+Further real retest:
+
+- `chinese-morning-language-validated.txt` has a Chinese pre-tool sentence after
+  shared validation. The model's aggregate zero-stock count still needs care:
+  its prose says three while the source contains four; individual records remain
+  authoritative. This is not a blanket factual pass.
+- `chinese-restock-cover-retest.txt` correctly reports stock 3 to 27 and 15.6 days
+  of total cover, matching the host card's rounded 16 days. Its content preview
+  remains unapplied in this new isolated run.
+- `chinese-analysis-scope-retest.txt` no longer includes the duplicate snapshot
+  card. Inspection of the actual tool input exposed a different error: the main
+  model requested Aug 15–27 as a supposedly 14-day prior window. The delegate then
+  treated the omitted Aug 14 as absent source data. The backend now supplies exact
+  inclusive two-week comparison windows in merchant context; a source-row test
+  verifies two disjoint 14-day windows spanning the latest 28 days. Real retesting
+  of this correction remains required. Category schema names still occur in some
+  Chinese analysis labels.
+
+All eight apps pass TypeScript after the latest shared error rendering change.
