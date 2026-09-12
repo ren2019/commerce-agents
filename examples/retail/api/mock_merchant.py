@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import asyncio
 import sqlite3
+from collections.abc import Awaitable, Callable
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 from typing import Any
@@ -65,6 +66,7 @@ from merchant_agent import (
 )
 from shopping_agent import ProductDetails, SearchFilters, ShoppingSessionContext
 
+from .language import language
 from .mock_retail import DATA_DIR, DELIVERY_ATTRIBUTE, LOW_STOCK_ATTRIBUTE, MockRetail
 
 
@@ -75,10 +77,13 @@ class MockRetailMerchant(MerchantBackend):
         config: MerchantAgentConfig | None = None,
         data_dir: Path = DATA_DIR,
         merchant_id: str = "acme-retail",
+        translate_content: Callable[[str, str], Awaitable[str]] | None = None,
     ) -> None:
         self.storefront = storefront
         self.config = config or MerchantAgentConfig(brand_name=storefront.store_name)
         self.ledger = ChangeLedger(self.config)
+        self.translate_content = translate_content
+        self._change_languages: dict[str, str] = {}
         # Analysis queries are refused for sessions scoped to any other merchant.
         self.merchant_id = merchant_id
         metrics = load_json(data_dir, "merchant_metrics.json")
@@ -149,7 +154,7 @@ class MockRetailMerchant(MerchantBackend):
         """One listing row. A family's price is its lowest variant's, its stock the sum of
         its variants' rows, and it is active while any variant is; a variant carries its
         choices and its family's id."""
-        product = self._product(product_id)
+        product = self.storefront.view_product(product_id)
         if product is None:
             return None
         row = self._state_row(product.product_id)
@@ -415,7 +420,7 @@ class MockRetailMerchant(MerchantBackend):
         self, session: MerchantSessionContext, listing_id: str
     ) -> ListingDetails | None:
         del session
-        product = self._product(listing_id)
+        product = self.storefront.view_product(listing_id)
         listing = self._listing(listing_id) if product else None
         if product is None or listing is None:
             return None
@@ -438,7 +443,7 @@ class MockRetailMerchant(MerchantBackend):
     def _compute_alerts(self) -> list[InventoryAlert]:
         alerts: list[InventoryAlert] = []
         for product_id, row in self._inventory.items():
-            product = self._product(product_id)
+            product = self.storefront.view_product(product_id)
             if product is None or product.has_options:
                 continue  # a family's stock lives on its variants' rows
             stock = int(row.get("stock", self._default_stock))
@@ -541,6 +546,8 @@ class MockRetailMerchant(MerchantBackend):
         fields: dict[str, Any],
         note: str | None = None,
     ) -> StagedChange:
+        if any(name.endswith((".en", ".zh")) for name in fields):
+            raise ValueError("Translation fields are prepared by the host")
         listing = await self.get_listing(session, listing_id)
         if listing is None:
             raise ValueError(f"no listing {listing_id}")
@@ -554,15 +561,41 @@ class MockRetailMerchant(MerchantBackend):
             )
             for name, value in fields.items()
         ]
+        other = "en" if language.get() == "zh" else "zh"
+        for name, value in fields.items():
+            if name not in FAMILY_CONTENT_FIELDS or not isinstance(value, str):
+                continue
+            if self.translate_content is None:
+                if language.get() != self.storefront.language.source_language:
+                    raise ValueError(
+                        "Bilingual content edits require the configured DeepSeek translator"
+                    )
+                continue
+            translated = await self.translate_content(value, other)
+            token = language.set(other)
+            try:
+                previous = await self.get_listing(session, listing_id)
+            finally:
+                language.reset(token)
+            items.append(
+                ChangeItem(
+                    target=listing_id,
+                    field=f"{name}.{other}",
+                    before=getattr(previous, name),
+                    after=translated,
+                )
+            )
         # Everything staged here is proposed by the assistant on the operator's behalf;
         # applying is the operator's own act.
-        return self.ledger.stage(
+        change = self.ledger.stage(
             kind=ChangeKind.LISTING_UPDATE,
             summary=note or f"Update listing content on {listing.listing_id}",
             items=items,
             actor=session.operator,
             actor_kind=ActorKind.AGENT,
         )
+        self._change_languages[change.change_id] = language.get()
+        return change
 
     async def stage_price_update(
         self,
@@ -786,8 +819,22 @@ class MockRetailMerchant(MerchantBackend):
                         product.attributes.pop(LOW_STOCK_ATTRIBUTE, None)
                 refresh_family(family or product)
                 if change.kind is ChangeKind.LISTING_UPDATE:
-                    if item.field in FAMILY_CONTENT_FIELDS:
-                        share_content(product, item.field, item.after)
+                    content_field, _, suffix = item.field.partition(".")
+                    if content_field in FAMILY_CONTENT_FIELDS:
+                        locale = suffix or self._change_languages.get(
+                            change.change_id, self.storefront.language.source_language
+                        )
+                        if locale == self.storefront.language.source_language:
+                            share_content(product, content_field, item.after)
+                        for member in [product, *product.variants]:
+                            translations = self.storefront.language.products
+                            translations.setdefault(locale, {}).setdefault(member.product_id, {})[
+                                content_field
+                            ] = item.after
+                            if self.translate_content is None:
+                                for other, entries in translations.items():
+                                    if other != locale:
+                                        entries.get(member.product_id, {}).pop(content_field, None)
                     elif item.field == "content_quality":
                         row["content_quality"] = item.after
                     else:

@@ -351,3 +351,76 @@ async def test_a_price_below_the_reported_floor_is_refused(merchant, operator_se
             operator_session,
             [PriceUpdateItem(listing_id="AR-1902-KING", new_price=context.min_price - 1)],
         )
+
+
+async def test_merchant_language_views_preserve_business_state(merchant, backend, operator_session):
+    from retail.api.language import language
+
+    original = backend.product("AR-2102").model_dump()
+    english = await merchant.get_listing(operator_session, "AR-2102")
+    token = language.set("zh")
+    try:
+        chinese = await merchant.get_listing(operator_session, "AR-2102")
+        found = await merchant.search_listings(operator_session, "海洋墙贴")
+        alerts = await merchant.get_inventory_alerts(operator_session)
+        alert = next(item for item in alerts if item.listing_id == "AR-2102")
+        assert chinese.title != english.title
+        assert chinese.short_description != english.short_description
+        assert chinese.title == alert.title
+        assert "AR-2102" in [item.listing_id for item in found]
+        for field in ("listing_id", "price", "currency", "stock", "sales_last_30d"):
+            assert getattr(chinese, field) == getattr(english, field)
+        assert backend.product("AR-2102").model_dump() == original
+    finally:
+        language.reset(token)
+    assert (await merchant.get_listing(operator_session, "AR-2102")).title == english.title
+
+
+@pytest.mark.parametrize("locale", ["en", "zh"])
+async def test_bilingual_content_is_staged_together_and_only_applied_after_approval(
+    merchant, backend, operator_session, locale
+):
+    from retail.api.language import language
+
+    texts = {"en": "36 ocean decals.", "zh": "36张海洋墙贴。"}
+
+    async def translate(text, target):
+        assert text == texts[locale]
+        return texts[target]
+
+    merchant.translate_content = translate
+    canonical = backend.product("AR-2102").short_description
+    token = language.set(locale)
+    try:
+        change = await merchant.stage_listing_update(
+            operator_session, "AR-2102", {"short_description": texts[locale]}
+        )
+        assert len(change.items) == 2
+        assert {item.after for item in change.items} == set(texts.values())
+        assert backend.product("AR-2102").short_description == canonical
+        await merchant.apply_change(operator_session, change.change_id)
+        assert backend.product("AR-2102").short_description == texts["en"]
+        for current in ("en", "zh"):
+            language.set(current)
+            assert (
+                await merchant.get_listing(operator_session, "AR-2102")
+            ).short_description == texts[current]
+            assert backend.view_product("AR-2102").short_description == texts[current]
+    finally:
+        language.reset(token)
+
+
+async def test_failed_content_translation_does_not_stage_or_change_catalog(
+    merchant, backend, operator_session
+):
+    async def fail(text, target):
+        raise ValueError("Translation changed a number")
+
+    merchant.translate_content = fail
+    original = backend.product("AR-2102").model_dump()
+    with pytest.raises(ValueError, match="changed a number"):
+        await merchant.stage_listing_update(
+            operator_session, "AR-2102", {"short_description": "36 ocean decals."}
+        )
+    assert not merchant.ledger.pending()
+    assert backend.product("AR-2102").model_dump() == original

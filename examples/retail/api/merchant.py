@@ -13,6 +13,8 @@ from demo_common import REPO_ROOT, MerchantIdentity, build_merchant_router
 from merchant_agent_runtime import MerchantAgent
 
 from .agent_config import build_merchant_config, build_model_client
+from .deepseek import DeepSeekClient, localize_visible_text
+from .language import language
 from .mock_merchant import MockRetailMerchant
 from .mock_retail import MockRetail
 
@@ -21,14 +23,32 @@ IDENTITY = MerchantIdentity(merchant_id="acme-retail", operator="Avery")
 
 def create_merchant_router(storefront: MockRetail, memory_store: MemoryStore) -> APIRouter:
     config = build_merchant_config(storefront.store_name)
+    client = build_model_client()
+
+    async def translate_content(text: str, locale: str) -> str:
+        token = language.set(locale)
+        try:
+            protected = {storefront.store_name, *storefront.products, *storefront.variants}
+            protected.update(p.brand for p in storefront.products.values() if p.brand)
+            translated, _ = await localize_visible_text(
+                client, config.model, text, protected, force=True
+            )
+            return translated
+        finally:
+            language.reset(token)
+
     merchant = MockRetailMerchant(
-        storefront, config, data_dir=storefront.data_dir, merchant_id=IDENTITY.merchant_id
+        storefront,
+        config,
+        data_dir=storefront.data_dir,
+        merchant_id=IDENTITY.merchant_id,
+        translate_content=translate_content if isinstance(client, DeepSeekClient) else None,
     )
     agent = MerchantAgent(
         backend=merchant,
         skills_dir=REPO_ROOT / "merchant-agent" / "skills",
         config=config,
-        client=build_model_client(),
+        client=client,
         memory_store=memory_store,
     )
     return build_merchant_router(

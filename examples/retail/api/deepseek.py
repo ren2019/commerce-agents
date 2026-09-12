@@ -58,7 +58,7 @@ class DeepSeekClient(AsyncAnthropic):
 
 
 async def localize_visible_text(
-    client: AsyncAnthropic, model: str, text: str, protected: set[str]
+    client: AsyncAnthropic, model: str, text: str, protected: set[str], *, force: bool = False
 ) -> tuple[str, dict[str, int]]:
     """Translate a language-mismatched text segment, never tool data or stored history."""
     import re
@@ -74,7 +74,7 @@ async def localize_visible_text(
         if locale == "zh"
         else bool(chinese)
     )
-    if not mismatch:
+    if not mismatch and not force:
         return text, {}
     response = await client.messages.create(
         model=model,

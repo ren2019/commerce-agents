@@ -167,3 +167,14 @@ includes source records, bilingual content, image provenance and generated opera
 The merchant portal uses the same optional language context; its interface copy
 lives in `merchant-web/lib/chinese.ts`. Merchant bilingual data and approval-card
 coverage are under development in issue 5.
+
+Merchant listing and inventory views reuse the catalog language projections.
+Under the DeepSeek deployment, content edits stage both the entered text and its
+translation as separate before/after rows. No catalog content changes while the
+translation is prepared. Approval applies both language versions to the shared
+catalog, preserving the source language and refreshing the other language view.
+Translation failure leaves no staged change. These extra translation requests use
+the configured DeepSeek model; they add preparation latency and are not included
+in the conversation runtime's usage total. Runtime changes still reset with the
+selected dataset. The default non-DeepSeek path retains source-language editing;
+non-source-language content edits require the DeepSeek translator.

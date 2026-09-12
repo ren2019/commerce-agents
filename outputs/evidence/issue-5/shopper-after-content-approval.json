@@ -1,0 +1,162 @@
+{
+  "en": {
+    "product_id": "AR-2102",
+    "title": "ACME Kids Peel-and-Stick Ocean Wall Decals (36 pc)",
+    "brand": "ACME Kids",
+    "price": 24.0,
+    "currency": "USD",
+    "rating": 4.6,
+    "review_count": 2440,
+    "image_url": null,
+    "category": "kids-room",
+    "labels": [],
+    "attributes": {
+      "count": "36 decals",
+      "removable": "yes",
+      "largest": "24 in whale",
+      "theme": "ocean",
+      "delivery": "Get it by Thu, Sep 17",
+      "low_stock": "3"
+    },
+    "in_stock": true,
+    "short_description": "36 ocean-themed wall stickers",
+    "options": {},
+    "option_values": {},
+    "variant_of": null,
+    "long_description": "Thirty-six matte decals: a whale, dolphins, sea turtles, seahorses, and drifts of fish, plus coral and bubbles to scatter between them. Each one repositions without lifting paint, so the reef can be rebuilt whenever inspiration strikes.",
+    "specs": {
+      "count": "36",
+      "largest_decal": "24 in",
+      "surface": "painted walls, doors, furniture",
+      "removal": "peels clean, repositionable"
+    },
+    "review_highlights": [
+      "Went up in twenty minutes and came off our rental walls clean",
+      "The big whale over the bed is the star of the room",
+      "Went up bubble-free — our kid handled half the wall solo"
+    ],
+    "variants": [],
+    "price_intelligence": {
+      "days": 90,
+      "series": [
+        25.36,
+        24.21,
+        23.81,
+        22.49,
+        23.07,
+        25.21,
+        24.83,
+        24.4,
+        23.42,
+        22.22,
+        24.1,
+        25.12,
+        24.0
+      ],
+      "low": 22.22,
+      "high": 25.36,
+      "position": "typical",
+      "verdict": "$24.00 is this item's typical price (90-day range $22–$25)"
+    },
+    "review_aspects": {
+      "review_count": 2440,
+      "aspects": [
+        {
+          "name": "Easy setup",
+          "positive_pct": 83,
+          "mentions": 507
+        },
+        {
+          "name": "Looks as pictured",
+          "positive_pct": 82,
+          "mentions": 309
+        },
+        {
+          "name": "Durability",
+          "positive_pct": 84,
+          "mentions": 309
+        }
+      ]
+    }
+  },
+  "zh": {
+    "product_id": "AR-2102",
+    "title": "ACME 儿童即撕即贴海洋墙贴（36件）",
+    "brand": "ACME Kids",
+    "price": 24.0,
+    "currency": "USD",
+    "rating": 4.6,
+    "review_count": 2440,
+    "image_url": null,
+    "category": "kids-room",
+    "labels": [],
+    "attributes": {
+      "count": "36张贴纸",
+      "removable": "是",
+      "largest": "24英寸鲸鱼",
+      "theme": "海洋",
+      "delivery": "Get it by Thu, Sep 17",
+      "low_stock": "3"
+    },
+    "in_stock": true,
+    "short_description": "36张海洋主题墙贴",
+    "options": {},
+    "option_values": {},
+    "variant_of": null,
+    "long_description": "三十六张哑光贴纸：一只鲸鱼、海豚、海龟、海马和成群的鱼，外加珊瑚和气泡散布其间。每张都可重新放置而不损伤漆面，因此无论何时灵感涌现，都能重建这片礁石。",
+    "specs": {
+      "count": "36",
+      "largest_decal": "24英寸",
+      "surface": "涂漆墙面、门、家具",
+      "removal": "撕下不留痕，可重新放置"
+    },
+    "review_highlights": [
+      "二十分钟就贴好了，从我们租的房子墙上撕下来干干净净",
+      "床上方的大鲸鱼是整个房间的亮点",
+      "贴上去没有气泡——我们家孩子一个人贴了半面墙"
+    ],
+    "variants": [],
+    "price_intelligence": {
+      "days": 90,
+      "series": [
+        25.36,
+        24.21,
+        23.81,
+        22.49,
+        23.07,
+        25.21,
+        24.83,
+        24.4,
+        23.42,
+        22.22,
+        24.1,
+        25.12,
+        24.0
+      ],
+      "low": 22.22,
+      "high": 25.36,
+      "position": "typical",
+      "verdict": "$24.00 is this item's typical price (90-day range $22–$25)"
+    },
+    "review_aspects": {
+      "review_count": 2440,
+      "aspects": [
+        {
+          "name": "Easy setup",
+          "positive_pct": 83,
+          "mentions": 507
+        },
+        {
+          "name": "Looks as pictured",
+          "positive_pct": 82,
+          "mentions": 309
+        },
+        {
+          "name": "Durability",
+          "positive_pct": 84,
+          "mentions": 309
+        }
+      ]
+    }
+  }
+}

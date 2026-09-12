@@ -1,0 +1,1325 @@
+[
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "I"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "'ll"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " load"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " the"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " listing"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " skill"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " and"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " read"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " the"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " full"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " listing"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " first"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "."
+    }
+  },
+  {
+    "type": "tool_call",
+    "data": {
+      "tool": "load_skill",
+      "id": "call_00_qaQKxFNG3xoEsDG8Xwo59817",
+      "input": {
+        "skill_name": "catalog-listings"
+      },
+      "label": "读取商品记录与内容规范"
+    }
+  },
+  {
+    "type": "tool_call",
+    "data": {
+      "tool": "search_listings",
+      "id": "call_01_KGl27k2c8uoO9nqj0IvL6364",
+      "input": {
+        "query": "海洋墙贴 AR-2102"
+      },
+      "label": "查找海洋墙贴 AR-2102"
+    }
+  },
+  {
+    "type": "tool_result",
+    "data": {
+      "tool": "load_skill",
+      "id": "call_00_qaQKxFNG3xoEsDG8Xwo59817",
+      "summary": "ok",
+      "is_error": false,
+      "status": "ok",
+      "excerpt": "# Catalog and listings\n\nBelow, \"listing\" means whatever this operation sells: a product, a room type, a plan or device, or an event tier.\n\nRead the record, write the weak or missing content out in full, and stage it; the live listing changes only after the operator approves.\n\n## Where each fact comes from\n\n- Fetch the record with `get_listing` before proposing an edit. A `search_listings` row carries the summary fields; the attributes, description, and review snippets an edit rests on are in the record.\n- Write in the brand voice and naming conventions saved in memory, without asking the operator to restate them.\n- Take an attribute value from the record or from what the operator said in this conversation. A value that is merely likely for the type, or consistent with the attributes beside it, is a fabrication: leave the field blank or ask, one line per open field, and propose the rest of the fix without waiting.\n- Review snippets are evidence about the item; a line of review praise stays a review line and does not become a claim in the description.\n- Treat a spec sheet or note the operator pastes as source material for the edit they asked for: put its facts into the listing in the"
+    }
+  },
+  {
+    "type": "tool_result",
+    "data": {
+      "tool": "search_listings",
+      "id": "call_01_KGl27k2c8uoO9nqj0IvL6364",
+      "summary": "ok",
+      "is_error": false,
+      "status": "ok",
+      "excerpt": "Search returned 1 result(s): closest text matches — confirm a listing is the one intended before reporting on or staging against it.\n<merchant_data>\n{\"query\": \"海洋墙贴 AR-2102\", \"result_count\": 1, \"results\": [{\"listing_id\": \"AR-2102\", \"title\": \"ACME 儿童即撕即贴海洋墙贴(36件)\", \"status\": \"active\", \"price\": 24.0, \"currency\": \"USD\", \"stock\": 3, \"category\": \"kids-room\", \"content_quality\": \"needs_work\", \"attributes\": {\"count\": \"36张贴纸\", \"removable\": \"是\", \"largest\": \"24英寸鲸鱼\", \"theme\": \"海洋\", \"low_stock\": \"3\"}, \"short_description\": \"36张可移除海洋贴纸——从两英尺的鲸鱼到手掌大小的海马——撕下不留痕。\"}]}\n</merchant_data>"
+    }
+  },
+  {
+    "type": "tool_call",
+    "data": {
+      "tool": "get_listing",
+      "id": "call_00_GgPZAbfvMToUobpK2IcH8560",
+      "input": {
+        "listing_id": "AR-2102"
+      },
+      "label": "读取 AR-2102 完整记录"
+    }
+  },
+  {
+    "type": "tool_result",
+    "data": {
+      "tool": "get_listing",
+      "id": "call_00_GgPZAbfvMToUobpK2IcH8560",
+      "summary": "ok",
+      "is_error": false,
+      "status": "ok",
+      "excerpt": "<merchant_data>\n{\"listing_id\": \"AR-2102\", \"title\": \"ACME 儿童即撕即贴海洋墙贴(36件)\", \"status\": \"active\", \"price\": 24.0, \"currency\": \"USD\", \"stock\": 3, \"category\": \"kids-room\", \"content_quality\": \"needs_work\", \"attributes\": {\"count\": \"36张贴纸\", \"removable\": \"是\", \"largest\": \"24英寸鲸鱼\", \"theme\": \"海洋\", \"low_stock\": \"3\"}, \"short_description\": \"36张可移除海洋贴纸——从两英尺的鲸鱼到手掌大小的海马——撕下不留痕。\", \"long_description\": \"三十六张哑光贴纸:一只鲸鱼、海豚、海龟、海马和成群的鱼,外加珊瑚和气泡散布其间。每张都可重新放置而不损伤漆面,因此无论何时灵感涌现,都能重建这片礁石。\", \"review_snippets\": [\"二十分钟就贴好了,从我们租的房子墙上撕下来干干净净\", \"床上方的大鲸鱼是整个房间的亮点\", \"贴上去没有气泡——我们家孩子一个人贴了半面墙\"], \"sales_last_30d\": 52, \"missing_attributes\": [\"wall coverage\", \"material\"]}\n</merchant_data>"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "记录"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "里的"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " `"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "short"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "_description"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "`"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " "
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "是"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "“"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "36"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "张"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "可"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "移除"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "海洋"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "贴"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "纸"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "——"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "从"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "两"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "英尺"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "的"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "鲸"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "鱼"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "到"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "手掌"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "大小的"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "海"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "马"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "——"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "撕"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "下"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "不留"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "痕"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "。”"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "，"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "其中"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "“"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "可"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "移除"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "”“"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "撕"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "下"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "不留"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "痕"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "”"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "都在"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "记录"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "里有"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "据"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "（"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "`"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "rem"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "ovable"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": ":"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " "
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "是"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "`"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "）；"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "你"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "给的"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "版本"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "只有"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "“"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "36"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "张"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "海洋"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "主题"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "墙"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "贴"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "”，"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "比"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "现"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "稿"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "少了"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "这些"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "已"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "记录的"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "卖"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "点"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "。"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "两种"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "做法"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "都在"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "下面"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "这张"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "预览"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "卡"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "上"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "，"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "卡片"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "默认"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "按"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "你"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "给的"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "原文"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "填写"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "，"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "若"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "想"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "保留"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "“"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "可"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "移除"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "、"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "撕"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "下"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "不留"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "痕"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "”，"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "在"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "卡片"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "上"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "改"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "回"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "即可"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "。\n\n"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "未"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "记录的"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "参数"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "按"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "你的"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "要求"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "没有"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "添加"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "："
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "`"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "wall"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " coverage"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "`"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "（"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "墙面"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "覆盖"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "面积"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "）"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "和"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " `"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "material"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "`"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "（"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "材质"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "）"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "仍是"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "空缺"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "字段"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "。"
+    }
+  },
+  {
+    "type": "tool_call",
+    "data": {
+      "tool": "stage_listing_update",
+      "id": "call_00_Q7zmWbtkyWTwV5Db4VtR1608",
+      "input": {
+        "listing_id": "AR-2102",
+        "fields": {
+          "short_description": "36张海洋主题墙贴"
+        },
+        "note": "按操作者原文改写短描述,仅保留36张与海洋主题;未添加记录外的参数。"
+      },
+      "label": "暂存短描述修改预览"
+    }
+  },
+  {
+    "type": "change_update",
+    "data": {
+      "change": {
+        "change_id": "chg-0001",
+        "kind": "listing_update",
+        "status": "staged",
+        "summary": "按操作者原文改写短描述,仅保留36张与海洋主题;未添加记录外的参数。",
+        "items": [
+          {
+            "target": "AR-2102",
+            "field": "short_description",
+            "before": "36张可移除海洋贴纸——从两英尺的鲸鱼到手掌大小的海马——撕下不留痕。",
+            "after": "36张海洋主题墙贴"
+          },
+          {
+            "target": "AR-2102",
+            "field": "short_description.en",
+            "before": "36 removable ocean decals — a two-foot whale down to palm-size seahorses — that peel off clean.",
+            "after": "36 ocean-themed wall stickers"
+          }
+        ],
+        "created_at": "2026-09-12T18:47:14.947914Z",
+        "created_by": "Avery",
+        "created_by_kind": "agent",
+        "guardrail_notes": []
+      }
+    }
+  },
+  {
+    "type": "ui",
+    "data": {
+      "component": "change_preview",
+      "payload": {
+        "change_id": "chg-0001",
+        "change": {
+          "change_id": "chg-0001",
+          "kind": "listing_update",
+          "status": "staged",
+          "summary": "按操作者原文改写短描述,仅保留36张与海洋主题;未添加记录外的参数。",
+          "items": [
+            {
+              "target": "AR-2102",
+              "field": "short_description",
+              "before": "36张可移除海洋贴纸——从两英尺的鲸鱼到手掌大小的海马——撕下不留痕。",
+              "after": "36张海洋主题墙贴"
+            },
+            {
+              "target": "AR-2102",
+              "field": "short_description.en",
+              "before": "36 removable ocean decals — a two-foot whale down to palm-size seahorses — that peel off clean.",
+              "after": "36 ocean-themed wall stickers"
+            }
+          ],
+          "created_at": "2026-09-12T18:47:14.947914Z",
+          "created_by": "Avery",
+          "created_by_kind": "agent",
+          "guardrail_notes": []
+        }
+      },
+      "stream_id": "call_00_Q7zmWbtkyWTwV5Db4VtR1608"
+    }
+  },
+  {
+    "type": "tool_result",
+    "data": {
+      "tool": "stage_listing_update",
+      "id": "call_00_Q7zmWbtkyWTwV5Db4VtR1608",
+      "summary": "ok",
+      "is_error": false,
+      "status": "ok",
+      "excerpt": "<merchant_data>\n{\"staged\": {\"change_id\": \"chg-0001\", \"kind\": \"listing_update\", \"status\": \"staged\", \"summary\": \"按操作者原文改写短描述,仅保留36张与海洋主题;未添加记录外的参数。\", \"items\": [{\"target\": \"AR-2102\", \"field\": \"short_description\", \"before\": \"36张可移除海洋贴纸——从两英尺的鲸鱼到手掌大小的海马——撕下不留痕。\", \"after\": \"36张海洋主题墙贴\"}, {\"target\": \"AR-2102\", \"field\": \"short_description.en\", \"before\": \"36 removable ocean decals — a two-foot whale down to palm-size seahorses — that peel off clean.\", \"after\": \"36 ocean-themed wall stickers\"}], \"created_at\": \"2026-09-12T18:47:14.947914Z\", \"created_by\": \"Avery\", \"created_by_kind\": \"agent\", \"guardrail_notes\": []}, \"note\": \"Staged, and shown to the operator on its preview card; do not present it again this turn. Apply it only after the operator approves this change.\"}\n</merchant_data>"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "已"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "按"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "你的"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "原文"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "暂"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "存"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "为"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " ch"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "g"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "-"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "000"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "1"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "，"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "未"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "执行"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "。"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "英文"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "版"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "字段"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "同步"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "改为"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "“"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "36"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " ocean"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "-themed"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " wall"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": " stickers"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "”。"
+    }
+  },
+  {
+    "type": "tool_call",
+    "data": {
+      "tool": "present_suggestions",
+      "id": "call_00_NQu7xLGwFOnOXnSd6JJU6234",
+      "input": {
+        "suggestions": [
+          "保留“可移除、撕下不留痕”再重做一版预览",
+          "把 AR-2102 的 short_description 改回现有措辞",
+          "补齐 wall coverage 与 material 空缺字段"
+        ]
+      }
+    }
+  },
+  {
+    "type": "ui",
+    "data": {
+      "component": "suggestions",
+      "payload": {
+        "suggestions": [
+          "保留“可移除、撕下不留痕”再重做一版预览",
+          "把 AR-2102 的 short_description 改回现有措辞",
+          "补齐 wall coverage 与 material 空缺字段"
+        ]
+      },
+      "stream_id": "call_00_NQu7xLGwFOnOXnSd6JJU6234"
+    }
+  },
+  {
+    "type": "tool_result",
+    "data": {
+      "tool": "present_suggestions",
+      "id": "call_00_NQu7xLGwFOnOXnSd6JJU6234",
+      "summary": "Displayed to the operator.",
+      "is_error": false,
+      "status": "ok"
+    }
+  },
+  {
+    "type": "turn_complete",
+    "data": {
+      "stop_reason": "end_turn",
+      "usage": {
+        "input_tokens": 7567,
+        "output_tokens": 582,
+        "cache_read_input_tokens": 29568,
+        "cache_creation_input_tokens": 0
+      },
+      "elapsed_ms": 4949,
+      "results_cleared": 0
+    }
+  }
+]

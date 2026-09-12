@@ -28,4 +28,7 @@ export const chinese: Record<string, string> = {
   "This week": "本周", "Last week": "上周", "Last 7 days": "近7天", "Last 30 days": "近30天",
   "You approve every change": "每项变更均由你批准", "Full screen": "全屏", "Exit full screen": "退出全屏",
   "Resize assistant panel": "调整助手面板宽度",
+  "Short description.en": "简短描述（英文）", "Short description.zh": "简短描述（中文）",
+  "Long description.en": "详细描述（英文）", "Long description.zh": "详细描述（中文）",
+  "Title.en": "标题（英文）", "Title.zh": "标题（中文）",
 };
