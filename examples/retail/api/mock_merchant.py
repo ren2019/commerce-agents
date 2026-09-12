@@ -98,6 +98,12 @@ class MockRetailMerchant(MerchantBackend):
         self._assert_storefront_consistency()
         self._campaigns = load_campaigns(data_dir)
         self._issues = load_issues(data_dir)
+        self._issue_translations = load_json(data_dir, "merchant_messages.json").get(
+            "translations", {}
+        )
+        self._campaign_translations = load_json(data_dir, "merchant_campaigns.json").get(
+            "translations", {}
+        )
 
     # ------------------------------------------------------------------
     # Listings
@@ -234,7 +240,7 @@ class MockRetailMerchant(MerchantBackend):
         worst: tuple[Any, float, dict[str, Any]] | None = None
         for product_id, row in self._inventory.items():
             rate = row.get("return_rate_pct")
-            product = self.storefront.products.get(product_id)
+            product = self.storefront.view_product(product_id)
             if rate is None or product is None:
                 continue
             if worst is None or rate > worst[1]:
@@ -253,6 +259,16 @@ class MockRetailMerchant(MerchantBackend):
                     "prompt": f"Returns on {product.title} ({product.product_id}) are at "
                     f"{rate:.0f}%. What's the likely cause and what would you change?",
                 }
+            )
+
+        if language.get() == "zh" and worst is not None:
+            product, rate, row = worst
+            sold = row.get("sales_last_30d")
+            pace = f"近30天售出{sold}件，" if sold else ""
+            insights[-1].update(
+                headline=f"{product.title}的退货率达到{rate:.0f}%",
+                detail=f"{pace}退货率{rate:.0f}%；建议补货前先检查商品内容。",
+                prompt=f"{product.title}（{product.product_id}）的退货率为{rate:.0f}%。可能是什么原因？建议如何改进？",
             )
 
         # Segment sales week over week.
@@ -276,6 +292,14 @@ class MockRetailMerchant(MerchantBackend):
                         "stocking out?",
                     }
                 )
+
+                if language.get() == "zh":
+                    direction_zh = "增长" if change >= 0 else "下降"
+                    insights[-1].update(
+                        headline=f"儿童房商品销售额周环比{direction_zh}{abs(change):.0f}%",
+                        detail=f"儿童房品类本周销售额${current:,.0f}，上周为${prior:,.0f}。",
+                        prompt=f"儿童房商品销售额周环比{direction_zh}{abs(change):.0f}%。原因是什么？哪些商品存在缺货风险？",
+                    )
 
         # Return per dollar across active campaigns that report revenue, when there are
         # two to compare; a campaign whose channel reports no revenue is left out.
@@ -302,6 +326,18 @@ class MockRetailMerchant(MerchantBackend):
                         "move between them?",
                     }
                 )
+
+                if language.get() == "zh":
+                    names = self._campaign_translations.get("zh", {})
+                    best_name = names.get(best.campaign_id, {}).get("name", best.name)
+                    worst_name = names.get(worst_campaign.campaign_id, {}).get(
+                        "name", worst_campaign.name
+                    )
+                    insights[-1].update(
+                        headline="正在进行的营销活动回报差异明显",
+                        detail=f"{best_name}每投入$1带来${best_roas:.2f}收入；{worst_name}为${worst_roas:.2f}。",
+                        prompt=f"{best_name}每投入$1带来${best_roas:.2f}收入，{worst_name}为${worst_roas:.2f}。是否建议调整两者预算？",
+                    )
 
         return insights[:limit]
 
@@ -382,7 +418,11 @@ class MockRetailMerchant(MerchantBackend):
         campaigns = list(self._campaigns.values())
         if campaign_id:
             campaigns = [c for c in campaigns if c.campaign_id == campaign_id]
-        return campaigns
+        translations = self._campaign_translations.get(language.get(), {})
+        return [
+            campaign.model_copy(update=translations.get(campaign.campaign_id, {}))
+            for campaign in campaigns
+        ]
 
     # ------------------------------------------------------------------
     # Catalog
@@ -492,7 +532,10 @@ class MockRetailMerchant(MerchantBackend):
 
     async def get_order_issues(self, session: MerchantSessionContext) -> list[OrderIssue]:
         del session
-        return list(self._issues)
+        translations = self._issue_translations.get(language.get(), {})
+        return [
+            issue.model_copy(update=translations.get(issue.issue_id, {})) for issue in self._issues
+        ]
 
     # ------------------------------------------------------------------
     # Pricing

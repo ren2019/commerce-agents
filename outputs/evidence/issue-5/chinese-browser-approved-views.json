@@ -1,0 +1,98 @@
+{
+  "en": {
+    "listing": {
+      "listing_id": "AR-2102",
+      "title": "ACME Kids Peel-and-Stick Ocean Wall Decals (36 pc)",
+      "status": "active",
+      "price": 24.0,
+      "currency": "USD",
+      "stock": 27,
+      "category": "kids-room",
+      "content_quality": "good",
+      "attributes": {
+        "count": "36 decals",
+        "removable": "yes",
+        "largest": "24 in whale",
+        "theme": "ocean"
+      },
+      "short_description": "36 removable ocean stickers, including one 24-inch whale—from the largest whale to a palm-sized seahorse, peel off without leaving residue. Matte finish, repositionable without damaging paint.",
+      "options": {},
+      "option_values": {},
+      "long_description": "Thirty-six matte decals: a whale, dolphins, sea turtles, seahorses, and drifts of fish, plus coral and bubbles to scatter between them. Each one repositions without lifting paint, so the reef can be rebuilt whenever inspiration strikes.",
+      "review_snippets": [
+        "Went up in twenty minutes and came off our rental walls clean",
+        "The big whale over the bed is the star of the room",
+        "Went up bubble-free — our kid handled half the wall solo"
+      ],
+      "sales_last_30d": 52,
+      "missing_attributes": [
+        "wall coverage",
+        "material"
+      ],
+      "variants": []
+    },
+    "pricing": {
+      "listing_id": "AR-2102",
+      "current_price": 24.0,
+      "currency": "USD",
+      "unit_cost": 10.5,
+      "margin_pct": 56.2,
+      "min_price": 12.07,
+      "max_price": 32.4,
+      "max_price_delta_pct": 20.0,
+      "max_promotion_discount_pct": 50.0,
+      "min_price_basis": "cost",
+      "demand_signal": "rising",
+      "option_values": {},
+      "variants": []
+    }
+  },
+  "zh": {
+    "listing": {
+      "listing_id": "AR-2102",
+      "title": "ACME 儿童即撕即贴海洋墙贴（36件）",
+      "status": "active",
+      "price": 24.0,
+      "currency": "USD",
+      "stock": 27,
+      "category": "kids-room",
+      "content_quality": "good",
+      "attributes": {
+        "count": "36张贴纸",
+        "removable": "是",
+        "largest": "24英寸鲸鱼",
+        "theme": "海洋"
+      },
+      "short_description": "36张可移除海洋贴纸,包括一张24英寸鲸鱼——从最大的鲸鱼到手掌大小的海马,撕下不留痕。哑光贴面,可重新放置而不损伤漆面。",
+      "options": {},
+      "option_values": {},
+      "long_description": "三十六张哑光贴纸：一只鲸鱼、海豚、海龟、海马和成群的鱼，外加珊瑚和气泡散布其间。每张都可重新放置而不损伤漆面，因此无论何时灵感涌现，都能重建这片礁石。",
+      "review_snippets": [
+        "二十分钟就贴好了，从我们租的房子墙上撕下来干干净净",
+        "床上方的大鲸鱼是整个房间的亮点",
+        "贴上去没有气泡——我们家孩子一个人贴了半面墙"
+      ],
+      "sales_last_30d": 52,
+      "missing_attributes": [
+        "wall coverage",
+        "material"
+      ],
+      "variants": []
+    },
+    "pricing": {
+      "listing_id": "AR-2102",
+      "current_price": 24.0,
+      "currency": "USD",
+      "unit_cost": 10.5,
+      "margin_pct": 56.2,
+      "min_price": 12.07,
+      "max_price": 32.4,
+      "max_price_delta_pct": 20.0,
+      "max_promotion_discount_pct": 50.0,
+      "min_price_basis": "cost",
+      "demand_signal": "rising",
+      "option_values": {},
+      "variants": []
+    }
+  }
+}

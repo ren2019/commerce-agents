@@ -86,3 +86,19 @@ def test_reset_uses_imported_baseline_not_changed_source(package, tmp_path):
     assert (restored.data_dir / "catalog.json").read_bytes() == original
     assert not (restored.data_dir / ".memory-store.json").exists()
     assert (first.data_dir / ".memory-store.json").exists()
+
+
+@pytest.mark.parametrize(
+    "filename,record_id,field",
+    [
+        ("merchant_messages.json", "ISS-101", "order_id"),
+        ("merchant_campaigns.json", "C-201", "budget"),
+    ],
+)
+def test_merchant_translations_cannot_override_business_fields(package, filename, record_id, field):
+    path = package / "data" / filename
+    data = json.loads(path.read_text())
+    data["translations"] = {"zh": {record_id: {field: "changed"}}}
+    path.write_text(json.dumps(data))
+    with pytest.raises(ValueError, match="unsupported translation fields"):
+        load_dataset(package)

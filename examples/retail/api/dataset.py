@@ -167,6 +167,32 @@ def load_dataset(root: Path | None = None) -> Dataset:
                         )
                         if not valid:
                             raise ValueError(f"policy-translations.json: invalid {policy_id}/{key}")
+        for filename, collection, id_field, allowed in (
+            ("merchant_messages.json", "issues", "issue_id", {"summary", "buyer_message_excerpt"}),
+            (
+                "merchant_campaigns.json",
+                "campaigns",
+                "campaign_id",
+                {"name", "objective", "channel"},
+            ),
+        ):
+            source = json.loads((data_dir / filename).read_text())
+            known = {row[id_field] for row in source[collection]}
+            localized = source.get("translations", {})
+            if not isinstance(localized, dict) or set(localized) - {"en", "zh"}:
+                raise ValueError(f"{filename}: translations locales must be en or zh")
+            for locale, records in localized.items():
+                if not isinstance(records, dict):
+                    raise ValueError(f"{filename}: invalid translation records for {locale}")
+                for record_id, fields in records.items():
+                    if record_id not in known or not isinstance(fields, dict):
+                        raise ValueError(f"{filename}: unknown or invalid translation {record_id}")
+                    if set(fields) - allowed or any(
+                        not isinstance(v, str) for v in fields.values()
+                    ):
+                        raise ValueError(
+                            f"{filename}: unsupported translation fields for {record_id}"
+                        )
         if manifest.logo and not local_asset(images, manifest.logo).is_file():
             raise ValueError("dataset.json: logo file missing")
         return Dataset(root, data_dir, images, manifest, warnings)

@@ -24,7 +24,7 @@ export default function MetricsCard({ payload }: { payload: MetricsPayload }) {
   const metrics = payload.metrics ?? [];
   return (
     <GenCard>
-      <GenCardHeader title={payload.title ?? t("Performance")} aside={payload.period ? t(formatPeriodLabel(payload.period)) : null} />
+      <GenCardHeader title={payload.title ?? t("Performance")} aside={payload.period ? t(formatPeriodLabel(payload.period, language === "zh" ? "zh-CN" : "en-US")) : null} />
       <div className="mt-2 grid grid-cols-2 border-t border-(--line) [&>*:nth-child(even)]:border-l [&>*:nth-child(n+3)]:border-t [&>*]:border-(--line)">
         {metrics.map((entry, index) => {
           const value = metricValue(entry);

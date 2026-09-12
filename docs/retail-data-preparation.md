@@ -46,3 +46,18 @@
 停止并重新启动 retail API，刷新顾客端和商家端。CLI 会选择一份独立运行副本；详见 [切换与重置](../examples/retail/README.md#switch-and-reset)。使用相同的 `RETAIL_STATE_DIR`，清除会覆盖 CLI 选择的 `RETAIL_DATASET` 环境变量。
 
 核对 `/api/dataset` 的品牌、模拟标识和 warnings；创建两端会话，再从购物商品详情和商家 listing 详情读取相同 ID、图片、价格和库存。浏览器打开两端，检查图片、模拟标识、订单和低库存提示。导入校验通过与模型闭环运行通过分别报告。
+
+### 经营资料的双语内容
+
+`merchant_messages.json` 和 `merchant_campaigns.json` 可在根对象增加
+`translations`，按 `en` / `zh`、再按已有 `issue_id` / `campaign_id` 建立译文。
+消息仅允许翻译 `summary`、`buyer_message_excerpt`；活动仅允许翻译 `name`、
+`objective`、`channel`。例如：
+
+```json
+{"translations":{"zh":{"ISS-101":{"summary":"待处理订单问题","buyer_message_excerpt":"买家原话的译文"}}}}
+```
+
+译文不能改变订单关联、活动编号、状态、金额或日期。买家消息中的指令性内容仍是
+引用资料，保留原意，不作为演示系统的操作指令。导入时校验语言、已有编号、
+允许的字段和字符串类型。没有对应译文时显示原始资料。

@@ -161,7 +161,7 @@ export function formatFieldValue(field: string, value: unknown, kinds: FieldKind
 const ISO_RANGE = /^(\d{4}-\d{2}-\d{2})\s*\/\s*(\d{4}-\d{2}-\d{2})$/;
 
 /** "2026-06-19/2026-06-25" as "Jun 19–25". */
-export function formatPeriodLabel(value: string | null | undefined): string {
+export function formatPeriodLabel(value: string | null | undefined, locale = "en-US"): string {
   if (!value) return "";
   const match = ISO_RANGE.exec(value.trim());
   if (!match) return value;
@@ -169,18 +169,19 @@ export function formatPeriodLabel(value: string | null | undefined): string {
   const end = parseDate(match[2]);
   if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) return value;
   if (start.getFullYear() !== end.getFullYear()) {
-    return `${formatDate(match[1])} – ${formatDate(match[2])}`;
+    return `${formatDate(match[1], locale)} – ${formatDate(match[2], locale)}`;
   }
   if (start.getMonth() !== end.getMonth()) {
-    return `${formatDayMonth(match[1])} – ${formatDayMonth(match[2])}`;
+    return `${formatDayMonth(match[1], locale)} – ${formatDayMonth(match[2], locale)}`;
   }
-  return `${formatDayMonth(match[1])}–${end.getDate()}`;
+  return `${formatDayMonth(match[1], locale)}–${end.getDate()}`;
 }
 
 /** "prior week"/"prior period" when the windows abut at equal length; else the window's label. */
 export function formatComparisonLabel(
   period: string | null | undefined,
   compareTo: string | null | undefined,
+  locale = "en-US",
 ): string {
   if (!compareTo) return "";
   const primary = ISO_RANGE.exec(period?.trim() ?? "");
@@ -195,7 +196,7 @@ export function formatComparisonLabel(
       return primaryDays === 6 ? "prior week" : "prior period";
     }
   }
-  return formatPeriodLabel(compareTo);
+  return formatPeriodLabel(compareTo, locale);
 }
 
 export function describeProposer(change: {

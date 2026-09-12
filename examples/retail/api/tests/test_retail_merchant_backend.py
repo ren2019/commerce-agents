@@ -424,3 +424,25 @@ async def test_failed_content_translation_does_not_stage_or_change_catalog(
         )
     assert not merchant.ledger.pending()
     assert backend.product("AR-2102").model_dump() == original
+
+
+async def test_merchant_operational_translation_keeps_ids_and_amounts(merchant, operator_session):
+    from retail.api.language import language
+
+    before_issues = await merchant.get_order_issues(operator_session)
+    before_campaigns = await merchant.get_campaign_performance(operator_session)
+    token = language.set("zh")
+    try:
+        issues = await merchant.get_order_issues(operator_session)
+        campaigns = await merchant.get_campaign_performance(operator_session)
+        assert issues[0].summary != before_issues[0].summary
+        assert issues[0].order_id == before_issues[0].order_id
+        assert campaigns[0].name == "海底世界房间焕新"
+        assert campaigns[0].budget == before_campaigns[0].budget
+        assert campaigns[0].campaign_id == before_campaigns[0].campaign_id
+        assert all("headline" in item for item in merchant.home_insights())
+        assert "退货率" in merchant.home_insights()[0]["headline"]
+        assert "</merchant_data>" in issues[3].buyer_message_excerpt
+    finally:
+        language.reset(token)
+    assert (await merchant.get_order_issues(operator_session))[0] == before_issues[0]

@@ -97,4 +97,13 @@ export const chinese: Record<string, string> = {
   "12 lb": "12磅", "15 lb": "15磅", "20 lb": "20磅",
   "rising": "上升", "falling": "下降", "wall coverage": "墙面覆盖面积", "material": "材质",
   "now": "当前", "floor": "下限", "ceiling": "上限",
+  "Good morning": "早上好", "Good afternoon": "下午好", "Good evening": "晚上好", "Welcome": "欢迎",
+  "Overview could not be loaded. Check that the demo service is running.": "无法加载经营概览，请检查演示服务是否已启动。",
+  "Needs you today": "今日待办", "Filter attention items": "筛选待关注事项", "Slow": "滞销",
+  "Nothing needs you today.": "今天没有待处理事项。", "See all": "查看全部", "From the assistant": "经营洞察",
+  "All orders": "全部订单", "No orders yet.": "暂无订单。", "prior week": "上周", "prior period": "上一周期",
+  "Conversion": "转化率", "Average order value": "客单价",
+  "Sales: ask the assistant why": "询问销售额变化原因", "Orders: ask the assistant why": "询问订单量变化原因",
+  "Conversion: ask the assistant why": "询问转化率变化原因", "Average order value: ask the assistant why": "询问客单价变化原因",
+  "Review": "查看提案", "Recent changes": "近期变更",
 };

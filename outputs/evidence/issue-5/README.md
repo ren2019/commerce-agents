@@ -48,3 +48,31 @@ changes. React Doctor score remains 64; it now reports seven maintainability
 complexity warnings in modified merchant page components, no correctness errors.
 Home-page content, dynamic business fixture text and full merchant stories remain
 in progress. These captures are not final acceptance evidence.
+
+Home and operational-data checkpoint:
+
+- Home date, KPI/queue labels and recent-record controls now follow the language.
+  Operational messages and campaigns contain optional, validated locale maps.
+  Computed insights use unchanged figures with localized descriptions.
+- `chinese-home.txt` / `.jpg` show the real Chinese overview. The screenshot exposed
+  narrow columns while the assistant rail is open; the page now uses its container
+  width for the two-column breakpoint. This adjustment awaits a fresh visual check.
+- `chinese-change-previews.txt`: actual DeepSeek restock (3 to 27) and bilingual
+  description preview. `chinese-chat-approval-rejected.txt` and corresponding state
+  JSON prove chat consent left both changes unapplied.
+- `chinese-browser-approved.txt` and `chinese-browser-approved-views.json`: clicking
+  both actual approval buttons applied stock 27 and new descriptions in both
+  languages. Material and wall coverage remain missing; no invented values were
+  added to those fields.
+
+The run is progress evidence, not final language/analysis acceptance. Its morning
+summary misclassifies one slow mover as low stock, and a generated restock note
+says 14 days after replenishment while the deterministic card correctly calculates
+16 days for total stock 27. These presentation discrepancies remain to resolve or
+clearly separate from authoritative inventory values before the final rehearsal.
+Full Chinese/English analysis and English complete-story regression remain pending.
+
+Latest backend validation: 1135 passed, 1 skipped; Ruff and check.py passed.
+Merchant production build passed before the last home responsive-layout change;
+TypeScript passed after that change. React Doctor has no correctness warning,
+score 64, with eight remaining component-complexity warnings.

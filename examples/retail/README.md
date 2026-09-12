@@ -178,3 +178,9 @@ the configured DeepSeek model; they add preparation latency and are not included
 in the conversation runtime's usage total. Runtime changes still reset with the
 selected dataset. The default non-DeepSeek path retains source-language editing;
 non-source-language content edits require the DeepSeek translator.
+
+Operational fixture files may carry root-level `translations` by locale and
+existing issue/campaign ID. Messages translate only summary and quoted excerpt;
+campaigns translate name, objective and channel. Dataset validation rejects
+identity, amount, status and date overrides. Home insights calculate the same
+figures in both languages and localize their descriptions at read time.
