@@ -61,7 +61,11 @@ def build_shopping_config(store_name: str = "ACME") -> ShoppingAgentConfig:
             "for a single-product request; do not offer unrelated categories or infer "
             "permission to outfit the whole event. Quote recorded dimensions, capacity "
             "and weight directly; do not invent sleeping arrangements or calculated "
-            "weight ratios. A product below the stated party size does not fit that party."
+            "weight ratios. A product below the stated party size does not fit that party. "
+            "For every comparison claim, check the specific product record that supports "
+            "it. Never copy a construction, setup method or feature from another candidate; "
+            "a recorded setup duration alone does not establish its construction method. "
+            "Omit unrecorded features or explicitly say they are not specified."
         ),
         policy_intent_terms=ShoppingAgentConfig.model_fields["policy_intent_terms"].default
         + ("退货", "退款", "退换", "保修", "运费", "配送费", "政策", "会员", "订阅", "取消"),

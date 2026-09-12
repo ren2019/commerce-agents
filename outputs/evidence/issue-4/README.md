@@ -1,4 +1,4 @@
-# Issue 4: bilingual shopper verification in progress
+# Issue 4: bilingual shopper verification
 
 The current real DeepSeek runs are `chinese-api-story-guarded.json` and
 `english-api-story-current.json`. Each contains three turns: tent search,
@@ -43,7 +43,7 @@ after adding a product from its detail view; `chinese-orders.txt` and
 `chinese-order-status.txt` verify order filters, delay explanations and the
 model-generated status card. Amounts remain 79 USD for that separate dog-bed flow.
 
-Issue 4 remains open while final browser story and variant-option checks are completed. Merchant bilingual work (5) and autonomous delivery checks
+Final browser story and variant-option checks are recorded below. Merchant bilingual work (5) and autonomous delivery checks
 (8) remain outstanding. No human operation or recording gate is claimed passed.
 
 Variant browser check: `chinese-variants.txt` records standard/king sizes and
@@ -60,3 +60,15 @@ confirmed matching tent fallback icons and readable comparison columns. One
 grounding discrepancy remains: the comparison calls the family tent freestanding,
 although that attribute is recorded only for the two-person tent. This observation
 is not a clean factual-accuracy acceptance; resolve it before closing issue 4.
+
+Grounding retest after requiring each comparison claim to use its own product
+record: `chinese-api-story-grounding-retest.json` completed all three real DeepSeek
+turns. The family-tent comparison no longer borrows the freestanding construction;
+that claim appears only on AR-1201. The matching cart remains AR-1202, one item,
+219 USD. Targeted language/deployment tests passed (11 tests). This fixes the
+observed discrepancy; it is not a guarantee that future model output is error-free.
+
+Issue 4 acceptance is covered by the two current real-model language stories,
+bidirectional search and identity tests, production build, detail/variant/checkout/
+order browser observations, and readable Chinese comparison screenshot. The
+final integrated both-role recording rehearsal remains in issue 8.
