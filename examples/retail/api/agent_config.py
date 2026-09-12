@@ -47,7 +47,11 @@ def build_shopping_config(store_name: str = "ACME") -> ShoppingAgentConfig:
         **_model_settings(),
         brand_name=store_name,
         assistant_name=f"{store_name} Assistant",
-        brand_voice="professional, warm, and brief",
+        brand_voice=(
+            "professional, warm, and brief. Use Simplified Chinese for all replies and "
+            "presentation text when current_page.extra.locale is zh; otherwise use English. "
+            "Keep product IDs, amounts, and currency unchanged"
+        ),
     )
 
 

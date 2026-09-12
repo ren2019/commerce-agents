@@ -316,12 +316,13 @@ def rank_products(
     score: Callable[[ProductDetails, list[str]], float],
     hard_filter: Callable[[ProductDetails, SearchFilters], bool],
     soft_filter: Callable[[ProductDetails, SearchFilters], bool],
+    tokenize: Callable[[str], list[str]] = tokens,
     relevance_tiebreak: Callable[[ProductDetails], Any] = lambda product: -(product.rating or 0),
 ) -> list[ProductDetails]:
     """The ranking every mock uses: hard filters, then a relevance cutoff at half the best
     score, then the soft filters (dropped again if they would empty the result), then the
     requested sort."""
-    query_tokens = tokens(query)
+    query_tokens = tokenize(query)
     if not query_tokens:
         return []
     scored = [

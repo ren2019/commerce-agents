@@ -12,6 +12,7 @@ user, so what a shopper asks the store to remember, or to forget, survives a res
 
 from __future__ import annotations
 
+from fastapi import Request
 from fastapi.staticfiles import StaticFiles
 
 from commerce_common.memory import InMemoryMemoryStore, JsonFileMemoryStore
@@ -27,6 +28,7 @@ from shopping_agent_runtime import ShoppingAgent
 
 from .agent_config import build_model_client, build_shopping_config
 from .dataset import selected_dataset
+from .language import language
 from .merchant import create_merchant_router
 from .mock_retail import DATA_DIR, MockRetail
 
@@ -57,12 +59,25 @@ host = build_storefront_host(
     example_root=DATA_DIR.parent,
     backend=backend,
     agent=agent,
+    product_of=backend.view_product,
     memory_seeder=MemorySeeder(
         dataset.data_dir / "memory-seed.json", marker=dataset.data_dir / ".memory-seeded.json"
     ),
     product_detail=product_detail,
 )
 app = host.app
+
+
+@app.middleware("http")
+async def select_language(request: Request, call_next):
+    selected = request.headers.get("X-Demo-Language", "en")
+    token = language.set(selected if selected in {"en", "zh"} else "en")
+    try:
+        return await call_next(request)
+    finally:
+        language.reset(token)
+
+
 app.include_router(create_merchant_router(backend, InMemoryMemoryStore()), prefix="/api/merchant")
 # The merchant portal shows the storefront's listing photos, so the API serves them to both apps.
 app.mount("/products", StaticFiles(directory=PRODUCT_IMAGES, check_dir=False), name="products")

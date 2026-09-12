@@ -118,6 +118,7 @@ def load_dataset(root: Path | None = None) -> Dataset:
                         "attributes",
                         "specs",
                         "aliases",
+                        "review_highlights",
                     }:
                         raise ValueError(
                             f"translations.json: unsupported fields for {locale}/{product_id}"
@@ -130,13 +131,42 @@ def load_dataset(root: Path | None = None) -> Dataset:
                             )
                             if key in {"attributes", "specs"}
                             else isinstance(value, list) and all(isinstance(v, str) for v in value)
-                            if key == "aliases"
+                            if key in {"aliases", "review_highlights"}
                             else isinstance(value, str)
                         )
                         if not valid:
                             raise ValueError(
                                 f"translations.json: invalid {locale}/{product_id}/{key}"
                             )
+        policy_translations = data_dir / "policy-translations.json"
+        if policy_translations.exists():
+            localized = json.loads(policy_translations.read_text())
+            policy_ids = {
+                policy["policy_id"]
+                for policy in json.loads((data_dir / "policies.json").read_text())["policies"]
+            }
+            if not isinstance(localized, dict) or set(localized) - {"en", "zh"}:
+                raise ValueError("policy-translations.json: locales must be en or zh")
+            for policies in localized.values():
+                if not isinstance(policies, dict):
+                    raise ValueError("policy-translations.json: expected policy records")
+                for policy_id, fields in policies.items():
+                    if policy_id not in policy_ids:
+                        raise ValueError(f"policy-translations.json: unknown policy {policy_id}")
+                    if not isinstance(fields, dict) or set(fields) - {
+                        "title",
+                        "content",
+                        "aliases",
+                    }:
+                        raise ValueError("policy-translations.json: unsupported fields")
+                    for key, value in fields.items():
+                        valid = (
+                            isinstance(value, list) and all(isinstance(v, str) for v in value)
+                            if key == "aliases"
+                            else isinstance(value, str)
+                        )
+                        if not valid:
+                            raise ValueError(f"policy-translations.json: invalid {policy_id}/{key}")
         if manifest.logo and not local_asset(images, manifest.logo).is_file():
             raise ValueError("dataset.json: logo file missing")
         return Dataset(root, data_dir, images, manifest, warnings)

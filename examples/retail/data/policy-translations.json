@@ -1,0 +1,149 @@
+{
+  "en": {
+    "returns": {
+      "title": "Returns & refunds",
+      "content": "Most items can be returned within 30 days of delivery in original condition for a full refund to the original payment method. Opened electronics can be returned within 15 days. Mattresses, bedding, and personal-care items must be unopened. Refunds post within 5 business days of the return arriving at our warehouse. ACME Subscription members get free return pickup; otherwise drop off at any ACME location or use the prepaid label in your order page."
+    },
+    "shipping": {
+      "title": "Shipping options & timelines",
+      "content": "Standard shipping is $5.99, free over $49, and arrives in 3-5 business days. Express arrives in 2 business days and is free for ACME Subscription members on orders over $49, otherwise $9.99. Same-day delivery is available on eligible items in select areas when ordered before 2pm. Oversized items ship freight and include a scheduled delivery window."
+    },
+    "price-match": {
+      "title": "Price match promise",
+      "content": "If you find an identical, in-stock item at a lower price from a major retailer within 14 days of purchase, we will match it and refund the difference. Marketplace sellers, clearance, and doorbuster prices are excluded. Contact support with a link to the competing listing."
+    },
+    "warranty": {
+      "title": "Warranties & protection plans",
+      "content": "Manufacturer warranties apply to most products; the duration is listed on the product page under specs. ACME Protect plans extend coverage to 3 years and cover accidental damage on electronics. Claims are handled in-app and most replacements ship within 2 business days of approval."
+    },
+    "membership": {
+      "title": "ACME Subscription membership",
+      "content": "ACME Subscription costs $79/year and includes free express shipping over $49, free return pickup, early access to seasonal sales, and 2% back in store credit. You can cancel anytime and we will prorate the unused portion. There is a 14-day free trial for new members."
+    },
+    "gift-cards": {
+      "title": "Gift cards",
+      "content": "Digital gift cards are delivered by email within minutes and never expire. Physical gift cards ship free. Gift cards cannot be redeemed for cash except where required by law, and cannot be used to buy other gift cards. Check your balance any time in the app under Payments."
+    },
+    "order-changes": {
+      "title": "Changing or cancelling an order",
+      "content": "Orders can be modified or cancelled within 30 minutes of being placed from the order page. After that, items that have not entered the packing process can still be cancelled — contact support. Once an order has shipped, use the return process instead. Address changes after shipping are handled by the carrier and are not guaranteed."
+    },
+    "damaged-items": {
+      "title": "Damaged or missing items",
+      "content": "If an item arrives damaged or an order is missing items, report it within 7 days from the order page with a photo. We will send a replacement or refund the affected items — no need to return the damaged product unless we send a pickup label. Porch theft claims are reviewed case by case after the carrier confirms delivery."
+    },
+    "guide-tents": {
+      "title": "Buying guide: choosing a tent",
+      "content": "A tent's person rating counts sleepers packed shoulder to shoulder, so for comfort size up by one from your head count, and by two if gear or a dog sleeps inside. Decide next how the tent travels: carried in on foot, every gram matters and a low, compact backpacking tent wins; driven to the site, weight barely matters and standing height and floor space matter far more. A 3-season rating covers spring through autumn camping; only winter trips need more. Freestanding tents pitch anywhere and move easily once up; a first tent should pitch in ten minutes or less, and it is worth practising once at home."
+    },
+    "guide-home-coffee": {
+      "title": "Buying guide: drip or espresso at home",
+      "content": "A drip coffee maker brews a full pot with almost no effort or technique, needs only a rinse between uses, and suits households that drink several cups through the morning. An espresso machine makes concentrated shots and steamed-milk drinks, but each cup takes a few minutes of hands-on work, the machine wants regular descaling and a spot of permanent counter space, and it rewards fresh beans and a little practice. Choose drip if convenience and volume come first; choose espresso only if milk drinks or the ritual itself are the point. Programmable timers and thermal carafes matter more for drip than any brewing spec."
+    },
+    "guide-desk-ergonomics": {
+      "title": "Buying guide: a desk setup that stays comfortable",
+      "content": "Fix things in this order, because each step matters more than the next. First, the seat: a chair with adjustable lumbar support and adjustable arm height does more for a long day than anything else on the desk. Second, screen height: the top of the screen should sit at about eye level, which a monitor arm or a laptop stand plus a separate keyboard achieves cheaply. Third, and only after those two, a sit-stand desk lets you change posture through the day; look for memory presets so switching is a single tap, and check the height range reaches both your seated and standing elbow height. Lighting and a separate keyboard are inexpensive finishing touches."
+    }
+  },
+  "zh": {
+    "returns": {
+      "title": "退货与退款",
+      "content": "大多数商品可在送达后30天内以原始状态退回，退款将全额退还至原支付方式。已拆封的电子产品可在15天内退回。床垫、床上用品和个人护理用品必须未拆封。退款将在退货到达我们的仓库后5个工作日内到账。ACME Subscription会员可享受免费退货取件；否则，请将商品送至任意ACME门店，或使用订单页面中的预付标签。",
+      "aliases": [
+        "退货退款",
+        "退款政策",
+        "退货时限"
+      ]
+    },
+    "shipping": {
+      "title": "配送选项与时效",
+      "content": "标准配送为$5.99，订单满$49免费，3-5个工作日送达。快速配送2个工作日送达，ACME Subscription会员订单满$49免费，否则为$9.99。符合条件的商品在部分地区于下午2点前下单可享当日达。超大件商品通过货运配送，并包含预约送达时间窗口。",
+      "aliases": [
+        "配送选项",
+        "配送时效",
+        "运费政策"
+      ]
+    },
+    "price-match": {
+      "title": "价格匹配承诺",
+      "content": "如果您在购买后14天内，发现主要零售商处有同款且有库存的商品价格更低，我们将匹配该价格并退还差价。市场卖家、清仓和开门大抢购价格除外。请联系客服并提供竞争商品链接。",
+      "aliases": [
+        "价格匹配",
+        "退差价",
+        "低价保证"
+      ]
+    },
+    "warranty": {
+      "title": "保修与保护计划",
+      "content": "制造商保修适用于大多数产品；保修期限列在产品页面的规格下方。ACME Protect计划将保修期延长至3年，并涵盖电子产品的意外损坏。索赔通过应用内处理，大多数替换品在批准后2个工作日内发货。",
+      "aliases": [
+        "保修政策",
+        "保护计划",
+        "意外损坏"
+      ]
+    },
+    "membership": {
+      "title": "ACME订阅会员",
+      "content": "ACME订阅费用为每年79美元，包含订单满49美元免费快递配送、免费退货取件、季节性促销优先参与以及2%商店积分返利。您可以随时取消，我们将按比例退还剩余未使用部分。新会员可享受14天免费试用。",
+      "aliases": [
+        "ACME订阅",
+        "会员政策",
+        "订阅取消"
+      ]
+    },
+    "gift-cards": {
+      "title": "礼品卡",
+      "content": "数字礼品卡在几分钟内通过电子邮件送达，永不过期。实体礼品卡免费配送。除法律要求外，礼品卡不可兑换现金，也不可用于购买其他礼品卡。您可以随时在应用的“付款”下查看余额。",
+      "aliases": [
+        "礼品卡政策",
+        "礼品卡余额",
+        "数字礼品卡"
+      ]
+    },
+    "order-changes": {
+      "title": "更改或取消订单",
+      "content": "订单可在下单后30分钟内在订单页面修改或取消。此后，尚未进入打包流程的商品仍可取消——请联系客服。订单一旦发货，请改用退货流程。发货后的地址更改由承运商处理，且不予保证。",
+      "aliases": [
+        "取消订单",
+        "更改订单",
+        "订单修改"
+      ]
+    },
+    "damaged-items": {
+      "title": "商品损坏或缺失",
+      "content": "如果商品送达时已损坏或订单中有商品缺失，请在7天内通过订单页面并附上照片进行报告。我们将为受影响商品寄送替换品或退款——除非我们提供取件标签，否则无需退回损坏商品。承运商确认送达后，门廊盗窃索赔将逐案审核。",
+      "aliases": [
+        "损坏商品政策",
+        "商品缺失报告",
+        "订单问题申诉"
+      ]
+    },
+    "guide-tents": {
+      "title": "购买指南：选择帐篷",
+      "content": "帐篷的容纳人数按肩并肩挤着睡的露营者计算，所以为了舒适，要比你的实际人数大一号，如果里面还要睡装备或狗，则大两号。接下来决定帐篷如何携带：徒步背进去，每克都重要，低矮紧凑的背包帐篷胜出；开车到营地，重量几乎不重要，站立高度和地面空间重要得多。3季评级覆盖春季到秋季露营；只有冬季旅行需要更多。独立式帐篷随处可搭，搭好后容易移动；第一顶帐篷应在十分钟或更短时间内搭好，值得在家练习一次。",
+      "aliases": [
+        "帐篷购买指南",
+        "选择帐篷",
+        "帐篷尺寸与季节"
+      ]
+    },
+    "guide-home-coffee": {
+      "title": "购买指南：在家用滴滤还是意式浓缩",
+      "content": "滴滤咖啡机几乎无需技巧就能煮出满满一壶，使用间隙只需冲洗，适合早上喝好几杯的家庭。意式浓缩咖啡机可制作浓缩咖啡和蒸汽牛奶饮品，但每杯需要几分钟手工操作，机器需要定期除垢并占用一块固定的台面空间，且对新鲜咖啡豆和少许练习有回报。如果便利和量是首要考虑，选滴滤；只有当牛奶饮品或仪式感本身是重点时，才选意式浓缩。可编程定时器和保温壶对滴滤比对任何冲泡规格都更重要。",
+      "aliases": [
+        "滴滤咖啡机选购",
+        "意式咖啡机选购",
+        "家用咖啡机指南"
+      ]
+    },
+    "guide-desk-ergonomics": {
+      "title": "购买指南：打造持久舒适的桌面配置",
+      "content": "按照以下顺序解决问题，因为每一步都比下一步更重要。首先，座椅：一把带有可调节腰部支撑和可调节扶手高度的椅子，对一整天来说比桌上的任何其他东西都更有帮助。其次，屏幕高度：屏幕顶部应大致位于视线水平，使用显示器支架或笔记本电脑支架加独立键盘可以低成本实现。第三，只有在前两步之后，坐站两用桌才能让你在一天中改变姿势；寻找记忆预设，让切换只需轻触一下，并检查高度范围能否达到你坐姿和站姿的肘部高度。照明和独立键盘是廉价的最后点缀。",
+      "aliases": [
+        "桌面舒适配置",
+        "人体工学购买指南",
+        "坐站两用桌"
+      ]
+    }
+  }
+}

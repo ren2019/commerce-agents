@@ -48,6 +48,8 @@ from shopping_agent import (
     UserPreferences,
 )
 
+from .language import CatalogLanguage, search_tokens
+
 DATA_DIR = example_data_dir(__file__)
 
 # Attributes stamped onto products at boot rather than authored in the catalog. The
@@ -115,6 +117,7 @@ _STORE_OPENS, _STORE_CLOSES = 9, 21
 class MockRetail(StorefrontBackend):
     def __init__(self, data_dir: Path = DATA_DIR) -> None:
         self.data_dir = data_dir
+        self.language = CatalogLanguage(data_dir)
         catalog, self.products, self.variants = load_catalog(data_dir)
         self.store_name: str = catalog.get("store_name", "the store")
         self._users = load_users(data_dir)
@@ -183,9 +186,35 @@ class MockRetail(StorefrontBackend):
         }
 
     def _score(self, product: ProductDetails, query_tokens: list[str]) -> float:
-        return keyword_score(
+        score = keyword_score(
             self._searchable_text(product), _SEARCH_WEIGHTS, query_tokens, _SYNONYMS
         )
+        chinese = any("\u4e00" <= c <= "\u9fff" for token in query_tokens for c in token)
+        localized = self.language.products.get("zh" if chinese else "en", {}).get(
+            product.product_id, {}
+        )
+        content = {k: v for k, v in localized.items() if k != "aliases"}
+        if content:
+            translated = product.model_copy(update=content)
+            score = max(
+                score,
+                keyword_score(
+                    self._searchable_text(translated), _SEARCH_WEIGHTS, query_tokens, _SYNONYMS
+                ),
+            )
+        if chinese:
+            text = " ".join(self.language.search_texts(product.product_id))
+            score = max(
+                score,
+                3.0
+                * sum(
+                    1
+                    for token in query_tokens
+                    if any("\u4e00" <= c <= "\u9fff" for c in token) and token in text
+                ),
+            )
+            score = max(score, 3.0 * self.language.chinese_terms(product.product_id, query_tokens))
+        return score
 
     @staticmethod
     def _soft_filter(product: ProductDetails, filters: SearchFilters) -> bool:
@@ -217,17 +246,22 @@ class MockRetail(StorefrontBackend):
             score=self._score,
             hard_filter=within_price_and_rating,
             soft_filter=self._soft_filter,
+            tokenize=search_tokens,
         )
-        return [summary_of(product) for product in ranked]
+        return [summary_of(self.language.record(product)) for product in ranked]
 
     def product(self, product_id: str) -> ProductDetails | None:
         return find_product(self.products, self.variants, product_id)
+
+    def view_product(self, product_id: str) -> ProductDetails | None:
+        product = self.product(product_id)
+        return self.language.record(product) if product is not None else None
 
     async def get_product_details(
         self, session: ShoppingSessionContext, product_id: str
     ) -> ProductDetails | None:
         del session
-        return self.product(product_id)
+        return self.view_product(product_id)
 
     def price_intelligence(self, product_id: str) -> dict[str, Any] | None:
         """A 90-day price series derived from the product id, ending at today's price,
@@ -293,7 +327,7 @@ class MockRetail(StorefrontBackend):
     # ------------------------------------------------------------------
 
     async def get_cart(self, session: ShoppingSessionContext) -> Cart:
-        return self._carts.cart(session.session_id)
+        return self.language.record(self._carts.cart(session.session_id))
 
     async def add_to_cart(
         self, session: ShoppingSessionContext, product_id: str, quantity: int
@@ -307,15 +341,17 @@ class MockRetail(StorefrontBackend):
             raise Unavailable(unavailable_detail(product, self.listing_of(product_id)))
         existing = self._carts.lines(session.session_id).get(product_id)
         quantity += existing.quantity if existing else 0
-        return self._carts.put(session.session_id, product, quantity)
+        return self.language.record(self._carts.put(session.session_id, product, quantity))
 
     async def update_cart_item(
         self, session: ShoppingSessionContext, product_id: str, quantity: int
     ) -> Cart:
-        return self._carts.set_quantity(session.session_id, product_id, quantity)
+        return self.language.record(
+            self._carts.set_quantity(session.session_id, product_id, quantity)
+        )
 
     async def remove_from_cart(self, session: ShoppingSessionContext, product_id: str) -> Cart:
-        return self._carts.remove(session.session_id, product_id)
+        return self.language.record(self._carts.remove(session.session_id, product_id))
 
     def reset_session(self, session_id: str) -> None:
         self._carts.reset(session_id)
@@ -328,17 +364,37 @@ class MockRetail(StorefrontBackend):
         return preferences_of(self._users, session.user_id)
 
     async def get_orders(self, session: ShoppingSessionContext, limit: int = 5) -> list[Order]:
-        return orders_for(self._orders, session.user_id, limit)
+        return [
+            self.language.record(order)
+            for order in orders_for(self._orders, session.user_id, limit)
+        ]
 
     async def get_order(self, session: ShoppingSessionContext, order_id: str) -> Order | None:
-        return find_order(self._orders, session.user_id, order_id)
+        order = find_order(self._orders, session.user_id, order_id)
+        return self.language.record(order) if order else None
 
     def recent_orders(self, limit: int = 6) -> list[Order]:
         return newest_orders(self._orders, limit)
 
     async def search_policies(self, session: ShoppingSessionContext, query: str) -> list[Policy]:
         del session
-        return search_help(self._policies, query)
+        matches = search_help(self._policies, query)
+        query_terms = search_tokens(query)
+        scored = []
+        for policy in self._policies:
+            score = 0
+            for entries in self.language.policies.values():
+                content = entries.get(policy.policy_id, {})
+                heading = content.get("title", "") + " " + " ".join(content.get("aliases", []))
+                score = max(
+                    score, sum(len(term) for term in query_terms if term in heading.lower())
+                )
+            if score:
+                scored.append((score, policy))
+        scored.sort(key=lambda pair: -pair[0])
+        localized = [policy for _, policy in scored]
+        matches = localized + [policy for policy in matches if policy not in localized]
+        return [self.language.record(policy) for policy in matches[:3]]
 
     @staticmethod
     def _pickup_eta(now: datetime) -> str:

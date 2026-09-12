@@ -1,0 +1,3604 @@
+{
+  "en": {
+    "AR-1001": {
+      "title": "ACME Everyday 12-Cup Programmable Drip Coffee Maker",
+      "attributes": {
+        "capacity": "12 cups",
+        "carafe": "glass",
+        "programmable": "yes",
+        "color": "stainless"
+      },
+      "short_description": "Wake-up timer, bold-brew mode, and a keep-warm plate that doesn't scorch the pot."
+    },
+    "AR-1002": {
+      "title": "ACME Signature 15-Bar Espresso Machine with Steam Wand",
+      "attributes": {
+        "pressure": "15 bar",
+        "steam_wand": "yes",
+        "water_tank": "1.8 L",
+        "color": "matte black"
+      },
+      "short_description": "Cafe-style shots and microfoam at home; heats up in under a minute."
+    },
+    "AR-1003": {
+      "title": "ACME Signature 8-Inch Forged Chef's Knife",
+      "attributes": {
+        "blade": "german steel",
+        "length": "8 in",
+        "handle": "laminated wood",
+        "dishwasher_safe": "no"
+      },
+      "short_description": "Full-tang forged blade with a comfortable balance point; holds an edge through months of daily prep."
+    },
+    "AR-1004": {
+      "title": "ACME Signature 6-Quart Enameled Cast Iron Dutch Oven",
+      "attributes": {
+        "capacity": "6 qt",
+        "material": "enameled cast iron",
+        "oven_safe": "260 C",
+        "color": "dusk blue"
+      },
+      "short_description": "Braises, breads, and big-batch soups; goes from stovetop to oven to table."
+    },
+    "AR-1005": {
+      "title": "ACME Everyday Ceramic Nonstick 10-Piece Cookware Set",
+      "attributes": {
+        "pieces": "10",
+        "coating": "ceramic nonstick",
+        "induction_ready": "yes",
+        "pfas_free": "yes"
+      },
+      "short_description": "PFAS-free ceramic coating over aluminum; even heat without the babying."
+    },
+    "AR-1006": {
+      "title": "ACME Home HEPA Air Purifier for Large Rooms",
+      "attributes": {
+        "coverage": "1100 sq ft",
+        "filter": "true HEPA + carbon",
+        "noise": "24 dB sleep mode",
+        "smart": "app + auto mode"
+      },
+      "short_description": "Quiet enough for bedrooms, strong enough for open-plan living rooms; filter alerts in the app."
+    },
+    "AR-1007": {
+      "title": "ACME Everyday Robot Vacuum with Self-Empty Base",
+      "attributes": {
+        "suction": "4000 Pa",
+        "self_empty": "about 8 weeks",
+        "mapping": "lidar",
+        "pet_hair": "tangle-free brush"
+      },
+      "short_description": "Lidar mapping, room-by-room schedules, and a base that empties itself for weeks at a time.",
+      "long_description": "It maps your home with lidar on its first run and then cleans room by room on the schedule you set. The tangle-free roller and 4000 Pa suction are tuned for pet hair on both hard floors and rugs, and the self-empty base goes about eight weeks between bag changes. Quiet mode keeps it under 58 dB so it can run while you're on calls. Works with the ACME Home app for no-go zones and per-room suction levels.",
+      "specs": {
+        "suction": "4000 Pa",
+        "runtime": "180 min",
+        "bin": "self-empty base, 2.5 L bag",
+        "height": "9.7 cm",
+        "noise": "58 dB standard / 52 dB quiet",
+        "warranty": "2 years"
+      },
+      "review_highlights": [
+        "Handles a golden retriever's shedding with one pass a day",
+        "Mapping is accurate; no-go zones actually hold",
+        "Base is loud for a few seconds when it empties — schedule it for daytime"
+      ]
+    },
+    "AR-1008": {
+      "title": "ACME Rest Weighted Blanket, Queen",
+      "attributes": {
+        "size": "queen",
+        "cover": "washable bamboo",
+        "fill": "glass beads"
+      },
+      "short_description": "Evenly stitched glass-bead fill with a removable, washable bamboo cover that sleeps cool. Three weights; about a tenth of body weight is the usual pick."
+    },
+    "AR-1008-12LB": {
+      "title": "ACME Rest Weighted Blanket, Queen",
+      "attributes": {
+        "size": "queen",
+        "cover": "washable bamboo",
+        "fill": "glass beads"
+      },
+      "short_description": "Evenly stitched glass-bead fill with a removable, washable bamboo cover that sleeps cool. Three weights; about a tenth of body weight is the usual pick."
+    },
+    "AR-1008-15LB": {
+      "title": "ACME Rest Weighted Blanket, Queen",
+      "attributes": {
+        "size": "queen",
+        "cover": "washable bamboo",
+        "fill": "glass beads"
+      },
+      "short_description": "Evenly stitched glass-bead fill with a removable, washable bamboo cover that sleeps cool. Three weights; about a tenth of body weight is the usual pick."
+    },
+    "AR-1008-20LB": {
+      "title": "ACME Rest Weighted Blanket, Queen",
+      "attributes": {
+        "size": "queen",
+        "cover": "washable bamboo",
+        "fill": "glass beads"
+      },
+      "short_description": "Evenly stitched glass-bead fill with a removable, washable bamboo cover that sleeps cool. Three weights; about a tenth of body weight is the usual pick."
+    },
+    "AR-1101": {
+      "title": "ACME Select 27\" 4K IPS Monitor with USB-C",
+      "attributes": {
+        "size": "27 in",
+        "resolution": "4K UHD",
+        "panel": "IPS",
+        "ports": "USB-C 90W, HDMI x2, DP",
+        "vesa": "100x100"
+      },
+      "short_description": "Factory-calibrated 4K panel with single-cable USB-C power and video for laptops.",
+      "long_description": "A 27-inch 4K IPS panel factory-calibrated to 99% sRGB, with a 90W USB-C port that powers your laptop and carries video over one cable. The stand adjusts for height, tilt, and pivot, and the thin bezels make a clean dual-monitor setup. A built-in KVM switches your keyboard and mouse between two computers, which is handy if you split time between a work laptop and a personal desktop.",
+      "specs": {
+        "resolution": "3840 x 2160",
+        "refresh": "60 Hz",
+        "brightness": "400 nits",
+        "color": "99% sRGB, 95% DCI-P3",
+        "power_delivery": "90 W",
+        "warranty": "3 years"
+      },
+      "review_highlights": [
+        "Text is razor sharp; great for long writing and spreadsheet days",
+        "USB-C single-cable setup cleaned up my whole desk",
+        "Not a gaming monitor — 60 Hz is the trade-off for the price"
+      ]
+    },
+    "AR-1102": {
+      "title": "ACME Studio Mesh Office Chair",
+      "attributes": {
+        "lumbar": "adjustable",
+        "armrests": "4D",
+        "recline": "135 degrees",
+        "weight_capacity": "300 lb",
+        "material": "breathable mesh"
+      },
+      "short_description": "Adjustable lumbar, 4D armrests, and a breathable mesh back built for full workdays.",
+      "long_description": "The chair is built around an adjustable lumbar support that tracks the curve of your lower back, with a synchronized recline that keeps your feet planted as you lean. The mesh back keeps airflow moving through long afternoons, the seat pan slides forward and back to fit longer legs, and the 4D armrests adjust in height, depth, width, and angle so your shoulders can actually relax. Assembly takes about 20 minutes with the included tools.",
+      "specs": {
+        "seat_height": "17-21 in",
+        "recline": "synchronized, lockable to 135 degrees",
+        "armrests": "4D adjustable",
+        "capacity": "300 lb",
+        "warranty": "5 years"
+      },
+      "review_highlights": [
+        "Back pain after long days basically disappeared after the first week",
+        "Armrests stay where you put them, unlike cheaper chairs",
+        "Headrest is a separate add-on, which is annoying at this price"
+      ]
+    },
+    "AR-1103": {
+      "title": "ACME Studio 48\" Electric Standing Desk",
+      "attributes": {
+        "width": "48 in",
+        "height_range": "28-47 in",
+        "memory_presets": "4",
+        "top": "bamboo"
+      },
+      "short_description": "Dual-motor lift with four memory presets and a bamboo top that doesn't wobble at standing height."
+    },
+    "AR-1104": {
+      "title": "ACME Select Low-Profile Mechanical Keyboard",
+      "attributes": {
+        "switches": "low-profile tactile",
+        "connectivity": "BT5.1 + 2.4GHz + USB-C",
+        "layout": "75%",
+        "backlight": "white"
+      },
+      "short_description": "Quiet tactile switches, three-device Bluetooth, and a battery that lasts about six weeks."
+    },
+    "AR-1105": {
+      "title": "ACME Select Noise-Cancelling Headphones",
+      "attributes": {
+        "anc": "adaptive",
+        "battery": "40 h",
+        "multipoint": "2 devices",
+        "weight": "254 g"
+      },
+      "short_description": "Adaptive noise cancelling tuned for open offices and flights, with 40-hour battery life."
+    },
+    "AR-1106": {
+      "title": "ACME Select 1080p Webcam with Auto-Framing",
+      "attributes": {
+        "resolution": "1080p60",
+        "field_of_view": "90 degrees",
+        "auto_framing": "yes",
+        "privacy_shutter": "yes"
+      },
+      "short_description": "Sharp low-light image, auto-framing that follows you, and a physical privacy shutter."
+    },
+    "AR-1107": {
+      "title": "ACME Studio Adjustable Aluminum Laptop Stand",
+      "attributes": {
+        "material": "aluminum",
+        "height_range": "2-12 in",
+        "max_laptop": "17 in",
+        "foldable": "yes"
+      },
+      "short_description": "Raises the screen to eye level and folds flat for a backpack; rock solid even at full height."
+    },
+    "AR-1108": {
+      "title": "ACME Select LED Desk Lamp with Wireless Charger",
+      "attributes": {
+        "color_temp": "2700-6000 K",
+        "brightness": "5 levels",
+        "charger": "10W Qi pad",
+        "usb_port": "yes"
+      },
+      "short_description": "Flicker-free light with warm-to-cool presets and a phone charging pad in the base."
+    },
+    "AR-1201": {
+      "title": "ACME Basecamp 2-Person Backpacking Tent",
+      "attributes": {
+        "capacity": "2 person",
+        "weight": "2.1 kg",
+        "season": "3-season",
+        "setup": "freestanding"
+      },
+      "short_description": "A 2.1 kg freestanding three-season tent that pitches in about four minutes.",
+      "long_description": "A true two-person backpacking tent that keeps weight at 2.1 kg without giving up livability: two doors, two vestibules, and enough headroom to sit up and play cards through a rainy evening. Color-coded aluminum poles make the first pitch intuitive, the full-coverage rainfly has taped seams, and the mesh body keeps condensation moving on humid nights. Packs down to the size of a loaf of bread.",
+      "specs": {
+        "floor_area": "2.9 sq m",
+        "peak_height": "102 cm",
+        "doors": "2",
+        "packed_size": "46 x 15 cm",
+        "rainfly": "full coverage, taped seams",
+        "warranty": "lifetime"
+      },
+      "review_highlights": [
+        "Survived a windy weekend on an exposed ridge without a shudder",
+        "Genuinely fits two adults plus boots and packs in the vestibules",
+        "Stakes are flimsy — worth swapping for better ones"
+      ]
+    },
+    "AR-1202": {
+      "title": "ACME Basecamp 4-Person Family Tent",
+      "attributes": {
+        "capacity": "4 person",
+        "weight": "7.4 kg",
+        "standing_height": "183 cm",
+        "setup": "8 minutes"
+      },
+      "short_description": "Standing-height family tent with a room divider and a porch awning for muddy boots."
+    },
+    "AR-1203": {
+      "title": "ACME Basecamp 20°F Insulated Sleeping Bag",
+      "attributes": {
+        "rating": "-7 C / 20 F",
+        "fill": "synthetic",
+        "weight": "1.3 kg",
+        "packed": "compression sack included"
+      },
+      "short_description": "Synthetic 20°F bag that stays warm when damp and packs down small."
+    },
+    "AR-1204": {
+      "title": "ACME Signature Two-Burner Camp Stove",
+      "attributes": {
+        "burners": "2 x 10000 BTU",
+        "fuel": "propane",
+        "ignition": "matchless",
+        "wind_panels": "yes"
+      },
+      "short_description": "Compact two-burner propane stove with matchless ignition and fold-out wind panels."
+    },
+    "AR-1205": {
+      "title": "ACME Journey 45L Hard Cooler",
+      "attributes": {
+        "capacity": "45 L",
+        "ice_retention": "5 days",
+        "bear_resistant": "certified",
+        "drain": "yes"
+      },
+      "short_description": "Keeps ice through a long weekend in summer heat; certified bear-resistant latches."
+    },
+    "AR-1206": {
+      "title": "ACME Basecamp 400-Lumen Rechargeable Headlamp",
+      "attributes": {
+        "brightness": "400 lumens",
+        "battery": "USB-C rechargeable",
+        "runtime": "up to 40 h",
+        "red_mode": "yes"
+      },
+      "short_description": "Bright, light, and USB-C rechargeable, with a red mode that won't wake the tent."
+    },
+    "AR-1207": {
+      "title": "ACME Journey 55L Hiking Backpack",
+      "attributes": {
+        "capacity": "55 L",
+        "frame": "internal aluminum",
+        "fit": "adjustable torso",
+        "rain_cover": "included"
+      },
+      "short_description": "Adjustable-torso pack with a supportive hip belt and an included rain cover."
+    },
+    "AR-1208": {
+      "title": "ACME Basecamp Gravity Water Filter, 3L",
+      "attributes": {
+        "capacity": "3 L",
+        "flow": "1.5 L/min",
+        "filter_life": "1500 L",
+        "weight": "310 g"
+      },
+      "short_description": "Hang it from a branch and let gravity do the filtering — no pumping, 1.5 liters a minute."
+    },
+    "AR-1301": {
+      "title": "ACME Fit 6mm Non-Slip Yoga Mat",
+      "attributes": {
+        "thickness": "6 mm",
+        "material": "natural rubber + cork",
+        "grip": "wet/dry",
+        "weight": "1.9 kg"
+      },
+      "short_description": "Cork surface that grips better as you sweat, over cushioned natural rubber."
+    },
+    "AR-1302": {
+      "title": "ACME Fit Adjustable Dumbbells, 5-50 lb Pair",
+      "attributes": {
+        "range": "5-50 lb each",
+        "increments": "5 lb",
+        "adjustment": "dial",
+        "footprint": "40 x 20 cm per tray"
+      },
+      "short_description": "A full dumbbell rack in two trays — dial from 5 to 50 pounds in seconds.",
+      "long_description": "The pair replaces a rack of dumbbells with a dial adjustment that moves from 5 to 50 pounds in 5-pound steps. The plates lock with a reassuring click and don't rattle mid-set, and the contoured handle stays comfortable through high-rep days. They're sized for apartment corners: each tray is about the footprint of a shoebox. Not designed to be dropped from overhead — treat them like the precision tools they are.",
+      "specs": {
+        "weight_range": "5-50 lb per dumbbell",
+        "increments": "5 lb",
+        "handle": "knurled steel",
+        "trays": "included",
+        "warranty": "2 years"
+      },
+      "review_highlights": [
+        "Switching weights mid-superset takes two seconds",
+        "No rattle at all once locked — feels like a fixed dumbbell",
+        "Pricey, but cheaper than the rack of dumbbells it replaced"
+      ]
+    },
+    "AR-1303": {
+      "title": "ACME Fit Cast Iron Kettlebell, 35 lb",
+      "attributes": {
+        "weight": "35 lb",
+        "material": "single-cast iron",
+        "coating": "powder coat",
+        "base": "flat"
+      },
+      "short_description": "Single-cast iron with a smooth powder coat that's kind to hands and floors."
+    },
+    "AR-1304": {
+      "title": "ACME Fit Resistance Band Set with Door Anchor",
+      "attributes": {
+        "bands": "5 (10-50 lb)",
+        "stackable": "to 150 lb",
+        "anchor": "door + ankle straps",
+        "case": "included"
+      },
+      "short_description": "Five stackable bands, handles, and a door anchor — a gym that fits in a drawer."
+    },
+    "AR-1305": {
+      "title": "ACME Fit High-Density Foam Roller",
+      "attributes": {
+        "length": "45 cm",
+        "density": "firm",
+        "surface": "textured",
+        "weight_capacity": "300 lb"
+      },
+      "short_description": "Firm textured roller that holds its shape; the post-leg-day ritual you'll actually keep."
+    },
+    "AR-1306": {
+      "title": "ACME Fit Speed Rope with Ball Bearings",
+      "attributes": {
+        "cable": "adjustable steel",
+        "bearings": "dual ball",
+        "handles": "aluminum",
+        "spare_cable": "included"
+      },
+      "short_description": "Smooth ball-bearing spin and a quick-adjust cable, with a spare cable in the box."
+    },
+    "AR-1307": {
+      "title": "ACME Fit Indoor Exercise Bike",
+      "attributes": {
+        "resistance": "magnetic, 100 levels",
+        "drive": "belt",
+        "console": "bluetooth + app",
+        "footprint": "120 x 55 cm"
+      },
+      "short_description": "Near-silent magnetic resistance and a tablet mount; pairs with the usual training apps."
+    },
+    "AR-1308": {
+      "title": "ACME Fit Percussion Massage Gun",
+      "attributes": {
+        "speeds": "5",
+        "heads": "6",
+        "battery": "4 h",
+        "noise": "45 dB"
+      },
+      "short_description": "Quiet enough to use on the couch, strong enough to un-knot a long run."
+    },
+    "AR-1401": {
+      "title": "ACME Playroom Stacking Wooden Block Set (54 pc)",
+      "attributes": {
+        "pieces": "54 blocks + 12 idea cards",
+        "material": "beechwood, water-based paint",
+        "age_range": "4-10 years",
+        "storage": "cotton carry sack"
+      },
+      "short_description": "Classic beechwood blocks with idea cards that turn a pile into bridges, towers, and towns.",
+      "long_description": "Fifty-four solid beechwood blocks in six shapes and four water-based colors, with a dozen idea cards that step from a first bridge up to a whole town. The blocks are cut chunky for small hands, sanded smooth, and sized to stack true — and the cotton carry sack turns cleanup into the last round of the game.",
+      "specs": {
+        "pieces": "54 blocks, 6 shapes",
+        "colors": "4, water-based paint",
+        "largest": "arch, 12 cm",
+        "idea_cards": "12, bridge to town",
+        "safety": "independently safety-tested for ages 3+"
+      },
+      "review_highlights": [
+        "My 9-year-old builds the tallest tower card, then invents her own",
+        "Paint has held up through a year of rough play",
+        "Carry sack fills fast — cleanup races actually work"
+      ]
+    },
+    "AR-1402": {
+      "title": "ACME Makers 540-Piece Building Brick Set",
+      "attributes": {
+        "pieces": "540",
+        "age_range": "6-12 years",
+        "compatible": "major brick brands",
+        "ideas_book": "included"
+      },
+      "short_description": "540 bricks, an ideas book with 12 builds, and compatibility with the bricks you already own."
+    },
+    "AR-1403": {
+      "title": "ACME Makers Coding Robot Kit",
+      "attributes": {
+        "age_range": "8-14 years",
+        "coding": "block-based app",
+        "sensors": "line, obstacle, light",
+        "battery": "rechargeable"
+      },
+      "short_description": "Build it, then program it to follow lines, dodge obstacles, and patrol the hallway."
+    },
+    "AR-1404": {
+      "title": "ACME Playroom Family Trail Board Game",
+      "attributes": {
+        "players": "2-6",
+        "age_range": "8+",
+        "playtime": "45 min",
+        "type": "cooperative strategy"
+      },
+      "short_description": "A cooperative trail-building game that adults genuinely want to replay."
+    },
+    "AR-1405": {
+      "title": "ACME Makers 86-Piece Art Studio Kit",
+      "attributes": {
+        "pieces": "86",
+        "age_range": "4-10 years",
+        "includes": "watercolors, pastels, markers, pads",
+        "case": "wooden"
+      },
+      "short_description": "Watercolors, pastels, and markers in a fold-out wooden case that keeps the chaos contained."
+    },
+    "AR-1406": {
+      "title": "ACME Playroom Otter Plush, 40 cm",
+      "attributes": {
+        "height": "40 cm",
+        "age_range": "0+",
+        "material": "recycled fill",
+        "washable": "machine"
+      },
+      "short_description": "Impossibly soft, machine washable, and stuffed with recycled fill."
+    },
+    "AR-1407": {
+      "title": "ACME Playroom National Parks 1000-Piece Puzzle",
+      "attributes": {
+        "pieces": "1000",
+        "size": "70 x 50 cm",
+        "material": "recycled board",
+        "poster": "included"
+      },
+      "short_description": "Crisp-cut pieces, no dust, and a reference poster so the table stays peaceful."
+    },
+    "AR-1408": {
+      "title": "ACME Makers 3-Wheel Kids Scooter",
+      "attributes": {
+        "age_range": "3-8 years",
+        "wheels": "light-up PU",
+        "steering": "lean-to-steer",
+        "max_weight": "50 kg"
+      },
+      "short_description": "Lean-to-steer stability for new riders, with light-up wheels that make every lap an event."
+    },
+    "AR-1501": {
+      "title": "ACME Paws Orthopedic Memory Foam Dog Bed, Large",
+      "attributes": {
+        "size": "large (90 x 70 cm)",
+        "foam": "10 cm memory foam",
+        "cover": "removable, washable",
+        "base": "non-slip"
+      },
+      "short_description": "Ten centimeters of memory foam for older joints, with a washable cover that survives muddy seasons.",
+      "long_description": "Built for big dogs and aging joints: a 10 cm slab of high-density memory foam that won't flatten into a pancake by month three, wrapped in a water-resistant liner and a machine-washable microsuede cover. The non-slip base keeps it in place on hard floors, and the low front edge makes it easy for stiff-legged seniors to step in. Fits dogs up to about 40 kg comfortably.",
+      "specs": {
+        "dimensions": "90 x 70 x 20 cm",
+        "foam": "high-density memory foam, 10 cm",
+        "cover": "microsuede, machine washable",
+        "liner": "water resistant",
+        "max_dog": "40 kg"
+      },
+      "review_highlights": [
+        "Our 11-year-old shepherd chooses it over the couch now",
+        "Cover has been through the wash a dozen times and still zips fine",
+        "Foam needs a day to expand fully after unboxing"
+      ]
+    },
+    "AR-1502": {
+      "title": "ACME Paws 5-Level Cat Tree with Scratching Posts",
+      "attributes": {
+        "height": "160 cm",
+        "levels": "5",
+        "posts": "sisal-wrapped",
+        "perches": "2 + 1 condo"
+      },
+      "short_description": "Five levels, two perches, and a condo — sturdy enough for a determined Maine Coon."
+    },
+    "AR-1503": {
+      "title": "ACME Paws Automatic Pet Feeder",
+      "attributes": {
+        "capacity": "4 L",
+        "meals": "up to 6/day",
+        "app": "wifi + schedule",
+        "backup": "battery"
+      },
+      "short_description": "Scheduled portions from the app, a voice-recording call button, and a battery backup for outages."
+    },
+    "AR-1504": {
+      "title": "ACME Paws Retractable Leash, 5 m",
+      "attributes": {
+        "length": "5 m",
+        "max_dog": "50 kg",
+        "brake": "one-touch lock",
+        "tape": "reflective"
+      },
+      "short_description": "Reflective tape, a one-touch brake, and a grip that doesn't cramp your hand on long walks."
+    },
+    "AR-1505": {
+      "title": "ACME Paws Hooded Litter Box with Carbon Filter",
+      "attributes": {
+        "size": "jumbo",
+        "filter": "carbon",
+        "door": "swing",
+        "scoop": "included"
+      },
+      "short_description": "High sides, a carbon filter, and a front swing door that keeps litter (mostly) inside."
+    },
+    "AR-1506": {
+      "title": "ACME Paws Insulated Dog Jacket",
+      "attributes": {
+        "sizes": "XS-XL",
+        "insulation": "recycled synthetic",
+        "shell": "water resistant",
+        "harness_slot": "yes"
+      },
+      "short_description": "Water-resistant shell with a harness slot, for dogs who pretend they don't need it."
+    },
+    "AR-1507": {
+      "title": "ACME Paws Interactive Feather Wand Bundle",
+      "attributes": {
+        "wands": "2",
+        "refills": "6 feather + 2 crinkle",
+        "pole": "telescoping",
+        "storage": "bag included"
+      },
+      "short_description": "Two telescoping wands and eight refills, because the first feather never survives the week."
+    },
+    "AR-1508": {
+      "title": "ACME Paws 10-Gallon Aquarium Starter Kit",
+      "attributes": {
+        "capacity": "10 gal",
+        "filter": "quiet flow",
+        "light": "LED day/night",
+        "extras": "heater, net, conditioner"
+      },
+      "short_description": "Tank, filter, heater, and lighting in one box — just add gravel, water, and patience."
+    },
+    "AR-1601": {
+      "title": "ACME Glow Fast-Dry Hair Dryer",
+      "attributes": {
+        "power": "1600 W high-speed motor",
+        "ionic": "yes",
+        "attachments": "diffuser + 2 concentrators",
+        "weight": "340 g"
+      },
+      "short_description": "High-speed motor dries in half the time at half the weight, with heat that won't cook your hair."
+    },
+    "AR-1602": {
+      "title": "ACME Daily Sonic Electric Toothbrush, 2-Pack",
+      "attributes": {
+        "modes": "5",
+        "timer": "2-min with quad pacing",
+        "battery": "30 days",
+        "heads": "4 included"
+      },
+      "short_description": "Two handles, four heads, five modes — the his-and-hers upgrade dentists keep suggesting."
+    },
+    "AR-1603": {
+      "title": "ACME Glow Vitamin C Brightening Serum Duo",
+      "attributes": {
+        "actives": "15% vitamin C + E + ferulic",
+        "size": "2 x 30 ml",
+        "fragrance_free": "yes",
+        "cruelty_free": "yes"
+      },
+      "short_description": "Fragrance-free vitamin C duo — one for now, one sealed for when the first runs out."
+    },
+    "AR-1604": {
+      "title": "ACME Daily Precision Beard Trimmer Kit",
+      "attributes": {
+        "guards": "13",
+        "blade": "self-sharpening steel",
+        "battery": "90 min",
+        "waterproof": "IPX7"
+      },
+      "short_description": "Thirteen guards, a steel blade that stays sharp, and a charge that outlasts the month."
+    },
+    "AR-1605": {
+      "title": "ACME Glow Mineral SPF 50 Sunscreen, 3-Pack",
+      "attributes": {
+        "spf": "50",
+        "type": "mineral (zinc)",
+        "water_resistant": "80 min",
+        "size": "3 x 88 ml"
+      },
+      "short_description": "Zinc-based SPF 50 that rubs in without the ghost effect; reef-safer formula."
+    },
+    "AR-1606": {
+      "title": "ACME Rest Mulberry Silk Pillowcase",
+      "attributes": {
+        "material": "22-momme mulberry silk",
+        "closure": "hidden zipper"
+      },
+      "short_description": "22-momme silk that's kinder to hair and skin than cotton, with a hidden zipper. Standard and king, four colors."
+    },
+    "AR-1606-STANDARD-IVORY": {
+      "title": "ACME Rest Mulberry Silk Pillowcase",
+      "attributes": {
+        "material": "22-momme mulberry silk",
+        "closure": "hidden zipper"
+      },
+      "short_description": "22-momme silk that's kinder to hair and skin than cotton, with a hidden zipper. Standard and king, four colors."
+    },
+    "AR-1606-STANDARD-SLATE": {
+      "title": "ACME Rest Mulberry Silk Pillowcase",
+      "attributes": {
+        "material": "22-momme mulberry silk",
+        "closure": "hidden zipper"
+      },
+      "short_description": "22-momme silk that's kinder to hair and skin than cotton, with a hidden zipper. Standard and king, four colors."
+    },
+    "AR-1606-STANDARD-BLUSH": {
+      "title": "ACME Rest Mulberry Silk Pillowcase",
+      "attributes": {
+        "material": "22-momme mulberry silk",
+        "closure": "hidden zipper"
+      },
+      "short_description": "22-momme silk that's kinder to hair and skin than cotton, with a hidden zipper. Standard and king, four colors."
+    },
+    "AR-1606-STANDARD-SAGE": {
+      "title": "ACME Rest Mulberry Silk Pillowcase",
+      "attributes": {
+        "material": "22-momme mulberry silk",
+        "closure": "hidden zipper"
+      },
+      "short_description": "22-momme silk that's kinder to hair and skin than cotton, with a hidden zipper. Standard and king, four colors."
+    },
+    "AR-1606-KING-IVORY": {
+      "title": "ACME Rest Mulberry Silk Pillowcase",
+      "attributes": {
+        "material": "22-momme mulberry silk",
+        "closure": "hidden zipper"
+      },
+      "short_description": "22-momme silk that's kinder to hair and skin than cotton, with a hidden zipper. Standard and king, four colors."
+    },
+    "AR-1606-KING-SLATE": {
+      "title": "ACME Rest Mulberry Silk Pillowcase",
+      "attributes": {
+        "material": "22-momme mulberry silk",
+        "closure": "hidden zipper"
+      },
+      "short_description": "22-momme silk that's kinder to hair and skin than cotton, with a hidden zipper. Standard and king, four colors."
+    },
+    "AR-1606-KING-BLUSH": {
+      "title": "ACME Rest Mulberry Silk Pillowcase",
+      "attributes": {
+        "material": "22-momme mulberry silk",
+        "closure": "hidden zipper"
+      },
+      "short_description": "22-momme silk that's kinder to hair and skin than cotton, with a hidden zipper. Standard and king, four colors."
+    },
+    "AR-1606-KING-SAGE": {
+      "title": "ACME Rest Mulberry Silk Pillowcase",
+      "attributes": {
+        "material": "22-momme mulberry silk",
+        "closure": "hidden zipper"
+      },
+      "short_description": "22-momme silk that's kinder to hair and skin than cotton, with a hidden zipper. Standard and king, four colors."
+    },
+    "AR-1607": {
+      "title": "ACME Daily Salon-Grade Manicure Set, 18 Pieces",
+      "attributes": {
+        "pieces": "18",
+        "material": "stainless steel",
+        "case": "leather travel case",
+        "warranty": "lifetime sharpening"
+      },
+      "short_description": "Stainless tools in a zip case, with lifetime sharpening — a quietly great gift."
+    },
+    "AR-1801": {
+      "title": "ACME Journey 22\" Carry-On Spinner",
+      "attributes": {
+        "size": "22 in / 38 L",
+        "shell": "polycarbonate",
+        "wheels": "4 spinner",
+        "weight": "2.9 kg",
+        "warranty": "10 years"
+      },
+      "short_description": "A 2.9 kg polycarbonate carry-on that shrugs off baggage handlers and glides on bad pavement.",
+      "long_description": "The carry-on for people who've had a zipper fail in a departures hall. The polycarbonate shell flexes on impact instead of cracking, the heavy-duty zippers are oversized, and the 360-degree wheels keep rolling smoothly on cobblestones and carpet alike. Inside: a full-length compression panel, a zip-off laundry bag, and a security-checkpoint-friendly combination lock built into the shell. Sized to fit most overhead bins at 22 x 14 x 9 inches.",
+      "specs": {
+        "dimensions": "56 x 36 x 23 cm",
+        "volume": "38 L",
+        "weight": "2.9 kg",
+        "shell": "polycarbonate",
+        "lock": "built-in combination",
+        "warranty": "10 years"
+      },
+      "review_highlights": [
+        "Two years, forty flights, still rolls like new",
+        "Compression panel genuinely fits an extra day of clothes",
+        "No external pocket — you'll miss it at security if you carry a laptop"
+      ]
+    },
+    "AR-1802": {
+      "title": "ACME Journey 28\" Checked Spinner",
+      "attributes": {
+        "size": "28 in / 95 L",
+        "shell": "polycarbonate",
+        "expansion": "+15%",
+        "weight": "4.3 kg"
+      },
+      "short_description": "Big-trip volume with a 15% expansion gusset and the same crack-resistant shell as the carry-on."
+    },
+    "AR-1803": {
+      "title": "ACME Journey Compression Packing Cubes, Set of 6",
+      "attributes": {
+        "pieces": "6",
+        "compression": "double zipper",
+        "material": "ripstop nylon",
+        "shoe_bag": "included"
+      },
+      "short_description": "Double-zip compression that buys you a third more space, plus a shoe bag for the gross stuff."
+    },
+    "AR-1804": {
+      "title": "ACME Rest Memory Foam Travel Pillow",
+      "attributes": {
+        "fill": "memory foam",
+        "cover": "washable",
+        "clasp": "front snap",
+        "packs_to": "60% with roll bag"
+      },
+      "short_description": "Actually supports your chin instead of pushing your head forward; rolls to half its size."
+    },
+    "AR-1805": {
+      "title": "ACME Select Universal Travel Adapter with 65W GaN Charging",
+      "attributes": {
+        "regions": "150+ countries",
+        "ports": "2x USB-C + 2x USB-A",
+        "output": "65 W GaN",
+        "fuse": "replaceable"
+      },
+      "short_description": "One brick for every outlet shape, fast enough to charge a laptop, with a spare fuse included."
+    },
+    "AR-1806": {
+      "title": "ACME Journey Hanging Toiletry Bag",
+      "attributes": {
+        "hook": "swivel",
+        "compartments": "4 + leakproof pocket",
+        "material": "water-resistant ripstop",
+        "size": "25 x 19 x 9 cm"
+      },
+      "short_description": "Hangs from any towel bar, opens flat, and quarantines the shampoo that will eventually leak."
+    },
+    "AR-1807": {
+      "title": "ACME Select Item Tracker, 4-Pack",
+      "attributes": {
+        "pack": "4 trackers",
+        "network": "phone finder networks",
+        "battery": "1 year, replaceable",
+        "water": "IP67"
+      },
+      "short_description": "Drop one in each bag and stop doing the carousel math — a year of battery, replaceable coin cell."
+    },
+    "AR-2101": {
+      "title": "ACME Kids Under-the-Sea Twin Bedding Set",
+      "attributes": {
+        "size": "twin",
+        "pieces": "comforter + sheet + pillowcase",
+        "material": "brushed microfiber",
+        "theme": "ocean"
+      },
+      "short_description": "Twin comforter, fitted sheet, and pillowcase in a friendly whale, sea-turtle, and starfish print.",
+      "long_description": "The Under-the-Sea set sends bedtime beneath the waves: whales, sea turtles, and schools of fish drift across a teal-and-navy brushed-microfiber comforter, with a matching fitted sheet and one pillowcase. A year of weekly washes in testing left the colors bright.",
+      "specs": {
+        "size": "twin (68 x 86 in comforter)",
+        "material": "100% brushed microfiber",
+        "care": "machine wash cold"
+      },
+      "review_highlights": [
+        "Still bright after a year of weekly washes",
+        "My son picks out a different sea creature every night",
+        "Softer than sets twice the price"
+      ]
+    },
+    "AR-2102": {
+      "title": "ACME Kids Peel-and-Stick Ocean Wall Decals (36 pc)",
+      "attributes": {
+        "count": "36 decals",
+        "removable": "yes",
+        "largest": "24 in whale",
+        "theme": "ocean"
+      },
+      "short_description": "36 removable ocean decals — a two-foot whale down to palm-size seahorses — that peel off clean.",
+      "long_description": "Thirty-six matte decals: a whale, dolphins, sea turtles, seahorses, and drifts of fish, plus coral and bubbles to scatter between them. Each one repositions without lifting paint, so the reef can be rebuilt whenever inspiration strikes.",
+      "specs": {
+        "count": "36",
+        "largest_decal": "24 in",
+        "surface": "painted walls, doors, furniture",
+        "removal": "peels clean, repositionable"
+      },
+      "review_highlights": [
+        "Went up in twenty minutes and came off our rental walls clean",
+        "The big whale over the bed is the star of the room",
+        "Went up bubble-free — our kid handled half the wall solo"
+      ]
+    },
+    "AR-2103": {
+      "title": "ACME Kids Tide-Pool Print Area Rug 4x5 ft",
+      "attributes": {
+        "size": "4 x 5 ft",
+        "backing": "non-slip",
+        "pile": "low, play-friendly",
+        "theme": "ocean"
+      },
+      "short_description": "A low-pile play rug printed as a shoreline map — tide pools, a lighthouse, and a reef to explore.",
+      "long_description": "The rug is half decor, half toy: a printed shoreline runs from a lighthouse past tide pools out to a reef, with channels for boats and figures to travel, and the low pile stays flat under bins and play. Non-slip backing for hard floors.",
+      "specs": {
+        "size": "48 x 60 in",
+        "pile_height": "0.3 in",
+        "backing": "non-slip latex",
+        "care": "spot clean, vacuum"
+      },
+      "review_highlights": [
+        "Flat enough that doors clear it and figures stand on it",
+        "He plays on it more than he plays on the tablet",
+        "Colors match the bedding set perfectly"
+      ]
+    },
+    "AR-2104": {
+      "title": "ACME Makers 300-Piece Meadow Puzzle",
+      "attributes": {
+        "pieces": "300",
+        "finished_size": "18 x 24 in",
+        "art": "original meadow illustration",
+        "age_range": "8+"
+      },
+      "short_description": "An original meadow scene in 300 satisfying pieces — an afternoon at the table with a frame-worthy finish.",
+      "long_description": "An original meadow-at-sunrise illustration cut into 300 crisp-edged pieces — big enough to satisfy, small enough to finish in a weekend of table time. The finished 18 x 24 print is frame-worthy, and the lid doubles as a reference stand while you work.",
+      "specs": {
+        "pieces": "300",
+        "finished_size": "18 x 24 in",
+        "board": "recycled, crisp-cut, low dust",
+        "art": "original commissioned illustration"
+      },
+      "review_highlights": [
+        "We finished it over one rainy weekend and framed it",
+        "Pieces snap in with a satisfying click — no forcing",
+        "The lid-stand for the reference picture is a small genius touch"
+      ]
+    },
+    "AR-2105": {
+      "title": "ACME Playroom Storybook Bear (14 in)",
+      "attributes": {
+        "size": "14 in",
+        "material": "plush, embroidered eyes",
+        "washable": "machine wash, gentle",
+        "age_range": "3+"
+      },
+      "short_description": "A softly weighted bear with embroidered eyes — no buttons, no batteries, endlessly loved.",
+      "long_description": "A softly weighted 14-inch bear with embroidered eyes and nose — nothing to chew off — and seams that survive being dragged everywhere. Machine washable on gentle, and the fur comes out of the dryer bag as soft as day one.",
+      "specs": {
+        "size": "14 in seated",
+        "filling": "recycled polyfill, softly weighted",
+        "details": "embroidered eyes and nose",
+        "care": "machine wash gentle, dryer bag"
+      },
+      "review_highlights": [
+        "Has been to two sleepovers and a beach trip and still looks great",
+        "Embroidered details — no parts to lose",
+        "Softer than the boutique ones we paid double for"
+      ]
+    },
+    "AR-2106": {
+      "title": "ACME Kids Toy Storage Bins (Set of 3)",
+      "attributes": {
+        "count": "3 bins",
+        "collapsible": "yes",
+        "labels": "beachcombing icons",
+        "theme": "ocean"
+      },
+      "short_description": "Three collapsible fabric bins with beachcombing labels, sized for figures, blocks, and books.",
+      "long_description": "Cleanup turns into a beach walk: each bin wears its own icon (shells, fish, driftwood) so putting toys away is the treasure sort. Reinforced rims keep them open; they fold flat when not needed.",
+      "specs": {
+        "size": "11 in cube each",
+        "material": "felt + canvas",
+        "rims": "reinforced wire"
+      },
+      "review_highlights": [
+        "Cleanup time stopped being a negotiation",
+        "Sturdy rims — they don't slump like cheap bins",
+        "Fits the cube shelf we already had"
+      ]
+    },
+    "AR-2107": {
+      "title": "ACME Kids Rocket Table Lamp",
+      "attributes": {
+        "shade": "rocket silhouette",
+        "dimmable": "3 levels",
+        "power": "USB-C",
+        "theme": "space"
+      },
+      "short_description": "A warm three-level lamp with a rocket silhouette shade for the reading corner.",
+      "long_description": "A small desk-or-shelf lamp whose shade throws a soft rocket-and-moon profile on the wall. Three brightness levels — reading, wind-down, and barely-there.",
+      "specs": {
+        "height": "11 in",
+        "brightness": "3 levels, max 400 lm",
+        "power": "USB-C"
+      },
+      "review_highlights": [
+        "Perfect on the bookshelf next to the solar system posters",
+        "The wall silhouette is a sweet touch at night",
+        "Wish the cable were longer — buy an extension"
+      ]
+    },
+    "AR-2108": {
+      "title": "ACME Playroom Solar System Poster Set (4 pc)",
+      "attributes": {
+        "count": "4 posters",
+        "size": "16 x 20 in",
+        "finish": "matte, glare-free",
+        "theme": "space"
+      },
+      "short_description": "Four matte posters mapping the planets, moon phases, distances, and a launch timeline — decor that answers questions.",
+      "long_description": "A four-poster set that turns walls into reference material: a planet size-comparison chart, a solar-system distance map, a moon-phase calendar, and a rocket anatomy print. Matte stock reads clean under a night light.",
+      "specs": {
+        "count": "4",
+        "size": "16 x 20 in each",
+        "finish": "matte",
+        "mounting": "frame or washi tape"
+      },
+      "review_highlights": [
+        "She corrects us from across the room now — citing the wall",
+        "Matte finish means no glare from the lamp",
+        "Looks designed, not licensed-cartoon"
+      ]
+    },
+    "AR-2109": {
+      "title": "ACME Kids Deep Sea Blackout Curtains (2 panels)",
+      "attributes": {
+        "panels": "2",
+        "size": "42 x 63 in each",
+        "blackout": "85%",
+        "theme": "ocean"
+      },
+      "short_description": "Two blackout panels with a subtle tone-on-tone wave weave — dark enough for early bedtimes.",
+      "long_description": "Deep Sea panels block about 85% of light behind a quiet tone-on-tone wave pattern — plain navy from across the room, rolling surf up close. Standard rod pocket.",
+      "specs": {
+        "panels": "2",
+        "size": "42 x 63 in",
+        "blackout": "85%",
+        "care": "machine wash cold"
+      },
+      "review_highlights": [
+        "Summer bedtimes finally work",
+        "Print is subtle — the room won't need redoing at age ten",
+        "Hung in ten minutes on the rod we had"
+      ]
+    },
+    "AR-1901": {
+      "title": "ACME Sleep Queen Platform Bed Frame",
+      "attributes": {
+        "size": "queen",
+        "headboard": "upholstered, linen-look",
+        "slats": "no box spring needed",
+        "assembly": "45 min, two people"
+      },
+      "short_description": "A queen platform frame with a cushioned linen-look headboard — no box spring, no squeaks.",
+      "long_description": "The ACME Sleep platform frame pairs a softly cushioned headboard with a solid slat base, so the mattress goes straight on. Steel core rails are wrapped to stay silent; under-bed clearance fits storage bins.",
+      "specs": {
+        "size": "queen",
+        "clearance": "9 in under-bed",
+        "weight_capacity": "700 lb",
+        "assembly": "two people, ~45 min"
+      },
+      "review_highlights": [
+        "Zero squeaks six months in",
+        "Assembly was genuinely 45 minutes",
+        "Headboard is comfortable for sitting up reading"
+      ]
+    },
+    "AR-1902": {
+      "title": "ACME Sleep Hybrid Mattress",
+      "attributes": {
+        "type": "hybrid coil + foam",
+        "firmness": "medium-firm",
+        "trial": "100 nights"
+      },
+      "short_description": "A medium-firm hybrid that ships compressed and settles in two days — 100-night trial.",
+      "long_description": "The mattress layers pocketed coils under cooling foam for a medium-firm feel that suits back and side sleepers. Arrives compressed, fully expands in 48 hours, and carries a 100-night home trial. Four sizes; the price steps up with each.",
+      "specs": {
+        "sizes": "twin, full, queen, king",
+        "height": "11 in",
+        "layers": "pocketed coils + gel foam",
+        "trial": "100 nights"
+      },
+      "review_highlights": [
+        "The 48-hour expansion is real — wait before judging",
+        "Sleeps noticeably cooler than our old foam slab",
+        "Edge support is solid for a hybrid at this price"
+      ]
+    },
+    "AR-1902-TWIN": {
+      "title": "ACME Sleep Hybrid Mattress",
+      "attributes": {
+        "type": "hybrid coil + foam",
+        "firmness": "medium-firm",
+        "trial": "100 nights"
+      },
+      "short_description": "A medium-firm hybrid that ships compressed and settles in two days — 100-night trial.",
+      "long_description": "The mattress layers pocketed coils under cooling foam for a medium-firm feel that suits back and side sleepers. Arrives compressed, fully expands in 48 hours, and carries a 100-night home trial. Four sizes; the price steps up with each.",
+      "specs": {
+        "sizes": "twin, full, queen, king",
+        "height": "11 in",
+        "layers": "pocketed coils + gel foam",
+        "trial": "100 nights"
+      },
+      "review_highlights": [
+        "The 48-hour expansion is real — wait before judging",
+        "Sleeps noticeably cooler than our old foam slab",
+        "Edge support is solid for a hybrid at this price"
+      ]
+    },
+    "AR-1902-FULL": {
+      "title": "ACME Sleep Hybrid Mattress",
+      "attributes": {
+        "type": "hybrid coil + foam",
+        "firmness": "medium-firm",
+        "trial": "100 nights"
+      },
+      "short_description": "A medium-firm hybrid that ships compressed and settles in two days — 100-night trial.",
+      "long_description": "The mattress layers pocketed coils under cooling foam for a medium-firm feel that suits back and side sleepers. Arrives compressed, fully expands in 48 hours, and carries a 100-night home trial. Four sizes; the price steps up with each.",
+      "specs": {
+        "sizes": "twin, full, queen, king",
+        "height": "11 in",
+        "layers": "pocketed coils + gel foam",
+        "trial": "100 nights"
+      },
+      "review_highlights": [
+        "The 48-hour expansion is real — wait before judging",
+        "Sleeps noticeably cooler than our old foam slab",
+        "Edge support is solid for a hybrid at this price"
+      ]
+    },
+    "AR-1902-QUEEN": {
+      "title": "ACME Sleep Hybrid Mattress",
+      "attributes": {
+        "type": "hybrid coil + foam",
+        "firmness": "medium-firm",
+        "trial": "100 nights"
+      },
+      "short_description": "A medium-firm hybrid that ships compressed and settles in two days — 100-night trial.",
+      "long_description": "The mattress layers pocketed coils under cooling foam for a medium-firm feel that suits back and side sleepers. Arrives compressed, fully expands in 48 hours, and carries a 100-night home trial. Four sizes; the price steps up with each.",
+      "specs": {
+        "sizes": "twin, full, queen, king",
+        "height": "11 in",
+        "layers": "pocketed coils + gel foam",
+        "trial": "100 nights"
+      },
+      "review_highlights": [
+        "The 48-hour expansion is real — wait before judging",
+        "Sleeps noticeably cooler than our old foam slab",
+        "Edge support is solid for a hybrid at this price"
+      ]
+    },
+    "AR-1902-KING": {
+      "title": "ACME Sleep Hybrid Mattress",
+      "attributes": {
+        "type": "hybrid coil + foam",
+        "firmness": "medium-firm",
+        "trial": "100 nights"
+      },
+      "short_description": "A medium-firm hybrid that ships compressed and settles in two days — 100-night trial.",
+      "long_description": "The mattress layers pocketed coils under cooling foam for a medium-firm feel that suits back and side sleepers. Arrives compressed, fully expands in 48 hours, and carries a 100-night home trial. Four sizes; the price steps up with each.",
+      "specs": {
+        "sizes": "twin, full, queen, king",
+        "height": "11 in",
+        "layers": "pocketed coils + gel foam",
+        "trial": "100 nights"
+      },
+      "review_highlights": [
+        "The 48-hour expansion is real — wait before judging",
+        "Sleeps noticeably cooler than our old foam slab",
+        "Edge support is solid for a hybrid at this price"
+      ]
+    },
+    "AR-1903": {
+      "title": "ACME Sleep Washed-Cotton Duvet Set, Queen",
+      "attributes": {
+        "size": "queen",
+        "material": "washed cotton",
+        "pieces": "duvet cover + 2 shams",
+        "closure": "hidden buttons"
+      },
+      "short_description": "A washed-cotton duvet cover and two shams that look better slightly rumpled.",
+      "long_description": "Garment-washed cotton with a lived-in softness from day one. Hidden button closure and corner ties keep the insert in place.",
+      "specs": {
+        "size": "queen",
+        "material": "100% washed cotton",
+        "pieces": "cover + 2 shams"
+      },
+      "review_highlights": [
+        "Soft immediately, no break-in needed",
+        "The rumpled look hides a multitude of unmade-bed sins",
+        "Corner ties actually hold the insert"
+      ]
+    },
+    "AR-1721": {
+      "title": "ACME Beauty Eye Palette",
+      "attributes": {
+        "shades": "12",
+        "finish": "8 matte / 4 shimmer",
+        "vegan": "yes"
+      },
+      "short_description": "Twelve wearable neutrals — eight mattes, four shimmers — built for five-minute mornings.",
+      "long_description": "The Everyday palette skips the novelty shades: twelve neutrals that blend with fingers in a hurry and layer up for evenings. Vegan formulas, low fallout.",
+      "specs": {
+        "shades": "12",
+        "weight": "14 g",
+        "vegan": "yes",
+        "cruelty_free": "yes"
+      },
+      "review_highlights": [
+        "Every shade is actually usable",
+        "Minimal fallout even with the shimmers",
+        "Replaced three palettes in my drawer"
+      ]
+    },
+    "AR-1722": {
+      "title": "ACME Beauty Tinted Moisturizer SPF 30",
+      "attributes": {
+        "spf": "30",
+        "shades": "6",
+        "finish": "natural, breathable"
+      },
+      "short_description": "Sheer, breathable coverage with SPF 30 — skincare that behaves like makeup.",
+      "long_description": "It evens tone without masking it, layers SPF 30 under everything, and wears for a workday without caking. Six shades, lightest to deepest.",
+      "specs": {
+        "spf": "30 broad spectrum",
+        "size": "40 ml",
+        "shades": "6, porcelain to espresso"
+      },
+      "review_highlights": [
+        "The no-makeup makeup everyone asks about",
+        "Doesn't pill under sunscreen reapplication",
+        "Shade match tool got mine right first try"
+      ]
+    },
+    "AR-1722-PORCELAIN": {
+      "title": "ACME Beauty Tinted Moisturizer SPF 30",
+      "attributes": {
+        "spf": "30",
+        "shades": "6",
+        "finish": "natural, breathable"
+      },
+      "short_description": "Sheer, breathable coverage with SPF 30 — skincare that behaves like makeup.",
+      "long_description": "It evens tone without masking it, layers SPF 30 under everything, and wears for a workday without caking. Six shades, lightest to deepest.",
+      "specs": {
+        "spf": "30 broad spectrum",
+        "size": "40 ml",
+        "shades": "6, porcelain to espresso"
+      },
+      "review_highlights": [
+        "The no-makeup makeup everyone asks about",
+        "Doesn't pill under sunscreen reapplication",
+        "Shade match tool got mine right first try"
+      ]
+    },
+    "AR-1722-SAND": {
+      "title": "ACME Beauty Tinted Moisturizer SPF 30",
+      "attributes": {
+        "spf": "30",
+        "shades": "6",
+        "finish": "natural, breathable"
+      },
+      "short_description": "Sheer, breathable coverage with SPF 30 — skincare that behaves like makeup.",
+      "long_description": "It evens tone without masking it, layers SPF 30 under everything, and wears for a workday without caking. Six shades, lightest to deepest.",
+      "specs": {
+        "spf": "30 broad spectrum",
+        "size": "40 ml",
+        "shades": "6, porcelain to espresso"
+      },
+      "review_highlights": [
+        "The no-makeup makeup everyone asks about",
+        "Doesn't pill under sunscreen reapplication",
+        "Shade match tool got mine right first try"
+      ]
+    },
+    "AR-1722-HONEY": {
+      "title": "ACME Beauty Tinted Moisturizer SPF 30",
+      "attributes": {
+        "spf": "30",
+        "shades": "6",
+        "finish": "natural, breathable"
+      },
+      "short_description": "Sheer, breathable coverage with SPF 30 — skincare that behaves like makeup.",
+      "long_description": "It evens tone without masking it, layers SPF 30 under everything, and wears for a workday without caking. Six shades, lightest to deepest.",
+      "specs": {
+        "spf": "30 broad spectrum",
+        "size": "40 ml",
+        "shades": "6, porcelain to espresso"
+      },
+      "review_highlights": [
+        "The no-makeup makeup everyone asks about",
+        "Doesn't pill under sunscreen reapplication",
+        "Shade match tool got mine right first try"
+      ]
+    },
+    "AR-1722-AMBER": {
+      "title": "ACME Beauty Tinted Moisturizer SPF 30",
+      "attributes": {
+        "spf": "30",
+        "shades": "6",
+        "finish": "natural, breathable"
+      },
+      "short_description": "Sheer, breathable coverage with SPF 30 — skincare that behaves like makeup.",
+      "long_description": "It evens tone without masking it, layers SPF 30 under everything, and wears for a workday without caking. Six shades, lightest to deepest.",
+      "specs": {
+        "spf": "30 broad spectrum",
+        "size": "40 ml",
+        "shades": "6, porcelain to espresso"
+      },
+      "review_highlights": [
+        "The no-makeup makeup everyone asks about",
+        "Doesn't pill under sunscreen reapplication",
+        "Shade match tool got mine right first try"
+      ]
+    },
+    "AR-1722-CHESTNUT": {
+      "title": "ACME Beauty Tinted Moisturizer SPF 30",
+      "attributes": {
+        "spf": "30",
+        "shades": "6",
+        "finish": "natural, breathable"
+      },
+      "short_description": "Sheer, breathable coverage with SPF 30 — skincare that behaves like makeup.",
+      "long_description": "It evens tone without masking it, layers SPF 30 under everything, and wears for a workday without caking. Six shades, lightest to deepest.",
+      "specs": {
+        "spf": "30 broad spectrum",
+        "size": "40 ml",
+        "shades": "6, porcelain to espresso"
+      },
+      "review_highlights": [
+        "The no-makeup makeup everyone asks about",
+        "Doesn't pill under sunscreen reapplication",
+        "Shade match tool got mine right first try"
+      ]
+    },
+    "AR-1722-ESPRESSO": {
+      "title": "ACME Beauty Tinted Moisturizer SPF 30",
+      "attributes": {
+        "spf": "30",
+        "shades": "6",
+        "finish": "natural, breathable"
+      },
+      "short_description": "Sheer, breathable coverage with SPF 30 — skincare that behaves like makeup.",
+      "long_description": "It evens tone without masking it, layers SPF 30 under everything, and wears for a workday without caking. Six shades, lightest to deepest.",
+      "specs": {
+        "spf": "30 broad spectrum",
+        "size": "40 ml",
+        "shades": "6, porcelain to espresso"
+      },
+      "review_highlights": [
+        "The no-makeup makeup everyone asks about",
+        "Doesn't pill under sunscreen reapplication",
+        "Shade match tool got mine right first try"
+      ]
+    },
+    "AR-1723": {
+      "title": "ACME Beauty Long-Wear Mascara",
+      "attributes": {
+        "type": "tubing",
+        "removal": "warm water",
+        "smudge": "no"
+      },
+      "short_description": "A tubing mascara that survives the day and removes with warm water — no raccoon eyes either way.",
+      "long_description": "It wraps each lash in flexible tubes that don't flake or smudge through a full day, then slide off with warm water and light pressure. No remover needed.",
+      "specs": {
+        "type": "tubing",
+        "wear": "all-day, smudge-proof",
+        "removal": "warm water"
+      },
+      "review_highlights": [
+        "Gym, rain, a wedding cry — still on",
+        "Comes off in the shower with zero scrubbing",
+        "The only mascara that doesn't transfer to my glasses"
+      ]
+    },
+    "AR-2001": {
+      "title": "ACME Pantry Atlantic Salmon Fillets (2 lb, frozen)",
+      "attributes": {
+        "weight": "2 lb",
+        "portions": "4 fillets",
+        "state": "individually vacuum-sealed, frozen"
+      },
+      "short_description": "Four vacuum-sealed salmon fillets — a weeknight dinner that defrosts in twenty minutes.",
+      "long_description": "Individually sealed fillets that go from freezer to pan-ready in a bowl of cold water. Skin-on for crispy-skin searing or easy grilling.",
+      "specs": {
+        "weight": "2 lb (4 x 8 oz)",
+        "prep": "thaw 20 min in cold water",
+        "source": "farm-raised Atlantic"
+      },
+      "review_highlights": [
+        "Restaurant-thickness fillets, not thin tail pieces",
+        "Vacuum seals mean no freezer burn",
+        "Weeknight-fast from frozen"
+      ]
+    },
+    "AR-2002": {
+      "title": "ACME Pantry Lemon-Herb Marinade & Glaze",
+      "attributes": {
+        "size": "12 oz",
+        "use": "fish, chicken, vegetables"
+      },
+      "short_description": "A bright lemon-herb marinade that doubles as a finishing glaze for fish or chicken.",
+      "long_description": "Lemon, garlic, and soft herbs in a marinade that works in fifteen minutes and reduces into a pan glaze. One bottle covers two family dinners.",
+      "specs": {
+        "size": "12 oz",
+        "marinade_time": "15-30 min"
+      },
+      "review_highlights": [
+        "Made my salmon taste intentional",
+        "Reduces into a great pan sauce",
+        "Not too salty like most bottled marinades"
+      ]
+    },
+    "AR-2003": {
+      "title": "ACME Pantry Weeknight Stir-Fry Dinner Kit",
+      "attributes": {
+        "serves": "5-6",
+        "includes": "noodles, ginger-garlic sauce, crispy topping"
+      },
+      "short_description": "Wok noodles, a ginger-garlic sauce, and a crispy topping — add a protein and a bag of frozen veg, done.",
+      "long_description": "The Stir-Fry Dinner Kit bundles quick-cook wok noodles, a ginger-garlic sauce that's savory rather than spicy, and a sesame crunch topping. Bring your own protein and vegetables; one pan does the rest.",
+      "specs": {
+        "serves": "5-6",
+        "noodles": "2 x 8 oz wok noodles",
+        "sauce": "ginger-garlic, mild"
+      },
+      "review_highlights": [
+        "The sauce is kid-approved and adult-respectable",
+        "Noodles don't clump like the cheap ones",
+        "Faster than delivery on a weeknight"
+      ]
+    },
+    "AR-2004": {
+      "title": "ACME Pantry 90% Lean Ground Beef (1.5 lb)",
+      "attributes": {
+        "weight": "1.5 lb",
+        "lean": "90/10",
+        "state": "fresh, vacuum-packed"
+      },
+      "short_description": "Lean vacuum-packed ground beef in a one-dinner portion — brown it for pasta, chili, or burgers.",
+      "long_description": "A 90/10 blend that browns without a grease slick. Vacuum packing keeps it fresh longer in the fridge or drops straight into the freezer.",
+      "specs": {
+        "weight": "1.5 lb",
+        "blend": "90/10"
+      },
+      "review_highlights": [
+        "Browns clean, no draining ceremony",
+        "Right size for one family dinner with leftovers",
+        "Freezes flat for easy stacking"
+      ]
+    },
+    "AR-2005": {
+      "title": "ACME Pantry Fresh Pasta Duo — Rigatoni & Fettuccine",
+      "attributes": {
+        "weight": "2 x 9 oz",
+        "cook_time": "4 minutes",
+        "state": "refrigerated fresh"
+      },
+      "short_description": "Two nests of fresh pasta that cook in four minutes — dinner's four-minute head start.",
+      "long_description": "Fresh egg pasta with real bite: rigatoni for chunky sauces, fettuccine for cream or butter-sage. Four minutes in boiling water.",
+      "specs": {
+        "weight": "2 x 9 oz",
+        "cook_time": "4 min"
+      },
+      "review_highlights": [
+        "Tastes like the Italian deli's, half the price",
+        "Four-minute dinner backbone",
+        "Holds sauce way better than dried"
+      ]
+    },
+    "AR-2006": {
+      "title": "ACME Pantry Slow-Simmered Tomato-Basil Sauce",
+      "attributes": {
+        "size": "24 oz",
+        "ingredients": "8, all pronounceable",
+        "sugar_added": "no"
+      },
+      "short_description": "A slow-simmered tomato-basil sauce with eight ingredients and no added sugar.",
+      "long_description": "Crushed tomatoes, basil, olive oil, garlic — simmered down so it tastes like an afternoon you didn't have to spend. One jar coats a pound of pasta.",
+      "specs": {
+        "size": "24 oz",
+        "added_sugar": "none"
+      },
+      "review_highlights": [
+        "The one jarred sauce I don't doctor",
+        "Eight ingredients, all recognizable",
+        "Great over fresh or dried pasta alike"
+      ]
+    },
+    "AR-2007": {
+      "title": "ACME Pantry Garlic Brioche Dinner Rolls (8 pc)",
+      "attributes": {
+        "count": "8 rolls",
+        "prep": "5 min oven refresh"
+      },
+      "short_description": "Eight buttery garlic brioche rolls — five minutes in the oven and the table smells like effort.",
+      "long_description": "Par-baked brioche rolls brushed with garlic butter. Five minutes at 350°F finishes them golden.",
+      "specs": {
+        "count": "8",
+        "refresh": "5 min at 350°F"
+      },
+      "review_highlights": [
+        "Disappear before the pasta hits the table",
+        "Tastes bakery-fresh from a bag",
+        "Kids fight over the corner ones"
+      ]
+    },
+    "AR-2008": {
+      "title": "ACME Pantry Rainbow Veggie Roasting Mix (2 lb)",
+      "attributes": {
+        "weight": "2 lb",
+        "contents": "carrots, broccoli, peppers, red onion",
+        "prep": "pre-cut, oven-ready"
+      },
+      "short_description": "Pre-cut rainbow vegetables that roast on one sheet pan in 25 minutes.",
+      "long_description": "Carrots, broccoli, sweet peppers, and red onion, cut to roast evenly together. Toss with oil, one pan, 25 minutes — a side that goes with nearly any main.",
+      "specs": {
+        "weight": "2 lb",
+        "roast": "25 min at 425°F"
+      },
+      "review_highlights": [
+        "Every piece cooks in the same time — someone thought about this",
+        "Works next to fish, pasta, or a roast chicken",
+        "No cutting board on a weeknight"
+      ]
+    },
+    "AR-2009": {
+      "title": "ACME Pantry Caesar Salad Kit (family size)",
+      "attributes": {
+        "serves": "4-5",
+        "includes": "romaine, dressing, croutons, parmesan"
+      },
+      "short_description": "A family-size Caesar kit — romaine, dressing, croutons, and real shaved parmesan.",
+      "long_description": "Crisp romaine with a garlicky (not gloppy) dressing, sourdough croutons, and shaved parmesan. Tossed in the bag if you're feeling efficient.",
+      "specs": {
+        "serves": "4-5"
+      },
+      "review_highlights": [
+        "Dressing tastes homemade",
+        "Croutons stay crunchy to the bottom of the bowl",
+        "The shaved parm is the upgrade"
+      ]
+    },
+    "AR-2010": {
+      "title": "ACME Pantry Weekend Brownie Skillet Kit",
+      "attributes": {
+        "serves": "6",
+        "includes": "mix + chocolate chunks + skillet-ready liner"
+      },
+      "short_description": "A skillet brownie kit with proper chocolate chunks — dessert that earns the oven preheat.",
+      "long_description": "Everything for a shareable skillet brownie: rich cocoa mix, dark chocolate chunks, and a parchment liner sized for a 10-inch skillet. Add butter and one egg.",
+      "specs": {
+        "serves": "6",
+        "bake": "22 min at 350°F"
+      },
+      "review_highlights": [
+        "The chunks stay molten — dangerous knowledge",
+        "Easier than boxed mix, tastes pastry-case",
+        "Our weekend ritual closer"
+      ]
+    }
+  },
+  "zh": {
+    "AR-1001": {
+      "title": "ACME Everyday 12杯可编程滴滤式咖啡机",
+      "attributes": {
+        "capacity": "12杯",
+        "carafe": "玻璃",
+        "programmable": "是",
+        "color": "不锈钢"
+      },
+      "short_description": "唤醒定时器、浓醇冲泡模式，以及不会烧焦咖啡壶的保温盘。",
+      "aliases": [
+        "ACME咖啡机",
+        "12杯滴滤机",
+        "可编程咖啡机"
+      ]
+    },
+    "AR-1002": {
+      "title": "ACME Signature 15巴意式浓缩咖啡机（带蒸汽棒）",
+      "attributes": {
+        "pressure": "15巴",
+        "steam_wand": "是",
+        "water_tank": "1.8升",
+        "color": "哑光黑"
+      },
+      "short_description": "在家制作咖啡馆风格的浓缩咖啡和微泡奶；不到一分钟即可加热。",
+      "aliases": [
+        "意式咖啡机",
+        "蒸汽咖啡机",
+        "ACME咖啡机"
+      ]
+    },
+    "AR-1003": {
+      "title": "ACME Signature 8英寸锻造厨师刀",
+      "attributes": {
+        "blade": "德国钢",
+        "length": "8 in",
+        "handle": "层压木",
+        "dishwasher_safe": "no"
+      },
+      "short_description": "全龙骨锻造刀片，配重舒适；经数月日常备料仍保持锋利。",
+      "aliases": [
+        "厨师刀",
+        "锻造刀",
+        "8英寸刀"
+      ]
+    },
+    "AR-1004": {
+      "title": "ACME Signature 6夸脱搪瓷铸铁荷兰锅",
+      "attributes": {
+        "capacity": "6 qt",
+        "material": "搪瓷铸铁",
+        "oven_safe": "260 C",
+        "color": "暮蓝色"
+      },
+      "short_description": "炖菜、面包和大批量汤品；可从灶台到烤箱再到餐桌。",
+      "aliases": [
+        "铸铁锅",
+        "荷兰锅",
+        "搪瓷锅"
+      ]
+    },
+    "AR-1005": {
+      "title": "ACME 日常陶瓷不粘10件套炊具套装",
+      "attributes": {
+        "pieces": "10",
+        "coating": "陶瓷不粘",
+        "induction_ready": "是",
+        "pfas_free": "是"
+      },
+      "short_description": "铝制锅身覆有PFAS-free陶瓷涂层；均匀加热，无需小心呵护。",
+      "aliases": [
+        "陶瓷不粘锅套装",
+        "10件套炊具",
+        "ACME日常锅具"
+      ]
+    },
+    "AR-1006": {
+      "title": "ACME 家用大房间 HEPA 空气净化器",
+      "attributes": {
+        "coverage": "1100 平方英尺",
+        "filter": "真正的 HEPA + 活性炭",
+        "noise": "24 dB 睡眠模式",
+        "smart": "应用程序 + 自动模式"
+      },
+      "short_description": "安静得足以用于卧室，强劲得足以用于开放式客厅；应用程序中提供滤网提醒。",
+      "aliases": [
+        "大房间空气净化器",
+        "家用HEPA净化器",
+        "静音空气净化器"
+      ]
+    },
+    "AR-1007": {
+      "title": "ACME Everyday 自清空基站扫地机器人",
+      "attributes": {
+        "suction": "4000 Pa",
+        "self_empty": "约 8 周",
+        "mapping": "激光雷达",
+        "pet_hair": "防缠绕滚刷"
+      },
+      "short_description": "激光雷达建图，按房间设定日程，基站可自动清空数周。",
+      "long_description": "首次运行时用激光雷达绘制家居地图，之后按您设定的日程逐房间清洁。防缠绕滚刷和 4000 Pa 吸力针对硬地板和地毯上的宠物毛发进行了调校，自清空基站约每八周更换一次集尘袋。安静模式下噪音低于 58 dB，因此可以在您通话时运行。配合 ACME Home 应用可设置禁区及每个房间的吸力级别。",
+      "specs": {
+        "suction": "4000 Pa",
+        "runtime": "180 分钟",
+        "bin": "自清空基站，2.5 L 集尘袋",
+        "height": "9.7 cm",
+        "noise": "标准 58 dB / 安静 52 dB",
+        "warranty": "2 年"
+      },
+      "aliases": [
+        "扫地机器人",
+        "自清空基站",
+        "激光雷达导航"
+      ],
+      "review_highlights": [
+        "每天一次就能处理金毛犬的掉毛",
+        "建图准确；禁入区确实有效",
+        "集尘时基站会响几秒——安排白天运行"
+      ]
+    },
+    "AR-1008": {
+      "title": "ACME Rest 加重毯，Queen",
+      "attributes": {
+        "size": "queen",
+        "cover": "可水洗竹纤维",
+        "fill": "玻璃珠"
+      },
+      "short_description": "均匀缝制的玻璃珠填充，配有可拆卸、可水洗的竹纤维罩，睡感凉爽。三种重量；通常选择约为体重十分之一的重量。",
+      "aliases": [
+        "加重毯",
+        "ACME Rest",
+        "Queen加重毯"
+      ]
+    },
+    "AR-1008-12LB": {
+      "title": "ACME Rest 重力毯，Queen",
+      "attributes": {
+        "size": "queen",
+        "cover": "可水洗竹纤维",
+        "fill": "玻璃微珠"
+      },
+      "short_description": "均匀缝制的玻璃微珠填充，搭配可拆卸、可水洗的竹纤维外套，睡感凉爽。三种重量可选；通常选择约为体重十分之一的重量。",
+      "aliases": [
+        "重力毯",
+        "ACME Rest 毯",
+        "Queen 重力毯"
+      ]
+    },
+    "AR-1008-15LB": {
+      "title": "ACME Rest 加重毯，Queen 尺寸",
+      "attributes": {
+        "size": "queen",
+        "cover": "可水洗竹纤维",
+        "fill": "玻璃微珠"
+      },
+      "short_description": "均匀缝制的玻璃微珠填充，搭配可拆卸、可水洗的竹纤维外套，睡感清凉。三种重量可选；通常建议选择约为体重十分之一的重量。",
+      "aliases": [
+        "加重毯",
+        "ACME 加重毯",
+        "Queen 加重毯"
+      ]
+    },
+    "AR-1008-20LB": {
+      "title": "ACME Rest 加重毯，Queen 尺寸",
+      "attributes": {
+        "size": "queen",
+        "cover": "可水洗竹纤维",
+        "fill": "玻璃微珠"
+      },
+      "short_description": "均匀绗缝的玻璃微珠填充，搭配可拆卸、可水洗的竹纤维外套，睡眠凉爽。三种重量可选；通常选择约为体重十分之一的重量。",
+      "aliases": [
+        "加重毯",
+        "ACME Rest 毯",
+        "女王尺寸加重毯"
+      ]
+    },
+    "AR-1101": {
+      "title": "ACME Select 27\" 4K IPS 显示器，带 USB-C",
+      "attributes": {
+        "size": "27 英寸",
+        "resolution": "4K UHD",
+        "panel": "IPS",
+        "ports": "USB-C 90W, HDMI x2, DP",
+        "vesa": "100x100"
+      },
+      "short_description": "出厂校准的 4K 面板，通过单根 USB-C 线为笔记本电脑供电和传输视频。",
+      "long_description": "27 英寸 4K IPS 面板，出厂校准至 99% sRGB，配备 90W USB-C 端口，可通过一根线为笔记本电脑供电并传输视频。支架可调节高度、倾斜和旋转，超薄边框便于打造整洁的双显示器设置。内置 KVM 可在两台电脑之间切换键盘和鼠标，如果您在工作笔记本电脑和个人台式机之间分配时间，这会非常方便。",
+      "specs": {
+        "resolution": "3840 x 2160",
+        "refresh": "60 Hz",
+        "brightness": "400 尼特",
+        "color": "99% sRGB, 95% DCI-P3",
+        "power_delivery": "90 W",
+        "warranty": "3 年"
+      },
+      "aliases": [
+        "4K显示器",
+        "USB-C显示器",
+        "27寸IPS屏"
+      ],
+      "review_highlights": [
+        "文字极其锐利；非常适合长时间写作和處理表格的日子",
+        "USB-C 单线连接让整个桌面变得整洁",
+        "不是游戏显示器——60 Hz 是這個價格的取捨"
+      ]
+    },
+    "AR-1102": {
+      "title": "ACME Studio 网布办公椅",
+      "attributes": {
+        "lumbar": "可调节",
+        "armrests": "4D",
+        "recline": "135度",
+        "weight_capacity": "300 lb",
+        "material": "透气网布"
+      },
+      "short_description": "可调节腰部支撑、4D扶手和透气网布靠背，专为全天工作设计。",
+      "long_description": "这款椅子围绕可调节腰部支撑设计，贴合下背部曲线，同步后仰功能让您在后仰时双脚保持着地。网布靠背让空气在漫长午后持续流通，座垫可前后滑动以适应较长的腿，4D扶手可调节高度、深度、宽度和角度，让您的肩膀真正放松。使用随附工具组装约需20分钟。",
+      "specs": {
+        "seat_height": "17-21 in",
+        "recline": "同步，可锁定至135度",
+        "armrests": "4D可调节",
+        "capacity": "300 lb",
+        "warranty": "5年"
+      },
+      "aliases": [
+        "网布办公椅",
+        "人体工学椅",
+        "可调节办公椅"
+      ],
+      "review_highlights": [
+        "长时间工作后的背痛在第一周后基本消失了",
+        "扶手能固定在你放置的位置，不像更便宜的椅子",
+        "头枕是单独的附加配件，在这个价格上很烦人"
+      ]
+    },
+    "AR-1103": {
+      "title": "ACME Studio 48英寸电动站立办公桌",
+      "attributes": {
+        "width": "48 in",
+        "height_range": "28-47 in",
+        "memory_presets": "4",
+        "top": "竹"
+      },
+      "short_description": "双电机升降，具有四个记忆预设和竹制桌面，在站立高度时不会摇晃。",
+      "aliases": [
+        "电动站立桌",
+        "站立办公桌",
+        "电动升降桌"
+      ]
+    },
+    "AR-1106": {
+      "title": "ACME Select 1080p 自动取景网络摄像头",
+      "attributes": {
+        "resolution": "1080p60",
+        "field_of_view": "90度",
+        "auto_framing": "是",
+        "privacy_shutter": "是"
+      },
+      "short_description": "低光下图像清晰，自动取景跟随您，并有物理隐私快门。",
+      "aliases": [
+        "ACME网络摄像头",
+        "1080p自动取景",
+        "隐私快门摄像头"
+      ]
+    },
+    "AR-1105": {
+      "title": "ACME Select 降噪耳机",
+      "attributes": {
+        "anc": "自适应",
+        "battery": "40 h",
+        "multipoint": "2 devices",
+        "weight": "254 g"
+      },
+      "short_description": "自适应降噪，专为开放式办公室和航班调校，电池续航40小时。",
+      "aliases": [
+        "ACME Select耳机",
+        "降噪耳机",
+        "头戴式耳机"
+      ]
+    },
+    "AR-1104": {
+      "title": "ACME Select 低矮型机械键盘",
+      "attributes": {
+        "switches": "低矮型触感",
+        "connectivity": "BT5.1 + 2.4GHz + USB-C",
+        "layout": "75%",
+        "backlight": "白色"
+      },
+      "short_description": "静音触感开关，支持三设备蓝牙，电池续航约六周。",
+      "aliases": [
+        "矮轴机械键盘",
+        "ACME Select",
+        "三模机械键盘"
+      ]
+    },
+    "AR-1107": {
+      "title": "ACME Studio 可调节铝制笔记本电脑支架",
+      "attributes": {
+        "material": "铝",
+        "height_range": "2-12 英寸",
+        "max_laptop": "17 英寸",
+        "foldable": "是"
+      },
+      "short_description": "将屏幕升至视线水平，可折叠平整放入背包；即使在最大高度也稳固如磐石。",
+      "aliases": [
+        "笔记本支架",
+        "铝合金支架",
+        "可调节支架"
+      ]
+    },
+    "AR-1108": {
+      "title": "ACME Select LED台灯带无线充电器",
+      "attributes": {
+        "color_temp": "2700-6000 K",
+        "brightness": "5档",
+        "charger": "10W Qi充电板",
+        "usb_port": "有"
+      },
+      "short_description": "无频闪光线，具有暖色到冷色预设，底座内置手机充电板。",
+      "aliases": [
+        "LED台灯",
+        "无线充电台灯",
+        "ACME台灯"
+      ]
+    },
+    "AR-1201": {
+      "title": "ACME Basecamp 双人背包帐篷",
+      "attributes": {
+        "capacity": "2人",
+        "weight": "2.1 kg",
+        "season": "3季",
+        "setup": "独立式"
+      },
+      "short_description": "一款2.1公斤的独立式三季帐篷，约四分钟即可搭好。",
+      "long_description": "一款真正的双人背包帐篷，重量保持在2.1公斤，同时不牺牲居住舒适性：两个门、两个门厅，以及足够的头部空间，让您在雨夜也能坐起来打牌。颜色编码的铝制帐杆让首次搭建直观易懂，全罩式防雨罩带有压胶接缝，网眼帐身有助于减轻潮湿夜晚的凝露问题。收纳后仅相当于一条面包的大小。",
+      "specs": {
+        "floor_area": "2.9 平方米",
+        "peak_height": "102 厘米",
+        "doors": "2",
+        "packed_size": "46 x 15 厘米",
+        "rainfly": "全罩式，压胶接缝",
+        "warranty": "终身"
+      },
+      "aliases": [
+        "ACME双人帐篷",
+        "三季背包帐篷",
+        "轻量独立帐篷"
+      ],
+      "review_highlights": [
+        "在暴露的山脊上经历了一个多风的周末，帐篷纹丝不动",
+        "前庭空间确实能容纳两个成年人外加靴子和背包",
+        "地钉不结实——值得换成更好的"
+      ]
+    },
+    "AR-1203": {
+      "title": "ACME Basecamp 20°F 保温睡袋",
+      "attributes": {
+        "rating": "-7 C / 20 F",
+        "fill": "合成纤维",
+        "weight": "1.3 kg",
+        "packed": "含压缩袋"
+      },
+      "short_description": "合成纤维 20°F 睡袋，潮湿时仍保暖且收纳体积小。",
+      "aliases": [
+        "ACME睡袋",
+        "Basecamp保温睡袋",
+        "20度F睡袋"
+      ]
+    },
+    "AR-1202": {
+      "title": "ACME Basecamp 4人家庭帐篷",
+      "attributes": {
+        "capacity": "4人",
+        "weight": "7.4 kg",
+        "standing_height": "183 cm",
+        "setup": "8分钟"
+      },
+      "short_description": "站立高度的家庭帐篷，带有房间隔断和门廊遮阳篷，可放置泥泞的靴子。",
+      "aliases": [
+        "家庭帐篷",
+        "四人帐篷",
+        "ACME帐篷"
+      ]
+    },
+    "AR-1204": {
+      "title": "ACME 签名双头露营炉",
+      "attributes": {
+        "burners": "2 x 10000 BTU",
+        "fuel": "丙烷",
+        "ignition": "免火柴点火",
+        "wind_panels": "有"
+      },
+      "short_description": "紧凑型双头丙烷炉，配备免火柴点火和折叠式挡风板。",
+      "aliases": [
+        "双头炉",
+        "露营炉",
+        "丙烷炉"
+      ]
+    },
+    "AR-1206": {
+      "title": "ACME Basecamp 400流明充电式头灯",
+      "attributes": {
+        "brightness": "400流明",
+        "battery": "USB-C充电",
+        "runtime": "最长40小时",
+        "red_mode": "是"
+      },
+      "short_description": "明亮、轻便且支持USB-C充电，红光模式不会吵醒帐篷里的人。",
+      "aliases": [
+        "头灯",
+        "充电头灯",
+        "户外头灯"
+      ]
+    },
+    "AR-1205": {
+      "title": "ACME Journey 45L 硬质保温箱",
+      "attributes": {
+        "capacity": "45 L",
+        "ice_retention": "5 天",
+        "bear_resistant": "认证",
+        "drain": "是"
+      },
+      "short_description": "在夏季高温中可保持冰块度过长周末；通过认证的防熊锁扣。",
+      "aliases": [
+        "ACME保温箱",
+        "45L硬质冷藏箱",
+        "防熊保温箱"
+      ]
+    },
+    "AR-1207": {
+      "title": "ACME Journey 55L 徒步背包",
+      "attributes": {
+        "capacity": "55 L",
+        "frame": "内置铝合金",
+        "fit": "可调节躯干",
+        "rain_cover": "包含"
+      },
+      "short_description": "可调节躯干的背包，配有支撑性腰带和包含的防雨罩。",
+      "aliases": [
+        "徒步背包",
+        "55升背包",
+        "ACME Journey"
+      ]
+    },
+    "AR-1301": {
+      "title": "ACME Fit 6毫米防滑瑜伽垫",
+      "attributes": {
+        "thickness": "6 mm",
+        "material": "天然橡胶 + 软木",
+        "grip": "湿/干",
+        "weight": "1.9 kg"
+      },
+      "short_description": "软木表面，随着出汗抓地力更佳，覆盖在缓冲天然橡胶上。",
+      "aliases": [
+        "防滑瑜伽垫",
+        "软木瑜伽垫",
+        "天然橡胶瑜伽垫"
+      ]
+    },
+    "AR-1208": {
+      "title": "ACME Basecamp 重力式滤水器，3L",
+      "attributes": {
+        "capacity": "3 L",
+        "flow": "1.5 L/min",
+        "filter_life": "1500 L",
+        "weight": "310 g"
+      },
+      "short_description": "挂在树枝上，让重力完成过滤——无需泵压，每分钟1.5升。",
+      "aliases": [
+        "重力滤水器",
+        "户外净水器",
+        "露营滤水装备"
+      ]
+    },
+    "AR-1303": {
+      "title": "ACME Fit 铸铁壶铃，35 lb",
+      "attributes": {
+        "weight": "35 lb",
+        "material": "single-cast iron",
+        "coating": "powder coat",
+        "base": "flat"
+      },
+      "short_description": "单铸铸铁，带有光滑的粉末涂层，对双手和地板都很友好。",
+      "aliases": [
+        "铸铁壶铃",
+        "ACME Fit 壶铃",
+        "35磅壶铃"
+      ]
+    },
+    "AR-1302": {
+      "title": "ACME Fit 可调节哑铃，5-50 磅一对",
+      "attributes": {
+        "range": "每个 5-50 磅",
+        "increments": "5 磅",
+        "adjustment": "旋钮",
+        "footprint": "每个托盘 40 x 20 厘米"
+      },
+      "short_description": "两个托盘中的完整哑铃架——几秒钟内从 5 磅调节到 50 磅。",
+      "long_description": "这对哑铃通过旋钮调节，以 5 磅为步进从 5 磅移动到 50 磅，取代了一整排哑铃。铃片锁定时会发出令人安心的咔嗒声，在每组动作中不会发出嘎嘎声，轮廓手柄在高次数训练日也能保持舒适。它们的尺寸适合公寓角落：每个托盘的占地面积大约相当于一个鞋盒。并非为从头顶高度掉落而设计——请像对待精密工具一样对待它们。",
+      "specs": {
+        "weight_range": "每个哑铃 5-50 磅",
+        "increments": "5 磅",
+        "handle": "滚花钢",
+        "trays": "包含",
+        "warranty": "2 年"
+      },
+      "aliases": [
+        "可调节哑铃",
+        "ACME Fit 哑铃",
+        "5-50 磅哑铃"
+      ],
+      "review_highlights": [
+        "超级组中途换重量只需两秒",
+        "锁定后毫无晃动——感觉就像固定哑铃",
+        "价格不菲，但比它替代的那组哑铃更便宜"
+      ]
+    },
+    "AR-1304": {
+      "title": "ACME Fit 阻力带套装（含门锚）",
+      "attributes": {
+        "bands": "5条（10-50磅）",
+        "stackable": "至150磅",
+        "anchor": "门锚+脚踝绑带",
+        "case": "包含"
+      },
+      "short_description": "五条可叠加阻力带、手柄和门锚——一个能放进抽屉的健身房。",
+      "aliases": [
+        "阻力带套装",
+        "ACME健身带",
+        "门锚阻力带"
+      ]
+    },
+    "AR-1305": {
+      "title": "ACME Fit 高密度泡沫轴",
+      "attributes": {
+        "length": "45 cm",
+        "density": "硬质",
+        "surface": "纹理表面",
+        "weight_capacity": "300 lb"
+      },
+      "short_description": "硬质纹理泡沫轴，保持形状；练腿后你真正会坚持的放松仪式。",
+      "aliases": [
+        "高密度泡沫轴",
+        "硬质泡沫轴",
+        "纹理泡沫轴"
+      ]
+    },
+    "AR-1307": {
+      "title": "ACME Fit 室内健身自行车",
+      "attributes": {
+        "resistance": "磁控，100 级",
+        "drive": "皮带",
+        "console": "蓝牙 + 应用",
+        "footprint": "120 x 55 厘米"
+      },
+      "short_description": "近乎静音的磁控阻力与平板电脑支架；可与常用训练应用配对。",
+      "aliases": [
+        "健身车",
+        "室内自行车",
+        "磁控单车"
+      ]
+    },
+    "AR-1306": {
+      "title": "ACME Fit 滚珠轴承跳绳",
+      "attributes": {
+        "cable": "可调钢丝",
+        "bearings": "双滚珠",
+        "handles": "铝制",
+        "spare_cable": "包含"
+      },
+      "short_description": "顺滑滚珠轴承旋转，快速调节钢丝，盒内附备用钢丝。",
+      "aliases": [
+        "ACME跳绳",
+        "滚珠跳绳",
+        "健身跳绳"
+      ]
+    },
+    "AR-1308": {
+      "title": "ACME Fit 打击式按摩枪",
+      "attributes": {
+        "speeds": "5",
+        "heads": "6",
+        "battery": "4 h",
+        "noise": "45 dB"
+      },
+      "short_description": "安静到可以在沙发上使用，力道足以化解长跑后的肌肉打结。",
+      "aliases": [
+        "筋膜枪",
+        "按摩枪",
+        "肌肉放松枪"
+      ]
+    },
+    "AR-1402": {
+      "title": "ACME Makers 540片积木套装",
+      "attributes": {
+        "pieces": "540",
+        "age_range": "6-12岁",
+        "compatible": "主流积木品牌",
+        "ideas_book": "包含"
+      },
+      "short_description": "540块积木、包含12种拼搭的创意手册，并兼容您已有的积木。",
+      "aliases": [
+        "积木套装",
+        "拼搭玩具",
+        "创意积木"
+      ]
+    },
+    "AR-1401": {
+      "title": "ACME游戏室堆叠木制积木套装（54件）",
+      "aliases": [
+        "木制积木",
+        "堆叠积木",
+        "ACME积木"
+      ],
+      "attributes": {
+        "pieces": "54块积木+12张创意卡",
+        "material": "山毛榉木，水性漆",
+        "age_range": "4-10岁",
+        "storage": "棉质收纳袋"
+      },
+      "short_description": "经典山毛榉木积木，搭配创意卡，把一堆积木变成桥梁、塔楼和城镇。",
+      "long_description": "五十四块实心山毛榉木积木，六种形状，四种水性漆颜色，还有十二张创意卡，从第一座桥一步步引导到一整座城镇。积木为小手切割得厚实，打磨光滑，尺寸精准可堆叠——棉质收纳袋让收拾变成游戏的最后一轮。",
+      "specs": {
+        "pieces": "54块积木，6种形状",
+        "colors": "4种，水性漆",
+        "largest": "拱形，12厘米",
+        "idea_cards": "12张，从桥到城镇",
+        "safety": "经独立安全测试，适用于3岁以上"
+      },
+      "review_highlights": [
+        "我9岁的孩子搭出了最高的塔，然后自己发明了新玩法",
+        "油漆经过一年的粗暴玩耍依然完好",
+        "收纳袋很快就装满了——收拾比赛真的管用"
+      ]
+    },
+    "AR-1403": {
+      "title": "ACME Makers 编程机器人套件",
+      "attributes": {
+        "age_range": "8-14岁",
+        "coding": "基于块的应用程序",
+        "sensors": "循线、避障、光线",
+        "battery": "可充电"
+      },
+      "short_description": "组装它，然后编程让它循线行驶、躲避障碍并在走廊巡逻。",
+      "aliases": [
+        "编程机器人",
+        "机器人套件",
+        "ACME机器人"
+      ]
+    },
+    "AR-1404": {
+      "title": "ACME Playroom 家庭小径棋盘游戏",
+      "attributes": {
+        "players": "2-6",
+        "age_range": "8+",
+        "playtime": "45 min",
+        "type": "合作策略"
+      },
+      "short_description": "一款合作铺路游戏，成年人也真心愿意反复游玩。",
+      "aliases": [
+        "家庭小径",
+        "合作策略游戏",
+        "ACME棋盘游戏"
+      ]
+    },
+    "AR-1405": {
+      "title": "ACME Makers 86件艺术工作室套装",
+      "attributes": {
+        "pieces": "86",
+        "age_range": "4-10岁",
+        "includes": "水彩、粉彩、马克笔、画纸",
+        "case": "木质"
+      },
+      "short_description": "水彩、粉彩和马克笔，装在一个折叠式木质盒中，让混乱得以控制。",
+      "aliases": [
+        "86件艺术套装",
+        "儿童美术工具",
+        "木盒绘画套装"
+      ]
+    },
+    "AR-1406": {
+      "title": "ACME游戏室水獭毛绒玩具，40厘米",
+      "attributes": {
+        "height": "40厘米",
+        "age_range": "0+",
+        "material": "再生填充物",
+        "washable": "机洗"
+      },
+      "short_description": "极其柔软，可机洗，填充再生材料。",
+      "aliases": [
+        "水獭毛绒",
+        "40厘米玩偶",
+        "机洗毛绒"
+      ]
+    },
+    "AR-1407": {
+      "title": "ACME 游戏室国家公园 1000 片拼图",
+      "attributes": {
+        "pieces": "1000",
+        "size": "70 x 50 厘米",
+        "material": "再生纸板",
+        "poster": "包含"
+      },
+      "short_description": "切割利落无尘，附参考海报，让桌面保持安宁。",
+      "aliases": [
+        "国家公园拼图",
+        "1000片拼图",
+        "ACME拼图"
+      ]
+    },
+    "AR-1408": {
+      "title": "ACME Makers 三轮儿童滑板车",
+      "attributes": {
+        "age_range": "3-8岁",
+        "wheels": "发光PU轮",
+        "steering": "倾斜转向",
+        "max_weight": "50 kg"
+      },
+      "short_description": "倾斜转向为新手提供稳定性，发光轮让每一圈都成为亮点。",
+      "aliases": [
+        "儿童三轮滑板车",
+        "闪光轮滑板车",
+        "倾斜转向滑板车"
+      ]
+    },
+    "AR-1502": {
+      "title": "ACME Paws 五层带抓柱猫爬架",
+      "attributes": {
+        "height": "160 cm",
+        "levels": "5",
+        "posts": "剑麻缠绕",
+        "perches": "2 + 1 猫窝"
+      },
+      "short_description": "五层结构，两个平台和一个猫窝——足够坚固，能承受一只执着的缅因猫。",
+      "aliases": [
+        "猫爬架",
+        "五层猫树",
+        "剑麻抓柱"
+      ]
+    },
+    "AR-1501": {
+      "title": "ACME Paws 骨科记忆棉狗床，大号",
+      "attributes": {
+        "size": "大号（90 x 70 厘米）",
+        "foam": "10 厘米记忆棉",
+        "cover": "可拆卸，可水洗",
+        "base": "防滑"
+      },
+      "short_description": "十厘米记忆棉，适合老年关节，配有可水洗床套，经得起泥泞季节。",
+      "long_description": "专为大型犬和老化关节打造：一块10厘米厚的高密度记忆棉，不会在第三个月就压扁成薄饼，外层包裹防水内衬和可机洗的微麂皮床套。防滑底座使其在硬地板上保持原位，低矮的前边缘让僵硬的老年犬更容易迈入。舒适适合体重约40公斤以内的狗。",
+      "specs": {
+        "dimensions": "90 x 70 x 20 厘米",
+        "foam": "高密度记忆棉，10 厘米",
+        "cover": "微麂皮，可机洗",
+        "liner": "防水",
+        "max_dog": "40 公斤"
+      },
+      "aliases": [
+        "记忆棉狗床",
+        "骨科狗床",
+        "大号狗床"
+      ],
+      "review_highlights": [
+        "我们11岁的牧羊犬现在选它而不选沙发了",
+        "罩子洗了十几次，拉链依然完好",
+        "泡沫开箱后需要一天才能完全膨胀"
+      ]
+    },
+    "AR-1503": {
+      "title": "ACME Paws 自动宠物喂食器",
+      "attributes": {
+        "capacity": "4 L",
+        "meals": "最多6次/天",
+        "app": "wifi + 定时",
+        "backup": "电池"
+      },
+      "short_description": "通过应用定时投放份量，语音录制呼叫按钮，以及停电时的电池备份。",
+      "aliases": [
+        "自动喂食器",
+        "宠物喂食器",
+        "智能喂食器"
+      ]
+    },
+    "AR-1504": {
+      "title": "ACME Paws 可伸缩牵引绳，5 m",
+      "attributes": {
+        "length": "5 m",
+        "max_dog": "50 kg",
+        "brake": "一键锁定",
+        "tape": "反光"
+      },
+      "short_description": "反光带、一键刹车，以及长时间散步也不会让手抽筋的握把。",
+      "aliases": [
+        "可伸缩狗绳",
+        "反光牵引绳",
+        "一键锁定牵引绳"
+      ]
+    },
+    "AR-1505": {
+      "title": "ACME Paws 带碳滤芯封闭式猫砂盆",
+      "attributes": {
+        "size": "超大号",
+        "filter": "碳",
+        "door": "摆动",
+        "scoop": "包含"
+      },
+      "short_description": "高侧边、碳滤芯和前置摆动门，能（大部分）将猫砂留在盆内。",
+      "aliases": [
+        "封闭猫砂盆",
+        "碳滤芯猫砂盆",
+        "带门猫砂盆"
+      ]
+    },
+    "AR-1506": {
+      "title": "ACME Paws 保温狗夹克",
+      "attributes": {
+        "sizes": "XS-XL",
+        "insulation": "再生合成材料",
+        "shell": "防水",
+        "harness_slot": "有"
+      },
+      "short_description": "防水外壳，带有牵引绳开口，适合那些假装自己不需要的狗。",
+      "aliases": [
+        "狗夹克",
+        "宠物外套",
+        "保暖狗服"
+      ]
+    },
+    "AR-1507": {
+      "title": "ACME Paws 互动羽毛逗猫棒套装",
+      "attributes": {
+        "wands": "2",
+        "refills": "6 羽毛 + 2 响纸",
+        "pole": "可伸缩",
+        "storage": "含收纳袋"
+      },
+      "short_description": "两根可伸缩逗猫棒和八个替换头，因为第一根羽毛从来撑不过一周。",
+      "aliases": [
+        "逗猫棒套装",
+        "羽毛替换头",
+        "可伸缩猫玩具"
+      ]
+    },
+    "AR-1508": {
+      "title": "ACME Paws 10加仑水族箱入门套装",
+      "attributes": {
+        "capacity": "10 gal",
+        "filter": "静音水流",
+        "light": "LED日/夜",
+        "extras": "加热器、鱼网、水质调节剂"
+      },
+      "short_description": "水箱、过滤器、加热器和照明集于一箱——只需添加砾石、水和耐心。",
+      "aliases": [
+        "水族箱套装",
+        "入门水族箱",
+        "小型鱼缸套装"
+      ]
+    },
+    "AR-1601": {
+      "title": "ACME Glow 快干吹风机",
+      "attributes": {
+        "power": "1600 W 高速马达",
+        "ionic": "是",
+        "attachments": "散风嘴 + 2 个集风嘴",
+        "weight": "340 g"
+      },
+      "short_description": "高速马达，干发时间减半，重量减半，热量不伤发。",
+      "aliases": [
+        "快干吹风机",
+        "ACME吹风机",
+        "高速马达吹风机"
+      ]
+    },
+    "AR-1603": {
+      "title": "ACME Glow 维生素C亮肤精华双瓶装",
+      "attributes": {
+        "actives": "15% 维生素C + E + 阿魏酸",
+        "size": "2 x 30 ml",
+        "fragrance_free": "是",
+        "cruelty_free": "是"
+      },
+      "short_description": "无香精维生素C双瓶装——一瓶现用，一瓶密封待第一瓶用完后启用。",
+      "aliases": [
+        "ACME Glow双瓶",
+        "维C精华双支",
+        "无香维C亮白"
+      ]
+    },
+    "AR-1602": {
+      "title": "ACME日常声波电动牙刷，2支装",
+      "attributes": {
+        "modes": "5",
+        "timer": "2分钟四分区计时",
+        "battery": "30天",
+        "heads": "含4个刷头"
+      },
+      "short_description": "两支手柄，四个刷头，五种模式——牙医一直建议的男女升级款。",
+      "aliases": [
+        "ACME牙刷",
+        "声波电动牙刷",
+        "2支装牙刷"
+      ]
+    },
+    "AR-1604": {
+      "title": "ACME 日常精准胡须修剪器套装",
+      "attributes": {
+        "guards": "13",
+        "blade": "自锐钢",
+        "battery": "90分钟",
+        "waterproof": "IPX7"
+      },
+      "short_description": "十三个限位梳，持久锋利的钢刀头，一次充电续航超过一个月。",
+      "aliases": [
+        "胡须修剪器",
+        "ACME修剪器",
+        "精准修剪套装"
+      ]
+    },
+    "AR-1606": {
+      "title": "ACME Rest 桑蚕丝枕套",
+      "attributes": {
+        "material": "22姆米桑蚕丝",
+        "closure": "隐形拉链"
+      },
+      "short_description": "22姆米桑蚕丝，对头发和皮肤比棉更温和，配有隐形拉链。标准款和特大款，四种颜色。",
+      "aliases": [
+        "桑蚕丝枕套",
+        "ACME枕套",
+        "丝绸枕套"
+      ]
+    },
+    "AR-1606-STANDARD-IVORY": {
+      "title": "ACME Rest 桑蚕丝枕套",
+      "attributes": {
+        "material": "22姆米桑蚕丝",
+        "closure": "隐形拉链"
+      },
+      "short_description": "22姆米桑蚕丝比棉更呵护头发和皮肤，配有隐形拉链。标准款和特大款，四种颜色。",
+      "aliases": [
+        "桑蚕丝枕套",
+        "ACME Rest 枕套",
+        "22姆米真丝枕套"
+      ]
+    },
+    "AR-1605": {
+      "title": "ACME Glow 矿物 SPF 50 防晒霜，3件装",
+      "attributes": {
+        "spf": "50",
+        "type": "矿物（锌）",
+        "water_resistant": "80分钟",
+        "size": "3 x 88毫升"
+      },
+      "short_description": "基于锌的SPF 50，涂抹后无假白效果；对珊瑚礁更安全的配方。",
+      "aliases": [
+        "ACME Glow 防晒",
+        "矿物防晒霜",
+        "SPF 50 防晒"
+      ]
+    },
+    "AR-1606-STANDARD-SLATE": {
+      "title": "ACME Rest 桑蚕丝枕套",
+      "aliases": [
+        "桑蚕丝枕套",
+        "丝绸枕套",
+        "ACME枕套"
+      ],
+      "attributes": {
+        "material": "22姆米桑蚕丝",
+        "closure": "隐藏式拉链"
+      },
+      "short_description": "22姆米桑蚕丝，比棉质更呵护秀发与肌肤，配有隐藏式拉链。提供标准款和特大款，四色可选。"
+    },
+    "AR-1606-STANDARD-SAGE": {
+      "title": "ACME Rest 桑蚕丝枕套",
+      "attributes": {
+        "material": "22姆米桑蚕丝",
+        "closure": "隐形拉链"
+      },
+      "short_description": "22姆米桑蚕丝，比棉更亲和头发与肌肤，配有隐形拉链。标准款与国王款，四色可选。",
+      "aliases": [
+        "桑蚕丝枕套",
+        "22姆米真丝枕套",
+        "ACME真丝枕套"
+      ]
+    },
+    "AR-1606-STANDARD-BLUSH": {
+      "title": "ACME Rest 桑蚕丝枕套",
+      "attributes": {
+        "material": "22姆米桑蚕丝",
+        "closure": "隐形拉链"
+      },
+      "short_description": "22姆米桑蚕丝，比棉更呵护头发和皮肤，配有隐形拉链。标准款和特大款，四种颜色。",
+      "aliases": [
+        "桑蚕丝枕套",
+        "真丝枕套",
+        "丝绸枕套"
+      ]
+    },
+    "AR-1606-KING-IVORY": {
+      "title": "ACME Rest 桑蚕丝枕套",
+      "attributes": {
+        "material": "22姆米桑蚕丝",
+        "closure": "隐形拉链"
+      },
+      "short_description": "22姆米真丝，比棉质更呵护头发和皮肤，配有隐形拉链。标准款和加大款，四种颜色。",
+      "aliases": [
+        "真丝枕套",
+        "桑蚕丝枕头套",
+        "丝绸枕套"
+      ]
+    },
+    "AR-1606-KING-SLATE": {
+      "title": "ACME Rest 桑蚕丝枕套",
+      "attributes": {
+        "material": "22姆米桑蚕丝",
+        "closure": "隐形拉链"
+      },
+      "short_description": "22姆米桑蚕丝，比棉质更呵护头发与肌肤，配有隐形拉链。标准款与加大款，四色可选。",
+      "aliases": [
+        "丝绸枕套",
+        "桑蚕丝枕头套",
+        "隐形拉链枕套"
+      ]
+    },
+    "AR-1606-KING-BLUSH": {
+      "title": "ACME Rest 桑蚕丝枕套",
+      "attributes": {
+        "material": "22姆米桑蚕丝",
+        "closure": "隐形拉链"
+      },
+      "short_description": "22姆米桑蚕丝比棉质对头发和皮肤更温和，隐形拉链。标准款和特大款，四种颜色。",
+      "aliases": [
+        "桑蚕丝枕套",
+        "真丝枕套",
+        "ACME枕套"
+      ]
+    },
+    "AR-1606-KING-SAGE": {
+      "title": "ACME Rest 桑蚕丝枕套",
+      "attributes": {
+        "material": "22姆米桑蚕丝",
+        "closure": "隐形拉链"
+      },
+      "short_description": "22姆米桑蚕丝，对头发和皮肤比棉更温和，配隐形拉链。标准款和加大款，四种颜色。",
+      "aliases": [
+        "桑蚕丝枕套",
+        "真丝枕套",
+        "ACME枕套"
+      ]
+    },
+    "AR-1607": {
+      "title": "ACME 日常沙龙级美甲套装，18件",
+      "attributes": {
+        "pieces": "18",
+        "material": "不锈钢",
+        "case": "皮革旅行盒",
+        "warranty": "终身打磨"
+      },
+      "short_description": "不锈钢工具，拉链盒装，终身打磨——一份低调而极佳的礼物。",
+      "aliases": [
+        "美甲套装",
+        "沙龙美甲工具",
+        "不锈钢美甲"
+      ]
+    },
+    "AR-1801": {
+      "title": "ACME Journey 22\" 登机箱万向轮款",
+      "attributes": {
+        "size": "22 英寸 / 38 升",
+        "shell": "聚碳酸酯",
+        "wheels": "4 个万向轮",
+        "weight": "2.9 公斤",
+        "warranty": "10 年"
+      },
+      "short_description": "一款 2.9 公斤的聚碳酸酯登机箱，能承受行李搬运工的粗暴对待，在糟糕的路面上也能顺畅滑行。",
+      "long_description": "这款登机箱专为曾在出发大厅遭遇拉链损坏的人设计。聚碳酸酯外壳在受到撞击时会弯曲而不是破裂，重型拉链尺寸超大，360 度万向轮在鹅卵石和地毯上都能保持顺畅滚动。内部：全长压缩面板、可拆卸洗衣袋，以及嵌入外壳的安检友好型密码锁。尺寸为 22 x 14 x 9 英寸，适合大多数头顶行李舱。",
+      "specs": {
+        "dimensions": "56 x 36 x 23 厘米",
+        "volume": "38 升",
+        "weight": "2.9 公斤",
+        "shell": "聚碳酸酯",
+        "lock": "内置密码锁",
+        "warranty": "10 年"
+      },
+      "aliases": [
+        "登机箱",
+        "万向轮行李箱",
+        "聚碳酸酯拉杆箱"
+      ],
+      "review_highlights": [
+        "两年，四十次飞行，依然顺滑如新",
+        "压缩层确实能多装一天的衣服",
+        "没有外袋——如果你带笔记本电脑，过安检时你会想念它"
+      ]
+    },
+    "AR-1802": {
+      "title": "ACME Journey 28英寸托运万向轮行李箱",
+      "attributes": {
+        "size": "28 in / 95 L",
+        "shell": "聚碳酸酯",
+        "expansion": "+15%",
+        "weight": "4.3 kg"
+      },
+      "short_description": "大容量旅行选择，配备15%扩展插角，与登机箱采用相同的抗裂外壳。",
+      "aliases": [
+        "大号行李箱",
+        "托运箱",
+        "28寸拉杆箱"
+      ]
+    },
+    "AR-1803": {
+      "title": "ACME Journey 压缩收纳袋套装，6件套",
+      "attributes": {
+        "pieces": "6",
+        "compression": "双拉链",
+        "material": "防撕裂尼龙",
+        "shoe_bag": "包含"
+      },
+      "short_description": "双拉链压缩设计，可多出三分之一的空间，另附鞋袋用于放置脏物。",
+      "aliases": [
+        "压缩收纳袋",
+        "旅行收纳袋",
+        "ACME收纳袋"
+      ]
+    },
+    "AR-1804": {
+      "title": "ACME Rest记忆泡沫旅行枕",
+      "attributes": {
+        "fill": "记忆泡沫",
+        "cover": "可清洗",
+        "clasp": "前置按扣",
+        "packs_to": "使用卷收纳袋可压缩至60%"
+      },
+      "short_description": "真正支撑下巴而不是把头部往前推；可卷至一半大小。",
+      "aliases": [
+        "旅行枕",
+        "记忆泡沫枕",
+        "颈枕"
+      ]
+    },
+    "AR-1805": {
+      "title": "ACME Select 通用旅行适配器，带65W GaN充电",
+      "attributes": {
+        "regions": "150+个国家",
+        "ports": "2个USB-C + 2个USB-A",
+        "output": "65 W GaN",
+        "fuse": "可更换"
+      },
+      "short_description": "一个充电砖适配所有插座形状，充电速度足以支持笔记本电脑，并附带备用保险丝。",
+      "aliases": [
+        "旅行充电器",
+        "万能转换插头",
+        "氮化镓快充"
+      ]
+    },
+    "AR-1806": {
+      "title": "ACME Journey 悬挂式洗漱包",
+      "attributes": {
+        "hook": "旋转",
+        "compartments": "4 + 防漏口袋",
+        "material": "防水防撕裂",
+        "size": "25 x 19 x 9 cm"
+      },
+      "short_description": "可悬挂于任何毛巾杆，平铺展开，并隔离最终会泄漏的洗发水。",
+      "aliases": [
+        "悬挂洗漱包",
+        "旅行洗漱包",
+        "ACME洗漱包"
+      ]
+    },
+    "AR-1807": {
+      "title": "ACME Select 物品追踪器，4件装",
+      "attributes": {
+        "pack": "4个追踪器",
+        "network": "手机查找网络",
+        "battery": "1年，可更换",
+        "water": "IP67"
+      },
+      "short_description": "每个包里放一个，不用再算旋转木马的概率——一年电池，可更换纽扣电池。",
+      "aliases": [
+        "ACME追踪器",
+        "物品追踪器4件装",
+        "Select追踪器"
+      ]
+    },
+    "AR-2101": {
+      "title": "ACME 儿童海底世界双人床寝具套装",
+      "attributes": {
+        "size": "双人",
+        "pieces": "被芯 + 床单 + 枕套",
+        "material": "拉绒超细纤维",
+        "theme": "海洋"
+      },
+      "short_description": "双人被芯、床笠和枕套，采用友好的鲸鱼、海龟和海星印花。",
+      "long_description": "海底世界套装将睡前时光带入海浪之下：鲸鱼、海龟和鱼群在蓝绿色与海军蓝的拉绒超细纤维被芯上漂游，并配有配套的床笠和一个枕套。在测试中，每周洗涤持续一年后，颜色依然鲜亮。",
+      "specs": {
+        "size": "双人（被芯 68 x 86 英寸）",
+        "material": "100% 拉绒超细纤维",
+        "care": "冷水机洗"
+      },
+      "aliases": [
+        "儿童海洋床品",
+        "海底世界寝具",
+        "鲸鱼海龟被套"
+      ],
+      "review_highlights": [
+        "每周清洗一次，一年后依然鲜艳",
+        "我儿子每晚都挑不同的海洋生物",
+        "比价格翻倍的四件套还柔软"
+      ]
+    },
+    "AR-2102": {
+      "title": "ACME 儿童即撕即贴海洋墙贴（36件）",
+      "attributes": {
+        "count": "36张贴纸",
+        "removable": "是",
+        "largest": "24英寸鲸鱼",
+        "theme": "海洋"
+      },
+      "short_description": "36张可移除海洋贴纸——从两英尺的鲸鱼到手掌大小的海马——撕下不留痕。",
+      "long_description": "三十六张哑光贴纸：一只鲸鱼、海豚、海龟、海马和成群的鱼，外加珊瑚和气泡散布其间。每张都可重新放置而不损伤漆面，因此无论何时灵感涌现，都能重建这片礁石。",
+      "specs": {
+        "count": "36",
+        "largest_decal": "24英寸",
+        "surface": "涂漆墙面、门、家具",
+        "removal": "撕下不留痕，可重新放置"
+      },
+      "aliases": [
+        "海洋墙贴",
+        "儿童贴纸",
+        "可移除贴纸"
+      ],
+      "review_highlights": [
+        "二十分钟就贴好了，从我们租的房子墙上撕下来干干净净",
+        "床上方的大鲸鱼是整个房间的亮点",
+        "贴上去没有气泡——我们家孩子一个人贴了半面墙"
+      ]
+    },
+    "AR-2104": {
+      "title": "ACME Makers 300片草甸拼图",
+      "attributes": {
+        "pieces": "300",
+        "finished_size": "18 x 24 in",
+        "art": "原创草甸插画",
+        "age_range": "8+"
+      },
+      "short_description": "原创草甸场景，300片令人满足的拼片——在桌边度过一个下午，收获一幅值得装裱的作品。",
+      "long_description": "原创日出草甸插画，裁切成300片边缘利落的拼片——足够大以满足挑战，又足够小可在周末的桌边时光中完成。完成后的18 x 24英寸画作值得装裱，盒盖在拼图时可作为参考支架。",
+      "specs": {
+        "pieces": "300",
+        "finished_size": "18 x 24 in",
+        "board": "再生纸板，裁切利落，低粉尘",
+        "art": "原创委托插画"
+      },
+      "aliases": [
+        "草甸拼图",
+        "300片拼图",
+        "ACME拼图"
+      ],
+      "review_highlights": [
+        "我们在一个下雨的周末拼完了，还把它装裱了起来",
+        "拼图片咬合时发出令人满意的咔嗒声——完全不用硬塞",
+        "参考图的盖子支架是个巧妙的小设计"
+      ]
+    },
+    "AR-2103": {
+      "title": "ACME 儿童潮池印花区域地毯 4x5 英尺",
+      "attributes": {
+        "size": "4 x 5 英尺",
+        "backing": "防滑",
+        "pile": "低绒，适合玩耍",
+        "theme": "海洋"
+      },
+      "short_description": "一款低绒游戏地毯，印有海岸线地图——潮池、灯塔和珊瑚礁等待探索。",
+      "long_description": "这款地毯一半是装饰，一半是玩具：印刷的海岸线从灯塔延伸，经过潮池到达珊瑚礁，有供船只和人物穿行的通道，低绒在储物箱和玩耍下保持平整。防滑背衬适用于硬地板。",
+      "specs": {
+        "size": "48 x 60 英寸",
+        "pile_height": "0.3 英寸",
+        "backing": "防滑乳胶",
+        "care": "局部清洁，吸尘"
+      },
+      "aliases": [
+        "儿童海洋地毯",
+        "潮池游戏毯",
+        "防滑低绒地毯"
+      ],
+      "review_highlights": [
+        "足够平整，门能顺利通过，人偶也能稳稳站立",
+        "他在上面玩的时间比玩平板还多",
+        "颜色与床上用品套装完美匹配"
+      ]
+    },
+    "AR-2105": {
+      "title": "ACME游戏室故事书熊（14英寸）",
+      "attributes": {
+        "size": "14 in",
+        "material": "毛绒，刺绣眼睛",
+        "washable": "机洗，轻柔",
+        "age_range": "3+"
+      },
+      "short_description": "一只柔软加重的熊，带有刺绣眼睛——没有纽扣，没有电池，被无尽喜爱。",
+      "long_description": "一只柔软加重的14英寸熊，带有刺绣眼睛和鼻子——没有可咬掉的东西——以及经得起被拖来拖去的缝线。可轻柔机洗，烘干袋取出后毛发如第一天般柔软。",
+      "specs": {
+        "size": "14 in坐高",
+        "filling": "再生聚酯填充，柔软加重",
+        "details": "刺绣眼睛和鼻子",
+        "care": "轻柔机洗，烘干袋"
+      },
+      "aliases": [
+        "毛绒熊",
+        "故事书熊",
+        "14英寸熊"
+      ],
+      "review_highlights": [
+        "已经参加过两次过夜聚会和一次海滩旅行，看起来仍然很棒",
+        "刺绣细节——没有可丢失的部件",
+        "比我们花双倍价钱买的精品款更柔软"
+      ]
+    },
+    "AR-2106": {
+      "title": "ACME 儿童玩具收纳箱（3件套）",
+      "attributes": {
+        "count": "3个收纳箱",
+        "collapsible": "是",
+        "labels": "海滩拾荒图标",
+        "theme": "海洋"
+      },
+      "short_description": "三个可折叠布艺收纳箱，带有海滩拾荒标签，尺寸适合存放人偶、积木和书籍。",
+      "long_description": "清理变成海滩漫步：每个收纳箱都有自己的图标（贝壳、鱼、浮木），因此收拾玩具就像寻宝分类。加固边框保持打开；不使用时可以折叠平放。",
+      "specs": {
+        "size": "每个11英寸立方体",
+        "material": "毛毡+帆布",
+        "rims": "加固金属丝"
+      },
+      "aliases": [
+        "儿童玩具收纳箱",
+        "可折叠收纳箱",
+        "海洋主题收纳"
+      ],
+      "review_highlights": [
+        "清理时间不再是讨价还价的事",
+        "结实的边框——不像廉价收纳箱那样塌陷",
+        "适合我们已有的格子架"
+      ]
+    },
+    "AR-2107": {
+      "title": "ACME 儿童火箭台灯",
+      "attributes": {
+        "shade": "火箭轮廓",
+        "dimmable": "3 级",
+        "power": "USB-C",
+        "theme": "太空"
+      },
+      "short_description": "一款温暖的三级调光灯，配有火箭轮廓灯罩，适合阅读角落。",
+      "long_description": "一款小巧的书桌或架子灯，其灯罩在墙上投出柔和的火箭与月亮轮廓。三级亮度——阅读、放松和微光。",
+      "specs": {
+        "height": "11 英寸",
+        "brightness": "3 级，最大 400 流明",
+        "power": "USB-C"
+      },
+      "aliases": [
+        "儿童火箭灯",
+        "太空台灯",
+        "三级调光灯"
+      ],
+      "review_highlights": [
+        "放在书架上，紧挨着太阳系海报，完美",
+        "夜间的墙壁剪影是个温馨的小点缀",
+        "希望线缆能更长一些——买个延长线吧"
+      ]
+    },
+    "AR-2108": {
+      "title": "ACME 游戏室太阳系海报套装（4 张）",
+      "attributes": {
+        "count": "4 张海报",
+        "size": "16 x 20 英寸",
+        "finish": "哑光，防眩光",
+        "theme": "太空"
+      },
+      "short_description": "四张哑光海报，描绘行星、月相、距离和发射时间线——能回答问题的装饰。",
+      "long_description": "一套四张海报，将墙壁变成参考资料：行星大小对比图、太阳系距离图、月相日历和火箭结构图。哑光材质在夜灯下阅读清晰。",
+      "specs": {
+        "count": "4",
+        "size": "每张 16 x 20 英寸",
+        "finish": "哑光",
+        "mounting": "画框或和纸胶带"
+      },
+      "aliases": [
+        "太阳系海报",
+        "太空主题装饰",
+        "行星图套装"
+      ],
+      "review_highlights": [
+        "她现在在房间另一头就能纠正我们——引用墙上的内容",
+        "哑光表面意味着台灯不会产生眩光",
+        "看起来是精心设计的，而非授权卡通形象"
+      ]
+    },
+    "AR-2109": {
+      "title": "ACME 儿童深海遮光窗帘（2片装）",
+      "attributes": {
+        "panels": "2",
+        "size": "每片42 x 63英寸",
+        "blackout": "85%",
+        "theme": "海洋"
+      },
+      "short_description": "两片遮光帘板，带有微妙的同色系波浪编织——足够暗，适合早睡。",
+      "long_description": "深海帘板可阻挡约85%的光线，背后是安静的同色系波浪图案——从房间对面看是纯海军蓝，近看是翻滚的海浪。标准杆袋。",
+      "specs": {
+        "panels": "2",
+        "size": "42 x 63英寸",
+        "blackout": "85%",
+        "care": "冷水机洗"
+      },
+      "aliases": [
+        "儿童遮光帘",
+        "深海窗帘",
+        "海洋主题窗帘"
+      ],
+      "review_highlights": [
+        "夏日就寝时间终于可行",
+        "图案低调——孩子十岁时房间无需重装",
+        "用我们现有的杆子十分钟就挂好了"
+      ]
+    },
+    "AR-1901": {
+      "title": "ACME Sleep 大号平台床架",
+      "attributes": {
+        "size": "大号",
+        "headboard": "软包，仿亚麻",
+        "slats": "无需弹簧床垫",
+        "assembly": "45分钟，两人"
+      },
+      "short_description": "一款带软包仿亚麻床头的大号平台床架——无需弹簧床垫，无异响。",
+      "long_description": "ACME Sleep 平台床架将柔软的软包床头与坚固的板条底座相结合，床垫可直接放置。钢制核心横梁经过包裹处理以保持静音；床下净空可放置储物箱。",
+      "specs": {
+        "size": "大号",
+        "clearance": "床下9英寸",
+        "weight_capacity": "700磅",
+        "assembly": "两人，约45分钟"
+      },
+      "aliases": [
+        "大号平台床架",
+        "ACME Sleep床架",
+        "仿亚麻床头床架"
+      ],
+      "review_highlights": [
+        "六个月后依然零吱嘎声",
+        "组装确实只需45分钟",
+        "床头板靠坐阅读很舒适"
+      ]
+    },
+    "AR-1902": {
+      "title": "ACME 混合床垫",
+      "attributes": {
+        "type": "混合弹簧 + 泡沫",
+        "firmness": "中硬",
+        "trial": "100 晚"
+      },
+      "short_description": "中硬混合床垫，压缩发货，两天内稳定——100 晚试用。",
+      "long_description": "床垫将袋装弹簧层置于冷却泡沫下，提供适合仰卧和侧卧者的中硬睡感。到货时压缩，48 小时内完全膨胀，并提供 100 晚家庭试用。四种尺寸；价格逐级递增。",
+      "specs": {
+        "sizes": "单人, 双人, 大双人, 特大双人",
+        "height": "11 英寸",
+        "layers": "袋装弹簧 + 凝胶泡沫",
+        "trial": "100 晚"
+      },
+      "aliases": [
+        "混合床垫",
+        "中硬床垫",
+        "压缩床垫"
+      ],
+      "review_highlights": [
+        "48小时膨胀是真的——先别急着评判",
+        "比我们以前的泡沫板睡起来明显更凉爽",
+        "在这个价位上，混合床垫的边缘支撑很扎实"
+      ]
+    },
+    "AR-1902-TWIN": {
+      "title": "ACME Sleep Hybrid Mattress",
+      "attributes": {
+        "type": "混合弹簧加泡沫",
+        "firmness": "中等偏硬",
+        "trial": "100晚"
+      },
+      "short_description": "一款中等偏硬的混合床垫，压缩发货，两天内稳定——100晚试用。",
+      "long_description": "这款床垫在冷却泡沫下分层放置袋装弹簧，提供中等偏硬的感觉，适合仰卧和侧卧睡眠者。到货时压缩，48小时内完全膨胀，并提供100晚家庭试用。四种尺寸；价格随尺寸递增。",
+      "specs": {
+        "sizes": "单人床, 双人床, 大床, 特大床",
+        "height": "11英寸",
+        "layers": "袋装弹簧加凝胶泡沫",
+        "trial": "100晚"
+      },
+      "aliases": [
+        "混合床垫",
+        "中等偏硬床垫",
+        "ACME床垫"
+      ],
+      "review_highlights": [
+        "48小时膨胀是真的——别急着评判",
+        "比我们旧的泡沫床垫睡起来明显更凉",
+        "在这个价位，混合床垫的边缘支撑很扎实"
+      ]
+    },
+    "AR-1902-FULL": {
+      "title": "ACME 混合床垫",
+      "attributes": {
+        "type": "混合弹簧+泡沫",
+        "firmness": "中偏硬",
+        "trial": "100晚"
+      },
+      "short_description": "一款中偏硬的混合床垫，压缩发货，两天内恢复——100晚试用。",
+      "long_description": "床垫将袋装弹簧层置于冷却泡沫之下，提供中偏硬睡感，适合仰卧和侧卧者。到货时为压缩状态，48小时内完全膨胀，并提供100晚居家试用。四种尺寸；价格逐级递增。",
+      "specs": {
+        "sizes": "单人、双人、大双人、特大双人",
+        "height": "11英寸",
+        "layers": "袋装弹簧+凝胶泡沫",
+        "trial": "100晚"
+      },
+      "aliases": [
+        "ACME混合床垫",
+        "中偏硬床垫",
+        "压缩发货床垫"
+      ],
+      "review_highlights": [
+        "48小时膨胀是真的——先别急着下结论",
+        "比我们旧的泡沫垫睡起来明显更凉快",
+        "这个价位的混合床垫，边缘支撑很扎实"
+      ]
+    },
+    "AR-1902-QUEEN": {
+      "title": "ACME Sleep 混合床垫",
+      "aliases": [
+        "混合床垫",
+        "中等硬度床垫",
+        "ACME床垫"
+      ],
+      "attributes": {
+        "type": "混合线圈+泡沫",
+        "firmness": "中等偏硬",
+        "trial": "100晚"
+      },
+      "short_description": "一款中等偏硬的混合床垫，压缩发货，两天内稳定——100晚试用。",
+      "long_description": "这款床垫将袋装线圈层叠在冷却泡沫之下，提供中等偏硬的触感，适合仰卧和侧卧睡眠者。到货时处于压缩状态，48小时内完全膨胀，并附带100晚居家试用。四种尺寸；价格随尺寸递增。",
+      "specs": {
+        "sizes": "单人床, 双人床, 大号床, 特大号床",
+        "height": "11英寸",
+        "layers": "袋装线圈+凝胶泡沫",
+        "trial": "100晚"
+      },
+      "review_highlights": [
+        "48小时膨胀是真的——先别急着评判",
+        "比我们旧的泡沫板睡起来明显更凉",
+        "在这个价位上，混合床垫的边缘支撑很扎实"
+      ]
+    },
+    "AR-1902-KING": {
+      "title": "ACME 混合床垫",
+      "attributes": {
+        "type": "混合弹簧 + 泡沫",
+        "firmness": "中等偏硬",
+        "trial": "100 晚"
+      },
+      "short_description": "一款中等偏硬的混合床垫，压缩发货，两天内稳定——100 晚试用。",
+      "long_description": "床垫将袋装弹簧置于冷却泡沫之下，带来中等偏硬睡感，适合仰卧和侧卧者。到货时为压缩状态，48 小时内完全膨胀，并提供 100 晚居家试用。四种尺寸；价格逐级递增。",
+      "specs": {
+        "sizes": "单人、双人、大双人、特大双人",
+        "height": "11 英寸",
+        "layers": "袋装弹簧 + 凝胶泡沫",
+        "trial": "100 晚"
+      },
+      "aliases": [
+        "混合床垫",
+        "中等偏硬床垫",
+        "100晚试用床垫"
+      ],
+      "review_highlights": [
+        "48小时膨胀是真的——先别急着评价",
+        "比我们旧的泡沫床垫睡起来明显更凉快",
+        "这个价位的混合床垫边缘支撑很扎实"
+      ]
+    },
+    "AR-1903": {
+      "title": "ACME Sleep 水洗棉被套套装，Queen",
+      "attributes": {
+        "size": "queen",
+        "material": "水洗棉",
+        "pieces": "被套 + 2 个枕套",
+        "closure": "隐藏式纽扣"
+      },
+      "short_description": "水洗棉被套和两个枕套，看起来略带褶皱更显质感。",
+      "long_description": "成衣水洗棉，从第一天起就拥有如旧衣般的柔软触感。隐藏式纽扣封口和角部系带可将被芯固定到位。",
+      "specs": {
+        "size": "queen",
+        "material": "100% 水洗棉",
+        "pieces": "被套 + 2 个枕套"
+      },
+      "aliases": [
+        "水洗棉被套",
+        "ACME Sleep 床品",
+        "Queen 被套套装"
+      ],
+      "review_highlights": [
+        "立即柔软，无需磨合",
+        "褶皱外观掩盖了无数未整理床铺的瑕疵",
+        "角带确实能固定被芯"
+      ]
+    },
+    "AR-1721": {
+      "title": "ACME 美容眼影盘",
+      "attributes": {
+        "shades": "12",
+        "finish": "8 哑光 / 4 珠光",
+        "vegan": "是"
+      },
+      "short_description": "十二款日常中性色——八款哑光，四款珠光——专为五分钟早晨打造。",
+      "long_description": "Everyday 眼影盘舍弃了新奇怪异的色调：十二款中性色，匆忙时用指尖即可快速晕染，层层叠加可应对晚间场合。纯素配方，飞粉少。",
+      "specs": {
+        "shades": "12",
+        "weight": "14 g",
+        "vegan": "是",
+        "cruelty_free": "是"
+      },
+      "aliases": [
+        "ACME 眼影盘",
+        "日常眼影盘",
+        "中性色眼影"
+      ],
+      "review_highlights": [
+        "每个色号都真正实用",
+        "即使是珠光色也几乎不飞粉",
+        "替换了我抽屉里的三盘眼影"
+      ]
+    },
+    "AR-1722": {
+      "title": "ACME 有色保湿霜 SPF 30",
+      "attributes": {
+        "spf": "30",
+        "shades": "6",
+        "finish": "自然、透气"
+      },
+      "short_description": "轻薄透气的遮瑕效果，SPF 30——像化妆品一样表现的护肤品。",
+      "long_description": "均匀肤色而不遮盖，SPF 30 可层叠于所有产品之下，持续一个工作日不卡粉。六种色号，从最浅到最深。",
+      "specs": {
+        "spf": "30 广谱",
+        "size": "40 毫升",
+        "shades": "6，从瓷白到浓咖"
+      },
+      "aliases": [
+        "有色保湿霜",
+        "防晒隔离霜",
+        "轻薄粉底"
+      ],
+      "review_highlights": [
+        "人人都在问的伪素颜妆容",
+        "重复涂抹防晒霜也不会搓泥",
+        "色号匹配工具第一次就帮我选对了"
+      ]
+    },
+    "AR-1722-PORCELAIN": {
+      "title": "ACME Beauty 有色保湿霜 SPF 30",
+      "attributes": {
+        "spf": "30",
+        "shades": "6",
+        "finish": "自然、透气"
+      },
+      "short_description": "轻薄透气遮瑕，SPF 30——像护肤品一样起效的化妆品。",
+      "long_description": "均匀肤色而不遮盖，可叠加在一切之下提供 SPF 30 防护，全天持妆不卡粉。六种色号，从最浅到最深。",
+      "specs": {
+        "spf": "30 广谱",
+        "size": "40 毫升",
+        "shades": "6，瓷白到浓咖啡"
+      },
+      "aliases": [
+        "有色面霜",
+        "防晒保湿霜",
+        "轻薄粉底"
+      ],
+      "review_highlights": [
+        "人人都问的伪素颜妆",
+        "防晒补涂后不搓泥",
+        "色号匹配工具第一次就选对了"
+      ]
+    },
+    "AR-1722-SAND": {
+      "title": "ACME Beauty 有色保湿霜 SPF 30",
+      "attributes": {
+        "spf": "30",
+        "shades": "6",
+        "finish": "自然、透气"
+      },
+      "short_description": "轻薄透气的遮盖力，SPF 30——像护肤品一样起效的妆容。",
+      "long_description": "均匀肤色而不掩盖，可叠加 SPF 30 于任何产品之下，持续一整天不卡粉。六个色号，从最浅到最深。",
+      "specs": {
+        "spf": "30 广谱防晒",
+        "size": "40 ml",
+        "shades": "6 个，从瓷白到浓咖"
+      },
+      "aliases": [
+        "有色面霜",
+        "防晒保湿霜",
+        "轻薄粉底"
+      ],
+      "review_highlights": [
+        "人人都在问的伪素颜妆",
+        "在防晒霜补涂后也不会搓泥",
+        "色号匹配工具第一次就帮我选对了"
+      ]
+    },
+    "AR-1722-HONEY": {
+      "title": "ACME Beauty有色保湿霜SPF 30",
+      "attributes": {
+        "spf": "30",
+        "shades": "6",
+        "finish": "自然、透气"
+      },
+      "short_description": "轻薄透气的遮瑕效果，SPF 30 — 像化妆品一样起效的护肤品。",
+      "long_description": "它能均匀肤色而不掩盖肤色，可在所有东西下面叠加SPF 30，并且能持续一个工作日而不卡粉。六种色号，从最浅到最深。",
+      "specs": {
+        "spf": "30广谱",
+        "size": "40毫升",
+        "shades": "6种，从瓷白到浓咖啡色"
+      },
+      "aliases": [
+        "有色保湿霜",
+        "防晒保湿霜",
+        "轻薄粉底"
+      ],
+      "review_highlights": [
+        "人人都问的伪素颜妆",
+        "防晒霜补涂后不搓泥",
+        "肤色匹配工具第一次就选对了我的色号"
+      ]
+    },
+    "AR-1722-AMBER": {
+      "title": "ACME Beauty 有色保湿霜 SPF 30",
+      "attributes": {
+        "spf": "30",
+        "shades": "6",
+        "finish": "自然、透气"
+      },
+      "short_description": "轻薄透气的遮瑕，SPF 30——像化妆品一样发挥作用的护肤品。",
+      "long_description": "均匀肤色而不遮盖，可在所有产品下叠加 SPF 30，持妆一整天不卡粉。六种色号，从最浅到最深。",
+      "specs": {
+        "spf": "30 广谱",
+        "size": "40 ml",
+        "shades": "6，瓷白到浓缩咖啡"
+      },
+      "aliases": [
+        "有色保湿霜",
+        "SPF30妆前乳",
+        "轻薄粉底液"
+      ],
+      "review_highlights": [
+        "所有人都问的伪素颜妆容",
+        "在防晒霜重复涂抹下不会起球",
+        "色号匹配工具第一次就选对了我的色号"
+      ]
+    },
+    "AR-1722-CHESTNUT": {
+      "title": "ACME Beauty 有色保湿霜 SPF 30",
+      "attributes": {
+        "spf": "30",
+        "shades": "6",
+        "finish": "自然、透气"
+      },
+      "short_description": "轻薄透气的遮瑕与 SPF 30 防护——如护肤品般服帖的底妆。",
+      "long_description": "均匀肤色而不掩盖本色，可叠涂于任何产品之下提供 SPF 30 防护，全天佩戴不卡粉。六款色号，从最浅到最深。",
+      "specs": {
+        "spf": "30 广谱防晒",
+        "size": "40 毫升",
+        "shades": "6 款，从瓷白到浓缩咖啡色"
+      },
+      "aliases": [
+        "有色面霜",
+        "轻薄保湿霜",
+        "SPF 30 保湿"
+      ],
+      "review_highlights": [
+        "人人都在问的伪素颜妆",
+        "在补涂防晒霜后不会起球",
+        "色号匹配工具第一次就帮我选对了"
+      ]
+    },
+    "AR-1723": {
+      "title": "ACME Beauty Long-Wear Mascara",
+      "attributes": {
+        "type": "管状",
+        "removal": "温水",
+        "smudge": "否"
+      },
+      "short_description": "一款管状睫毛膏，全天持久，温水即可卸除——无论如何都不会出现熊猫眼。",
+      "long_description": "它将每根睫毛包裹在灵活的管状结构中，全天不结块、不晕染，然后只需温水和轻柔按压即可滑落。无需卸妆液。",
+      "specs": {
+        "type": "管状",
+        "wear": "全天，防晕染",
+        "removal": "温水"
+      },
+      "aliases": [
+        "长效睫毛膏",
+        "温水卸除",
+        "管状睫毛膏"
+      ],
+      "review_highlights": [
+        "健身房、下雨、婚礼痛哭——依然完好",
+        "洗澡时无需揉搓就能卸掉",
+        "唯一不会蹭到我眼镜上的睫毛膏"
+      ]
+    },
+    "AR-1722-ESPRESSO": {
+      "title": "ACME 美颜润色保湿霜 SPF 30",
+      "attributes": {
+        "spf": "30",
+        "shades": "6",
+        "finish": "自然，透气"
+      },
+      "short_description": "轻薄透气的遮瑕效果，SPF 30 — 像化妆品一样行事的护肤品。",
+      "long_description": "均匀肤色而不遮盖，将 SPF 30 叠加在所有产品之下，持续整个工作日而不卡粉。六种色号，从最浅到最深。",
+      "specs": {
+        "spf": "30 广谱",
+        "size": "40 ml",
+        "shades": "6，瓷白至浓咖"
+      },
+      "aliases": [
+        "有色面霜",
+        "防晒保湿",
+        "轻薄粉底"
+      ],
+      "review_highlights": [
+        "人人都问的伪素颜妆容",
+        "在补涂防晒霜时不会起球",
+        "色号匹配工具第一次就帮我选对了"
+      ]
+    },
+    "AR-2001": {
+      "title": "ACME 食品柜 大西洋鲑鱼柳（2 磅，冷冻）",
+      "attributes": {
+        "weight": "2 磅",
+        "portions": "4 片鱼柳",
+        "state": "独立真空密封，冷冻"
+      },
+      "short_description": "四片真空密封鲑鱼柳——二十分钟解冻的工作日晚餐。",
+      "long_description": "独立密封的鱼柳，从冷冻到可直接下锅，只需浸泡在一碗冷水中。带皮，适合煎脆皮或轻松烧烤。",
+      "specs": {
+        "weight": "2 磅（4 x 8 盎司）",
+        "prep": "在冷水中解冻 20 分钟",
+        "source": "养殖大西洋"
+      },
+      "aliases": [
+        "冷冻鲑鱼柳",
+        "真空密封鱼柳",
+        "大西洋鲑鱼"
+      ],
+      "review_highlights": [
+        "餐厅厚度的鱼排，不是薄尾段",
+        "真空密封意味着没有冷冻灼伤",
+        "从冷冻状态开始，工作日晚上也能快速做好"
+      ]
+    },
+    "AR-2003": {
+      "title": "ACME 平日炒面晚餐套装",
+      "attributes": {
+        "serves": "5-6",
+        "includes": "面条、姜蒜酱、脆 topping"
+      },
+      "short_description": "炒锅面条、姜蒜酱和脆 topping——加入蛋白质和一袋冷冻蔬菜，搞定。",
+      "long_description": "炒面晚餐套装包含快煮炒锅面条、咸鲜而非辛辣的姜蒜酱，以及芝麻脆 topping。自备蛋白质和蔬菜；一个锅搞定其余。",
+      "specs": {
+        "serves": "5-6",
+        "noodles": "2 x 8 盎司炒锅面条",
+        "sauce": "姜蒜，微辣"
+      },
+      "aliases": [
+        "炒面套装",
+        "快煮炒面",
+        "姜蒜炒面"
+      ],
+      "review_highlights": [
+        "酱料孩子爱吃，大人也认可",
+        "面条不像便宜货那样结块",
+        "工作日晚上比外卖还快"
+      ]
+    },
+    "AR-2002": {
+      "title": "ACME 食品储藏室柠檬香草腌料与釉料",
+      "attributes": {
+        "size": "12盎司",
+        "use": "鱼、鸡肉、蔬菜"
+      },
+      "short_description": "一款明亮的柠檬香草腌料，也可作为鱼或鸡肉的收尾釉料。",
+      "long_description": "柠檬、大蒜和软香草制成的腌料，十五分钟即可入味，并可收汁成锅釉。一瓶可供两次家庭晚餐使用。",
+      "specs": {
+        "size": "12盎司",
+        "marinade_time": "15-30分钟"
+      },
+      "aliases": [
+        "柠檬香草腌料",
+        "鸡肉腌料釉",
+        "鱼肉调味酱"
+      ],
+      "review_highlights": [
+        "让我的三文鱼尝起来更有讲究",
+        "收汁后变成很棒的锅底酱汁",
+        "不像大多数瓶装腌料那么咸"
+      ]
+    },
+    "AR-2006": {
+      "title": "ACME 食品柜慢炖番茄罗勒酱",
+      "attributes": {
+        "size": "24 盎司",
+        "ingredients": "8 种，全部易于发音",
+        "sugar_added": "无"
+      },
+      "short_description": "一款慢炖番茄罗勒酱，含八种配料且无添加糖。",
+      "long_description": "碎番茄、罗勒、橄榄油、大蒜——慢炖浓缩，尝起来像是一个你不必花费的午后。一罐可拌一磅意面。",
+      "specs": {
+        "size": "24 盎司",
+        "added_sugar": "无"
+      },
+      "aliases": [
+        "番茄罗勒酱",
+        "慢炖意面酱",
+        "无添加糖酱"
+      ],
+      "review_highlights": [
+        "唯一不需要我调味的罐装酱料",
+        "八种配料，全都认识",
+        "淋在新鲜或干意面上都很棒"
+      ]
+    },
+    "AR-2005": {
+      "title": "ACME 食品柜新鲜双款意面 — 通心粉与宽面",
+      "attributes": {
+        "weight": "2 x 9 oz",
+        "cook_time": "4分钟",
+        "state": "冷藏新鲜"
+      },
+      "short_description": "两团新鲜意面，四分钟即可煮熟——晚餐快人四分钟。",
+      "long_description": "新鲜鸡蛋意面，口感劲道：通心粉适合浓郁酱汁，宽面适合奶油或黄油鼠尾草。沸水煮四分钟。",
+      "specs": {
+        "weight": "2 x 9 oz",
+        "cook_time": "4分钟"
+      },
+      "aliases": [
+        "新鲜意面",
+        "双款意面",
+        "快煮意面"
+      ],
+      "review_highlights": [
+        "味道像意大利熟食店的，价格却只要一半",
+        "四分钟晚餐主食",
+        "比干面更能挂住酱汁"
+      ]
+    },
+    "AR-2004": {
+      "title": "ACME Pantry 90%瘦牛肉碎（1.5磅）",
+      "attributes": {
+        "weight": "1.5磅",
+        "lean": "90/10",
+        "state": "新鲜，真空包装"
+      },
+      "short_description": "真空包装的瘦牛肉碎，一餐份量——可炒熟用于意面、辣酱汤或汉堡。",
+      "long_description": "90/10的配比，煎炒时不产生油腻。真空包装使其在冰箱中保鲜更久，也可直接放入冷冻室。",
+      "specs": {
+        "weight": "1.5磅",
+        "blend": "90/10"
+      },
+      "aliases": [
+        "瘦牛肉碎",
+        "真空包装牛肉",
+        "ACME牛肉"
+      ],
+      "review_highlights": [
+        "煎至金黄，无需沥油步骤",
+        "适合一家晚餐并有余量",
+        "可平铺冷冻，便于叠放"
+      ]
+    },
+    "AR-2007": {
+      "title": "ACME 食品柜蒜香布里欧修晚餐小面包（8个装）",
+      "attributes": {
+        "count": "8个",
+        "prep": "烤箱复热5分钟"
+      },
+      "short_description": "八个黄油蒜香布里欧修小面包——烤箱五分钟，满桌都是用心的香气。",
+      "long_description": "半烤布里欧修小面包，刷上蒜香黄油。350°F烤五分钟，金黄出炉。",
+      "specs": {
+        "count": "8",
+        "refresh": "350°F下5分钟"
+      },
+      "aliases": [
+        "蒜香小面包",
+        "布里欧修餐包",
+        "冷冻面包复热"
+      ],
+      "review_highlights": [
+        "在意大利面端上桌前就消失了",
+        "从袋子里拿出来尝起来像刚出炉的",
+        "孩子们为角落的那几块争抢"
+      ]
+    },
+    "AR-2009": {
+      "title": "ACME 食品柜凯撒沙拉套装（家庭装）",
+      "attributes": {
+        "serves": "4-5",
+        "includes": "罗马生菜、沙拉酱、面包丁、帕尔马干酪"
+      },
+      "short_description": "家庭装凯撒沙拉套装——罗马生菜、沙拉酱、面包丁和真正的帕尔马干酪薄片。",
+      "long_description": "脆嫩的罗马生菜搭配蒜香浓郁（不黏糊）的沙拉酱、酸面团面包丁和帕尔马干酪薄片。如果你讲究效率，直接在袋中拌匀即可。",
+      "specs": {
+        "serves": "4-5"
+      },
+      "aliases": [
+        "凯撒沙拉套装",
+        "家庭装沙拉",
+        "ACME沙拉"
+      ],
+      "review_highlights": [
+        "调料尝起来像自制",
+        "面包丁到底部依然酥脆",
+        "刨碎的帕尔马干酪是升级之选"
+      ]
+    },
+    "AR-2008": {
+      "title": "ACME 食品柜彩虹蔬菜烘烤混合装（2 磅）",
+      "attributes": {
+        "weight": "2 磅",
+        "contents": "胡萝卜、西兰花、甜椒、红洋葱",
+        "prep": "预切，可直接烘烤"
+      },
+      "short_description": "预切彩虹蔬菜，25 分钟在一个烤盘上烤制完成。",
+      "long_description": "胡萝卜、西兰花、甜椒和红洋葱，切块以便均匀一起烘烤。拌油，一个烤盘，25 分钟——几乎可搭配任何主菜的配菜。",
+      "specs": {
+        "weight": "2 磅",
+        "roast": "425°F 下 25 分钟"
+      },
+      "aliases": [
+        "彩虹蔬菜烘烤",
+        "预切烤蔬菜",
+        "ACME 蔬菜混合"
+      ],
+      "review_highlights": [
+        "每一块都在同一时间烹饪——有人考虑到了这一点",
+        "可与鱼、意面或烤鸡搭配",
+        "工作日晚上不用砧板"
+      ]
+    },
+    "AR-2010": {
+      "title": "ACME 储藏室周末布朗尼煎锅套装",
+      "attributes": {
+        "serves": "6",
+        "includes": "混合粉 + 巧克力块 + 煎锅适用衬垫"
+      },
+      "short_description": "一款带真正巧克力块的煎锅布朗尼套装——值得预热烤箱的甜点。",
+      "long_description": "制作可分享的煎锅布朗尼所需的一切：浓郁可可混合粉、黑巧克力块，以及适合10英寸煎锅的羊皮纸衬垫。只需加入黄油和一个鸡蛋。",
+      "specs": {
+        "serves": "6",
+        "bake": "350°F下烘烤22分钟"
+      },
+      "aliases": [
+        "煎锅布朗尼套装",
+        "周末布朗尼套装",
+        "ACME 布朗尼煎锅"
+      ],
+      "review_highlights": [
+        "这些块状物保持熔融状态——危险的知识",
+        "比盒装混合料更容易，尝起来像糕点柜",
+        "我们的周末仪式更近了"
+      ]
+    }
+  }
+}

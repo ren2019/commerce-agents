@@ -1,0 +1,15 @@
+{
+  "items": [
+    {
+      "product_id": "AR-1202",
+      "title": "ACME Basecamp 4人家庭帐篷",
+      "price": 219.0,
+      "quantity": 1,
+      "image_url": null,
+      "line_total": 219.0
+    }
+  ],
+  "item_count": 1,
+  "subtotal": 219.0,
+  "currency": "USD"
+}
