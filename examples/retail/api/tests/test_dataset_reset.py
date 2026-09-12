@@ -68,6 +68,7 @@ def test_switch_and_reset_clear_both_roles(package, tmp_path, monkeypatch):  # n
                 assert len(facts) == 3
                 overview = client.get("/api/merchant/overview", headers=operator).json()
                 assert overview["recent_changes"] == []
+                assert overview["needs_attention"]["pending_changes"] == []
                 listing = client.get("/api/merchant/listings/AR-2102", headers=operator).json()
                 assert listing["listing"]["stock"] == 3
                 if mutate:
@@ -123,6 +124,9 @@ def test_switch_and_reset_clear_both_roles(package, tmp_path, monkeypatch):  # n
                             ],
                         )
                     )
+                    changed = client.get("/api/merchant/overview", headers=operator).json()
+                    assert len(changed["recent_changes"]) == 1
+                    assert len(changed["needs_attention"]["pending_changes"]) == 1
                 old_shopper, old_operator = shopper, operator
     finally:
         monkeypatch.delenv("RETAIL_STATE_DIR")

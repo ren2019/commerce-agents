@@ -1,0 +1,15 @@
+{
+  "dataset": {
+    "dataset_id": "field-demo",
+    "store_name": "ACME Field",
+    "logo": "/products/logo.svg",
+    "simulated": true,
+    "warnings": []
+  },
+  "old_shopper_status": 401,
+  "old_operator_status": 401,
+  "cart": 0,
+  "memory_count": 3,
+  "recent_changes": [],
+  "stock": 3
+}
