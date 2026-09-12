@@ -1,0 +1,23 @@
+{
+  "health": {
+    "ok": true,
+    "store": "ACME",
+    "products": 87,
+    "skills": [
+      "customer-care",
+      "memory-personalization",
+      "planning-goals",
+      "purchase-research",
+      "search-discovery"
+    ],
+    "model": "deepseek-flash"
+  },
+  "dataset": {
+    "dataset_id": "retail",
+    "store_name": "ACME",
+    "logo": null,
+    "simulated": true,
+    "warnings": []
+  },
+  "merchant_sales": 17338.41
+}

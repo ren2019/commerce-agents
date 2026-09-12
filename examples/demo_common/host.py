@@ -90,9 +90,8 @@ def _lifespan(on_startup: Sequence[Callable[[], Awaitable[None]]]):
     async def lifespan(_: FastAPI) -> AsyncIterator[None]:
         if not (os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_AUTH_TOKEN")):
             logger.info(
-                "No API key in the environment or .env files; the Anthropic SDK falls back "
-                "to its own credential chain. If chat returns auth errors, set "
-                "ANTHROPIC_API_KEY in a .env file (repo root or the example's directory)."
+                "Model credentials are resolved by the configured deployment. If chat returns "
+                "authentication errors, check the provider configuration in this example's README."
             )
         for step in on_startup:
             await step()
@@ -177,10 +176,9 @@ def stream_turn(
             logger.exception("chat turn failed: API authentication")
             yield to_sse(
                 AgentEvent.error(
-                    f"Anthropic API authentication failed (401). Check ANTHROPIC_API_KEY in "
+                    f"Model API authentication failed (401). Check the configured provider's key in "
                     f"{env_hint} or the repo-root .env, unset any stale key exported by your "
-                    "shell, or restart with COMMERCE_DEMO_AUTH=sdk to use the SDK's own "
-                    "credential chain."
+                    "shell, and restart the API."
                 )
             )
         except Exception as error:  # the client gets a safe event, the log gets the rest
@@ -189,8 +187,8 @@ def stream_turn(
             if any(word in described for word in ("authentication", "credential", "api_key")):
                 yield to_sse(
                     AgentEvent.error(
-                        "No Anthropic API credentials are configured, so chat can't run. Set "
-                        f"ANTHROPIC_API_KEY in {env_hint} or the repo-root .env and restart; "
+                        "Model credentials could not be used, so chat can't run. Check the "
+                        f"configured provider's key in {env_hint} or the repo-root .env and restart; "
                         "everything except chat works without one."
                     )
                 )

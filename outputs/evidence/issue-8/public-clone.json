@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/ren2019/commerce-agents.git",
+  "branch": "codex/bilingual-commerce-demo",
+  "commit": "35f149a46f50fe9ec21c1be1e66fdf302498b261",
+  "clone_contains_local_env": false,
+  "clone_contains_private_handoff": false,
+  "python": "Python 3.12.13",
+  "node": "v26.7.0",
+  "npm": "11.19.0",
+  "dependency_install": "fresh .venv and npm ci, no workspace symlinks",
+  "extra_dependency": "socksio for local SOCKS proxy",
+  "verification": "scripts/verify_all.py in independent public clone; output recorded separately"
+}

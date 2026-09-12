@@ -1,0 +1,20 @@
+
+[1/3] user: I'm taking my partner and our 6-year-old camping for the first time next month. ...
+    18 events in 3.9s
+    tools: ['load_skill', 'search_products', 'search_products', 'present_products', 'present_suggestions']
+    ui:    ['products', 'suggestions']
+    text:  135 chars | tokens in/out: 7211/557 (cache read 18944)
+
+[2/3] user: Compare the top two options for me — mostly care about space and ease of setup....
+    20 events in 4.2s
+    tools: ['get_product_details', 'get_product_details', 'present_comparison', 'present_suggestions']
+    ui:    ['comparison', 'suggestions']
+    text:  0 chars | tokens in/out: 776/543 (cache read 20736)
+
+[3/3] user: The family one sounds right. Add it to my cart, and remind me what returns look ...
+    10 events in 2.5s
+    tools: ['add_to_cart', 'search_policies', 'present_suggestions']
+    ui:    ['suggestions']
+    text:  431 chars | tokens in/out: 13986/285 (cache read 5888)
+
+SMOKE PASSED

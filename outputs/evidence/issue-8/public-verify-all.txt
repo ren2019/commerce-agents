@@ -1,0 +1,18 @@
+verify_all: 14 steps
+
+  lint (ruff check)                                ... PASS  (0.7s)
+  format (ruff format --check)                     ... PASS  (0.0s)
+  repo consistency (check.py)                      ... PASS  (2.3s)
+  tests (pytest)                                   ... PASS  (6.5s)
+  managed-agents deploy dry-run (shopping-agent)   ... PASS  (0.1s)
+  managed-agents deploy dry-run (merchant-agent)   ... PASS  (0.0s)
+  retail storefront-web (next build)               ... PASS  (7.7s)
+  retail merchant-web (next build)                 ... PASS  (5.1s)
+  travel storefront-web (next build)               ... PASS  (5.2s)
+  travel merchant-web (next build)                 ... PASS  (5.1s)
+  telecom storefront-web (next build)              ... PASS  (5.1s)
+  telecom merchant-web (next build)                ... PASS  (5.1s)
+  entertainment storefront-web (next build)        ... PASS  (5.3s)
+  entertainment merchant-web (next build)          ... PASS  (5.0s)
+
+verify_all: all steps passed
