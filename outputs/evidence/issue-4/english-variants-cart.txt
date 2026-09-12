@@ -1,0 +1,224 @@
+Browser tab: 12, Title: "ACME", URL: "http://localhost:3014/".
+0 AXWebArea ACME, URL: localhost:3014/
+	1 container
+		2 text ACME Simulated data / 模拟数据
+		3 container Views
+			4 button Assistant
+			5 button Orders, 2 delayed
+				6 text Orders
+				7 text 2
+		8 button Description: Switch to Chinese, Help: Switch the interface and future replies; earlier conversation keeps its original language.
+		9 button Activity 3
+			10 text Activity
+			11 text 3
+		12 button Priya: profile and memory
+			13 text Priya
+			14 text ACME Subscription member
+	15 container
+		16 text 请介绍ACME Paws 骨科记忆棉狗床，大号。 我来查一下这个产品。
+		17 heading ACME Paws 骨科记忆棉狗床, Value: 3
+			18 text ACME Paws 骨科记忆棉狗床
+		19 container
+			20 button ACME Paws 骨科记忆棉狗床，大号 ACME PAWS ACME Paws 骨科记忆棉狗床，大号 大号（90 x 70 厘米） 10 厘米记忆棉 可拆卸，可水洗 $79.00 ★ 4.6 (2,380) Get it by Wed, Sep 16 30-day returns
+				21 image ACME Paws 骨科记忆棉狗床，大号
+				22 text ACME PAWS
+				23 text ACME Paws 骨科记忆棉狗床，大号
+				24 container
+					25 text 大号（90 x 70 厘米） 10 厘米记忆棉 可拆卸，可水洗
+				26 text $79.00
+				27 text ★
+				28 text 4.6
+				29 text  (
+				30 text 2,380
+				31 text )
+				32 text Get it by Wed, Sep 16
+				33 text 30-day returns
+			34 button Add ACME Paws 骨科记忆棉狗床，大号 to cart
+		226 container
+			227 image ACME Paws Orthopedic Memory Foam Dog Bed, Large
+			228 button Add ACME Paws Orthopedic Memory Foam Dog Bed, Large to cart
+			229 text ACME PAWS ACME Paws Orthopedic Memory Foam Dog Bed, Large $79.00 ★ 4.6  ( 2,380 ) Get it by Wed, Sep 16
+			230 button Collapse details
+			231 text 大号(90 x 70 厘米),10 厘米记忆棉,可水洗床套与防滑底 $79.00 is this item's typical price (90-day range $72–$84) Sitting in the typical band of its own range ·  last 90 days FROM 2,380 CUSTOMER REVIEWS
+			232 container Durability: 89% positive across 366 {language === "zh" ? "次提及" : "mentions"}
+				233 text Durability 89 % 366 mentions
+			234 container Pet comfort: 83% positive across 223 {language === "zh" ? "次提及" : "mentions"}
+				235 text Pet comfort 83 % 223 mentions
+			236 container Easy to clean: 88% positive across 223 {language === "zh" ? "次提及" : "mentions"}
+				237 text Easy to clean 88 % 223 mentions
+			238 text Built for big dogs and aging joints: a 10 cm slab of high-density memory foam that won't flatten into a pancake by month three, wrapped in a water-resistant liner and a machine-washable microsuede cover. The non-slip base keeps it in place on hard floors, and the low front edge makes it easy for stiff-legged seniors to step in. Fits dogs up to about 40 kg comfortably.
+			239 definition list
+				240 container Dimensions
+					241 text Dimensions
+				242 text 90 x 70 x 20 cm
+				243 container Foam
+					244 text Foam
+				245 text high-density memory foam, 10 cm
+				246 container Cover
+					247 text Cover
+				248 text microsuede, machine washable
+				249 container Liner
+					250 text Liner
+				251 text water resistant
+				252 container Max Dog
+					253 text Max Dog
+				254 text 40 kg
+			255 text “ Our 11-year-old shepherd chooses it over the couch now ” “ Cover has been through the wash a dozen times and still zips fine ” “ Foam needs a day to expand fully after unboxing ”
+		65 text 请结算我的购物车。
+		66 heading Ready to check out, Value: 3
+			67 text Ready to check out
+		68 text Not charged
+		69 text 购物车仅含 ACME Paws 骨科记忆棉狗床,大号 ×1,小计 $79.00。配送方式未定:标准配送 3-5 个工作日免运费,加急 2 个工作日 $9.99,或今日 11:00 前到 ACME Maple Heights 自提。请在应用内确认配送方式后再提交。
+		70 image ACME Paws Orthopedic Memory Foam Dog Bed, Large
+		71 container ACME Paws Orthopedic Memory Foam Dog Bed, Large
+			72 text ACME Paws Orthopedic Memory Foam Dog Bed, Large  ×  1
+		73 text $79.00
+		74 text Get it by Wed, Sep 16
+		75 text Subtotal $79.00 Shipping standard  ·  3–5 business days Free Tax Calculated at checkout Estimated total $79.00
+		76 container
+			77 text Before tax ; the final total appears at checkout.
+		78 text Most items can be returned within 30 days of delivery for a refund to your original payment method.
+		79 button (disabled) Continue to checkout
+		80 text Nothing is charged here. Payment happens when you check out.
+		81 text 请查询订单AR-77903：询问原因。
+		82 heading Order AR-77903, Value: 3
+			83 text Order AR-77903
+		84 text delayed
+		85 text 承运方延误,原定 2026-09-10 送达未达成;更新后的预计送达为 2026-09-16。
+		256 text delayed
+		257 text Ordered
+		258 text Aug 30
+		259 text Packed
+		260 text Shipped
+		261 text Delivered
+		262 container
+			263 text Sep 10 Sep 16
+		94 text ACME Paws 骨科记忆棉狗床，大号  ×  1 $79.00 Total $79.00
+		95 link Description: Track package, Value: track.example.com/AR-77903
+		96 text 可在应用内的支持流程中查看或提交延误处理;退货需在送达后 30 天内,商品保持原始状态。
+		120 text 请展示 ACME Rest 真丝枕套（AR-1606），我想选择尺寸和颜色。
+		121 heading ACME Rest 桑蚕丝枕套:尺寸与颜色, Value: 3
+			122 text ACME Rest 桑蚕丝枕套:尺寸与颜色
+		123 container
+			124 button ACME REST ACME Rest 桑蚕丝枕套 Standard size · ivory $29.00 ★ 4.5 (1,660) Get it by Wed, Sep 16 30-day returns
+				125 text ACME REST
+				126 text ACME Rest 桑蚕丝枕套
+				127 text Standard size · ivory
+				128 text $29.00
+				129 text ★
+				130 text 4.5
+				131 text  (
+				132 text 1,660
+				133 text )
+				134 text Get it by Wed, Sep 16
+				135 text 30-day returns
+			136 button Add ACME Rest 桑蚕丝枕套 to cart
+			137 button ACME REST ACME Rest 桑蚕丝枕套 Standard size · slate $29.00 ★ 4.5 (1,660) Get it by Wed, Sep 16 30-day returns
+				138 text ACME REST
+				139 text ACME Rest 桑蚕丝枕套
+				140 text Standard size · slate
+				141 text $29.00
+				142 text ★
+				143 text 4.5
+				144 text  (
+				145 text 1,660
+				146 text )
+				147 text Get it by Wed, Sep 16
+				148 text 30-day returns
+			149 button Add ACME Rest 桑蚕丝枕套 to cart
+			150 button ACME REST ACME Rest 桑蚕丝枕套 Standard size · blush $29.00 ★ 4.5 (1,660) Get it by Wed, Sep 16 30-day returns
+				151 text ACME REST
+				152 text ACME Rest 桑蚕丝枕套
+				153 text Standard size · blush
+				154 text $29.00
+				155 text ★
+				156 text 4.5
+				157 text  (
+				158 text 1,660
+				159 text )
+				160 text Get it by Wed, Sep 16
+				161 text 30-day returns
+			162 button Add ACME Rest 桑蚕丝枕套 to cart
+			163 button ACME REST ACME Rest 桑蚕丝枕套 Standard size · sage $29.00 ★ 4.5 (1,660) Get it by Wed, Sep 16 30-day returns
+				164 text ACME REST
+				165 text ACME Rest 桑蚕丝枕套
+				166 text Standard size · sage
+				167 text $29.00
+				168 text ★
+				169 text 4.5
+				170 text  (
+				171 text 1,660
+				172 text )
+				173 text Get it by Wed, Sep 16
+				174 text 30-day returns
+			175 button Add ACME Rest 桑蚕丝枕套 to cart
+			176 button ACME REST ACME Rest 桑蚕丝枕套 king · ivory $37.00 ★ 4.5 (1,660) Get it by Wed, Sep 16 30-day returns
+				177 text ACME REST
+				178 text ACME Rest 桑蚕丝枕套
+				179 text king · ivory
+				180 text $37.00
+				181 text ★
+				182 text 4.5
+				183 text  (
+				184 text 1,660
+				185 text )
+				186 text Get it by Wed, Sep 16
+				187 text 30-day returns
+			188 button Add ACME Rest 桑蚕丝枕套 to cart
+			189 button ACME REST ACME Rest 桑蚕丝枕套 king · slate $37.00 ★ 4.5 (1,660) Get it by Wed, Sep 16 30-day returns
+				190 text ACME REST
+				191 text ACME Rest 桑蚕丝枕套
+				192 text king · slate
+				193 text $37.00
+				194 text ★
+				195 text 4.5
+				196 text  (
+				197 text 1,660
+				198 text )
+				199 text Get it by Wed, Sep 16
+				200 text 30-day returns
+			201 button Add ACME Rest 桑蚕丝枕套 to cart
+			202 button ACME REST ACME Rest 桑蚕丝枕套 king · sage $37.00 ★ 4.5 (1,660) Get it by Wed, Sep 16 30-day returns
+				203 text ACME REST
+				204 text ACME Rest 桑蚕丝枕套
+				205 text king · sage
+				206 text $37.00
+				207 text ★
+				208 text 4.5
+				209 text  (
+				210 text 1,660
+				211 text )
+				212 text Get it by Wed, Sep 16
+				213 text 30-day returns
+			214 button Add ACME Rest 桑蚕丝枕套 to cart
+		215 button 加标准款象牙白
+		216 button 加特大款石板灰
+		217 button 退换货规则是什么
+		218 button 洗护注意什么
+	101 container
+		102 text entry area (settable) Message ACME Assistant
+		103 button (disabled) Send
+	104 container Cart
+		105 heading Cart, Value: 2
+			106 text Cart
+		264 text 2 items
+		108 content list
+			109 container
+				110 image ACME Paws Orthopedic Memory Foam Dog Bed, Large
+				111 text ACME PAWS ACME Paws Orthopedic Memory Foam Dog Bed, Large $79.00 Get it by Wed, Sep 16
+				112 button Decrease ACME Paws Orthopedic Memory Foam Dog Bed, Large quantity
+				113 text 1
+				114 button Increase ACME Paws Orthopedic Memory Foam Dog Bed, Large quantity
+				115 button Remove ACME Paws Orthopedic Memory Foam Dog Bed, Large
+			220 container
+				221 text ACME REST ACME Rest Mulberry Silk Pillowcase Standard size · ivory $29.00 Get it by Wed, Sep 16
+				222 button Decrease ACME Rest Mulberry Silk Pillowcase (standard · ivory) quantity
+				223 text 1
+				224 button Increase ACME Rest Mulberry Silk Pillowcase (standard · ivory) quantity
+				225 button Remove ACME Rest Mulberry Silk Pillowcase (standard · ivory)
+		116 text Free shipping on this order ✓
+		117 text Subtotal · 2 items $108.00
+		118 button Check out
+		119 button Ask about this cart
+
+The focused UI element is 8 button Description: Switch to Chinese, Help: Switch the interface and future replies; earlier conversation keeps its original language.

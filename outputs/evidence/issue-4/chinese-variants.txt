@@ -1,0 +1,224 @@
+Browser tab: 12, Title: "ACME", URL: "http://localhost:3014/".
+0 AXWebArea ACME, URL: localhost:3014/
+	1 container
+		2 text ACME Simulated data / 模拟数据
+		3 container 页面
+			4 button 购物助手
+			5 button 订单, 2 延误
+				6 text 订单
+				7 text 2
+		8 button Description: 切换为英文, Help: 切换界面与后续回复的语言；历史对话保留原语言。
+		9 button 活动记录 3
+			10 text 活动记录
+			11 text 3
+		12 button Priya：资料与记忆
+			13 text Priya
+			14 text ACME订阅会员
+	15 container
+		16 text 请介绍ACME Paws 骨科记忆棉狗床，大号。 我来查一下这个产品。
+		17 heading ACME Paws 骨科记忆棉狗床, Value: 3
+			18 text ACME Paws 骨科记忆棉狗床
+		19 container
+			20 button ACME Paws 骨科记忆棉狗床，大号 ACME PAWS ACME Paws 骨科记忆棉狗床，大号 大号（90 x 70 厘米） 10 厘米记忆棉 可拆卸，可水洗 $79.00 ★ 4.6 (2,380) 预计9月16日送达 30天退货
+				21 image ACME Paws 骨科记忆棉狗床，大号
+				22 text ACME PAWS
+				23 text ACME Paws 骨科记忆棉狗床，大号
+				24 container
+					25 text 大号（90 x 70 厘米） 10 厘米记忆棉 可拆卸，可水洗
+				26 text $79.00
+				27 text ★
+				28 text 4.6
+				29 text  (
+				30 text 2,380
+				31 text )
+				32 text 预计9月16日送达
+				33 text 30天退货
+			34 button 将ACME Paws 骨科记忆棉狗床，大号加入购物车
+		35 container
+			36 image ACME Paws 骨科记忆棉狗床，大号
+			37 button 将ACME Paws 骨科记忆棉狗床，大号加入购物车
+			38 text ACME PAWS ACME Paws 骨科记忆棉狗床，大号 $79.00 ★ 4.6  ( 2,380 ) 预计9月16日送达
+			39 button 收起详情
+			40 text 大号(90 x 70 厘米),10 厘米记忆棉,可水洗床套与防滑底 $79.00为通常价格（90天区间：$72.25–$83.86） 处于该商品自身价格区间的常见水平 ·  最近90天 来自2,380条顾客评论
+			41 container 耐用性：366次提及中，89%为正面评价
+				42 text 耐用性 89 % 366 次提及
+			43 container 宠物舒适度：223次提及中，83%为正面评价
+				44 text 宠物舒适度 83 % 223 次提及
+			45 container 易清洁：223次提及中，88%为正面评价
+				46 text 易清洁 88 % 223 次提及
+			47 text 专为大型犬和老化关节打造：一块10厘米厚的高密度记忆棉，不会在第三个月就压扁成薄饼，外层包裹防水内衬和可机洗的微麂皮床套。防滑底座使其在硬地板上保持原位，低矮的前边缘让僵硬的老年犬更容易迈入。舒适适合体重约40公斤以内的狗。
+			48 definition list
+				49 container 尺寸
+					50 text 尺寸
+				51 text 90 x 70 x 20 厘米
+				52 container 泡棉
+					53 text 泡棉
+				54 text 高密度记忆棉，10 厘米
+				55 container 外罩
+					56 text 外罩
+				57 text 微麂皮，可机洗
+				58 container 内衬
+					59 text 内衬
+				60 text 防水
+				61 container 适用犬只最大体重
+					62 text 适用犬只最大体重
+				63 text 40 公斤
+			64 text “ 我们11岁的牧羊犬现在选它而不选沙发了 ” “ 罩子洗了十几次，拉链依然完好 ” “ 泡沫开箱后需要一天才能完全膨胀 ”
+		65 text 请结算我的购物车。
+		66 heading 准备结算, Value: 3
+			67 text 准备结算
+		68 text 尚未扣款
+		69 text 购物车仅含 ACME Paws 骨科记忆棉狗床,大号 ×1,小计 $79.00。配送方式未定:标准配送 3-5 个工作日免运费,加急 2 个工作日 $9.99,或今日 11:00 前到 ACME Maple Heights 自提。请在应用内确认配送方式后再提交。
+		70 image ACME Paws 骨科记忆棉狗床，大号
+		71 container ACME Paws 骨科记忆棉狗床，大号
+			72 text ACME Paws 骨科记忆棉狗床，大号  ×  1
+		73 text $79.00
+		74 text 预计9月16日送达
+		75 text 小计 $79.00 配送 标准配送  ·  3–5个工作日 免费 税费 结算时计算 预计总额 $79.00
+		76 container
+			77 text 不含税费 ；最终金额将在结算时显示。
+		78 text 大多数商品可在送达后30天内退货，退款将退回原支付方式。
+		79 button (disabled) 前往结算
+		80 text 此处不会扣款。付款在结算时完成。
+		81 text 请查询订单AR-77903：询问原因。
+		82 heading 订单 AR-77903, Value: 3
+			83 text 订单 AR-77903
+		84 text 延误
+		85 text 承运方延误,原定 2026-09-10 送达未达成;更新后的预计送达为 2026-09-16。
+		86 text 延误
+		87 text 已下单
+		88 text 8月30日
+		89 text 已打包
+		90 text 已发货
+		91 text 已送达
+		92 container
+			93 text 9月10日 9月16日
+		94 text ACME Paws 骨科记忆棉狗床，大号  ×  1 $79.00 合计 $79.00
+		95 link Description: 跟踪包裹, Value: track.example.com/AR-77903
+		96 text 可在应用内的支持流程中查看或提交延误处理;退货需在送达后 30 天内,商品保持原始状态。
+		120 text 请展示 ACME Rest 真丝枕套（AR-1606），我想选择尺寸和颜色。
+		121 heading ACME Rest 桑蚕丝枕套:尺寸与颜色, Value: 3
+			122 text ACME Rest 桑蚕丝枕套:尺寸与颜色
+		123 container
+			124 button ACME REST ACME Rest 桑蚕丝枕套 标准尺寸 · 象牙色 $29.00 ★ 4.5 (1,660) 预计9月16日送达 30天退货
+				125 text ACME REST
+				126 text ACME Rest 桑蚕丝枕套
+				127 text 标准尺寸 · 象牙色
+				128 text $29.00
+				129 text ★
+				130 text 4.5
+				131 text  (
+				132 text 1,660
+				133 text )
+				134 text 预计9月16日送达
+				135 text 30天退货
+			136 button 将ACME Rest 桑蚕丝枕套加入购物车
+			137 button ACME REST ACME Rest 桑蚕丝枕套 标准尺寸 · 岩灰色 $29.00 ★ 4.5 (1,660) 预计9月16日送达 30天退货
+				138 text ACME REST
+				139 text ACME Rest 桑蚕丝枕套
+				140 text 标准尺寸 · 岩灰色
+				141 text $29.00
+				142 text ★
+				143 text 4.5
+				144 text  (
+				145 text 1,660
+				146 text )
+				147 text 预计9月16日送达
+				148 text 30天退货
+			149 button 将ACME Rest 桑蚕丝枕套加入购物车
+			150 button ACME REST ACME Rest 桑蚕丝枕套 标准尺寸 · 腮红粉 $29.00 ★ 4.5 (1,660) 预计9月16日送达 30天退货
+				151 text ACME REST
+				152 text ACME Rest 桑蚕丝枕套
+				153 text 标准尺寸 · 腮红粉
+				154 text $29.00
+				155 text ★
+				156 text 4.5
+				157 text  (
+				158 text 1,660
+				159 text )
+				160 text 预计9月16日送达
+				161 text 30天退货
+			162 button 将ACME Rest 桑蚕丝枕套加入购物车
+			163 button ACME REST ACME Rest 桑蚕丝枕套 标准尺寸 · 鼠尾草绿 $29.00 ★ 4.5 (1,660) 预计9月16日送达 30天退货
+				164 text ACME REST
+				165 text ACME Rest 桑蚕丝枕套
+				166 text 标准尺寸 · 鼠尾草绿
+				167 text $29.00
+				168 text ★
+				169 text 4.5
+				170 text  (
+				171 text 1,660
+				172 text )
+				173 text 预计9月16日送达
+				174 text 30天退货
+			175 button 将ACME Rest 桑蚕丝枕套加入购物车
+			176 button ACME REST ACME Rest 桑蚕丝枕套 特大尺寸（king） · 象牙色 $37.00 ★ 4.5 (1,660) 预计9月16日送达 30天退货
+				177 text ACME REST
+				178 text ACME Rest 桑蚕丝枕套
+				179 text 特大尺寸（king） · 象牙色
+				180 text $37.00
+				181 text ★
+				182 text 4.5
+				183 text  (
+				184 text 1,660
+				185 text )
+				186 text 预计9月16日送达
+				187 text 30天退货
+			188 button 将ACME Rest 桑蚕丝枕套加入购物车
+			189 button ACME REST ACME Rest 桑蚕丝枕套 特大尺寸（king） · 岩灰色 $37.00 ★ 4.5 (1,660) 预计9月16日送达 30天退货
+				190 text ACME REST
+				191 text ACME Rest 桑蚕丝枕套
+				192 text 特大尺寸（king） · 岩灰色
+				193 text $37.00
+				194 text ★
+				195 text 4.5
+				196 text  (
+				197 text 1,660
+				198 text )
+				199 text 预计9月16日送达
+				200 text 30天退货
+			201 button 将ACME Rest 桑蚕丝枕套加入购物车
+			202 button ACME REST ACME Rest 桑蚕丝枕套 特大尺寸（king） · 鼠尾草绿 $37.00 ★ 4.5 (1,660) 预计9月16日送达 30天退货
+				203 text ACME REST
+				204 text ACME Rest 桑蚕丝枕套
+				205 text 特大尺寸（king） · 鼠尾草绿
+				206 text $37.00
+				207 text ★
+				208 text 4.5
+				209 text  (
+				210 text 1,660
+				211 text )
+				212 text 预计9月16日送达
+				213 text 30天退货
+			214 button 将ACME Rest 桑蚕丝枕套加入购物车
+		215 button 加标准款象牙白
+		216 button 加特大款石板灰
+		217 button 退换货规则是什么
+		218 button 洗护注意什么
+	101 container
+		102 text entry area (settable) 发送消息给ACME 购物助手
+		103 button (disabled) 发送
+	104 container 购物车
+		105 heading 购物车, Value: 2
+			106 text 购物车
+		219 text 2件商品
+		108 content list
+			109 container
+				110 image ACME Paws 骨科记忆棉狗床，大号
+				111 text ACME PAWS ACME Paws 骨科记忆棉狗床，大号 $79.00 预计9月16日送达
+				112 button 减少ACME Paws 骨科记忆棉狗床，大号数量
+				113 text 1
+				114 button 增加ACME Paws 骨科记忆棉狗床，大号数量
+				115 button 移除ACME Paws 骨科记忆棉狗床，大号
+			220 container
+				221 text ACME REST ACME Rest 桑蚕丝枕套 标准尺寸 · 象牙色 $29.00 预计9月16日送达
+				222 button 减少ACME Rest 桑蚕丝枕套 (standard · ivory)数量
+				223 text 1
+				224 button 增加ACME Rest 桑蚕丝枕套 (standard · ivory)数量
+				225 button 移除ACME Rest 桑蚕丝枕套 (standard · ivory)
+		116 text 此订单包邮 ✓
+		117 text 小计 · 2件商品 $108.00
+		118 button 结算
+		119 button 询问购物车
+
+The focused UI element is 136 button 将ACME Rest 桑蚕丝枕套加入购物车

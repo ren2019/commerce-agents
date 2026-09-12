@@ -55,8 +55,8 @@ function asProduct(item: CartItem, catalog: Record<string, Product>): Product {
 }
 
 /** "the ACME Sleep Hybrid Mattress (queen)": what a message to the assistant calls a line. */
-function lineName(item: CartItem): string {
-  const chosen = optionValuesLabel(item);
+function lineName(item: CartItem, t: (text: string) => string): string {
+  const chosen = localizeOptionText(optionValuesLabel(item), t);
   return chosen ? `${item.title} (${chosen})` : item.title;
 }
 
@@ -116,12 +116,12 @@ export default function CartPanel({ cart, checkoutStaged = false }: { cart: Cart
                 <div className="mt-2 flex items-center gap-2.5">
                   <Stepper
                     quantity={item.quantity}
-                    itemTitle={lineName(item)}
+                    itemTitle={lineName(item, t)}
                     onChange={(quantity) =>
-                      ask(language === "zh" ? (quantity < 1 ? `从购物车移除${lineName(item)}。` : `将${lineName(item)}的数量改为${quantity}。`) : quantity < 1 ? `Remove the ${lineName(item)} from my cart.` : `Change the ${lineName(item)} quantity to ${quantity}.`)
+                      ask(language === "zh" ? (quantity < 1 ? `从购物车移除${lineName(item, t)}。` : `将${lineName(item, t)}的数量改为${quantity}。`) : quantity < 1 ? `Remove the ${lineName(item, t)} from my cart.` : `Change the ${lineName(item, t)} quantity to ${quantity}.`)
                     }
                   />
-                  <RemoveLink itemTitle={lineName(item)} onClick={() => ask(language === "zh" ? `从购物车移除${lineName(item)}。` : `Remove the ${lineName(item)} from my cart.`)} />
+                  <RemoveLink itemTitle={lineName(item, t)} onClick={() => ask(language === "zh" ? `从购物车移除${lineName(item, t)}。` : `Remove the ${lineName(item, t)} from my cart.`)} />
                 </div>
               </div>
             </li>

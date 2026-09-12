@@ -45,3 +45,10 @@ model-generated status card. Amounts remain 79 USD for that separate dog-bed flo
 
 Issue 4 remains open while final browser story and variant-option checks are completed. Merchant bilingual work (5) and autonomous delivery checks
 (8) remain outstanding. No human operation or recording gate is claimed passed.
+
+Variant browser check: `chinese-variants.txt` records standard/king sizes and
+colors, selecting the standard ivory variant for 29 USD. Switching to English
+(`english-variants-cart.txt`) preserves both cart lines and the 108 USD subtotal.
+The Chinese capture exposed untranslated option values in quantity-button
+accessibility labels; CartPanel now applies the same option translation to those
+labels and generated quantity/removal messages. TypeScript verification passed.
