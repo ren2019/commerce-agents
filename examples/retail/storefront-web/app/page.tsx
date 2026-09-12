@@ -16,13 +16,13 @@ type View = "assistant" | "orders";
 
 
 
-function Wordmark({ name, logo }: { name: string; logo: string | null }) {
+function Wordmark({ name, logo, simulated }: { name: string; logo: string | null; simulated: boolean }) {
   return (
     <span className="flex items-center gap-2.5 pr-1">
       <span aria-hidden className="grid h-[30px] w-[30px] place-items-center rounded-lg bg-(--ink) text-[15px] font-bold text-(--surface)">
         {logo ? <img src={api.assetUrl(logo) ?? undefined} alt="" className="h-full w-full object-contain" /> : name.slice(0, 1)}
       </span>
-      <span className="text-[17px] font-bold tracking-[-0.02em] text-(--ink)">{name}</span>
+      <span><span className="block text-[17px] font-bold tracking-[-0.02em] text-(--ink)">{name}</span>{simulated && <span className="block text-[10px] text-(--ink-muted)">Simulated data / 模拟数据</span>}</span>
     </span>
   );
 }
@@ -68,7 +68,7 @@ export default function StorefrontPage() {
 
   return (
     <StoreShell
-      brand={<Wordmark name={storeName} logo={dataset?.logo ?? null} />}
+      brand={<Wordmark name={storeName} logo={dataset?.logo ?? null} simulated={dataset?.simulated ?? false} />}
       views={views}
       view={view}
       onViewChange={setView}

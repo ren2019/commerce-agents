@@ -111,6 +111,7 @@ export default function PortalPage() {
           </AssistantRail>
         }
       >
+        {dataset?.simulated && <p className="mx-7 mt-4 text-xs text-(--ink-muted)">{storeName} · Simulated data / 模拟数据</p>}
         {session.sessionId ? (
           <>
             {view === "home" ? (

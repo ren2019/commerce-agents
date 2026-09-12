@@ -134,3 +134,9 @@ halfway through a change. API restart invalidates both role sessions and clears 
 in-memory carts and change ledgers; the fresh runtime also starts with seeded memory.
 Previous runtime copies are retained. Clear `RETAIL_DATASET` when using these commands,
 since that explicit development override bypasses the saved selection.
+
+## Prepare a catalog
+
+Use [the preparation guide](../../../docs/retail-data-preparation.md) when converting
+customer catalogs into external packages. The [public two-product example](sample-catalog/README.md)
+includes source records, bilingual content, image provenance and generated operating data.

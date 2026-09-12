@@ -1,0 +1,359 @@
+{
+  "dataset": {
+    "dataset_id": "playroom-sample",
+    "store_name": "ACME Playroom Sample",
+    "logo": null,
+    "simulated": true,
+    "warnings": []
+  },
+  "source_orders": 60,
+  "source_sales": 1590,
+  "products": [
+    {
+      "product_id": "AR-1401",
+      "title": "ACME Playroom Stacking Wooden Block Set (54 pc)",
+      "price": 34.0,
+      "stock": 3,
+      "image": "/products/AR-1401.webp",
+      "image_sha256": "01c826edaabd409e7a66c8556a3ece4ce62432dbe3c3a87cebdb055d1bb589d6"
+    },
+    {
+      "product_id": "AR-1407",
+      "title": "ACME Playroom National Parks 1000-Piece Puzzle",
+      "price": 19.0,
+      "stock": 20,
+      "image": "/products/AR-1407.webp",
+      "image_sha256": "a6332aeec24a3a508d71f9e176f62faf916005c7a6a28c2fbdfb559853843d73"
+    }
+  ],
+  "overview": {
+    "snapshot": {
+      "period": "2026-09-06/2026-09-12",
+      "compare_to": "2026-08-30/2026-09-05",
+      "sales": 371.0,
+      "orders": 14,
+      "traffic": 700,
+      "conversion_rate": 2.0,
+      "average_order_value": 26.5,
+      "sales_change_pct": 0.0,
+      "orders_change_pct": 0.0,
+      "traffic_change_pct": 0.0,
+      "conversion_change_pct": 0.0,
+      "currency": "USD",
+      "alerts": {
+        "low_stock": 1,
+        "slow_movers": 0,
+        "order_issues": 0,
+        "pending_changes": 0
+      }
+    },
+    "needs_attention": {
+      "inventory": [
+        {
+          "listing_id": "AR-1401",
+          "title": "ACME Playroom Stacking Wooden Block Set (54 pc)",
+          "kind": "low_stock",
+          "option_values": {},
+          "stock": 3,
+          "threshold": 8,
+          "days_of_cover": 3.0,
+          "sales_last_30d": 30,
+          "storefront_visible": true
+        }
+      ],
+      "order_issues": [],
+      "pending_changes": []
+    },
+    "recent_orders": [
+      {
+        "order_id": "SIM-20260912-AR-1401",
+        "status": "delivered",
+        "placed_at": "2026-09-12T10:00:00+00:00",
+        "total": 34.0,
+        "items": 1
+      },
+      {
+        "order_id": "SIM-20260912-AR-1407",
+        "status": "delivered",
+        "placed_at": "2026-09-12T10:00:00+00:00",
+        "total": 19.0,
+        "items": 1
+      },
+      {
+        "order_id": "SIM-20260911-AR-1401",
+        "status": "delivered",
+        "placed_at": "2026-09-11T10:00:00+00:00",
+        "total": 34.0,
+        "items": 1
+      },
+      {
+        "order_id": "SIM-20260911-AR-1407",
+        "status": "delivered",
+        "placed_at": "2026-09-11T10:00:00+00:00",
+        "total": 19.0,
+        "items": 1
+      },
+      {
+        "order_id": "SIM-20260910-AR-1401",
+        "status": "delivered",
+        "placed_at": "2026-09-10T10:00:00+00:00",
+        "total": 34.0,
+        "items": 1
+      },
+      {
+        "order_id": "SIM-20260910-AR-1407",
+        "status": "delivered",
+        "placed_at": "2026-09-10T10:00:00+00:00",
+        "total": 19.0,
+        "items": 1
+      }
+    ],
+    "recent_changes": [],
+    "trends": {
+      "sales": [
+        {
+          "date": "2026-09-06",
+          "value": 53.0
+        },
+        {
+          "date": "2026-09-07",
+          "value": 53.0
+        },
+        {
+          "date": "2026-09-08",
+          "value": 53.0
+        },
+        {
+          "date": "2026-09-09",
+          "value": 53.0
+        },
+        {
+          "date": "2026-09-10",
+          "value": 53.0
+        },
+        {
+          "date": "2026-09-11",
+          "value": 53.0
+        },
+        {
+          "date": "2026-09-12",
+          "value": 53.0
+        }
+      ],
+      "orders": [
+        {
+          "date": "2026-09-06",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-07",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-08",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-09",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-10",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-11",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-12",
+          "value": 2.0
+        }
+      ],
+      "conversion": [
+        {
+          "date": "2026-09-06",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-07",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-08",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-09",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-10",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-11",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-12",
+          "value": 2.0
+        }
+      ],
+      "average_order_value": [
+        {
+          "date": "2026-09-06",
+          "value": 26.5
+        },
+        {
+          "date": "2026-09-07",
+          "value": 26.5
+        },
+        {
+          "date": "2026-09-08",
+          "value": 26.5
+        },
+        {
+          "date": "2026-09-09",
+          "value": 26.5
+        },
+        {
+          "date": "2026-09-10",
+          "value": 26.5
+        },
+        {
+          "date": "2026-09-11",
+          "value": 26.5
+        },
+        {
+          "date": "2026-09-12",
+          "value": 26.5
+        }
+      ]
+    },
+    "trends_prior": {
+      "sales": [
+        {
+          "date": "2026-08-30",
+          "value": 53.0
+        },
+        {
+          "date": "2026-08-31",
+          "value": 53.0
+        },
+        {
+          "date": "2026-09-01",
+          "value": 53.0
+        },
+        {
+          "date": "2026-09-02",
+          "value": 53.0
+        },
+        {
+          "date": "2026-09-03",
+          "value": 53.0
+        },
+        {
+          "date": "2026-09-04",
+          "value": 53.0
+        },
+        {
+          "date": "2026-09-05",
+          "value": 53.0
+        }
+      ],
+      "orders": [
+        {
+          "date": "2026-08-30",
+          "value": 2.0
+        },
+        {
+          "date": "2026-08-31",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-01",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-02",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-03",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-04",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-05",
+          "value": 2.0
+        }
+      ],
+      "conversion": [
+        {
+          "date": "2026-08-30",
+          "value": 2.0
+        },
+        {
+          "date": "2026-08-31",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-01",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-02",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-03",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-04",
+          "value": 2.0
+        },
+        {
+          "date": "2026-09-05",
+          "value": 2.0
+        }
+      ],
+      "average_order_value": [
+        {
+          "date": "2026-08-30",
+          "value": 26.5
+        },
+        {
+          "date": "2026-08-31",
+          "value": 26.5
+        },
+        {
+          "date": "2026-09-01",
+          "value": 26.5
+        },
+        {
+          "date": "2026-09-02",
+          "value": 26.5
+        },
+        {
+          "date": "2026-09-03",
+          "value": 26.5
+        },
+        {
+          "date": "2026-09-04",
+          "value": 26.5
+        },
+        {
+          "date": "2026-09-05",
+          "value": 26.5
+        }
+      ]
+    },
+    "insights": []
+  },
+  "shopper_orders_returned": 20
+}

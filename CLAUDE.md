@@ -14,6 +14,7 @@ paths each, four vertical examples, and a Claude Code plugin.
 - `*/runtime-agent-sdk/`: each agent as `ClaudeAgentOptions`, with a console.
 - `*/managed-agents/`: the manifest directory (with the derived `system.md`) and the role's MCP server.
 - `examples/demo_common/` and `examples/web-shared/`: what the verticals' APIs and web apps share; `examples/` is the npm workspace.
+- When preparing catalog files or product images, follow `docs/retail-data-preparation.md`; `examples/retail/sample-catalog/` is the public preparation example.
 - `examples/retail/api/dataset.py`: external package validation and atomic private runtime selection; `scripts/retail_dataset.py` is its local import command.
 - `examples/<vertical>/`: `api/`, `data/`, `storefront-web/`, `merchant-web/`; ports 8000-8003, 3000-3003, 3100-3103.
 - `plugins/commerce-builder/`: six skills, four commands; `.claude-plugin/marketplace.json` points at it.
