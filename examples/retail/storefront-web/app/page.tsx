@@ -8,27 +8,29 @@ import { type AgentEvent, formatMoney, OrdersView, plural, StoreShell, type Stor
 import CartPanel from "@/components/CartPanel";
 import Chat from "@/components/Chat";
 import HomeView from "@/components/views/HomeView";
-import { api, UNREACHABLE } from "@/lib/api";
+import { api, fetchDataset, UNREACHABLE } from "@/lib/api";
 import { NOUNS, OrderThumb } from "@/lib/orders";
 import type { CartPayload } from "@/lib/types";
 
 type View = "assistant" | "orders";
 
-const ASSISTANT = "ACME Assistant";
 
-function Wordmark() {
+
+function Wordmark({ name, logo }: { name: string; logo: string | null }) {
   return (
     <span className="flex items-center gap-2.5 pr-1">
       <span aria-hidden className="grid h-[30px] w-[30px] place-items-center rounded-lg bg-(--ink) text-[15px] font-bold text-(--surface)">
-        A
+        {logo ? <img src={api.assetUrl(logo) ?? undefined} alt="" className="h-full w-full object-contain" /> : name.slice(0, 1)}
       </span>
-      <span className="text-[17px] font-bold tracking-[-0.02em] text-(--ink)">ACME</span>
+      <span className="text-[17px] font-bold tracking-[-0.02em] text-(--ink)">{name}</span>
     </span>
   );
 }
 
 export default function StorefrontPage() {
   const session = useSession(api);
+  const { data: dataset } = useResource(fetchDataset, []);
+  const storeName = dataset?.store_name ?? "ACME";
   const [view, setView] = useState<View>("assistant");
   const [cart, setCart] = useState<CartPayload | null>(null);
   // A staged checkout owns the panel's primary action until the cart changes again.
@@ -66,13 +68,13 @@ export default function StorefrontPage() {
 
   return (
     <StoreShell
-      brand={<Wordmark />}
+      brand={<Wordmark name={storeName} logo={dataset?.logo ?? null} />}
       views={views}
       view={view}
       onViewChange={setView}
       chat={chat}
       api={api}
-      assistantName={ASSISTANT}
+      assistantName={`${storeName} Assistant`}
       shopper={shopper}
       bag={{ label: "Cart", count, noun: "item", figure: count ? formatMoney(cart?.subtotal ?? 0, cart?.currency) : null }}
       panel={<CartPanel cart={cart} checkoutStaged={checkoutStaged} />}

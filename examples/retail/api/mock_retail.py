@@ -114,6 +114,7 @@ _STORE_OPENS, _STORE_CLOSES = 9, 21
 
 class MockRetail(StorefrontBackend):
     def __init__(self, data_dir: Path = DATA_DIR) -> None:
+        self.data_dir = data_dir
         catalog, self.products, self.variants = load_catalog(data_dir)
         self.store_name: str = catalog.get("store_name", "the store")
         self._users = load_users(data_dir)

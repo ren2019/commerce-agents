@@ -35,9 +35,10 @@ function ReturnsPromise({ className = "" }: { className?: string }) {
 }
 
 export function ProductImage({ product, className = "" }: { product: Product; className?: string }) {
-  if (product.image_url) {
+  const [failedUrl, setFailedUrl] = useState<string | null>(null);
+  if (product.image_url && failedUrl !== product.image_url) {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img src={product.image_url} alt={product.title} className={`object-cover ${className}`} />;
+    return <img src={product.image_url} onError={() => setFailedUrl(product.image_url ?? null)} alt={product.title} className={`object-cover ${className}`} />;
   }
   return (
     <div

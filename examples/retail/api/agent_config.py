@@ -8,15 +8,39 @@ from __future__ import annotations
 
 import os
 
+from anthropic import AsyncAnthropic
+
 from demo_common import host_approval_default
 from merchant_agent import MerchantAgentConfig
 from shopping_agent import ShoppingAgentConfig
 
 
-def build_shopping_config() -> ShoppingAgentConfig:
+def build_shopping_client() -> AsyncAnthropic | None:
+    """Use an explicit DeepSeek deployment without changing other examples."""
+    if os.environ.get("RETAIL_MODEL_PROVIDER", "anthropic") == "anthropic":
+        return None
+    if os.environ["RETAIL_MODEL_PROVIDER"] != "deepseek":
+        raise ValueError("RETAIL_MODEL_PROVIDER must be anthropic or deepseek")
+    if not os.environ.get("DEEPSEEK_API_KEY"):
+        raise ValueError("Set DEEPSEEK_API_KEY locally before starting the DeepSeek demo")
+    return AsyncAnthropic(
+        api_key=os.environ["DEEPSEEK_API_KEY"],
+        base_url="https://api.deepseek.com/anthropic",
+        timeout=120.0,
+    )
+
+
+def build_shopping_config(store_name: str = "ACME") -> ShoppingAgentConfig:
+    models = {}
+    if os.environ.get("RETAIL_MODEL_PROVIDER", "anthropic") == "deepseek":
+        model = os.environ.get("DEEPSEEK_MODEL")
+        if not model:
+            raise ValueError("Set DEEPSEEK_MODEL to the model available to your account")
+        models = {"model": model, "memory_model": model}
     return ShoppingAgentConfig(
-        brand_name="ACME",
-        assistant_name="ACME Assistant",
+        **models,
+        brand_name=store_name,
+        assistant_name=f"{store_name} Assistant",
         brand_voice="professional, warm, and brief",
     )
 

@@ -27,3 +27,9 @@ export function fetchListingDetail(listingId: string): Promise<ListingDetailResp
 export function fetchAlerts(): Promise<AlertsResponse | null> {
   return api.get<AlertsResponse>("/alerts");
 }
+
+export type DatasetInfo = { dataset_id: string; store_name: string; logo: string | null; simulated: boolean; warnings: string[] };
+export async function fetchDataset(): Promise<DatasetInfo | null> {
+  const response = await fetch(`${API_URL}/api/dataset`);
+  return response.ok ? response.json() : null;
+}

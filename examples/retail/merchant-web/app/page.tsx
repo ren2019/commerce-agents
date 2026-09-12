@@ -19,24 +19,26 @@ import CatalogView from "@/components/views/CatalogView";
 import HomeView from "@/components/views/HomeView";
 import InventoryView from "@/components/views/InventoryView";
 import OrdersView from "@/components/views/OrdersView";
-import { api, fetchOverview, UNREACHABLE } from "@/lib/api";
+import { api, fetchDataset, fetchOverview, UNREACHABLE } from "@/lib/api";
 import type { StagedChange } from "@/lib/types";
 
 type PortalView = "home" | "catalog" | "orders" | "inventory";
 
-function StoreMark() {
+function StoreMark({ name, logo }: { name: string; logo: string | null }) {
   return (
     <span
       aria-hidden
       className="grid h-[34px] w-[34px] shrink-0 place-items-center rounded-[10px] bg-(--ink) text-[16px] font-bold text-(--brand) shadow-[inset_0_-3px_0_rgba(0,0,0,0.18)]"
     >
-      A
+      {logo ? <img src={api.assetUrl(logo) ?? undefined} alt="" className="h-full w-full object-contain" /> : name.slice(0, 1)}
     </span>
   );
 }
 
 export default function PortalPage() {
   const session = useSession(api);
+  const { data: dataset } = useResource(fetchDataset, []);
+  const storeName = dataset?.store_name ?? "ACME";
   const [view, setView] = useState<PortalView>("home");
   const [assistantOpen, setAssistantOpen] = useState(false);
   const [activityOpen, setActivityOpen] = useState(false);
@@ -82,7 +84,7 @@ export default function PortalPage() {
   return (
     <>
       <PortalShell
-        brand={{ mark: <StoreMark />, name: "ACME", detail: "Merchant workspace" }}
+        brand={{ mark: <StoreMark name={storeName} logo={dataset?.logo ?? null} />, name: storeName, detail: "Merchant workspace" }}
         nav={nav}
         view={view}
         onViewChange={setView}

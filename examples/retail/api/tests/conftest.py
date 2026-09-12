@@ -38,7 +38,7 @@ def make_merchant_router():
 
 @pytest.fixture(scope="session")
 def extra_public_routes() -> set[str]:
-    return set()
+    return {"/api/dataset"}
 
 
 @pytest.fixture(scope="session")

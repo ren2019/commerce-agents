@@ -21,7 +21,9 @@ IDENTITY = MerchantIdentity(merchant_id="acme-retail", operator="Avery")
 
 def create_merchant_router(storefront: MockRetail, memory_store: MemoryStore) -> APIRouter:
     config = build_merchant_config(storefront.store_name)
-    merchant = MockRetailMerchant(storefront, config, merchant_id=IDENTITY.merchant_id)
+    merchant = MockRetailMerchant(
+        storefront, config, data_dir=storefront.data_dir, merchant_id=IDENTITY.merchant_id
+    )
     agent = MerchantAgent(
         backend=merchant,
         skills_dir=REPO_ROOT / "merchant-agent" / "skills",

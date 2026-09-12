@@ -25,19 +25,22 @@ from demo_common import (
 from shopping_agent import ProductDetails
 from shopping_agent_runtime import ShoppingAgent
 
-from .agent_config import build_shopping_config
+from .agent_config import build_shopping_client, build_shopping_config
+from .dataset import selected_dataset
 from .merchant import create_merchant_router
 from .mock_retail import DATA_DIR, MockRetail
 
 load_demo_env(DATA_DIR.parent)
-PRODUCT_IMAGES = DATA_DIR.parent / "storefront-web" / "public" / "products"
+dataset = selected_dataset()
+PRODUCT_IMAGES = dataset.images
 
-backend = MockRetail()
+backend = MockRetail(dataset.data_dir)
 agent = ShoppingAgent(
     backend=backend,
     skills_dir=REPO_ROOT / "shopping-agent" / "skills",
-    config=build_shopping_config(),
-    memory_store=JsonFileMemoryStore(DATA_DIR / ".memory-store.json"),
+    config=build_shopping_config(backend.store_name),
+    client=build_shopping_client(),
+    memory_store=JsonFileMemoryStore(dataset.data_dir / ".memory-store.json"),
 )
 
 
@@ -55,7 +58,7 @@ host = build_storefront_host(
     backend=backend,
     agent=agent,
     memory_seeder=MemorySeeder(
-        DATA_DIR / "memory-seed.json", marker=DATA_DIR / ".memory-seeded.json"
+        dataset.data_dir / "memory-seed.json", marker=dataset.data_dir / ".memory-seeded.json"
     ),
     product_detail=product_detail,
 )
@@ -72,3 +75,14 @@ async def cart_add(request: CartAddRequest, record: host.CurrentSession) -> dict
         request,
         note="Customer tapped the add-to-cart button on {title} ({product_id}), quantity {quantity}.",
     )
+
+
+@app.get("/api/dataset")
+async def dataset_info() -> dict:
+    return {
+        "dataset_id": dataset.manifest.dataset_id,
+        "store_name": dataset.manifest.store_name,
+        "logo": f"/products/{dataset.manifest.logo}" if dataset.manifest.logo else None,
+        "simulated": dataset.manifest.simulated,
+        "warnings": dataset.warnings,
+    }

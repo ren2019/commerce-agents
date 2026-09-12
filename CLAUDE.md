@@ -14,6 +14,7 @@ paths each, four vertical examples, and a Claude Code plugin.
 - `*/runtime-agent-sdk/`: each agent as `ClaudeAgentOptions`, with a console.
 - `*/managed-agents/`: the manifest directory (with the derived `system.md`) and the role's MCP server.
 - `examples/demo_common/` and `examples/web-shared/`: what the verticals' APIs and web apps share; `examples/` is the npm workspace.
+- `examples/retail/api/dataset.py`: external package validation and atomic private runtime selection; `scripts/retail_dataset.py` is its local import command.
 - `examples/<vertical>/`: `api/`, `data/`, `storefront-web/`, `merchant-web/`; ports 8000-8003, 3000-3003, 3100-3103.
 - `plugins/commerce-builder/`: six skills, four commands; `.claude-plugin/marketplace.json` points at it.
 - `docs/`: `safety.md`, `backends.md`, `deployment.md`. `scripts/`: install, demo, smoke, screenshots, check, deploy, verify.
@@ -54,3 +55,15 @@ redesign rather than rename.
 ruff check . && ruff format --check . && pytest && python scripts/check.py
 python scripts/verify_all.py          # adds deploy dry runs and web builds
 ```
+
+## Agent skills
+
+### Issue tracker
+Issues 和规格使用 ren2019/commerce-agents 的 GitHub Issues。
+操作前读取 docs/agents/issue-tracker.md。
+
+### Triage labels
+使用五个默认分流标签。应用标签前读取 docs/agents/triage-labels.md。
+
+### Domain docs
+采用 single-context。探索和设计前读取 docs/agents/domain.md。

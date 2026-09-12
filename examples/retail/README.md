@@ -81,3 +81,43 @@ Product photos in `storefront-web/public/products/` are CC0 category images list
 
 Sessions and identity are the shared host code in [`../demo_common/`](../demo_common/): a
 session id stands for a demo profile or the one merchant.
+
+## DeepSeek shopping deployment
+
+In your local environment or untracked root `.env`, set `RETAIL_MODEL_PROVIDER=deepseek`,
+`DEEPSEEK_API_KEY`, and `DEEPSEEK_MODEL` to an explicit model available to your account.
+Restart the API after changing these values. The shopping agent uses the DeepSeek
+Anthropic-compatible endpoint for both conversation and memory extraction. Omitting
+`RETAIL_MODEL_PROVIDER` preserves the upstream Anthropic deployment.
+
+Verify with the retail shopping smoke conversation and browser before presenting.
+Provider configuration tests do not establish live model compatibility. Merchant
+DeepSeek support is tracked separately and is not enabled by this shopping setting yet.
+
+## External dataset packages
+
+Run `.venv/bin/python scripts/retail_dataset.py validate /absolute/package` to check,
+then `.venv/bin/python scripts/retail_dataset.py import /absolute/package` to select it.
+Restart the API and refresh both pages after a successful import. Failed validation
+leaves the previous selection and running API intact. Imports copy data and images
+into `~/.local/share/commerce-agent/retail` (override with `RETAIL_STATE_DIR`), so runtime
+memory does not modify the source. `RETAIL_DATASET` is an explicit development override
+that directly loads a directory and takes precedence over the imported selection.
+A package contains `dataset.json`, `data/` (the retail JSON fixtures), and `images/`.
+The version 1 manifest requires `dataset_id` and `store_name`; optional fields are
+`logo` (relative to `images/`) and `simulated` (defaults to true). The catalog's
+store name must match the manifest. Product images use `/products/<filename>`;
+both web applications read the selected package's images from the API.
+
+The loader validates product identities, order references, catalog models and
+merchant inventory consistency before constructing the application. Missing product
+images appear in dataset warnings; invalid logo references reject the package.
+The public `/api/dataset` endpoint reports brand metadata and warnings without
+exposing the package's filesystem location. Keep customer packages outside Git.
+
+Optional `data/translations.json` stores `en` and `zh` maps keyed by stable product ID.
+Each product may contain `title`, `short_description`, `long_description` (strings),
+`attributes`, `specs` (string maps), and `aliases` (string list). Unknown product IDs,
+locales or fields are rejected. This sidecar preserves language-neutral pricing and
+identity and is retained during import; bilingual rendering and search are delivered
+by the separate bilingual tickets.
