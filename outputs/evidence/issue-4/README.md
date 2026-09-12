@@ -52,3 +52,11 @@ colors, selecting the standard ivory variant for 29 USD. Switching to English
 The Chinese capture exposed untranslated option values in quantity-button
 accessibility labels; CartPanel now applies the same option translation to those
 labels and generated quantity/removal messages. TypeScript verification passed.
+
+The latest production build after the variant-label fix passed. A fresh Chinese
+browser story (`chinese-tent-browser-final.txt`, comparison screenshot) completed
+all three turns, with Chinese prose and cards and a 219 USD cart. Visual review
+confirmed matching tent fallback icons and readable comparison columns. One
+grounding discrepancy remains: the comparison calls the family tent freestanding,
+although that attribute is recorded only for the two-person tent. This observation
+is not a clean factual-accuracy acceptance; resolve it before closing issue 4.

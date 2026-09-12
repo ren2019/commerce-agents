@@ -1,0 +1,92 @@
+Browser tab: 13, Title: "ACME", URL: "http://localhost:3014/".
+0 AXWebArea ACME, URL: localhost:3014/
+	1 container
+		2 text ACME Simulated data / 模拟数据
+		3 container 页面
+			4 button 购物助手
+			5 button 订单, 2 延误
+				6 text 订单
+				7 text 2
+		8 button Description: 切换为英文, Help: 切换界面与后续回复的语言；历史对话保留原语言。
+		9 button 活动记录 1
+			148 text 活动记录
+			149 text 1
+		10 button Priya：资料与记忆
+			11 text Priya
+			12 text ACME订阅会员
+	13 container
+		111 text 下个月我准备和伴侣、6岁的孩子第一次露营。想买一顶帐篷，别太重，预算最好在250美元以内。 我会加载规划流程并搜索商品目录。 这个搜索只返回了这两款，容量符合三口之家的那顶就是AR-1202。 按你给的三个条件（三口人、不太重、250美元以内），帐篷这一项我推荐 ACME Basecamp 4人家庭帐篷：4人容量、7.4 kg、219.00 美元，在预算内，8分钟搭好，对第一次露营比较友好。它不算最轻——同品牌的2人款只有2.1 kg，但2人容量睡不下三个人。 这次露营的第一件核心装备我按单件推荐来给，不铺开成整套采购清单；如果你想要完整的装备计划，我可以另开一份。
+		112 heading 250美元以内的家庭帐篷, Value: 3
+			113 text 250美元以内的家庭帐篷
+		114 container
+			115 button ACME BASECAMP ACME Basecamp 4人家庭帐篷 4人 7.4 kg 183 cm $219.00 ★ 4.5 (1,430) 预计9月17日送达 30天退货
+				116 text ACME BASECAMP
+				117 text ACME Basecamp 4人家庭帐篷
+				118 container
+					119 text 4人 7.4 kg 183 cm
+				120 text $219.00
+				121 text ★
+				122 text 4.5
+				123 text  (
+				124 text 1,430
+				125 text )
+				126 text 预计9月17日送达
+				127 text 30天退货
+			128 button 将ACME Basecamp 4人家庭帐篷加入购物车
+			129 button ACME BASECAMP ACME Basecamp 双人背包帐篷 2人 2.1 kg 3季 $149.00 ★ 4.6 (812) 预计9月16日送达 30天退货
+				130 text ACME BASECAMP
+				131 text ACME Basecamp 双人背包帐篷
+				132 container
+					133 text 2人 2.1 kg 3季
+				134 text $149.00
+				135 text ★
+				136 text 4.6
+				137 text  (
+				138 text 812
+				139 text )
+				140 text 预计9月16日送达
+				141 text 30天退货
+			142 button 将ACME Basecamp 双人背包帐篷加入购物车
+		150 text 帮我比较前两款，主要看空间和搭建是否方便。 两张卡片的对比我这就放上来。
+		151 heading AR-1202 与 AR-1201 对比, Value: 3
+			152 text AR-1202 与 AR-1201 对比
+		153 text 推荐
+		154 text ACME Basecamp 4人家庭帐篷
+		155 text $219.00 ★ 4.5  ( 1,430 )
+		156 container
+			157 text 适合： 第一次露营、自驾到营地、三口之家共用
+		158 text 4人容量，三口人加行李有富余 183 cm站立高度，可在帐内直立活动 8分钟搭好，独立式结构 219.00美元仍在250美元预算内 7.4 kg，搬动和背负负担明显更大
+		159 text ACME Basecamp 双人背包帐篷
+		160 text $149.00 ★ 4.6  ( 812 )
+		161 container
+			162 text 适合： 两人轻装徒步或作为孩子的备用帐篷
+		163 text 2.1 kg，搬运轻松 约4分钟搭好，最省力 149.00美元，价格更低 4.6分，评分略高 2人容量，三口人睡不下 无站立高度，帐内只能坐卧
+		164 container
+			165 text 价差： $70.00 ( $149.00  vs  $219.00 )
+		166 container
+			167 text 比较维度： 容量 · 重量 · 站立高度 · 搭建耗时 · 价格 · 用户评分
+		168 text 家庭款听起来合适，帮我加入购物车，再告诉我退货政策。 我先加入购物车，同时查一下退货条款。 ACME Basecamp 4人家庭帐篷（AR-1202）已加入购物车，1件，小计 219.00 USD。 退货方面：大多数商品可在送达后30天内以原始状态退回，退款全额退还至原支付方式；帐篷不属于特殊类别。退款在退货到达仓库后5个工作日内到账。作为 ACME Subscription 会员，你可以享受免费退货取件。
+		169 button 查一下配送或自提时间
+		170 button 结账
+		171 button 看看睡袋
+		172 button 帮我配齐整套首次露营装备
+	99 container
+		100 text entry area (settable) 发送消息给ACME 购物助手
+		101 button (disabled) 发送
+	102 container 购物车
+		103 heading 购物车, Value: 2
+			104 text 购物车
+		173 text 1件商品
+		174 content list
+			175 container
+				176 text ACME BASECAMP ACME Basecamp 4人家庭帐篷 $219.00 预计9月17日送达
+				177 button 减少ACME Basecamp 4人家庭帐篷数量
+				178 text 1
+				179 button 增加ACME Basecamp 4人家庭帐篷数量
+				180 button 移除ACME Basecamp 4人家庭帐篷
+		181 text 此订单包邮 ✓
+		109 text 小计 · 1件商品 $219.00
+		110 button 结算
+		182 button 询问购物车
+
+The focused UI element is 100 text entry area (settable) 发送消息给ACME 购物助手
