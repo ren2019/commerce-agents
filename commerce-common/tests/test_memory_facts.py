@@ -158,6 +158,7 @@ async def test_extraction_sends_the_prompt_and_transcript_and_keeps_the_valid_pr
     client = extraction_client(proposals)
     assert [f.key for f in await extract(client)] == ["parents_trip", "wool"]
     (call,) = client.calls
+    assert call["thinking"] == {"type": "disabled"}  # keep the small budget for facts
     assert (
         call["system"] == "the role's prompt"
         and "somewhere on the coast" in call["messages"][0]["content"]

@@ -36,7 +36,9 @@ def build_shopping_config(store_name: str = "ACME") -> ShoppingAgentConfig:
         model = os.environ.get("DEEPSEEK_MODEL")
         if not model:
             raise ValueError("Set DEEPSEEK_MODEL to the model available to your account")
-        models = {"model": model, "memory_model": model}
+        # DeepSeek rejects forced tool_choice while thinking is enabled. The
+        # shopping provenance gate uses forced tools, so keep this path non-thinking.
+        models = {"model": model, "memory_model": model, "thinking_effort": None}
     return ShoppingAgentConfig(
         **models,
         brand_name=store_name,

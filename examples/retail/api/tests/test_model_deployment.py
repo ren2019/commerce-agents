@@ -17,6 +17,7 @@ def test_deepseek_routes_chat_and_memory_to_explicit_model(monkeypatch):
     monkeypatch.setenv("DEEPSEEK_API_KEY", "test-only")
     config = build_shopping_config()
     assert config.model == config.memory_model == "deployment-model"
+    assert config.thinking_request_fields() == {"thinking": {"type": "disabled"}}
     with patch("retail.api.agent_config.AsyncAnthropic") as client:
         assert build_shopping_client() is client.return_value
         assert client.call_args.kwargs["base_url"] == "https://api.deepseek.com/anthropic"

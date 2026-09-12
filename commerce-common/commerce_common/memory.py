@@ -455,6 +455,7 @@ async def extract_facts(
     request: dict[str, Any] = {
         "model": model,
         "max_tokens": 600,
+        "thinking": {"type": "disabled"},
         "system": extraction_prompt,
         "tools": [_RECORD_FACT_TOOL],
         "messages": [
