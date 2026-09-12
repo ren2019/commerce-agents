@@ -7,7 +7,7 @@ from commerce_common.streaming import AgentEvent
 from shopping_agent import ShoppingSessionContext, ShoppingSessionState
 from shopping_agent_runtime import ShoppingAgent
 
-from .deepseek import DeepSeekClient, localize_visible_text
+from .deepseek import localize_events
 from .mock_retail import MockRetail
 
 
@@ -31,25 +31,9 @@ class RetailShoppingAgent(ShoppingAgent):
                             "attributes": current.attributes,
                         }
                     )
-        pending_text: list[str] = []
-        translation_usage: dict[str, int] = {}
         protected = {backend.store_name, *backend.products, *backend.variants}
         protected.update(product.brand for product in backend.products.values() if product.brand)
-        async for event in super().stream_turn(messages, session, state):
-            if isinstance(self.client, DeepSeekClient) and event.type == "text_delta":
-                pending_text.append(event.data["text"])
-                continue
-            if pending_text:
-                text, usage = await localize_visible_text(
-                    self.client, self.config.model, "".join(pending_text), protected
-                )
-                pending_text.clear()
-                for key, value in usage.items():
-                    translation_usage[key] = translation_usage.get(key, 0) + value
-                yield AgentEvent.text_delta(text)
-            if event.type == "turn_complete" and translation_usage:
-                usage = dict(event.data.get("usage", {}))
-                for key, value in translation_usage.items():
-                    usage[key] = usage.get(key, 0) + value
-                event = event.model_copy(update={"data": {**event.data, "usage": usage}})
+        async for event in localize_events(
+            super().stream_turn(messages, session, state), self.client, self.config.model, protected
+        ):
             yield event

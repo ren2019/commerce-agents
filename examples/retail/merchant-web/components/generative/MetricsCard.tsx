@@ -36,8 +36,8 @@ export default function MetricsCard({ payload }: { payload: MetricsPayload }) {
                 {value != null ? <span className="text-[20px] font-semibold leading-none tracking-[-0.02em] tabular-nums text-(--ink)">{value}</span> : null}
                 <ChangeChip changePct={entry.change_pct} />
               </div>
-              {points && points.length > 1 ? <Sparkline points={points} height={34} label={`${t(metricLabel(entry.metric))} trend`} className="mt-2" /> : null}
-              {entry.note ? <div className="mt-1.5 text-[11.5px] leading-snug text-(--ink-soft)">{entry.note}</div> : null}
+              {points && points.length > 1 ? <Sparkline points={points} height={34} label={language === "zh" ? `${t(metricLabel(entry.metric))}趋势` : `${metricLabel(entry.metric)} trend`} className="mt-2" /> : null}
+              {entry.note ? <div className="mt-1.5 text-[11.5px] leading-snug text-(--ink-soft)">{language === "zh" ? entry.note.replace(/^computed(?= — |$)/, "已计算") : entry.note}</div> : null}
             </div>
           );
         })}

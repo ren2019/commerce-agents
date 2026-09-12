@@ -52,6 +52,7 @@ export function Transcript({
   wide,
   gap = "gap-3",
 }: TranscriptProps) {
+  const { t } = useDemoLanguage();
   return items.map((item, index) =>
     item.kind === "user" ? (
       <UserBubble key={index} text={item.text} />
@@ -62,7 +63,7 @@ export function Transcript({
             const last = item.pending && i === item.segments.length - 1;
             return <AssistantText key={i} text={segment.text} streaming={last} />;
           }
-          if (segment.type === "error") return <ErrorBubble key={i} text={segment.text} />;
+          if (segment.type === "error") return <ErrorBubble key={i} text={t(segment.text)} />;
           return (
             <div
               key={segment.slotKey}

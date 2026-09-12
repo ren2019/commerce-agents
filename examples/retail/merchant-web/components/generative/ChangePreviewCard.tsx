@@ -83,7 +83,7 @@ export default function ChangePreviewCard({
 
       {change.margin_impact != null ? (
         <p className="mx-3.5 mt-2 text-[12.5px] tabular-nums text-(--ink-soft)">
-          Margin impact{" "}
+          {t("Margin impact")}{" "}
           <b className={`font-semibold ${change.margin_impact < 0 ? "text-(--danger)" : "text-(--ok)"}`}>
             {change.margin_impact > 0 ? "+" : ""}
             {formatMoney(change.margin_impact, change.currency ?? undefined)}

@@ -3,11 +3,14 @@
 from __future__ import annotations
 
 import logging
+from collections.abc import AsyncIterator
 from functools import cached_property
 from typing import Any
 
 from anthropic import AsyncAnthropic
 from anthropic.resources.messages import AsyncMessages
+
+from commerce_common.streaming import AgentEvent
 
 from .language import language
 
@@ -117,3 +120,29 @@ async def localize_visible_text(
         and isinstance(value, int)
     }
     return translated, usage
+
+
+async def localize_events(
+    events: AsyncIterator[AgentEvent], client: Any, model: str, protected: set[str]
+) -> AsyncIterator[AgentEvent]:
+    """Validate complete visible text blocks while preserving tool events and usage."""
+    pending_text: list[str] = []
+    translation_usage: dict[str, int] = {}
+    async for event in events:
+        if isinstance(client, DeepSeekClient) and event.type == "text_delta":
+            pending_text.append(event.data["text"])
+            continue
+        if pending_text:
+            text, usage = await localize_visible_text(
+                client, model, "".join(pending_text), protected
+            )
+            pending_text.clear()
+            for key, value in usage.items():
+                translation_usage[key] = translation_usage.get(key, 0) + value
+            yield AgentEvent.text_delta(text)
+        if event.type == "turn_complete" and translation_usage:
+            usage = dict(event.data.get("usage", {}))
+            for key, value in translation_usage.items():
+                usage[key] = usage.get(key, 0) + value
+            event = event.model_copy(update={"data": {**event.data, "usage": usage}})
+        yield event

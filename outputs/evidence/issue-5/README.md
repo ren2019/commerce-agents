@@ -76,3 +76,29 @@ Latest backend validation: 1135 passed, 1 skipped; Ruff and check.py passed.
 Merchant production build passed before the last home responsive-layout change;
 TypeScript passed after that change. React Doctor has no correctness warning,
 score 64, with eight remaining component-complexity warnings.
+
+Analysis and layout checkpoint:
+
+- `chinese-home-layout-fixed.jpg` and `chinese-listing-layout-fixed.jpg` were
+  visually inspected after the production rebuild: the home main column remains
+  readable with the assistant rail open, and listing facts no longer collapse.
+  The official AR-2102 fixture has no image; its placeholder is preserved rather
+  than substituting an unrelated product photo.
+- `chinese-analysis-before-scope-fix.txt` and
+  `chinese-two-week-before-scope-fix.txt` preserve real analysis results and a
+  presentation failure: the subsequent model-selected card used weekly snapshot
+  metrics under an analysis-window heading. The deployment now instructs the
+  merchant to retain the automatically rendered analysis card without duplicating
+  it with snapshot picks. This requires a new real-model regression.
+- The first analysis attempt timed out while reading the DeepSeek stream; a retry
+  returned results. No timeout is counted as a pass. Generic error text and analysis
+  chart annotations now have Chinese presentation.
+- `chinese-morning-classification-retest.txt` correctly separates slow movers and
+  low stock but includes an English pre-tool sentence. Both retail roles now share
+  the existing complete-text language validator, including token accounting and
+  unchanged tool-event ordering. The subsequent real browser retest is pending.
+
+Validation after extracting the shared language filter: 1136 passed, 1 skipped,
+two existing warnings. Merchant production build passed for the latest UI changes;
+React Doctor score 70 with eight complexity warnings and no correctness warnings.
+These checkpoints do not close issue 5.

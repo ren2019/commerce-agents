@@ -114,3 +114,31 @@ async def test_already_localized_text_does_not_make_an_extra_model_call():
         )
     finally:
         language.reset(token)
+
+
+async def test_event_translation_keeps_tool_order_and_accounts_for_usage(monkeypatch):
+    from commerce_common.streaming import AgentEvent
+    from retail.api import deepseek
+
+    tool = AgentEvent(type="tool_call", data={"tool": "get_inventory_alerts"})
+
+    async def source():
+        yield AgentEvent.text_delta("I'll check ")
+        yield AgentEvent.text_delta("the inventory.")
+        yield tool
+        yield AgentEvent(type="turn_complete", data={"usage": {"output_tokens": 20}})
+
+    async def translate(client, model, text, protected):
+        assert text == "I'll check the inventory."
+        assert protected == {"ACME"}
+        return "我会核对库存。", {"input_tokens": 10, "output_tokens": 5}
+
+    monkeypatch.setattr(deepseek, "localize_visible_text", translate)
+    async with DeepSeekClient(api_key="test-key") as client:
+        events = [
+            event async for event in deepseek.localize_events(source(), client, "test", {"ACME"})
+        ]
+    assert [event.type for event in events] == ["text_delta", "tool_call", "turn_complete"]
+    assert events[0].data["text"] == "我会核对库存。"
+    assert events[1] is tool
+    assert events[2].data["usage"] == {"input_tokens": 10, "output_tokens": 25}

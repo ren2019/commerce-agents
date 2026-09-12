@@ -6,19 +6,40 @@ plus the KPI trends and insight cards the retail portal's home page shows."""
 
 from __future__ import annotations
 
+from collections.abc import AsyncIterator
+from typing import Any
+
 from fastapi import APIRouter
 
 from commerce_common.memory import MemoryStore
+from commerce_common.streaming import AgentEvent
 from demo_common import REPO_ROOT, MerchantIdentity, build_merchant_router
+from merchant_agent import MerchantSessionContext, MerchantSessionState
 from merchant_agent_runtime import MerchantAgent
 
 from .agent_config import build_merchant_config, build_model_client
-from .deepseek import DeepSeekClient, localize_visible_text
+from .deepseek import DeepSeekClient, localize_events, localize_visible_text
 from .language import language
 from .mock_merchant import MockRetailMerchant
 from .mock_retail import MockRetail
 
 IDENTITY = MerchantIdentity(merchant_id="acme-retail", operator="Avery")
+
+
+class RetailMerchantAgent(MerchantAgent):
+    async def stream_turn(
+        self,
+        messages: list[dict[str, Any]],
+        session: MerchantSessionContext,
+        state: MerchantSessionState | None = None,
+    ) -> AsyncIterator[AgentEvent]:
+        storefront = self.backend.storefront
+        protected = {storefront.store_name, *storefront.products, *storefront.variants}
+        protected.update(product.brand for product in storefront.products.values() if product.brand)
+        async for event in localize_events(
+            super().stream_turn(messages, session, state), self.client, self.config.model, protected
+        ):
+            yield event
 
 
 def create_merchant_router(storefront: MockRetail, memory_store: MemoryStore) -> APIRouter:
@@ -44,7 +65,7 @@ def create_merchant_router(storefront: MockRetail, memory_store: MemoryStore) ->
         merchant_id=IDENTITY.merchant_id,
         translate_content=translate_content if isinstance(client, DeepSeekClient) else None,
     )
-    agent = MerchantAgent(
+    agent = RetailMerchantAgent(
         backend=merchant,
         skills_dir=REPO_ROOT / "merchant-agent" / "skills",
         config=config,
