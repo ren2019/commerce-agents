@@ -2,6 +2,8 @@ export const chinese: Record<string, string> = {
   "Something went wrong on our side. Please try again.": "服务暂时未能完成请求，请重试。",
   "Something went wrong.": "请求未能完成，请重试。",
   "Margin impact": "毛利影响",
+  "Reply": "回复", "Previous reply": "上一条回复", "Next reply": "下一条回复",
+  "Close activity": "关闭活动记录", "Steps": "执行步骤", "new": "新增",
   "Home": "首页", "Catalog": "商品", "Orders": "订单", "Inventory": "库存",
   "Merchant workspace": "商家工作台", "Store manager": "店铺经理", "Operator": "操作员",
   "Business memory": "经营记忆", "Portal views": "工作台页面", "Assistant": "经营助手",

@@ -136,11 +136,14 @@ for each turn so subsequent cards follow the selected language; IDs, prices and
 write provenance stay intact. Existing conversation prose remains as originally spoken.
 
 The DeepSeek client in `api/deepseek.py` appends the host-selected output language
-after session context, preserving the cached prefix. The shopper also buffers visible
+after session context, preserving the cached prefix. Both retail roles buffer visible
 text between tool events and translates language-mismatched segments through DeepSeek.
 The translator has no tools; numerical tokens, catalog IDs and brand names are checked
 before display. Its token usage is included in the turn totals. Stored conversation
 and tool data are not rewritten.
+
+The [operator runbook](../../../docs/retail-demo-runbook.md) covers fork setup,
+dataset switching/reset, bilingual rehearsal scripts and the manual acceptance gate.
 
 The storefront language control uses the optional `web-shared/language.tsx` context.
 Changing language retains the session and cart, and refreshes catalog and order views.

@@ -122,3 +122,20 @@ Further real retest:
   Chinese analysis labels.
 
 All eight apps pass TypeScript after the latest shared error rendering change.
+
+Exact-window and English API checks:
+
+- `chinese-exact-window-retest.json`: the real DeepSeek tool request now uses
+  Aug 28–Sep 10 and Aug 14–27, both inclusive. Figures are 34393.86 versus 32889.71
+  in sales, with 1756.78 growth in children's-room sales and -252.63 elsewhere.
+  `two-week-source-totals.json` independently sums the public source rows using
+  decimal arithmetic and matches the core figures. The returned follow-up card
+  resolves analysis figures rather than mismatched weekly snapshot values.
+- `english-official-smoke.txt`: all six official merchant steps pass with actual
+  DeepSeek, including chat approval refusal, portal application and both analyses.
+- The analysis UI translates the internal kids-room category label only when
+  rendering Chinese cards. Stored analysis data and SQL keys remain unchanged.
+
+The attempted browser continuation encountered a locked Mac. No new browser pass
+is claimed while locked. English browser approval and final integrated rehearsal
+remain outstanding. API checks alone do not establish visual acceptance.

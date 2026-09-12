@@ -1,0 +1,22 @@
+{
+  "sales": {
+    "current": "34393.86",
+    "previous": "32889.71",
+    "delta": "1504.15"
+  },
+  "kids_room_sales": {
+    "current": "4927.74",
+    "previous": "3170.96",
+    "delta": "1756.78"
+  },
+  "orders": {
+    "current": "767",
+    "previous": "733",
+    "delta": "34"
+  },
+  "traffic": {
+    "current": "26832",
+    "previous": "26101",
+    "delta": "731"
+  }
+}

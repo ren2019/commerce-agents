@@ -1,0 +1,35 @@
+
+[1/6] user: What needs my attention this morning?...
+    45 events in 9.2s
+    tools: ['get_inventory_alerts', 'get_order_issues', 'get_pending_changes', 'get_business_snapshot', 'present_digest', 'present_suggestions', 'present_digest', 'present_suggestions']
+    ui:    ['suggestions', 'digest', 'suggestions']
+    text:  67 chars | tokens in/out: 7672/2102 (cache read 34432)
+
+[2/6] user: Restock the ocean wall decals with enough to cover the next month at the current...
+    15 events in 7.1s
+    tools: ['get_listing', 'load_skill', 'stage_inventory_action', 'stage_listing_update', 'present_suggestions']
+    ui:    ['change_preview', 'suggestions']
+    text:  1329 chars | tokens in/out: 1830/894 (cache read 37888)
+
+[3/6] user: Looks right — approve the restock....
+    7 events in 2.1s
+    tools: ['apply_change', 'present_suggestions']
+    ui:    ['suggestions']
+    text:  172 chars | tokens in/out: 11932/173 (cache read 17152)
+
+[4/6] portal: approve the staged inventory_action
+    applied chg-0001 (inventory_action) through the portal
+
+[5/6] user: Kids-room decor feels like it's having a moment. Pull the numbers — is the under...
+    20 events in 20.1s
+    tools: ['get_business_snapshot', 'query_metrics', 'search_listings', 'run_analysis', 'present_suggestions']
+    ui:    ['metrics', 'suggestions']
+    text:  1941 chars | tokens in/out: 21213/4516 (cache read 56320)
+
+[6/6] user: Why did sales move over the last two weeks — which category or listings drove it...
+    17 events in 20.8s
+    tools: ['run_analysis', 'present_suggestions', 'present_suggestions']
+    ui:    ['metrics', 'suggestions', 'suggestions']
+    text:  2039 chars | tokens in/out: 16169/4403 (cache read 57600)
+
+SMOKE PASSED

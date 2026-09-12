@@ -1,0 +1,1327 @@
+[
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "我将加载绩效洞察流程，并提取两周对比窗口。"
+    }
+  },
+  {
+    "type": "tool_call",
+    "data": {
+      "tool": "load_skill",
+      "id": "call_00_vNUZj7nAaHLGrp8ZJ6DE3477",
+      "input": {
+        "skill_name": "performance-insights"
+      },
+      "label": "正在加载业绩分析流程"
+    }
+  },
+  {
+    "type": "tool_call",
+    "data": {
+      "tool": "run_analysis",
+      "id": "call_01_pb6LagFI4mx7ktB9Uyd04696",
+      "input": {
+        "question": "最近两周（2026-08-28 至 2026-09-10，含首尾）销售额相比前一个等长窗口（2026-08-14 至 2026-08-27，含首尾）的变化，按品类拆分，说明哪些品类贡献了主要增减。",
+        "metrics_needed": [
+          "sales",
+          "orders",
+          "conversion_rate"
+        ],
+        "period": "2026-08-28/2026-09-10",
+        "expected_output": "两个等长窗口的销售额对比及按品类的贡献拆分，用于判断销售变化的主要来源"
+      }
+    }
+  },
+  {
+    "type": "progress",
+    "data": {
+      "message": "starting",
+      "tool": "run_analysis"
+    }
+  },
+  {
+    "type": "progress",
+    "data": {
+      "message": "analysis: step 2 — running a query",
+      "tool": "run_analysis"
+    }
+  },
+  {
+    "type": "progress",
+    "data": {
+      "message": "analysis: step 3 — running a query",
+      "tool": "run_analysis"
+    }
+  },
+  {
+    "type": "progress",
+    "data": {
+      "message": "analysis: step 4 — running a query",
+      "tool": "run_analysis"
+    }
+  },
+  {
+    "type": "progress",
+    "data": {
+      "message": "analysis: step 5 — running a query",
+      "tool": "run_analysis"
+    }
+  },
+  {
+    "type": "tool_result",
+    "data": {
+      "tool": "load_skill",
+      "id": "call_00_vNUZj7nAaHLGrp8ZJ6DE3477",
+      "summary": "ok",
+      "is_error": false,
+      "status": "ok",
+      "excerpt": "# Performance insights\n\nBelow, \"segment\" means whatever unit this operation reports on: a category, a listing, a property, a plan, or an event.\n\nGive the operator a takeaway they can act on, the figure behind it, and the comparison it rests on, and say which reads it came from.\n\n## Where the figures come from\n\n- Start with `get_business_snapshot` for the period asked about: the headline figures, the prior period (`compare_to` and the change percentages), and the alert counts that every later figure is read against. Then use `query_metrics` for one metric over time, narrowed to a segment when the question is about part of the operation.\n- Take margin and stock from `get_pricing_context` and `get_listing`, and campaign spend and revenue from `get_campaign_performance`; the snapshot does not carry them.\n- Report a series the backend does not hold (an error, an empty series, a different metric name than you asked for) as unavailable, and say which question that leaves open.\n- Show a figure you work out from returned data (a run rate, a shortfall, a sell-out date at the current pace) with its inputs beside it.\n- The latest date in a returned series is the latest date the data covers. A "
+    }
+  },
+  {
+    "type": "ui",
+    "data": {
+      "component": "metrics",
+      "payload": {
+        "title": "总销售额两周环比 +4.6%（+1504.15），几乎全部由 kids-room 贡献；按品类拆分无法完成，数据中不存在按日×品类的销售额",
+        "metrics": [
+          {
+            "metric": "本窗总销售额（2026-08-28/09-10）",
+            "value": 34393.86,
+            "change_pct": 4.57,
+            "note": "14 天，对比前窗 32889.71 (USD)"
+          },
+          {
+            "metric": "前窗总销售额（2026-08-14/08-27）",
+            "value": 32889.71,
+            "change_pct": null,
+            "note": "14 天，等长窗口 (USD)"
+          },
+          {
+            "metric": "本窗 kids-room 销售额",
+            "value": 4927.74,
+            "change_pct": 55.42,
+            "note": "前窗 3170.96，占总销售 14.33% (USD)"
+          },
+          {
+            "metric": "本窗非 kids-room 销售额",
+            "value": 29466.12,
+            "change_pct": -0.85,
+            "note": "前窗 29718.75，其余品类合计小幅下滑 (USD)"
+          },
+          {
+            "metric": "本窗订单数",
+            "value": 767.0,
+            "change_pct": 4.64,
+            "note": "前窗 733 (单)"
+          },
+          {
+            "metric": "本窗转化率",
+            "value": 2.858,
+            "change_pct": null,
+            "note": "767/26832；前窗 2.808%，+0.050pp (%)"
+          },
+          {
+            "metric": "kids-room 日销售额",
+            "series": {
+              "metric": "kids-room 日销售额",
+              "unit": "USD",
+              "granularity": "day",
+              "period": "2026-08-14/2026-09-10",
+              "segment": "kids-room",
+              "points": [
+                {
+                  "date": "2026-08-14",
+                  "value": 220.99
+                },
+                {
+                  "date": "2026-08-15",
+                  "value": 240.42
+                },
+                {
+                  "date": "2026-08-16",
+                  "value": 237.27
+                },
+                {
+                  "date": "2026-08-17",
+                  "value": 206.76
+                },
+                {
+                  "date": "2026-08-18",
+                  "value": 205.21
+                },
+                {
+                  "date": "2026-08-19",
+                  "value": 210.97
+                },
+                {
+                  "date": "2026-08-20",
+                  "value": 214.8
+                },
+                {
+                  "date": "2026-08-21",
+                  "value": 227.5
+                },
+                {
+                  "date": "2026-08-22",
+                  "value": 246.68
+                },
+                {
+                  "date": "2026-08-23",
+                  "value": 239.78
+                },
+                {
+                  "date": "2026-08-24",
+                  "value": 207.07
+                },
+                {
+                  "date": "2026-08-25",
+                  "value": 213.12
+                },
+                {
+                  "date": "2026-08-26",
+                  "value": 235.94
+                },
+                {
+                  "date": "2026-08-27",
+                  "value": 264.45
+                },
+                {
+                  "date": "2026-08-28",
+                  "value": 298.35
+                },
+                {
+                  "date": "2026-08-29",
+                  "value": 340.76
+                },
+                {
+                  "date": "2026-08-30",
+                  "value": 342.91
+                },
+                {
+                  "date": "2026-08-31",
+                  "value": 300.99
+                },
+                {
+                  "date": "2026-09-01",
+                  "value": 300.95
+                },
+                {
+                  "date": "2026-09-02",
+                  "value": 315.13
+                },
+                {
+                  "date": "2026-09-03",
+                  "value": 333.46
+                },
+                {
+                  "date": "2026-09-04",
+                  "value": 360.37
+                },
+                {
+                  "date": "2026-09-05",
+                  "value": 402.86
+                },
+                {
+                  "date": "2026-09-06",
+                  "value": 406.08
+                },
+                {
+                  "date": "2026-09-07",
+                  "value": 361.87
+                },
+                {
+                  "date": "2026-09-08",
+                  "value": 367.12
+                },
+                {
+                  "date": "2026-09-09",
+                  "value": 387.73
+                },
+                {
+                  "date": "2026-09-10",
+                  "value": 409.16
+                }
+              ]
+            },
+            "note": "computed — AN-1"
+          }
+        ],
+        "suggestions": [],
+        "analysis_id": "AN-1",
+        "period": "2026-08-14/2026-09-10"
+      },
+      "stream_id": "call_01_pb6LagFI4mx7ktB9Uyd04696"
+    }
+  },
+  {
+    "type": "tool_result",
+    "data": {
+      "tool": "run_analysis",
+      "id": "call_01_pb6LagFI4mx7ktB9Uyd04696",
+      "summary": "ok",
+      "is_error": false,
+      "status": "ok",
+      "excerpt": "<merchant_data>\n{\"analysis_id\": \"AN-1\", \"question\": \"最近两周(2026-08-28 至 2026-09-10,含首尾)销售额相比前一个等长窗口(2026-08-14 至 2026-08-27,含首尾)的变化,按品类拆分,说明哪些品类贡献了主要增减。\", \"headline\": \"总销售额两周环比 +4.6%(+1504.15),几乎全部由 kids-room 贡献;按品类拆分无法完成,数据中不存在按日×品类的销售额\", \"findings\": [\"总销售额:前窗 32889.71 → 本窗 34393.86,增加 1504.15(+4.57%);两窗均为 14 天、14 个不同日期,长度可比。\", \"订单:733 → 767(+34,+4.64%);流量:26101 → 26832(+2.80%);整体转化率 2.808% → 2.858%(+0.050pp)。\", \"品类拆分无法计算:schema 中 listings 无日期维度(仅 sales_last_30d 累计值),daily_metrics 为店铺级日合计,无 品类×日期 事实表;因此不能给出 11 个品类各自两个窗口的销售额。\", \"唯一可归因的品类是 kids-room:daily_metrics.kids_room_sales 前窗 3170.96 → 本窗 4927.74(+1756.78,+55.4%),占总销售额比重 9.64% → 14.33%(+4.69pp)。\", \"非 kids-room 其余合计:29718.75 → 29466.12(-252.63,-0.85%)。即净增 1504.15 全部来自 kids-room,且总盘其他部分小幅下滑。\", \"kids-room 在 listings 中有 9 条在架商品、近 30 天累计销量 252(各品类最高),与窗口内增速方向一致。\", \"限定条件:home-kitchen 有 1 条 out_of_stock、1 条 active;outdoor-camping 有 1 条 paused;pet-supplies 有 1 条 out_of_stock。由于没有按日×品类数据,无法衡量这些状态对窗口差异的影响。\"], \"figures\": [{\"label\": \"本窗总销售额(2026-08-28/09-10)\", \"value\": 34393.86, \"unit\": \"USD\", \"change_pct\": 4.57, \"note\": \"14 天,对比前窗 32889.71\"}, {\"label\": \"前窗总销售额(2026-08-14/08-27)\", \"value\": 32889.71, \"unit\": \"USD\", \"note\": \"14 天,等长窗口\"}, {\"l"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "两周窗口总销售额 34393.86 美元，比前一个等长窗口（2026-08-14 至 2026-08-27）的 32889.71 美元增加 1504.15 美元（+4.57%），增量的全部来自儿童房（kids-room）：该品类 3170.96 → 4927.74 美元（+1756.78，+55.4%），占比 9.64% → 14.33%。其余品类合计 29718.75 → 29466.12 美元（-252.63，-0.85%），即净增完全由儿童房撑起，其他部分小幅回落。流量 26101 → 26832（+2.80%），转化率 2.808% → 2.858%，订单 733 → 767 单，所以这不是流量推的，而是儿童房自身的销售加速。\n\n商品级归因的限制：数据里没有“品类×日期”的销售额事实表——daily_metrics 是店铺级日合计，listings 只有近 30 天累计 sales_last_30d，没有日期维度。因此 11 个品类中只有儿童房有日级字段可以拆分两个窗口，其余品类无法给出各自的窗口销售额，也就无法把儿童房 +1756.78 美元的增量落到具体某条商品上。另需注意 home-kitchen 与 pet-supplies 各有 1 条 out_of_stock、outdoor-camping 有 1 条 paused，缺少按日×品类数据时这些状态对窗口差异的影响无法量化。转化率按店铺级订单数/流量计算，非会话口径。"
+    }
+  },
+  {
+    "type": "tool_call",
+    "data": {
+      "tool": "present_metrics",
+      "id": "call_00_iVDODoWPxIPH3OQtms122190",
+      "input": {
+        "title": "两周销售对比与儿童房贡献",
+        "period": "2026-08-28/2026-09-10 对比 2026-08-14/2026-08-27",
+        "picks": [
+          {
+            "metric": "sales:kids-room",
+            "note": "净增全部来源，+55.4%"
+          },
+          {
+            "metric": "sales",
+            "note": "两窗合计，+4.57%"
+          },
+          {
+            "metric": "orders",
+            "note": "+4.64%，与销售同向"
+          },
+          {
+            "metric": "conversion_rate",
+            "note": "店铺级口径，2.858%"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "tool_call",
+    "data": {
+      "tool": "present_suggestions",
+      "id": "call_01_IYLW2PE7oa2OwqgEBuBZ6544",
+      "input": {
+        "suggestions": [
+          "看儿童房日销售额走势",
+          "查儿童房 9 条在架商品的库存与销量",
+          "按品类列出近 30 天累计销量对比"
+        ]
+      }
+    }
+  },
+  {
+    "type": "tool_result",
+    "data": {
+      "tool": "present_metrics",
+      "id": "call_00_iVDODoWPxIPH3OQtms122190",
+      "summary": "None of those picks names a measure a tool returned this session (a snapshot figure, a queried series, a campaign, or an analysis figure). Read the figures first (get_business_snapshot, query_metrics, get_campaign_performance), then name each pick as the tool spelled it, or as a campaign id plus one measure ('<campaign_id> spend').",
+      "is_error": true,
+      "status": "error"
+    }
+  },
+  {
+    "type": "ui",
+    "data": {
+      "component": "suggestions",
+      "payload": {
+        "suggestions": [
+          "看儿童房日销售额走势",
+          "查儿童房 9 条在架商品的库存与销量",
+          "按品类列出近 30 天累计销量对比"
+        ]
+      },
+      "stream_id": "call_01_IYLW2PE7oa2OwqgEBuBZ6544"
+    }
+  },
+  {
+    "type": "tool_result",
+    "data": {
+      "tool": "present_suggestions",
+      "id": "call_01_IYLW2PE7oa2OwqgEBuBZ6544",
+      "summary": "Displayed to the operator.",
+      "is_error": false,
+      "status": "ok"
+    }
+  },
+  {
+    "type": "ui_partial",
+    "data": {
+      "component": "metrics",
+      "payload": {
+        "metrics": [
+          {
+            "metric": "kids-room 日销售额",
+            "series": {
+              "metric": "kids-room 日销售额",
+              "unit": "USD",
+              "granularity": "day",
+              "period": "2026-08-14/2026-09-10",
+              "segment": "kids-room",
+              "points": [
+                {
+                  "date": "2026-08-14",
+                  "value": 220.99
+                },
+                {
+                  "date": "2026-08-15",
+                  "value": 240.42
+                },
+                {
+                  "date": "2026-08-16",
+                  "value": 237.27
+                },
+                {
+                  "date": "2026-08-17",
+                  "value": 206.76
+                },
+                {
+                  "date": "2026-08-18",
+                  "value": 205.21
+                },
+                {
+                  "date": "2026-08-19",
+                  "value": 210.97
+                },
+                {
+                  "date": "2026-08-20",
+                  "value": 214.8
+                },
+                {
+                  "date": "2026-08-21",
+                  "value": 227.5
+                },
+                {
+                  "date": "2026-08-22",
+                  "value": 246.68
+                },
+                {
+                  "date": "2026-08-23",
+                  "value": 239.78
+                },
+                {
+                  "date": "2026-08-24",
+                  "value": 207.07
+                },
+                {
+                  "date": "2026-08-25",
+                  "value": 213.12
+                },
+                {
+                  "date": "2026-08-26",
+                  "value": 235.94
+                },
+                {
+                  "date": "2026-08-27",
+                  "value": 264.45
+                },
+                {
+                  "date": "2026-08-28",
+                  "value": 298.35
+                },
+                {
+                  "date": "2026-08-29",
+                  "value": 340.76
+                },
+                {
+                  "date": "2026-08-30",
+                  "value": 342.91
+                },
+                {
+                  "date": "2026-08-31",
+                  "value": 300.99
+                },
+                {
+                  "date": "2026-09-01",
+                  "value": 300.95
+                },
+                {
+                  "date": "2026-09-02",
+                  "value": 315.13
+                },
+                {
+                  "date": "2026-09-03",
+                  "value": 333.46
+                },
+                {
+                  "date": "2026-09-04",
+                  "value": 360.37
+                },
+                {
+                  "date": "2026-09-05",
+                  "value": 402.86
+                },
+                {
+                  "date": "2026-09-06",
+                  "value": 406.08
+                },
+                {
+                  "date": "2026-09-07",
+                  "value": 361.87
+                },
+                {
+                  "date": "2026-09-08",
+                  "value": 367.12
+                },
+                {
+                  "date": "2026-09-09",
+                  "value": 387.73
+                },
+                {
+                  "date": "2026-09-10",
+                  "value": 409.16
+                }
+              ]
+            },
+            "note": null
+          }
+        ],
+        "period": "2026-08-28/2026-09-10 对比 2026-08-14/2026-08-27"
+      },
+      "stream_id": "call_00_UIW09rj00AngqNRs96tz6206"
+    }
+  },
+  {
+    "type": "ui_partial",
+    "data": {
+      "component": "metrics",
+      "payload": {
+        "metrics": [
+          {
+            "metric": "kids-room 日销售额",
+            "series": {
+              "metric": "kids-room 日销售额",
+              "unit": "USD",
+              "granularity": "day",
+              "period": "2026-08-14/2026-09-10",
+              "segment": "kids-room",
+              "points": [
+                {
+                  "date": "2026-08-14",
+                  "value": 220.99
+                },
+                {
+                  "date": "2026-08-15",
+                  "value": 240.42
+                },
+                {
+                  "date": "2026-08-16",
+                  "value": 237.27
+                },
+                {
+                  "date": "2026-08-17",
+                  "value": 206.76
+                },
+                {
+                  "date": "2026-08-18",
+                  "value": 205.21
+                },
+                {
+                  "date": "2026-08-19",
+                  "value": 210.97
+                },
+                {
+                  "date": "2026-08-20",
+                  "value": 214.8
+                },
+                {
+                  "date": "2026-08-21",
+                  "value": 227.5
+                },
+                {
+                  "date": "2026-08-22",
+                  "value": 246.68
+                },
+                {
+                  "date": "2026-08-23",
+                  "value": 239.78
+                },
+                {
+                  "date": "2026-08-24",
+                  "value": 207.07
+                },
+                {
+                  "date": "2026-08-25",
+                  "value": 213.12
+                },
+                {
+                  "date": "2026-08-26",
+                  "value": 235.94
+                },
+                {
+                  "date": "2026-08-27",
+                  "value": 264.45
+                },
+                {
+                  "date": "2026-08-28",
+                  "value": 298.35
+                },
+                {
+                  "date": "2026-08-29",
+                  "value": 340.76
+                },
+                {
+                  "date": "2026-08-30",
+                  "value": 342.91
+                },
+                {
+                  "date": "2026-08-31",
+                  "value": 300.99
+                },
+                {
+                  "date": "2026-09-01",
+                  "value": 300.95
+                },
+                {
+                  "date": "2026-09-02",
+                  "value": 315.13
+                },
+                {
+                  "date": "2026-09-03",
+                  "value": 333.46
+                },
+                {
+                  "date": "2026-09-04",
+                  "value": 360.37
+                },
+                {
+                  "date": "2026-09-05",
+                  "value": 402.86
+                },
+                {
+                  "date": "2026-09-06",
+                  "value": 406.08
+                },
+                {
+                  "date": "2026-09-07",
+                  "value": 361.87
+                },
+                {
+                  "date": "2026-09-08",
+                  "value": 367.12
+                },
+                {
+                  "date": "2026-09-09",
+                  "value": 387.73
+                },
+                {
+                  "date": "2026-09-10",
+                  "value": 409.16
+                }
+              ]
+            },
+            "note": "净增全部来源，本窗 4927.74 美元，+55.4%"
+          },
+          {
+            "metric": "本窗非 kids-room 销售额",
+            "value": 29466.12,
+            "change_pct": -0.85,
+            "currency": null,
+            "note": null
+          }
+        ],
+        "period": "2026-08-28/2026-09-10 对比 2026-08-14/2026-08-27"
+      },
+      "stream_id": "call_00_UIW09rj00AngqNRs96tz6206"
+    }
+  },
+  {
+    "type": "ui_partial",
+    "data": {
+      "component": "metrics",
+      "payload": {
+        "metrics": [
+          {
+            "metric": "kids-room 日销售额",
+            "series": {
+              "metric": "kids-room 日销售额",
+              "unit": "USD",
+              "granularity": "day",
+              "period": "2026-08-14/2026-09-10",
+              "segment": "kids-room",
+              "points": [
+                {
+                  "date": "2026-08-14",
+                  "value": 220.99
+                },
+                {
+                  "date": "2026-08-15",
+                  "value": 240.42
+                },
+                {
+                  "date": "2026-08-16",
+                  "value": 237.27
+                },
+                {
+                  "date": "2026-08-17",
+                  "value": 206.76
+                },
+                {
+                  "date": "2026-08-18",
+                  "value": 205.21
+                },
+                {
+                  "date": "2026-08-19",
+                  "value": 210.97
+                },
+                {
+                  "date": "2026-08-20",
+                  "value": 214.8
+                },
+                {
+                  "date": "2026-08-21",
+                  "value": 227.5
+                },
+                {
+                  "date": "2026-08-22",
+                  "value": 246.68
+                },
+                {
+                  "date": "2026-08-23",
+                  "value": 239.78
+                },
+                {
+                  "date": "2026-08-24",
+                  "value": 207.07
+                },
+                {
+                  "date": "2026-08-25",
+                  "value": 213.12
+                },
+                {
+                  "date": "2026-08-26",
+                  "value": 235.94
+                },
+                {
+                  "date": "2026-08-27",
+                  "value": 264.45
+                },
+                {
+                  "date": "2026-08-28",
+                  "value": 298.35
+                },
+                {
+                  "date": "2026-08-29",
+                  "value": 340.76
+                },
+                {
+                  "date": "2026-08-30",
+                  "value": 342.91
+                },
+                {
+                  "date": "2026-08-31",
+                  "value": 300.99
+                },
+                {
+                  "date": "2026-09-01",
+                  "value": 300.95
+                },
+                {
+                  "date": "2026-09-02",
+                  "value": 315.13
+                },
+                {
+                  "date": "2026-09-03",
+                  "value": 333.46
+                },
+                {
+                  "date": "2026-09-04",
+                  "value": 360.37
+                },
+                {
+                  "date": "2026-09-05",
+                  "value": 402.86
+                },
+                {
+                  "date": "2026-09-06",
+                  "value": 406.08
+                },
+                {
+                  "date": "2026-09-07",
+                  "value": 361.87
+                },
+                {
+                  "date": "2026-09-08",
+                  "value": 367.12
+                },
+                {
+                  "date": "2026-09-09",
+                  "value": 387.73
+                },
+                {
+                  "date": "2026-09-10",
+                  "value": 409.16
+                }
+              ]
+            },
+            "note": "净增全部来源，本窗 4927.74 美元，+55.4%"
+          },
+          {
+            "metric": "本窗非 kids-room 销售额",
+            "value": 29466.12,
+            "change_pct": -0.85,
+            "currency": null,
+            "note": "29466.12 美元，其余品类合计 -0.85%"
+          },
+          {
+            "metric": "本窗订单数",
+            "value": 767.0,
+            "change_pct": 4.64,
+            "currency": null,
+            "note": null
+          }
+        ],
+        "period": "2026-08-28/2026-09-10 对比 2026-08-14/2026-08-27"
+      },
+      "stream_id": "call_00_UIW09rj00AngqNRs96tz6206"
+    }
+  },
+  {
+    "type": "ui_partial",
+    "data": {
+      "component": "metrics",
+      "payload": {
+        "metrics": [
+          {
+            "metric": "kids-room 日销售额",
+            "series": {
+              "metric": "kids-room 日销售额",
+              "unit": "USD",
+              "granularity": "day",
+              "period": "2026-08-14/2026-09-10",
+              "segment": "kids-room",
+              "points": [
+                {
+                  "date": "2026-08-14",
+                  "value": 220.99
+                },
+                {
+                  "date": "2026-08-15",
+                  "value": 240.42
+                },
+                {
+                  "date": "2026-08-16",
+                  "value": 237.27
+                },
+                {
+                  "date": "2026-08-17",
+                  "value": 206.76
+                },
+                {
+                  "date": "2026-08-18",
+                  "value": 205.21
+                },
+                {
+                  "date": "2026-08-19",
+                  "value": 210.97
+                },
+                {
+                  "date": "2026-08-20",
+                  "value": 214.8
+                },
+                {
+                  "date": "2026-08-21",
+                  "value": 227.5
+                },
+                {
+                  "date": "2026-08-22",
+                  "value": 246.68
+                },
+                {
+                  "date": "2026-08-23",
+                  "value": 239.78
+                },
+                {
+                  "date": "2026-08-24",
+                  "value": 207.07
+                },
+                {
+                  "date": "2026-08-25",
+                  "value": 213.12
+                },
+                {
+                  "date": "2026-08-26",
+                  "value": 235.94
+                },
+                {
+                  "date": "2026-08-27",
+                  "value": 264.45
+                },
+                {
+                  "date": "2026-08-28",
+                  "value": 298.35
+                },
+                {
+                  "date": "2026-08-29",
+                  "value": 340.76
+                },
+                {
+                  "date": "2026-08-30",
+                  "value": 342.91
+                },
+                {
+                  "date": "2026-08-31",
+                  "value": 300.99
+                },
+                {
+                  "date": "2026-09-01",
+                  "value": 300.95
+                },
+                {
+                  "date": "2026-09-02",
+                  "value": 315.13
+                },
+                {
+                  "date": "2026-09-03",
+                  "value": 333.46
+                },
+                {
+                  "date": "2026-09-04",
+                  "value": 360.37
+                },
+                {
+                  "date": "2026-09-05",
+                  "value": 402.86
+                },
+                {
+                  "date": "2026-09-06",
+                  "value": 406.08
+                },
+                {
+                  "date": "2026-09-07",
+                  "value": 361.87
+                },
+                {
+                  "date": "2026-09-08",
+                  "value": 367.12
+                },
+                {
+                  "date": "2026-09-09",
+                  "value": 387.73
+                },
+                {
+                  "date": "2026-09-10",
+                  "value": 409.16
+                }
+              ]
+            },
+            "note": "净增全部来源，本窗 4927.74 美元，+55.4%"
+          },
+          {
+            "metric": "本窗非 kids-room 销售额",
+            "value": 29466.12,
+            "change_pct": -0.85,
+            "currency": null,
+            "note": "29466.12 美元，其余品类合计 -0.85%"
+          },
+          {
+            "metric": "本窗订单数",
+            "value": 767.0,
+            "change_pct": 4.64,
+            "currency": null,
+            "note": "767 单，+4.64%"
+          },
+          {
+            "metric": "本窗转化率",
+            "value": 2.858,
+            "change_pct": null,
+            "currency": null,
+            "note": null
+          }
+        ],
+        "period": "2026-08-28/2026-09-10 对比 2026-08-14/2026-08-27"
+      },
+      "stream_id": "call_00_UIW09rj00AngqNRs96tz6206"
+    }
+  },
+  {
+    "type": "ui_partial",
+    "data": {
+      "component": "metrics",
+      "payload": {
+        "metrics": [
+          {
+            "metric": "kids-room 日销售额",
+            "series": {
+              "metric": "kids-room 日销售额",
+              "unit": "USD",
+              "granularity": "day",
+              "period": "2026-08-14/2026-09-10",
+              "segment": "kids-room",
+              "points": [
+                {
+                  "date": "2026-08-14",
+                  "value": 220.99
+                },
+                {
+                  "date": "2026-08-15",
+                  "value": 240.42
+                },
+                {
+                  "date": "2026-08-16",
+                  "value": 237.27
+                },
+                {
+                  "date": "2026-08-17",
+                  "value": 206.76
+                },
+                {
+                  "date": "2026-08-18",
+                  "value": 205.21
+                },
+                {
+                  "date": "2026-08-19",
+                  "value": 210.97
+                },
+                {
+                  "date": "2026-08-20",
+                  "value": 214.8
+                },
+                {
+                  "date": "2026-08-21",
+                  "value": 227.5
+                },
+                {
+                  "date": "2026-08-22",
+                  "value": 246.68
+                },
+                {
+                  "date": "2026-08-23",
+                  "value": 239.78
+                },
+                {
+                  "date": "2026-08-24",
+                  "value": 207.07
+                },
+                {
+                  "date": "2026-08-25",
+                  "value": 213.12
+                },
+                {
+                  "date": "2026-08-26",
+                  "value": 235.94
+                },
+                {
+                  "date": "2026-08-27",
+                  "value": 264.45
+                },
+                {
+                  "date": "2026-08-28",
+                  "value": 298.35
+                },
+                {
+                  "date": "2026-08-29",
+                  "value": 340.76
+                },
+                {
+                  "date": "2026-08-30",
+                  "value": 342.91
+                },
+                {
+                  "date": "2026-08-31",
+                  "value": 300.99
+                },
+                {
+                  "date": "2026-09-01",
+                  "value": 300.95
+                },
+                {
+                  "date": "2026-09-02",
+                  "value": 315.13
+                },
+                {
+                  "date": "2026-09-03",
+                  "value": 333.46
+                },
+                {
+                  "date": "2026-09-04",
+                  "value": 360.37
+                },
+                {
+                  "date": "2026-09-05",
+                  "value": 402.86
+                },
+                {
+                  "date": "2026-09-06",
+                  "value": 406.08
+                },
+                {
+                  "date": "2026-09-07",
+                  "value": 361.87
+                },
+                {
+                  "date": "2026-09-08",
+                  "value": 367.12
+                },
+                {
+                  "date": "2026-09-09",
+                  "value": 387.73
+                },
+                {
+                  "date": "2026-09-10",
+                  "value": 409.16
+                }
+              ]
+            },
+            "note": "净增全部来源，本窗 4927.74 美元，+55.4%"
+          },
+          {
+            "metric": "本窗非 kids-room 销售额",
+            "value": 29466.12,
+            "change_pct": -0.85,
+            "currency": null,
+            "note": "29466.12 美元，其余品类合计 -0.85%"
+          },
+          {
+            "metric": "本窗订单数",
+            "value": 767.0,
+            "change_pct": 4.64,
+            "currency": null,
+            "note": "767 单，+4.64%"
+          },
+          {
+            "metric": "本窗转化率",
+            "value": 2.858,
+            "change_pct": null,
+            "currency": null,
+            "note": "2.858%，店铺级订单/流量口径"
+          }
+        ],
+        "title": "两周销售对比与儿童房贡献",
+        "period": "2026-08-28/2026-09-10 对比 2026-08-14/2026-08-27"
+      },
+      "stream_id": "call_00_UIW09rj00AngqNRs96tz6206"
+    }
+  },
+  {
+    "type": "tool_call",
+    "data": {
+      "tool": "present_metrics",
+      "id": "call_00_UIW09rj00AngqNRs96tz6206",
+      "input": {
+        "period": "2026-08-28/2026-09-10 对比 2026-08-14/2026-08-27",
+        "picks": [
+          {
+            "metric": "kids-room 日销售额",
+            "note": "净增全部来源，本窗 4927.74 美元，+55.4%"
+          },
+          {
+            "label": "本窗总销售额(2026-08-28/09-10)",
+            "metric": "本窗总销售额(2026-08-28/09-10)",
+            "note": "34393.86 美元，等长 14 天窗口"
+          },
+          {
+            "label": "本窗非 kids-room 销售额",
+            "metric": "本窗非 kids-room 销售额",
+            "note": "29466.12 美元，其余品类合计 -0.85%"
+          },
+          {
+            "label": "本窗订单数",
+            "metric": "本窗订单数",
+            "note": "767 单，+4.64%"
+          },
+          {
+            "label": "本窗转化率",
+            "metric": "本窗转化率",
+            "note": "2.858%，店铺级订单/流量口径"
+          }
+        ],
+        "title": "两周销售对比与儿童房贡献"
+      }
+    }
+  },
+  {
+    "type": "ui",
+    "data": {
+      "component": "metrics",
+      "payload": {
+        "title": "两周销售对比与儿童房贡献",
+        "period": "2026-08-28/2026-09-10 对比 2026-08-14/2026-08-27",
+        "metrics": [
+          {
+            "metric": "kids-room 日销售额",
+            "series": {
+              "metric": "kids-room 日销售额",
+              "unit": "USD",
+              "granularity": "day",
+              "period": "2026-08-14/2026-09-10",
+              "segment": "kids-room",
+              "points": [
+                {
+                  "date": "2026-08-14",
+                  "value": 220.99
+                },
+                {
+                  "date": "2026-08-15",
+                  "value": 240.42
+                },
+                {
+                  "date": "2026-08-16",
+                  "value": 237.27
+                },
+                {
+                  "date": "2026-08-17",
+                  "value": 206.76
+                },
+                {
+                  "date": "2026-08-18",
+                  "value": 205.21
+                },
+                {
+                  "date": "2026-08-19",
+                  "value": 210.97
+                },
+                {
+                  "date": "2026-08-20",
+                  "value": 214.8
+                },
+                {
+                  "date": "2026-08-21",
+                  "value": 227.5
+                },
+                {
+                  "date": "2026-08-22",
+                  "value": 246.68
+                },
+                {
+                  "date": "2026-08-23",
+                  "value": 239.78
+                },
+                {
+                  "date": "2026-08-24",
+                  "value": 207.07
+                },
+                {
+                  "date": "2026-08-25",
+                  "value": 213.12
+                },
+                {
+                  "date": "2026-08-26",
+                  "value": 235.94
+                },
+                {
+                  "date": "2026-08-27",
+                  "value": 264.45
+                },
+                {
+                  "date": "2026-08-28",
+                  "value": 298.35
+                },
+                {
+                  "date": "2026-08-29",
+                  "value": 340.76
+                },
+                {
+                  "date": "2026-08-30",
+                  "value": 342.91
+                },
+                {
+                  "date": "2026-08-31",
+                  "value": 300.99
+                },
+                {
+                  "date": "2026-09-01",
+                  "value": 300.95
+                },
+                {
+                  "date": "2026-09-02",
+                  "value": 315.13
+                },
+                {
+                  "date": "2026-09-03",
+                  "value": 333.46
+                },
+                {
+                  "date": "2026-09-04",
+                  "value": 360.37
+                },
+                {
+                  "date": "2026-09-05",
+                  "value": 402.86
+                },
+                {
+                  "date": "2026-09-06",
+                  "value": 406.08
+                },
+                {
+                  "date": "2026-09-07",
+                  "value": 361.87
+                },
+                {
+                  "date": "2026-09-08",
+                  "value": 367.12
+                },
+                {
+                  "date": "2026-09-09",
+                  "value": 387.73
+                },
+                {
+                  "date": "2026-09-10",
+                  "value": 409.16
+                }
+              ]
+            },
+            "note": "净增全部来源，本窗 4927.74 美元，+55.4%"
+          },
+          {
+            "metric": "本窗非 kids-room 销售额",
+            "value": 29466.12,
+            "change_pct": -0.85,
+            "currency": null,
+            "note": "29466.12 美元，其余品类合计 -0.85%"
+          },
+          {
+            "metric": "本窗订单数",
+            "value": 767.0,
+            "change_pct": 4.64,
+            "currency": null,
+            "note": "767 单，+4.64%"
+          },
+          {
+            "metric": "本窗转化率",
+            "value": 2.858,
+            "change_pct": null,
+            "currency": null,
+            "note": "2.858%，店铺级订单/流量口径"
+          }
+        ]
+      },
+      "stream_id": "call_00_UIW09rj00AngqNRs96tz6206"
+    }
+  },
+  {
+    "type": "tool_result",
+    "data": {
+      "tool": "present_metrics",
+      "id": "call_00_UIW09rj00AngqNRs96tz6206",
+      "summary": "Displayed to the operator. Skipped metrics not returned this session: 本窗总销售额(2026-08-28/09-10).",
+      "is_error": false,
+      "status": "ok"
+    }
+  },
+  {
+    "type": "text_delta",
+    "data": {
+      "text": "已按上面的卡片展示：儿童房日销售额（唯一可归因的品类级序列）、非儿童房合计、订单数与转化率；总销售额那一项因名称未对应返回的度量被跳过，总盘数字写在正文里。"
+    }
+  },
+  {
+    "type": "turn_complete",
+    "data": {
+      "stop_reason": "end_turn",
+      "usage": {
+        "input_tokens": 13438,
+        "output_tokens": 3769,
+        "cache_read_input_tokens": 45824,
+        "cache_creation_input_tokens": 0
+      },
+      "elapsed_ms": 20019,
+      "results_cleared": 0
+    }
+  }
+]

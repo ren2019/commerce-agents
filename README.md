@@ -1,5 +1,10 @@
 # Claude Commerce Agents
 
+This public fork adds an operator-led Chinese/English retail demo using DeepSeek
+and external customer datasets. Start with the [demo runbook](docs/retail-demo-runbook.md)
+on branch `codex/bilingual-commerce-demo`. Final operator acceptance remains pending.
+The upstream reference and its deployment paths are described below.
+
 Two commerce agents built on Claude: a **shopping agent** a business embeds in its app for
 customers, and a **merchant agent** its staff use to run the back office. Each is defined
 once (prompt, skills, tool contracts, gates) and runs on the Messages API, the Claude Agent
