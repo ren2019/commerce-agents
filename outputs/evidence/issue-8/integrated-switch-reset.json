@@ -1,0 +1,540 @@
+{
+  "source_commit": "35f149a",
+  "model": "deepseek-flash",
+  "steps": [
+    {
+      "action": "import",
+      "locale": "en",
+      "dataset": "full-retail-rehearsal",
+      "fresh_state": {
+        "cart_items": 0,
+        "pending_changes": 0,
+        "recent_changes": 0
+      },
+      "real_model_events": [
+        {
+          "type": "tool_call",
+          "data": {
+            "tool": "get_product_details",
+            "id": "call_00_kFR1XrKy0wAOGWA8NWAa2188",
+            "input": {
+              "product_id": "AR-1202"
+            },
+            "label": "Looking up that tent for you"
+          }
+        },
+        {
+          "type": "tool_result",
+          "data": {
+            "tool": "get_product_details",
+            "id": "call_00_kFR1XrKy0wAOGWA8NWAa2188",
+            "summary": "ok",
+            "is_error": false,
+            "status": "ok",
+            "excerpt": "<storefront_data>\n{\"product_id\": \"AR-1202\", \"title\": \"ACME Basecamp 4-Person Family Tent\", \"brand\": \"ACME Basecamp\", \"price\": 219.0, \"currency\": \"USD\", \"rating\": 4.5, \"review_count\": 1430, \"in_stock\": true, \"attributes\": {\"capacity\": \"4 person\", \"weight\": \"7.4 kg\", \"standing_height\": \"183 cm\", \"setup\": \"8 minutes\", \"delivery\": \"Get it by Thu, Sep 17\"}, \"short_description\": \"Standing-height family tent with a room divider and a porch awning for muddy boots.\"}\n</storefront_data>"
+          }
+        },
+        {
+          "type": "tool_call",
+          "data": {
+            "tool": "add_to_cart",
+            "id": "call_00_TYeC6FJEtfUCaJE1e5KY8486",
+            "input": {
+              "product_id": "AR-1202"
+            },
+            "label": "Adding the tent to your cart"
+          }
+        },
+        {
+          "type": "cart_update",
+          "data": {
+            "cart": {
+              "items": [
+                {
+                  "product_id": "AR-1202",
+                  "title": "ACME Basecamp 4-Person Family Tent",
+                  "price": 219.0,
+                  "quantity": 1,
+                  "image_url": null,
+                  "line_total": 219.0
+                }
+              ],
+              "item_count": 1,
+              "subtotal": 219.0,
+              "currency": "USD"
+            }
+          }
+        },
+        {
+          "type": "tool_result",
+          "data": {
+            "tool": "add_to_cart",
+            "id": "call_00_TYeC6FJEtfUCaJE1e5KY8486",
+            "summary": "Added AR-1202 x1. Cart now has 1 item(s), subtotal 219.00 USD.",
+            "is_error": false,
+            "status": "ok"
+          }
+        },
+        {
+          "type": "text_delta",
+          "data": {
+            "text": "Added the ACME Basecamp 4-Person Family Tent (AR-1202) to your cart — cart now has 1 item, subtotal $219.00."
+          }
+        },
+        {
+          "type": "tool_call",
+          "data": {
+            "tool": "present_suggestions",
+            "id": "call_00_oDaS4Nntky83F6s5jykP3093",
+            "input": {
+              "suggestions": [
+                "Add a matching footprint or groundsheet",
+                "Check delivery options for this tent",
+                "Show other 4-person tents",
+                "Check out my cart"
+              ]
+            }
+          }
+        },
+        {
+          "type": "ui",
+          "data": {
+            "component": "suggestions",
+            "payload": {
+              "suggestions": [
+                "Add a matching footprint or groundsheet",
+                "Check delivery options for this tent",
+                "Show other 4-person tents",
+                "Check out my cart"
+              ]
+            },
+            "stream_id": "call_00_oDaS4Nntky83F6s5jykP3093"
+          }
+        },
+        {
+          "type": "tool_result",
+          "data": {
+            "tool": "present_suggestions",
+            "id": "call_00_oDaS4Nntky83F6s5jykP3093",
+            "summary": "Displayed to the customer.",
+            "is_error": false,
+            "status": "ok"
+          }
+        },
+        {
+          "type": "turn_complete",
+          "data": {
+            "stop_reason": "end_turn",
+            "usage": {
+              "input_tokens": 5342,
+              "output_tokens": 228,
+              "cache_read_input_tokens": 13312,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_ms": 2058,
+            "results_cleared": 0
+          }
+        }
+      ],
+      "cart_after": {
+        "items": [
+          {
+            "product_id": "AR-1202",
+            "title": "ACME Basecamp 4-Person Family Tent",
+            "price": 219.0,
+            "quantity": 1,
+            "image_url": null,
+            "line_total": 219.0
+          }
+        ],
+        "item_count": 1,
+        "subtotal": 219.0,
+        "currency": "USD"
+      }
+    },
+    {
+      "action": "switch",
+      "locale": "zh",
+      "dataset": "playroom-sample",
+      "old_shopper_status": 401,
+      "old_merchant_status": 401,
+      "fresh_state": {
+        "cart_items": 0,
+        "pending_changes": 0,
+        "recent_changes": 0
+      },
+      "real_model_events": [
+        {
+          "type": "tool_call",
+          "data": {
+            "tool": "get_product_details",
+            "id": "call_00_Iu29EFBHCh9jNbH6ItN29786",
+            "input": {
+              "product_id": "AR-1401"
+            },
+            "label": "正在查看 AR-1401 的详情"
+          }
+        },
+        {
+          "type": "tool_result",
+          "data": {
+            "tool": "get_product_details",
+            "id": "call_00_Iu29EFBHCh9jNbH6ItN29786",
+            "summary": "ok",
+            "is_error": false,
+            "status": "ok",
+            "excerpt": "<storefront_data>\n{\"product_id\": \"AR-1401\", \"title\": \"ACME Playroom 木质叠搭积木套装(54 块)\", \"brand\": \"ACME Playroom\", \"price\": 34.0, \"currency\": \"USD\", \"rating\": 4.8, \"review_count\": 2940, \"in_stock\": true, \"labels\": [\"bestseller\"], \"attributes\": {\"pieces\": \"54 块积木 + 12 张创意卡\", \"material\": \"山毛榉,水性涂料\", \"age_range\": \"4–10 岁\", \"storage\": \"棉质收纳袋\", \"delivery\": \"Get it by Tue, Sep 15\", \"low_stock\": \"3\"}, \"short_description\": \"经典山毛榉积木搭配创意卡,可以搭建桥梁、高塔和小镇。\", \"long_description\": \"54 块实心山毛榉积木,包含 6 种形状和 4 种水性涂装颜色。12 张创意卡从第一座桥引导到整座小镇。积木尺寸适合小手抓握,表面打磨光滑,便于稳定堆叠;棉质收纳袋方便收拾。\", \"specs\": {\"pieces\": \"54 块积木,6 种形状\", \"colors\": \"4 种,水性涂料\", \"largest\": \"拱形,12 cm\", \"idea_cards\": \"12 张,从桥梁到小镇\", \"safety\": \"已通过适用于 3 岁及以上儿童的独立安全测试(虚构原文声明)\"}, \"review_highlights\": [\"My 9-year-old builds the tallest tower card, then invents her own\", \"Paint has held up through a year of rough play\", \"Carry sack fills fast — cleanup races actually work\"]}\n</storefront_data>"
+          }
+        },
+        {
+          "type": "tool_call",
+          "data": {
+            "tool": "add_to_cart",
+            "id": "call_00_DwYrYP2eYECg3fUSOk5r8969",
+            "input": {
+              "product_id": "AR-1401",
+              "quantity": 1
+            },
+            "label": "正在把 AR-1401 加入购物车"
+          }
+        },
+        {
+          "type": "cart_update",
+          "data": {
+            "cart": {
+              "items": [
+                {
+                  "product_id": "AR-1401",
+                  "title": "ACME Playroom 木质叠搭积木套装（54 块）",
+                  "price": 34.0,
+                  "quantity": 1,
+                  "image_url": "/products/AR-1401.webp",
+                  "line_total": 34.0
+                }
+              ],
+              "item_count": 1,
+              "subtotal": 34.0,
+              "currency": "USD"
+            }
+          }
+        },
+        {
+          "type": "tool_result",
+          "data": {
+            "tool": "add_to_cart",
+            "id": "call_00_DwYrYP2eYECg3fUSOk5r8969",
+            "summary": "Added AR-1401 x1. Cart now has 1 item(s), subtotal 34.00 USD.",
+            "is_error": false,
+            "status": "ok"
+          }
+        },
+        {
+          "type": "text_delta",
+          "data": {
+            "text": "已将 AR-1401 木质叠搭积木套装(54 块)一件加入购物车,购物车现共 1 件,小计 34.00 USD。该款目前库存仅剩 3 件。"
+          }
+        },
+        {
+          "type": "tool_call",
+          "data": {
+            "tool": "present_suggestions",
+            "id": "call_00_VvGkik1kxSaQDmJEeJlH2333",
+            "input": {
+              "suggestions": [
+                "查看购物车",
+                "看看其他木质积木套装",
+                "推荐适合小公寓的家庭游戏",
+                "结算购物车"
+              ]
+            }
+          }
+        },
+        {
+          "type": "ui",
+          "data": {
+            "component": "suggestions",
+            "payload": {
+              "suggestions": [
+                "查看购物车",
+                "看看其他木质积木套装",
+                "推荐适合小公寓的家庭游戏",
+                "结算购物车"
+              ]
+            },
+            "stream_id": "call_00_VvGkik1kxSaQDmJEeJlH2333"
+          }
+        },
+        {
+          "type": "tool_result",
+          "data": {
+            "tool": "present_suggestions",
+            "id": "call_00_VvGkik1kxSaQDmJEeJlH2333",
+            "summary": "Displayed to the customer.",
+            "is_error": false,
+            "status": "ok"
+          }
+        },
+        {
+          "type": "turn_complete",
+          "data": {
+            "stop_reason": "end_turn",
+            "usage": {
+              "input_tokens": 8242,
+              "output_tokens": 260,
+              "cache_read_input_tokens": 10496,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_ms": 2759,
+            "results_cleared": 0
+          }
+        }
+      ],
+      "cart_after": {
+        "items": [
+          {
+            "product_id": "AR-1401",
+            "title": "ACME Playroom 木质叠搭积木套装（54 块）",
+            "price": 34.0,
+            "quantity": 1,
+            "image_url": "/products/AR-1401.webp",
+            "line_total": 34.0
+          }
+        ],
+        "item_count": 1,
+        "subtotal": 34.0,
+        "currency": "USD"
+      }
+    },
+    {
+      "action": "switch",
+      "locale": "en",
+      "dataset": "full-retail-rehearsal",
+      "old_shopper_status": 401,
+      "old_merchant_status": 401,
+      "fresh_state": {
+        "cart_items": 0,
+        "pending_changes": 0,
+        "recent_changes": 0
+      },
+      "real_model_events": [
+        {
+          "type": "tool_call",
+          "data": {
+            "tool": "get_pending_changes",
+            "id": "call_00_4yzA6E2pL9oZJ4AkLUSq0535",
+            "input": {},
+            "label": "Checking for changes already waiting"
+          }
+        },
+        {
+          "type": "tool_result",
+          "data": {
+            "tool": "get_pending_changes",
+            "id": "call_00_4yzA6E2pL9oZJ4AkLUSq0535",
+            "summary": "<merchant_data>\n{\"note\": \"Nothing is waiting for approval.\"}\n</merchant_data>",
+            "is_error": false,
+            "status": "ok"
+          }
+        },
+        {
+          "type": "tool_call",
+          "data": {
+            "tool": "get_listing",
+            "id": "call_00_lCZz6ZtTRY2GR0ddKDxF1487",
+            "input": {
+              "listing_id": "AR-2102"
+            },
+            "label": "Reading the AR-2102 record"
+          }
+        },
+        {
+          "type": "tool_result",
+          "data": {
+            "tool": "get_listing",
+            "id": "call_00_lCZz6ZtTRY2GR0ddKDxF1487",
+            "summary": "ok",
+            "is_error": false,
+            "status": "ok",
+            "excerpt": "<merchant_data>\n{\"listing_id\": \"AR-2102\", \"title\": \"ACME Kids Peel-and-Stick Ocean Wall Decals (36 pc)\", \"status\": \"active\", \"price\": 24.0, \"currency\": \"USD\", \"stock\": 3, \"category\": \"kids-room\", \"content_quality\": \"needs_work\", \"attributes\": {\"count\": \"36 decals\", \"removable\": \"yes\", \"largest\": \"24 in whale\", \"theme\": \"ocean\", \"low_stock\": \"3\"}, \"short_description\": \"36 removable ocean decals — a two-foot whale down to palm-size seahorses — that peel off clean.\", \"long_description\": \"Thirty-six matte decals: a whale, dolphins, sea turtles, seahorses, and drifts of fish, plus coral and bubbles to scatter between them. Each one repositions without lifting paint, so the reef can be rebuilt whenever inspiration strikes.\", \"review_snippets\": [\"Went up in twenty minutes and came off our rental walls clean\", \"The big whale over the bed is the star of the room\", \"Went up bubble-free — our kid handled half the wall solo\"], \"sales_last_30d\": 52, \"missing_attributes\": [\"wall coverage\", \"material\"]}\n</merchant_data>"
+          }
+        },
+        {
+          "type": "tool_call",
+          "data": {
+            "tool": "get_inventory_alerts",
+            "id": "call_00_KAUFgYZcpez3WzaZeKyo0027",
+            "input": {},
+            "label": "Checking AR-2102's alert detail"
+          }
+        },
+        {
+          "type": "tool_result",
+          "data": {
+            "tool": "get_inventory_alerts",
+            "id": "call_00_KAUFgYZcpez3WzaZeKyo0027",
+            "summary": "ok",
+            "is_error": false,
+            "status": "ok",
+            "excerpt": "<merchant_data>\n[{\"listing_id\": \"AR-2102\", \"title\": \"ACME Kids Peel-and-Stick Ocean Wall Decals (36 pc)\", \"kind\": \"low_stock\", \"stock\": 3, \"threshold\": 12, \"days_of_cover\": 1.7, \"sales_last_30d\": 52, \"storefront_visible\": true}, {\"listing_id\": \"AR-2106\", \"title\": \"ACME Kids Toy Storage Bins (Set of 3)\", \"kind\": \"low_stock\", \"stock\": 4, \"threshold\": 10, \"days_of_cover\": 3.2, \"sales_last_30d\": 38, \"storefront_visible\": true}, {\"listing_id\": \"AR-1002\", \"title\": \"ACME Signature 15-Bar Espresso Machine with Steam Wand\", \"kind\": \"low_stock\", \"stock\": 0, \"threshold\": 8, \"days_of_cover\": 0.0, \"sales_last_30d\": 17, \"storefront_visible\": false}, {\"listing_id\": \"AR-1508\", \"title\": \"ACME Paws 10-Gallon Aquarium Starter Kit\", \"kind\": \"low_stock\", \"stock\": 0, \"threshold\": 6, \"days_of_cover\": 0.0, \"sales_last_30d\": 11, \"storefront_visible\": false}, {\"listing_id\": \"AR-1902-KING\", \"title\": \"ACME Sleep Hybrid Mattress\", \"kind\": \"low_stock\", \"option_values\": {\"size\": \"king\"}, \"variant_of\": \"AR-1902\", \"stock\": 3, \"threshold\": 4, \"days_of_cover\": 10.0, \"sales_last_30d\": 9, \"storefront_visible\": true}, {\"listing_id\": \"AR-1902-FULL\", \"title\": \"ACME Sleep Hybrid Mattress\", \"kind\": \"low_stock\", \"option_val"
+          }
+        },
+        {
+          "type": "tool_call",
+          "data": {
+            "tool": "stage_inventory_action",
+            "id": "call_00_BQknnGDqvHm5xLrziHib4076",
+            "input": {
+              "items": [
+                {
+                  "listing_id": "AR-2102",
+                  "action": "restock",
+                  "quantity": 4
+                }
+              ],
+              "note": "Low stock: 3 units against a threshold of 12, selling 52 in the last 30 days. Adding 4 takes stock to 7, about 4.0 days of cover at the recent pace."
+            },
+            "label": "Staging a 4-unit restock for AR-2102"
+          }
+        },
+        {
+          "type": "change_update",
+          "data": {
+            "change": {
+              "change_id": "chg-0001",
+              "kind": "inventory_action",
+              "status": "staged",
+              "summary": "Low stock: 3 units against a threshold of 12, selling 52 in the last 30 days. Adding 4 takes stock to 7, about 4.0 days of cover at the recent pace.",
+              "items": [
+                {
+                  "target": "AR-2102",
+                  "field": "stock",
+                  "before": 3,
+                  "after": 7
+                }
+              ],
+              "created_at": "2026-09-12T22:36:49.772129Z",
+              "created_by": "Avery",
+              "created_by_kind": "agent",
+              "guardrail_notes": []
+            }
+          }
+        },
+        {
+          "type": "ui",
+          "data": {
+            "component": "change_preview",
+            "payload": {
+              "change_id": "chg-0001",
+              "change": {
+                "change_id": "chg-0001",
+                "kind": "inventory_action",
+                "status": "staged",
+                "summary": "Low stock: 3 units against a threshold of 12, selling 52 in the last 30 days. Adding 4 takes stock to 7, about 4.0 days of cover at the recent pace.",
+                "items": [
+                  {
+                    "target": "AR-2102",
+                    "field": "stock",
+                    "before": 3,
+                    "after": 7
+                  }
+                ],
+                "created_at": "2026-09-12T22:36:49.772129Z",
+                "created_by": "Avery",
+                "created_by_kind": "agent",
+                "guardrail_notes": []
+              }
+            },
+            "stream_id": "call_00_BQknnGDqvHm5xLrziHib4076"
+          }
+        },
+        {
+          "type": "tool_result",
+          "data": {
+            "tool": "stage_inventory_action",
+            "id": "call_00_BQknnGDqvHm5xLrziHib4076",
+            "summary": "ok",
+            "is_error": false,
+            "status": "ok",
+            "excerpt": "<merchant_data>\n{\"staged\": {\"change_id\": \"chg-0001\", \"kind\": \"inventory_action\", \"status\": \"staged\", \"summary\": \"Low stock: 3 units against a threshold of 12, selling 52 in the last 30 days. Adding 4 takes stock to 7, about 4.0 days of cover at the recent pace.\", \"items\": [{\"target\": \"AR-2102\", \"field\": \"stock\", \"before\": 3, \"after\": 7}], \"created_at\": \"2026-09-12T22:36:49.772129Z\", \"created_by\": \"Avery\", \"created_by_kind\": \"agent\", \"guardrail_notes\": []}, \"note\": \"Staged, and shown to the operator on its preview card; do not present it again this turn. Apply it only after the operator approves this change.\"}\n</merchant_data>"
+          }
+        },
+        {
+          "type": "text_delta",
+          "data": {
+            "text": "AR-2102 restock is staged: 4 units added, stock 3 → 7. Still below the threshold of 12, and 7 units is an estimate at the recent sales pace of 52 in the last 30 days, about 4.0 days of cover. Approve it on the Approve button on the change preview card."
+          }
+        },
+        {
+          "type": "tool_call",
+          "data": {
+            "tool": "present_suggestions",
+            "id": "call_00_IDzGLpWmQYatLMjvlSUw0903",
+            "input": {
+              "suggestions": [
+                "Stage a larger restock of AR-2102",
+                "Check cover for the other low-stock alerts",
+                "Show AR-2102's listing detail"
+              ]
+            }
+          }
+        },
+        {
+          "type": "ui",
+          "data": {
+            "component": "suggestions",
+            "payload": {
+              "suggestions": [
+                "Stage a larger restock of AR-2102",
+                "Check cover for the other low-stock alerts",
+                "Show AR-2102's listing detail"
+              ]
+            },
+            "stream_id": "call_00_IDzGLpWmQYatLMjvlSUw0903"
+          }
+        },
+        {
+          "type": "tool_result",
+          "data": {
+            "tool": "present_suggestions",
+            "id": "call_00_IDzGLpWmQYatLMjvlSUw0903",
+            "summary": "Displayed to the operator.",
+            "is_error": false,
+            "status": "ok"
+          }
+        },
+        {
+          "type": "turn_complete",
+          "data": {
+            "stop_reason": "end_turn",
+            "usage": {
+              "input_tokens": 7666,
+              "output_tokens": 445,
+              "cache_read_input_tokens": 32768,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_ms": 3809,
+            "results_cleared": 0
+          }
+        }
+      ],
+      "approved_stock": {
+        "before": 3,
+        "after": 7
+      }
+    },
+    {
+      "action": "reset",
+      "locale": "zh",
+      "dataset": "full-retail-rehearsal",
+      "old_shopper_status": 401,
+      "old_merchant_status": 401,
+      "fresh_state": {
+        "cart_items": 0,
+        "pending_changes": 0,
+        "recent_changes": 0
+      },
+      "restored_stock": 3
+    }
+  ],
+  "runtime_commit": "0d6fc23880a9716139e84a48a4475d74f6b703bc"
+}

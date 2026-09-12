@@ -33,3 +33,14 @@ build evidence above applies to the unchanged frontend sources at 35f149a.
 This does not complete issue 8. The Mac was locked when browser verification was
 attempted; final bilingual browser operation, integrated switch/reset rehearsal,
 and the user's own operation gate remain outstanding. Issue 5 is still open.
+
+`integrated-switch-reset.json` extends the switch/reset proof at runtime commit
+0d6fc23. In a separate loopback API process and private temporary state directory,
+the CLI imports full public retail A, switches to the public two-product sample B,
+switches back to A, then resets A. Real DeepSeek adds one product to a shopper cart
+in English A and Chinese B. Back on A, it stages four units of AR-2102, and the
+host approval endpoint applies stock 3 to 7. Reset restores stock 3. Each restart
+rejects both prior role tokens with 401; fresh carts, pending changes and resolved
+change lists are empty. The helper terminated its API process after the run.
+This is real process/API/model evidence; browser rendering during switching still
+requires the Mac to be unlocked.
