@@ -121,3 +121,16 @@ Each product may contain `title`, `short_description`, `long_description` (strin
 locales or fields are rejected. This sidecar preserves language-neutral pricing and
 identity and is retained during import; bilingual rendering and search are delivered
 by the separate bilingual tickets.
+
+### Switch and reset
+
+Use `scripts/retail_dataset.py switch /absolute/other-package` with the repository's
+Python environment to select a fresh runtime for another prepared package. Use
+`scripts/retail_dataset.py reset` to restore the selected package's imported baseline,
+even if its original source has subsequently changed. Both commands require an API
+restart followed by refreshing both browser pages. The current process keeps its
+current data until restarted; this is deliberate, so an active turn is not interrupted
+halfway through a change. API restart invalidates both role sessions and clears their
+in-memory carts and change ledgers; the fresh runtime also starts with seeded memory.
+Previous runtime copies are retained. Clear `RETAIL_DATASET` when using these commands,
+since that explicit development override bypasses the saved selection.

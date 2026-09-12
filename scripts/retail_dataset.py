@@ -9,16 +9,23 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "examples"))
 
-from retail.api.dataset import import_dataset, load_dataset  # noqa: E402
+from retail.api.dataset import import_dataset, load_dataset, reset_dataset  # noqa: E402
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["validate", "import"])
-    parser.add_argument("package", type=Path)
+    parser.add_argument("command", choices=["validate", "import", "switch", "reset"])
+    parser.add_argument("package", type=Path, nargs="?")
     args = parser.parse_args()
     try:
-        dataset = (import_dataset if args.command == "import" else load_dataset)(args.package)
+        if args.command == "reset":
+            if args.package is not None:
+                parser.error("reset takes no package; it restores the selected baseline")
+            dataset = reset_dataset()
+        else:
+            if args.package is None:
+                parser.error("a package directory is required")
+            dataset = (load_dataset if args.command == "validate" else import_dataset)(args.package)
     except ValueError as error:
         print(str(error), file=sys.stderr)
         return 1
@@ -28,7 +35,7 @@ def main() -> int:
             ensure_ascii=False,
         )
     )
-    if args.command == "import":
+    if args.command != "validate":
         print("Imported successfully. Restart the retail API and refresh both pages to activate.")
     return 0
 

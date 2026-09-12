@@ -71,3 +71,18 @@ def test_import_failure_keeps_selected_runtime_and_source_unchanged(package, tmp
         import_dataset(package, state)
     assert (state / "selected.json").read_bytes() == selection
     assert (active.data_dir / "catalog.json").read_bytes() == before
+
+
+def test_reset_uses_imported_baseline_not_changed_source(package, tmp_path):
+    from retail.api.dataset import import_dataset, reset_dataset
+
+    state = tmp_path / "state"
+    first = import_dataset(package, state)
+    original = (first.data_dir / "catalog.json").read_bytes()
+    (first.data_dir / ".memory-store.json").write_text('{"changed":true}')
+    (package / "data/catalog.json").write_text("invalid changed source")
+    restored = reset_dataset(state)
+    assert restored.root != first.root
+    assert (restored.data_dir / "catalog.json").read_bytes() == original
+    assert not (restored.data_dir / ".memory-store.json").exists()
+    assert (first.data_dir / ".memory-store.json").exists()

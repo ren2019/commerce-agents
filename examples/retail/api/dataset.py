@@ -180,7 +180,16 @@ def import_dataset(source: Path, state_dir: Path | None = None) -> Dataset:
         )
         shutil.copytree(candidate.images, runtime / "images")
         checked = load_dataset(runtime)
-        selection = {"source": str(candidate.root), "runtime": str(runtime)}
+        baseline = runtime / "baseline"
+        baseline.mkdir()
+        shutil.copy2(runtime / "dataset.json", baseline / "dataset.json")
+        shutil.copytree(runtime / "data", baseline / "data")
+        shutil.copytree(runtime / "images", baseline / "images")
+        selection = {
+            "source": str(candidate.root),
+            "runtime": str(runtime),
+            "baseline": str(baseline),
+        }
         with tempfile.NamedTemporaryFile(mode="w", dir=state_dir, delete=False) as handle:
             json.dump(selection, handle)
             pending = Path(handle.name)
@@ -189,3 +198,15 @@ def import_dataset(source: Path, state_dir: Path | None = None) -> Dataset:
     except Exception:
         shutil.rmtree(runtime)
         raise
+
+
+def reset_dataset(state_dir: Path | None = None) -> Dataset:
+    """Select a fresh runtime from the imported baseline, preserving the old runtime."""
+    state_dir = state_dir or state_directory()
+    selection_file = state_dir / "selected.json"
+    if not selection_file.is_file():
+        raise ValueError("Import a dataset before resetting it")
+    selection = json.loads(selection_file.read_text())
+    if "baseline" not in selection:
+        raise ValueError("Re-import this dataset once to establish its reset baseline")
+    return import_dataset(Path(selection["baseline"]), state_dir)
