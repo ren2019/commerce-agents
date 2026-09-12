@@ -3,7 +3,7 @@
 
 "use client";
 
-import { AssistantPanel as PanelShell, type MerchantChat, type Prefill } from "web-shared";
+import { AssistantPanel as PanelShell, type MerchantChat, type Prefill, useDemoLanguage } from "web-shared";
 import type { StagedChange } from "@/lib/types";
 import GenerativeBlock from "./generative";
 
@@ -35,10 +35,13 @@ export default function AssistantPanel({
   fullscreen: boolean;
   onToggleFullscreen: () => void;
 }) {
+  const { t } = useDemoLanguage();
+  const copy = { ...COPY, title: t(COPY.title), intro: t(COPY.intro),
+    starters: COPY.starters.map(t), label: t(COPY.label), placeholder: t(COPY.placeholder) };
   return (
     <PanelShell
       chat={chat}
-      copy={COPY}
+      copy={copy}
       prefill={prefill}
       renderBlock={(segment) => (
         <GenerativeBlock

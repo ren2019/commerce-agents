@@ -15,6 +15,7 @@ paths each, four vertical examples, and a Claude Code plugin.
 - `*/managed-agents/`: the manifest directory (with the derived `system.md`) and the role's MCP server.
 - `examples/demo_common/` and `examples/web-shared/`: what the verticals' APIs and web apps share; `examples/` is the npm workspace.
 - When preparing catalog files or product images, follow `docs/retail-data-preparation.md`; `examples/retail/sample-catalog/` is the public preparation example.
+- `examples/retail/merchant-web/lib/chinese.ts`: merchant interface dictionary for the shared optional language context.
 - `examples/retail/api/agent.py`: shopper runtime projects cached product content into the selected language while retaining provenance.
 - `examples/retail/api/deepseek.py`: DeepSeek client response-language directive after the cached context.
 - `examples/retail/api/language.py`: request-scoped catalog and policy translations over unchanged business IDs and amounts.

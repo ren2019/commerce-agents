@@ -6,6 +6,9 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   AssistantRail,
+  DemoLanguageProvider,
+  LanguageSwitch,
+  useDemoLanguage,
   Inspector,
   type PortalNavItem,
   PortalShell,
@@ -20,6 +23,7 @@ import HomeView from "@/components/views/HomeView";
 import InventoryView from "@/components/views/InventoryView";
 import OrdersView from "@/components/views/OrdersView";
 import { api, fetchDataset, fetchOverview, UNREACHABLE } from "@/lib/api";
+import { chinese } from "@/lib/chinese";
 import type { StagedChange } from "@/lib/types";
 
 type PortalView = "home" | "catalog" | "orders" | "inventory";
@@ -36,6 +40,11 @@ function StoreMark({ name, logo }: { name: string; logo: string | null }) {
 }
 
 export default function PortalPage() {
+  return <DemoLanguageProvider api={api} chinese={chinese}><PortalContent /></DemoLanguageProvider>;
+}
+
+function PortalContent() {
+  const { language, t } = useDemoLanguage();
   const session = useSession(api);
   const { data: dataset } = useResource(fetchDataset, []);
   const storeName = dataset?.store_name ?? "ACME";
@@ -54,7 +63,7 @@ export default function PortalPage() {
   });
 
   // The overview feeds the home page and the sidebar counts, so it loads here.
-  const { data: overview, failed: overviewFailed } = useResource(session.sessionId ? fetchOverview : null, [session.sessionId, refreshKey]);
+  const { data: overview, failed: overviewFailed } = useResource(session.sessionId ? fetchOverview : null, [session.sessionId, refreshKey, language]);
 
   // The rail is part of the default layout on wide screens; narrow screens open it on demand.
   useEffect(() => {
@@ -69,26 +78,26 @@ export default function PortalPage() {
   const nav = useMemo<PortalNavItem<PortalView>[]>(() => {
     const alerts = overview?.snapshot.alerts;
     return [
-      { id: "home", label: "Home", icon: "home" },
-      { id: "catalog", label: "Catalog", icon: "tag" },
-      { id: "orders", label: "Orders", icon: "inbox", attention: alerts?.order_issues || null },
+      { id: "home", label: t("Home"), icon: "home" },
+      { id: "catalog", label: t("Catalog"), icon: "tag" },
+      { id: "orders", label: t("Orders"), icon: "inbox", attention: alerts?.order_issues || null },
       {
         id: "inventory",
-        label: "Inventory",
+        label: t("Inventory"),
         icon: "box",
         count: alerts ? (alerts.low_stock ?? 0) + (alerts.slow_movers ?? 0) : null,
       },
     ];
-  }, [overview]);
+  }, [overview, t]);
 
   return (
     <>
       <PortalShell
-        brand={{ mark: <StoreMark name={storeName} logo={dataset?.logo ?? null} />, name: storeName, detail: "Merchant workspace" }}
+        brand={{ mark: <StoreMark name={storeName} logo={dataset?.logo ?? null} />, name: storeName, detail: t("Merchant workspace") }}
         nav={nav}
         view={view}
         onViewChange={setView}
-        operator={{ name: session.operator ?? "Operator", role: "Store manager" }}
+        operator={{ name: session.operator ?? t("Operator"), role: t("Store manager") }}
         assistantOpen={assistantOpen}
         assistantBusy={chat.busy}
         onToggleAssistant={() => setAssistantOpen((open) => !open)}
@@ -111,6 +120,7 @@ export default function PortalPage() {
           </AssistantRail>
         }
       >
+        <div className="flex justify-end px-7 pt-3"><LanguageSwitch disabled={chat.busy} /></div>
         {dataset?.simulated && <p className="mx-7 mt-4 text-xs text-(--ink-muted)">{storeName} · Simulated data / 模拟数据</p>}
         {session.sessionId ? (
           <>
@@ -138,7 +148,7 @@ export default function PortalPage() {
           trace={chat.trace}
           memory={chat.memory}
           newMemoryKeys={chat.newMemoryKeys}
-          memoryTitle="Business memory"
+          memoryTitle={t("Business memory")}
           onClose={() => setActivityOpen(false)}
         />
       ) : null}

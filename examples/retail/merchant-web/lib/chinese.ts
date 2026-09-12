@@ -1,0 +1,16 @@
+export const chinese: Record<string, string> = {
+  "Home": "首页", "Catalog": "商品", "Orders": "订单", "Inventory": "库存",
+  "Merchant workspace": "商家工作台", "Store manager": "店铺经理", "Operator": "操作员",
+  "Business memory": "经营记忆", "Portal views": "工作台页面", "Assistant": "经营助手",
+  "Hide assistant": "收起助手", "Show assistant": "打开助手", "Working": "处理中",
+  "Merchant assistant": "经营助手",
+  "Ask about performance, inventory, pricing, or campaigns.": "询问经营表现、库存、价格或营销活动。",
+  "What needs my attention this morning?": "今天早上有哪些事项需要我关注？",
+  "How did sales do this week compared to last?": "本周销量与上周相比如何？",
+  "Which listings are running low on stock?": "哪些商品库存不足？",
+  "Which slow movers should we mark down?": "哪些滞销商品适合降价？",
+  "Message the merchant assistant": "向经营助手发送消息",
+  "Ask about sales, stock, pricing…": "询问销量、库存、定价…",
+  "Send": "发送", "Close": "关闭", "Activity": "活动记录",
+  "Couldn't reach the demo service. Check that it is running and try again.": "无法连接演示服务，请检查服务是否已启动后重试。",
+};

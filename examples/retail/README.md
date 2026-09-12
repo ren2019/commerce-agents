@@ -163,3 +163,7 @@ since that explicit development override bypasses the saved selection.
 Use [the preparation guide](../../../docs/retail-data-preparation.md) when converting
 customer catalogs into external packages. The [public two-product example](sample-catalog/README.md)
 includes source records, bilingual content, image provenance and generated operating data.
+
+The merchant portal uses the same optional language context; its interface copy
+lives in `merchant-web/lib/chinese.ts`. Merchant bilingual data and approval-card
+coverage are under development in issue 5.
