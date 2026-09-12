@@ -15,7 +15,7 @@ from merchant_agent import MerchantAgentConfig
 from shopping_agent import ShoppingAgentConfig
 
 
-def build_shopping_client() -> AsyncAnthropic | None:
+def build_model_client() -> AsyncAnthropic | None:
     """Use an explicit DeepSeek deployment without changing other examples."""
     if os.environ.get("RETAIL_MODEL_PROVIDER", "anthropic") == "anthropic":
         return None
@@ -30,7 +30,7 @@ def build_shopping_client() -> AsyncAnthropic | None:
     )
 
 
-def build_shopping_config(store_name: str = "ACME") -> ShoppingAgentConfig:
+def _model_settings() -> dict:
     models = {}
     if os.environ.get("RETAIL_MODEL_PROVIDER", "anthropic") == "deepseek":
         model = os.environ.get("DEEPSEEK_MODEL")
@@ -39,8 +39,12 @@ def build_shopping_config(store_name: str = "ACME") -> ShoppingAgentConfig:
         # DeepSeek rejects forced tool_choice while thinking is enabled. The
         # shopping provenance gate uses forced tools, so keep this path non-thinking.
         models = {"model": model, "memory_model": model, "thinking_effort": None}
+    return models
+
+
+def build_shopping_config(store_name: str = "ACME") -> ShoppingAgentConfig:
     return ShoppingAgentConfig(
-        **models,
+        **_model_settings(),
         brand_name=store_name,
         assistant_name=f"{store_name} Assistant",
         brand_voice="professional, warm, and brief",
@@ -48,7 +52,12 @@ def build_shopping_config(store_name: str = "ACME") -> ShoppingAgentConfig:
 
 
 def build_merchant_config(store_name: str) -> MerchantAgentConfig:
+    deepseek = os.environ.get("RETAIL_MODEL_PROVIDER", "anthropic") == "deepseek"
+    models = _model_settings()
+    if deepseek and os.environ.get("MERCHANT_ANALYSIS_CODE_EXECUTION", "0") == "1":
+        raise ValueError("DeepSeek analysis uses local read-only SQL, not Anthropic code execution")
     return MerchantAgentConfig(
+        **models,
         brand_name=store_name,
         require_host_approval=host_approval_default(),
         approval_surface="the Approve button on the change preview card",
@@ -58,5 +67,7 @@ def build_merchant_config(store_name: str) -> MerchantAgentConfig:
         # the delegate's model, which otherwise inherits the main one.
         enable_analysis=True,
         analysis_use_code_execution=os.environ.get("MERCHANT_ANALYSIS_CODE_EXECUTION", "0") == "1",
-        analysis_model=os.environ.get("MERCHANT_ANALYSIS_MODEL") or None,
+        analysis_model=models["model"]
+        if deepseek
+        else os.environ.get("MERCHANT_ANALYSIS_MODEL") or None,
     )

@@ -12,7 +12,7 @@ from commerce_common.memory import MemoryStore
 from demo_common import REPO_ROOT, MerchantIdentity, build_merchant_router
 from merchant_agent_runtime import MerchantAgent
 
-from .agent_config import build_merchant_config
+from .agent_config import build_merchant_config, build_model_client
 from .mock_merchant import MockRetailMerchant
 from .mock_retail import MockRetail
 
@@ -28,6 +28,7 @@ def create_merchant_router(storefront: MockRetail, memory_store: MemoryStore) ->
         backend=merchant,
         skills_dir=REPO_ROOT / "merchant-agent" / "skills",
         config=config,
+        client=build_model_client(),
         memory_store=memory_store,
     )
     return build_merchant_router(

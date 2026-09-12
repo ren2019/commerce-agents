@@ -82,17 +82,23 @@ Product photos in `storefront-web/public/products/` are CC0 category images list
 Sessions and identity are the shared host code in [`../demo_common/`](../demo_common/): a
 session id stands for a demo profile or the one merchant.
 
-## DeepSeek shopping deployment
+## DeepSeek deployment
 
 In your local environment or untracked root `.env`, set `RETAIL_MODEL_PROVIDER=deepseek`,
 `DEEPSEEK_API_KEY`, and `DEEPSEEK_MODEL` to an explicit model available to your account.
-Restart the API after changing these values. The shopping agent uses the DeepSeek
-Anthropic-compatible endpoint for both conversation and memory extraction. Omitting
+Restart the API after changing these values. Both retail agents use the DeepSeek
+Anthropic-compatible endpoint for conversation and memory extraction. Merchant analysis
+uses the same explicit model with local read-only SQL; Anthropic-hosted code execution
+is unavailable on this provider. Omitting
 `RETAIL_MODEL_PROVIDER` preserves the upstream Anthropic deployment.
 
-Verify with the retail shopping smoke conversation and browser before presenting.
-Provider configuration tests do not establish live model compatibility. Merchant
-DeepSeek support is tracked separately and is not enabled by this shopping setting yet.
+Verify with both retail smoke conversations and browsers before presenting.
+Provider configuration tests do not establish live model compatibility. On DeepSeek,
+MERCHANT_ANALYSIS_MODEL does not override DEEPSEEK_MODEL.
+
+The DeepSeek deployment uses non-thinking requests: provenance gates force selected
+tools, which DeepSeek rejects in thinking mode. Memory extraction explicitly disables
+thinking so its 600-token budget is used for structured facts.
 
 ## External dataset packages
 
@@ -140,7 +146,3 @@ since that explicit development override bypasses the saved selection.
 Use [the preparation guide](../../../docs/retail-data-preparation.md) when converting
 customer catalogs into external packages. The [public two-product example](sample-catalog/README.md)
 includes source records, bilingual content, image provenance and generated operating data.
-
-The DeepSeek shopper deployment uses non-thinking requests: the shopping provenance
-gate forces selected tools, which DeepSeek rejects in thinking mode. Memory extraction
-explicitly disables thinking so its 600-token budget is used for structured facts.

@@ -25,7 +25,7 @@ from demo_common import (
 from shopping_agent import ProductDetails
 from shopping_agent_runtime import ShoppingAgent
 
-from .agent_config import build_shopping_client, build_shopping_config
+from .agent_config import build_model_client, build_shopping_config
 from .dataset import selected_dataset
 from .merchant import create_merchant_router
 from .mock_retail import DATA_DIR, MockRetail
@@ -39,7 +39,7 @@ agent = ShoppingAgent(
     backend=backend,
     skills_dir=REPO_ROOT / "shopping-agent" / "skills",
     config=build_shopping_config(backend.store_name),
-    client=build_shopping_client(),
+    client=build_model_client(),
     memory_store=JsonFileMemoryStore(dataset.data_dir / ".memory-store.json"),
 )
 

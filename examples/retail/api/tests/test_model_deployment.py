@@ -2,12 +2,12 @@ from unittest.mock import patch
 
 import pytest
 
-from retail.api.agent_config import build_shopping_client, build_shopping_config
+from retail.api.agent_config import build_merchant_config, build_model_client, build_shopping_config
 
 
 def test_default_deployment_is_unchanged(monkeypatch):
     monkeypatch.delenv("RETAIL_MODEL_PROVIDER", raising=False)
-    assert build_shopping_client() is None
+    assert build_model_client() is None
     assert build_shopping_config().model.startswith("claude-")
 
 
@@ -19,7 +19,7 @@ def test_deepseek_routes_chat_and_memory_to_explicit_model(monkeypatch):
     assert config.model == config.memory_model == "deployment-model"
     assert config.thinking_request_fields() == {"thinking": {"type": "disabled"}}
     with patch("retail.api.agent_config.AsyncAnthropic") as client:
-        assert build_shopping_client() is client.return_value
+        assert build_model_client() is client.return_value
         assert client.call_args.kwargs["base_url"] == "https://api.deepseek.com/anthropic"
         assert client.call_args.kwargs["api_key"] == "test-only"
 
@@ -31,4 +31,17 @@ def test_deepseek_requires_explicit_local_configuration(monkeypatch):
     with pytest.raises(ValueError, match="DEEPSEEK_MODEL"):
         build_shopping_config()
     with pytest.raises(ValueError, match="DEEPSEEK_API_KEY"):
-        build_shopping_client()
+        build_model_client()
+
+
+def test_deepseek_merchant_analysis_and_memory_use_same_model(monkeypatch):
+    monkeypatch.setenv("RETAIL_MODEL_PROVIDER", "deepseek")
+    monkeypatch.setenv("DEEPSEEK_MODEL", "deployment-model")
+    monkeypatch.setenv("MERCHANT_ANALYSIS_MODEL", "claude-unused")
+    config = build_merchant_config("ACME")
+    assert config.model == config.memory_model == config.analysis_model == "deployment-model"
+    assert config.require_host_approval
+    assert not config.analysis_use_code_execution
+    monkeypatch.setenv("MERCHANT_ANALYSIS_CODE_EXECUTION", "1")
+    with pytest.raises(ValueError, match="local read-only SQL"):
+        build_merchant_config("ACME")

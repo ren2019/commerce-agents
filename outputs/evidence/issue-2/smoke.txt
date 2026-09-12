@@ -1,0 +1,64 @@
+
+[1/6] user: What needs my attention this morning?...
+INFO merchant_agent_runtime.orchestrator: model call session=a367f8712029 round=0 model=deepseek-flash stop=tool_use input=7907 cache_read=128 cache_write=0 output=180 elapsed_ms=1315
+INFO merchant_agent_runtime.orchestrator: model call session=a367f8712029 round=1 model=deepseek-flash stop=tool_use input=1566 cache_read=8192 cache_write=0 output=1148 elapsed_ms=4972
+INFO merchant_agent_runtime.orchestrator: model call session=a367f8712029 round=2 model=deepseek-flash stop=tool_use input=136 cache_read=10880 cache_write=0 output=637 elapsed_ms=2524
+INFO merchant_agent_runtime.orchestrator: model call session=a367f8712029 round=3 model=deepseek-flash stop=tool_use input=741 cache_read=11008 cache_write=0 output=703 elapsed_ms=2322
+    69 events in 11.1s
+    tools: ['get_inventory_alerts', 'get_order_issues', 'get_business_snapshot', 'get_pending_changes', 'present_digest', 'present_suggestions', 'present_digest', 'present_digest', 'present_suggestions']
+    ui:    ['suggestions', 'digest', 'suggestions']
+    text:  65 chars | tokens in/out: 10350/2668 (cache read 30208)
+
+[2/6] user: Restock the ocean wall decals with enough to cover the next month at the current...
+INFO commerce_common.memory: model call session=a367f8712029 purpose=memory model=deepseek-flash stop=end_turn input=251 cache_read=512 cache_write=0 output=45 elapsed_ms=667
+INFO merchant_agent_runtime.orchestrator: model call session=a367f8712029 round=0 model=deepseek-flash stop=tool_use input=235 cache_read=12288 cache_write=0 output=79 elapsed_ms=820
+INFO merchant_agent_runtime.orchestrator: model call session=a367f8712029 round=1 model=deepseek-flash stop=tool_use input=479 cache_read=12416 cache_write=0 output=527 elapsed_ms=2595
+INFO merchant_agent_runtime.orchestrator: model call session=a367f8712029 round=2 model=deepseek-flash stop=tool_use input=628 cache_read=13312 cache_write=0 output=181 elapsed_ms=1443
+    340 events in 4.9s
+    tools: ['get_listing', 'stage_inventory_action', 'stage_listing_update', 'present_suggestions']
+    ui:    ['change_preview', 'change_preview', 'suggestions']
+    text:  1449 chars | tokens in/out: 1342/787 (cache read 38016)
+
+[3/6] user: Looks right — approve the restock....
+INFO merchant_agent_runtime.orchestrator: model call session=a367f8712029 round=0 model=deepseek-flash stop=tool_use input=11842 cache_read=2304 cache_write=0 output=61 elapsed_ms=1446
+INFO commerce_common.memory: model call session=a367f8712029 purpose=memory model=deepseek-flash stop=tool_use input=475 cache_read=640 cache_write=0 output=193 elapsed_ms=1493
+INFO merchant_agent_runtime.orchestrator: model call session=a367f8712029 round=1 model=deepseek-flash stop=tool_use input=189 cache_read=14080 cache_write=0 output=163 elapsed_ms=1121
+    100 events in 2.6s
+    tools: ['apply_change', 'present_suggestions']
+    ui:    ['suggestions']
+    text:  370 chars | tokens in/out: 12031/224 (cache read 16384)
+
+[4/6] portal: approve the staged inventory_action
+    applied chg-0001 (inventory_action) through the portal
+
+[5/6] user: Kids-room decor feels like it's having a moment. Pull the numbers — is the under...
+INFO commerce_common.memory: model call session=a367f8712029 purpose=memory model=deepseek-flash stop=tool_use input=250 cache_read=640 cache_write=0 output=100 elapsed_ms=962
+INFO merchant_agent_runtime.orchestrator: model call session=a367f8712029 round=0 model=deepseek-flash stop=tool_use input=12261 cache_read=2304 cache_write=0 output=251 elapsed_ms=1286
+INFO merchant_agent_runtime.analysis: model call session=a367f8712029 step=1 model=deepseek-flash stop=tool_use input=483 cache_read=1280 cache_write=0 output=161 elapsed_ms=1079
+INFO merchant_agent_runtime.analysis: model call session=a367f8712029 step=2 model=deepseek-flash stop=tool_use input=289 cache_read=1920 cache_write=0 output=304 elapsed_ms=1637
+INFO merchant_agent_runtime.analysis: model call session=a367f8712029 step=3 model=deepseek-flash stop=tool_use input=637 cache_read=2432 cache_write=0 output=276 elapsed_ms=1628
+INFO merchant_agent_runtime.analysis: model call session=a367f8712029 step=4 model=deepseek-flash stop=tool_use input=983 cache_read=3328 cache_write=0 output=353 elapsed_ms=1703
+INFO merchant_agent_runtime.analysis: model call session=a367f8712029 step=5 model=deepseek-flash stop=tool_use input=184 cache_read=4608 cache_write=0 output=2178 elapsed_ms=8433
+INFO merchant_agent_runtime.orchestrator: model call session=a367f8712029 round=1 model=deepseek-flash stop=tool_use input=1633 cache_read=14720 cache_write=0 output=530 elapsed_ms=2848
+    258 events in 18.6s
+    tools: ['run_analysis', 'present_metrics', 'present_suggestions']
+    ui:    ['metrics', 'metrics', 'suggestions']
+    text:  936 chars | tokens in/out: 16470/4053 (cache read 30592)
+
+[6/6] user: Why did sales move over the last two weeks — which category or listings drove it...
+INFO merchant_agent_runtime.orchestrator: model call session=a367f8712029 round=0 model=deepseek-flash stop=tool_use input=9596 cache_read=2304 cache_write=0 output=186 elapsed_ms=1168
+INFO commerce_common.memory: model call session=a367f8712029 purpose=memory model=deepseek-flash stop=tool_use input=361 cache_read=768 cache_write=0 output=224 elapsed_ms=1405
+INFO merchant_agent_runtime.analysis: model call session=a367f8712029 step=1 model=deepseek-flash stop=tool_use input=430 cache_read=1280 cache_write=0 output=133 elapsed_ms=1168
+INFO merchant_agent_runtime.analysis: model call session=a367f8712029 step=2 model=deepseek-flash stop=tool_use input=178 cache_read=1792 cache_write=0 output=250 elapsed_ms=1627
+INFO merchant_agent_runtime.analysis: model call session=a367f8712029 step=3 model=deepseek-flash stop=tool_use input=364 cache_read=2176 cache_write=0 output=181 elapsed_ms=1378
+INFO merchant_agent_runtime.analysis: model call session=a367f8712029 step=4 model=deepseek-flash stop=tool_use input=142 cache_read=2688 cache_write=0 output=189 elapsed_ms=1264
+INFO merchant_agent_runtime.analysis: model call session=a367f8712029 step=5 model=deepseek-flash stop=tool_use input=1646 cache_read=2944 cache_write=0 output=316 elapsed_ms=1510
+INFO merchant_agent_runtime.analysis: model call session=a367f8712029 step=6 model=deepseek-flash stop=tool_use input=158 cache_read=4864 cache_write=0 output=2947 elapsed_ms=9488
+INFO merchant_agent_runtime.orchestrator: model call session=a367f8712029 round=1 model=deepseek-flash stop=tool_use input=15829 cache_read=2688 cache_write=0 output=608 elapsed_ms=3755
+INFO merchant_agent_runtime.orchestrator: model call session=a367f8712029 round=2 model=deepseek-flash stop=tool_use input=256 cache_read=19072 cache_write=0 output=219 elapsed_ms=1535
+    465 events in 22.9s
+    tools: ['run_analysis', 'present_metrics', 'present_suggestions', 'present_suggestions']
+    ui:    ['metrics', 'metrics', 'suggestions', 'suggestions']
+    text:  1847 chars | tokens in/out: 28599/5029 (cache read 39808)
+
+SMOKE PASSED
