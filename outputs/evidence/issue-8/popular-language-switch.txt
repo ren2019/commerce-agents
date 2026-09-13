@@ -1,0 +1,108 @@
+Browser tab: 29, Title: "ACME", URL: "http://localhost:3014/".
+1 AXWebArea ACME, URL: localhost:3014/
+	2 container
+		3 text ACME Simulated data / 模拟数据
+		4 container Views
+			5 button Assistant
+			6 button Orders, 2 delayed
+				85 text Orders
+				86 text 2
+		7 button Description: Switch to Chinese, Help: Switch the interface and future replies; earlier conversation keeps its original language.
+		8 button Activity
+		9 button Open cart, 0 items
+			10 text Cart
+			11 text 0
+		12 button Priya: profile and memory
+			13 text Priya
+			14 text ACME Subscription member
+	15 container
+		16 text Sunday, September 13
+		17 heading Good morning, Priya, Value: 1
+			18 text Good morning, Priya
+		19 text 4 orders  on the way ; the next arrives Mon, Sep 14 . 2 are  running late.
+		110 button A tent for a first family camping trip, under $250
+		111 button Set up a home office in a small spare room for about $800
+		112 button Drip or espresso for busy weekday mornings?
+		113 button Remember: small apartment, no outdoor storage, and a golden retriever
+		91 heading Arriving, Value: 2
+			92 text Arriving
+		93 text 5 orders
+		94 button All orders
+		95 content list
+			96 container
+				97 text ACME Select Low-Profile Mechanical Keyboard + 1 more Shipped Arrives Mon, Sep 14
+				98 button Ask
+			99 container
+				100 text ACME Sleep Queen Platform Bed Frame + 1 more Delayed
+				101 container updated after a warehouse delay; the original Sep 1 estimate was missed
+					102 text Expected Mon, Sep 14
+				103 button Ask why
+			104 container
+				105 image ACME Paws Orthopedic Memory Foam Dog Bed, Large
+				106 text ACME Paws Orthopedic Memory Foam Dog Bed, Large Delayed
+				107 container updated after a carrier delay; the original Sep 10 estimate was missed
+					108 text Expected Wed, Sep 16
+				109 button Ask why
+		24 heading Popular right now, Value: 2
+			25 text Popular right now
+		26 text Bestsellers and new arrivals; open one to ask about it
+		27 button ACME Playroom Stacking Wooden Block Set (54 pc) ACME PLAYROOM ACME Playroom Stacking Wooden Block Set (54 pc) 54 blocks + 12 idea cards beechwood, water-based paint 4-10 years $34.00 ★ 4.8 (2,940) Get it by Tue, Sep 15 30-day returns
+			28 image ACME Playroom Stacking Wooden Block Set (54 pc)
+			29 text ACME PLAYROOM
+			114 container
+				115 text ACME Playroom Stacking Wooden Block Set (54 pc)
+			32 container
+				116 text 54 blocks + 12 idea cards beechwood, water-based paint 4-10 years
+			34 text $34.00
+			35 text ★
+			36 text 4.8
+			37 text  (
+			38 text 2,940
+			39 text )
+			40 text Get it by Tue, Sep 15
+			41 text 30-day returns
+		42 button ACME Paws Orthopedic Memory Foam Dog Bed, Large ACME PAWS ACME Paws Orthopedic Memory Foam Dog Bed, Large large (90 x 70 cm) 10 cm memory foam removable, washable $79.00 ★ 4.6 (2,380) Get it by Wed, Sep 16 30-day returns
+			43 image ACME Paws Orthopedic Memory Foam Dog Bed, Large
+			44 text ACME PAWS
+			45 text ACME Paws Orthopedic Memory Foam Dog Bed, Large
+			46 container
+				117 text large (90 x 70 cm) 10 cm memory foam removable, washable
+			48 text $79.00
+			49 text ★
+			50 text 4.6
+			51 text  (
+			52 text 2,380
+			53 text )
+			54 text Get it by Wed, Sep 16
+			55 text 30-day returns
+		56 button ACME EVERYDAY ACME Everyday 12-Cup Programmable Drip Coffee Maker 12 cups glass programmable $79.00 ★ 4.5 (2,841) Get it by Thu, Sep 17 30-day returns
+			57 text ACME EVERYDAY
+			58 text ACME Everyday 12-Cup Programmable Drip Coffee Maker
+			59 container
+				118 text 12 cups glass programmable
+			61 text $79.00
+			62 text ★
+			63 text 4.5
+			64 text  (
+			65 text 2,841
+			66 text )
+			67 text Get it by Thu, Sep 17
+			68 text 30-day returns
+		69 button ACME SIGNATURE ACME Signature 6-Quart Enameled Cast Iron Dutch Oven 6 qt enameled cast iron 260 C $89.00 ★ 4.7 (5,102) Get it by Thu, Sep 17 30-day returns
+			70 text ACME SIGNATURE
+			71 text ACME Signature 6-Quart Enameled Cast Iron Dutch Oven
+			72 container
+				73 text 6 qt enameled cast iron 260 C
+			74 text $89.00
+			75 text ★
+			76 text 4.7
+			77 text  (
+			78 text 5,102
+			79 text )
+			80 text Get it by Thu, Sep 17
+			81 text 30-day returns
+	82 container
+		83 text entry area (settable) Message ACME Assistant
+		84 button (disabled) Send
+
+The focused UI element is 7 button Description: Switch to Chinese, Help: Switch the interface and future replies; earlier conversation keeps its original language.

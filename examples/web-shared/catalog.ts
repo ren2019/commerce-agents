@@ -8,9 +8,9 @@ import { useDemoLanguage } from "./language";
 
 type Loader<P> = () => Promise<P[] | null>;
 
-const indexes = new WeakMap<object, Map<string, Promise<Record<string, unknown>>>>();
+const indexes = new WeakMap<object, Map<string, Promise<Record<string, unknown> | null>>>();
 
-/** Loaded once per page, keyed on `load`; empty until then and when the API is down. */
+/** Cache successful reads per language; failed refreshes retain the last catalog. */
 export function useCatalogIndex<P extends { product_id: string }>(
   load: Loader<P>,
 ): Record<string, P> {
@@ -22,16 +22,20 @@ export function useCatalogIndex<P extends { product_id: string }>(
       languages = new Map();
       indexes.set(load, languages);
     }
-    let promise = languages.get(language) as Promise<Record<string, P>> | undefined;
+    let promise = languages.get(language) as Promise<Record<string, P> | null> | undefined;
     if (!promise) {
-      promise = load().then((products) =>
-        Object.fromEntries((products ?? []).map((product) => [product.product_id, product])),
-      );
+      promise = load().then((products) => {
+        if (products === null) {
+          languages.delete(language);
+          return null;
+        }
+        return Object.fromEntries(products.map((product) => [product.product_id, product]));
+      });
       languages.set(language, promise);
     }
     let mounted = true;
     void promise.then((value) => {
-      if (mounted) setIndex(value);
+      if (mounted && value !== null) setIndex(value);
     });
     return () => {
       mounted = false;

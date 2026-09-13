@@ -78,3 +78,21 @@ not counted as a pass. Subsequent API readback and fresh browser pages succeeded
 `browser-reset-shopper.txt` and `browser-reset-merchant.txt` record fresh role views.
 The local ignored `.env` provider selector is now deepseek; credentials were not
 changed or exposed. Standard runbook launch therefore uses the selected provider.
+
+Operator-found Popular regression:
+
+The shared catalog hook cached a failed read (`null`) as a successful empty
+catalog for that language. Returning to that language could hide the entire
+Popular section until reload. Successful English API reads still contain 87
+products, including 26 eligible popular products. The hook now evicts failed
+reads, retains the last successful catalog during a failed refresh, and permits
+another language visit to retry; a real empty catalog remains a valid result.
+
+`node --test examples/web-shared/catalog.test.cjs` passes three cases: failed
+language refresh/retry, initial failure versus genuine empty catalog, and late
+responses from an older language. All eight app TypeScript checks and the retail
+storefront production build pass. React Doctor changed-scope scan reports no
+issues (score 68). Browser English/Chinese/English switching on the rebuilt 3014
+service retains Popular and displays the corresponding product text; see
+`popular-language-switch.txt` and the visually inspected screenshot. This does
+not pass the remaining user operation gate on their behalf.
