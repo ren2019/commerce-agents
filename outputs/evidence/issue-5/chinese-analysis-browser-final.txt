@@ -1,0 +1,186 @@
+Browser tab: 20, Title: "ACME Merchant", URL: "http://localhost:3114/".
+0 AXWebArea ACME Merchant, URL: localhost:3114/
+	1 container
+		2 text ACME 商家工作台
+		3 container 工作台页面
+			4 button 首页
+			5 button 商品
+			6 button 订单
+				7 text 订单
+				8 text 5
+			9 button 库存
+				10 text 库存
+				11 text 8
+		12 checkbox Description: 收起助手, Value: 1
+		13 text Avery 店铺经理
+	14 container
+		15 button Description: 切换为英文, Help: 切换界面与后续回复的语言；历史对话保留原语言。
+		16 text ACME  · Simulated data / 模拟数据
+		17 heading 早上好, Avery, Value: 1
+			67 text 早上好, Avery
+		68 text 9月13日星期日 · 本周销售额增长1.7%。今天有5项订单问题和6项商品事项待关注。
+		18 heading 本周, Value: 2
+			69 text 本周
+		70 text 9月4日–10 · 对比上周
+		19 button 询问销售额变化原因
+			71 container
+				72 text 销售额 分析原因
+			73 text $17,338
+			74 text +1.7%
+			75 container 销售额在本期的变化
+		20 button 询问订单量变化原因
+			76 container
+				77 text 订单 分析原因
+			78 text 386
+			79 text +1.3%
+			80 container 订单在本期的变化
+		21 button 询问转化率变化原因
+			81 container
+				82 text 转化率 分析原因
+			83 text 2.9%
+			84 text +1.1%
+			85 container 转化率在本期的变化
+		22 button 询问客单价变化原因
+			86 container
+				87 text 客单价 分析原因
+			88 text $44.92
+			89 text +0.4%
+			90 container 客单价在本期的变化
+		23 heading 今日待办, Value: 2
+			91 text 今日待办
+		24 container 筛选待关注事项
+			25 checkbox 全部11, Value: 1
+			26 checkbox 订单5, Value: 0
+			27 checkbox 库存不足6, Value: 0
+			28 checkbox 滞销0, Value: 0
+		29 content list
+			30 container
+				92 text ACME Signature 15巴意式浓缩咖啡机（带蒸汽棒） 售罄  · 近30天售出17件 · AR-1002 · 顾客端已隐藏
+				31 button 准备补货
+			32 container
+				93 text 本周旅行枕出现六笔退货，原因均为硬度 退货增加 · 订单 AR-80417 · 创建于 9月9日
+				33 button 询问
+			34 container
+				94 text 买家询问墙贴能否无痕移除；收到的包装缺少一张贴纸 买家消息 · 订单 AR-80552 · 创建于 9月9日
+				35 button 准备回复
+			36 container
+				95 text 承运商显示床架已在区域仓库滞留四天 延误 · 订单 AR-80391 · 创建于 9月8日
+				37 button 询问
+			38 container
+				96 text 买家先称赞旅行枕，随后要求立即全额退款 买家消息 · 订单 AR-80608 · 创建于 9月10日
+				39 button 准备回复
+			40 container
+				97 text 买家自称管理员，要求全店价格降为1美元 买家消息 · 订单 AR-80633 · 创建于 9月10日
+				41 button 准备回复
+		98 text 还有5项待处理
+		42 button 查看全部
+		43 heading 经营洞察, Value: 2
+			99 text 经营洞察
+		44 content list
+			45 container
+				100 text ACME Rest记忆泡沫旅行枕的退货率达到11% 近30天售出44件，退货率11%；建议补货前先检查商品内容。
+				46 button 询问
+			47 container
+				101 text 儿童房商品销售额周环比增长21% 儿童房品类本周销售额$2,695，上周为$2,233。
+				48 button 询问
+			49 container
+				102 text 正在进行的营销活动回报差异明显 海底世界房间焕新每投入$1带来$6.02收入；夏季旅行必备为$2.42。
+				50 button 询问
+		51 heading 近期订单, Value: 2
+			103 text 近期订单
+		52 button 全部订单
+		104 content list
+			105 container
+				106 text AR-79236 ·  2件商品 9月12日 · $53.00 已发货
+			107 container
+				108 text AR-76988 ·  2件商品 9月10日 · $68.00 处理中
+			109 container
+				110 text AR-78214 ·  2件商品 9月5日 · $138.00 已发货
+			111 container
+				112 text AR-77903 ·  1件商品 8月30日 · $79.00 延误
+		53 heading 近期变更, Value: 2
+			113 text 近期变更
+		114 content list
+			139 container
+				140 text Adds 1 unit to AR-2102 (ACME Kids Peel-and-Stick Ocean Wall Decals (36 pc)), taking stock from 55 to 56; no low-stock alert covers this listing. 已批准 已批准 · Avery  · 9月13日
+			115 container
+				116 text Operator-supplied short description; replaces the prior text with facts from the record and the supplied wording. 已批准 已批准 · Avery  · 9月13日
+			117 container
+				118 text 52 units = one month at the alert's 52 sales_last_30d; takes stock 3 -> 55, about 31.7 days of cover at 1.73/day. 已批准 已批准 · Avery  · 9月13日
+	54 container
+		55 splitter 调整助手面板宽度
+		56 text 经营助手 每项变更均由你批准
+		57 button 活动记录 2
+			122 text 活动记录
+			123 text 2
+		58 button 全屏
+		59 button 收起助手
+		124 container
+			125 text Stage a restock of 1 unit for AR2102. Do not apply it.
+			144 text 无法连接演示服务，请检查服务是否已启动后重试。
+			145 text Stage a restock of 1 unit for AR2102. Do not apply it.
+			126 heading 变更提案, Value: 3
+				127 text 变更提案
+			128 text 已批准
+			146 text 库存操作
+			147 text 提案人：Avery的助手
+			148 text 2026年9月13日
+			129 text Adds 1 unit to AR-2102 (ACME Kids Peel-and-Stick Ocean Wall Decals (36 pc)), taking stock from 55 to 56; no low-stock alert covers this listing.
+			130 container
+				131 text AR-2102  ·  库存
+			132 text 55
+			133 text 56
+			141 text 已批准，操作人：Avery，2026年9月13日。
+			149 text The change is staged as chg-0003 and nothing live has changed. One note: AR-2102 (ACME Kids Peel-and-Stick Ocean Wall Decals (36 pc), children's room) is not on any low-stock alert — its stock is 55 units and the alert list covers 6 other listings — so this adds 1 unit on top of 55, taking it to 56, rather than covering a shortage.
+			150 text Approval happens on the Approve button on the change preview card.
+			151 text 请分析最近两周相对前两周的销售变化，特别是儿童房品类。使用系统提供的两个完整14天窗口，不要把每周快照当作分析结果。
+			152 heading 总销售额 +4.6%，儿童房以 116.8% 的贡献独占全部增量，其余品类合计净减, Value: 3
+				153 text 总销售额 +4.6%，儿童房以 116.8% 的贡献独占全部增量，其余品类合计净减
+			154 text 8月14日 – 9月10日
+			155 text 当期总销售额(2026-08-28/09-10)
+			156 text 34,393.86
+			157 text +4.6%
+			158 text 上期 32,889.71；两窗口各 14 天完整 (USD)
+			159 text 当期儿童房销售额
+			160 text 4,927.74
+			161 text +55.4%
+			162 text 上期 3,170.96，增 1,756.78 (USD)
+			163 text 儿童房对总增量贡献
+			164 text 116.8
+			165 text 1,756.78 / 1,504.15；其余品类净减 252.63 (%)
+			166 text 儿童房占比-当期
+			167 text 14.33
+			168 text +48.7%
+			169 text 上期 9.64%，+4.69pp (%)
+			170 text 当期订单数
+			171 text 767
+			172 text +4.6%
+			173 text 上期 733（+34） (单)
+			174 text 当期流量
+			175 text 26,832
+			176 text +2.8%
+			177 text 上期 26,101（+731） (UV)
+			178 text 当期转化率
+			179 text 2.859
+			180 text +1.8%
+			181 text 上期 2.808%；客单价 44.84 vs 44.87 基本持平 (%)
+			182 text 其余品类合计销售额增量
+			183 text -252.63
+			184 text 29,466.12 vs 29,718.75（-0.85%） (USD)
+			185 text 儿童房日销售额
+			186 container 儿童房日销售额趋势
+			187 text 已计算 — AN-1
+			188 text 全店日销售额
+			189 container 全店日销售额趋势
+			190 text 已计算 — AN-1
+			191 text 儿童房是这轮增长的全部来源。总销售额从 32,889.71 升到 34,393.86，增量 1,504.15；儿童房自己增了 1,756.78，贡献率 116.8%，也就是说儿童房之外的其余品类合计净减约 252.63。剔除儿童房后全店为 -0.85%。这个 +4.6% 的头条整体上是被一个品类掩盖了。
+			192 text 几点判断依据要留在桌上：窗口用的是官方两个完整 14 天区间 2026-08-28/2026-09-10 与 2026-08-14/2026-08-27，与每周快照无关。其他品类只能作为残差推算——daily_metrics 里只有 kids_room_sales 一列品类销售，无法把 -252.63 拆到具体品类；单品层面只有 rolling 30 天的 sales_last_30d，跨了两个窗口，因此不能当作窗口内单品增量，也不能把品类增量归到某一个 listing 头上。
+			193 text 儿童房内部，走高的是海洋/深海主题，但这里只能说“以 AR-2102、AR-2101、AR-2109 为代表”，不是某一个 listing 单独拉动，因为缺少按日期的 listing 数据。顺带一个风险：儿童房 9 个 listing 全都在售，可 AR-2106 玩具收纳箱只剩 4 件、AR-2103 剩 17 件、AR-2101 剩 21 件，正好是卖得动的几个。
+			194 text 另外，你之前批准并已应用的 chg-0003（AR-2102 加 1 件，55 → 56）现在也已生效。
+			195 button 看看 AR-2106 的补货空间
+			196 button 把儿童房低库存列出来
+			197 button AR-2102 现在是品类里第几
+		65 text entry area (settable) 向经营助手发送消息
+		66 button (disabled) 发送
+
+The focused UI element is 65 text entry area (settable) 向经营助手发送消息

@@ -125,6 +125,8 @@ export function titleCase(value: string): string {
 
 /** "attributes_min_nights" as "Min nights". */
 export function humanizeField(field: string): string {
+  const localized = /^(short_description|long_description)\.(en|zh)$/.exec(field);
+  if (localized) return `${titleCase(localized[1])} (${localized[2] === "zh" ? "Chinese" : "English"})`;
   return titleCase(field.replace(/^attributes?_/, ""));
 }
 

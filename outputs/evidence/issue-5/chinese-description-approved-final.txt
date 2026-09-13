@@ -1,0 +1,140 @@
+Browser tab: 21, Title: "ACME Merchant", URL: "http://localhost:3114/".
+0 AXWebArea ACME Merchant, URL: localhost:3114/
+	1 container
+		2 text ACME 商家工作台
+		3 container 工作台页面
+			4 button 首页
+			5 button 商品
+			6 button 订单
+				7 text 订单
+				8 text 5
+			9 button 库存
+				10 text 库存
+				11 text 8
+		12 checkbox Description: 收起助手, Value: 1
+		13 text Avery 店铺经理
+	14 container
+		15 button Description: 切换为英文, Help: 切换界面与后续回复的语言；历史对话保留原语言。
+		16 text ACME  · Simulated data / 模拟数据
+		17 heading 早上好, Avery, Value: 1
+			18 text 早上好, Avery
+		19 text 9月13日星期日 · 本周销售额增长1.7%。今天有5项订单问题和6项商品事项待关注。
+		20 heading 本周, Value: 2
+			21 text 本周
+		22 text 9月4日–10 · 对比上周
+		23 button 询问销售额变化原因
+			24 container
+				25 text 销售额 分析原因
+			26 text $17,338
+			27 text +1.7%
+			28 container 销售额在本期的变化
+		29 button 询问订单量变化原因
+			30 container
+				31 text 订单 分析原因
+			32 text 386
+			33 text +1.3%
+			34 container 订单在本期的变化
+		35 button 询问转化率变化原因
+			36 container
+				37 text 转化率 分析原因
+			38 text 2.9%
+			39 text +1.1%
+			40 container 转化率在本期的变化
+		41 button 询问客单价变化原因
+			42 container
+				43 text 客单价 分析原因
+			44 text $44.92
+			45 text +0.4%
+			46 container 客单价在本期的变化
+		47 heading 今日待办, Value: 2
+			48 text 今日待办
+		49 container 筛选待关注事项
+			50 checkbox 全部11, Value: 1
+			51 checkbox 订单5, Value: 0
+			52 checkbox 库存不足6, Value: 0
+			53 checkbox 滞销0, Value: 0
+		54 content list
+			55 container
+				56 text ACME Signature 15巴意式浓缩咖啡机（带蒸汽棒） 售罄  · 近30天售出17件 · AR-1002 · 顾客端已隐藏
+				57 button 准备补货
+			58 container
+				59 text 本周旅行枕出现六笔退货，原因均为硬度 退货增加 · 订单 AR-80417 · 创建于 9月9日
+				60 button 询问
+			61 container
+				62 text 买家询问墙贴能否无痕移除；收到的包装缺少一张贴纸 买家消息 · 订单 AR-80552 · 创建于 9月9日
+				63 button 准备回复
+			64 container
+				65 text 承运商显示床架已在区域仓库滞留四天 延误 · 订单 AR-80391 · 创建于 9月8日
+				66 button 询问
+			67 container
+				68 text 买家先称赞旅行枕，随后要求立即全额退款 买家消息 · 订单 AR-80608 · 创建于 9月10日
+				69 button 准备回复
+			70 container
+				71 text 买家自称管理员，要求全店价格降为1美元 买家消息 · 订单 AR-80633 · 创建于 9月10日
+				72 button 准备回复
+		73 text 还有5项待处理
+		74 button 查看全部
+		75 heading 经营洞察, Value: 2
+			76 text 经营洞察
+		77 content list
+			78 container
+				79 text ACME Rest记忆泡沫旅行枕的退货率达到11% 近30天售出44件，退货率11%；建议补货前先检查商品内容。
+				80 button 询问
+			81 container
+				82 text 儿童房商品销售额周环比增长21% 儿童房品类本周销售额$2,695，上周为$2,233。
+				83 button 询问
+			84 container
+				85 text 正在进行的营销活动回报差异明显 海底世界房间焕新每投入$1带来$6.02收入；夏季旅行必备为$2.42。
+				86 button 询问
+		87 heading 近期订单, Value: 2
+			88 text 近期订单
+		89 button 全部订单
+		90 content list
+			91 container
+				92 text AR-79236 ·  2件商品 9月12日 · $53.00 已发货
+			93 container
+				94 text AR-76988 ·  2件商品 9月10日 · $68.00 处理中
+			95 container
+				96 text AR-78214 ·  2件商品 9月5日 · $138.00 已发货
+			97 container
+				98 text AR-77903 ·  1件商品 8月30日 · $79.00 延误
+		99 heading 近期变更, Value: 2
+			100 text 近期变更
+		101 content list
+			146 container
+				147 text 按记录修正简述标点;材质与墙面覆盖面积仍未知,未添加其他事实。 已批准 已批准 · Avery  · 9月13日
+			102 container
+				103 text Adds 1 unit to AR-2102 (ACME Kids Peel-and-Stick Ocean Wall Decals (36 pc)), taking stock from 55 to 56; no low-stock alert covers this listing. 已批准 已批准 · Avery  · 9月13日
+			104 container
+				105 text Operator-supplied short description; replaces the prior text with facts from the record and the supplied wording. 已批准 已批准 · Avery  · 9月13日
+			106 container
+				107 text 52 units = one month at the alert's 52 sales_last_30d; takes stock 3 -> 55, about 31.7 days of cover at 1.73/day. 已批准 已批准 · Avery  · 9月13日
+	108 container
+		110 text 经营助手 每项变更均由你批准
+		111 button 活动记录 1
+			124 text 活动记录
+			125 text 1
+		112 button 退出全屏
+		113 button 收起助手
+		126 container
+			127 text 请为 AR-2102 暂存简短描述修订，不要应用：36张可移除海洋贴纸，哑光饰面，可重新放置而不损坏漆面。保持材质与墙面覆盖面积未知，不增加其他事实。 我会先加载目录技能，并在暂存前读取商品记录。 当前简述第二句写成"可重新放置而不损坏漆面",结尾用了分号;其余事实(36张、哑光饰面)在记录中都成立,材质与墙面覆盖面积按记忆约束保持未知。
+			128 heading 变更提案, Value: 3
+				129 text 变更提案
+			130 text 已批准 商品内容更新 提案人：Avery的助手 2026年9月13日
+			131 text 按记录修正简述标点;材质与墙面覆盖面积仍未知,未添加其他事实。
+			132 container
+				133 text AR-2102  ·  简短描述
+			134 text 36张可移除海洋贴纸，从两英尺的鲸鱼到手掌大小的海马。哑光饰面；可重新放置而不损坏漆面。
+			135 text 36张可移除海洋贴纸,哑光饰面,可重新放置而不损坏漆面。
+			136 text 简短描述（英文） AR-2102
+			137 text 修改前
+			138 text 36 removable ocean decals, from a two-foot whale to palm-size seahorses. Matte finish; repositionable without damaging paint.
+			139 text 修改后
+			140 text 36 removable ocean stickers, matte finish, repositionable without damaging paint.
+			148 text 已批准，操作人：Avery，2026年9月13日。 已暂存 chg-0004,尚未应用:AR-2102 简述改为"36张可移除海洋贴纸,哑光饰面,可重新放置而不损坏漆面。"(英文同步)。材质与墙面覆盖面积保持未知。
+			144 button (disabled) 同时暂存长描述修订
+			145 button (disabled) 检查 AR-2102 的补货需求
+		119 text entry area (settable) 向经营助手发送消息
+		120 button (disabled) 发送
+
+The focused UI element is 112 button 退出全屏

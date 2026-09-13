@@ -1,0 +1,5 @@
+PASS normal approval
+PASS lost response after successful write
+PASS different change cannot prove success
+PASS wrong final state cannot prove success
+PASS unreachable read cannot prove success

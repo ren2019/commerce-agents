@@ -1,0 +1,95 @@
+{
+  "listing": {
+    "listing": {
+      "listing_id": "AR-2102",
+      "title": "ACME Kids Peel-and-Stick Ocean Wall Decals (36 pc)",
+      "status": "active",
+      "price": 24.0,
+      "currency": "USD",
+      "stock": 3,
+      "category": "kids-room",
+      "content_quality": "needs_work",
+      "attributes": {
+        "count": "36 decals",
+        "removable": "yes",
+        "largest": "24 in whale",
+        "theme": "ocean",
+        "low_stock": "3"
+      },
+      "short_description": "36 removable ocean decals — a two-foot whale down to palm-size seahorses — that peel off clean.",
+      "options": {},
+      "option_values": {},
+      "long_description": "Thirty-six matte decals: a whale, dolphins, sea turtles, seahorses, and drifts of fish, plus coral and bubbles to scatter between them. Each one repositions without lifting paint, so the reef can be rebuilt whenever inspiration strikes.",
+      "review_snippets": [
+        "Went up in twenty minutes and came off our rental walls clean",
+        "The big whale over the bed is the star of the room",
+        "Went up bubble-free — our kid handled half the wall solo"
+      ],
+      "sales_last_30d": 52,
+      "missing_attributes": [
+        "wall coverage",
+        "material"
+      ],
+      "variants": []
+    },
+    "pricing": {
+      "listing_id": "AR-2102",
+      "current_price": 24.0,
+      "currency": "USD",
+      "unit_cost": 10.5,
+      "margin_pct": 56.2,
+      "min_price": 12.07,
+      "max_price": 32.4,
+      "max_price_delta_pct": 20.0,
+      "max_promotion_discount_pct": 50.0,
+      "min_price_basis": "cost",
+      "demand_signal": "rising",
+      "option_values": {},
+      "variants": []
+    }
+  },
+  "pending": [
+    {
+      "change_id": "chg-0001",
+      "kind": "inventory_action",
+      "status": "staged",
+      "summary": "52 units = one month at the alert's 52 sales_last_30d; takes stock 3 -> 55, about 31.7 days of cover at 1.73/day.",
+      "items": [
+        {
+          "target": "AR-2102",
+          "field": "stock",
+          "before": 3,
+          "after": 55
+        }
+      ],
+      "created_at": "2026-09-12T23:55:41.117897Z",
+      "created_by": "Avery",
+      "created_by_kind": "agent",
+      "guardrail_notes": []
+    },
+    {
+      "change_id": "chg-0002",
+      "kind": "listing_update",
+      "status": "staged",
+      "summary": "Operator-supplied short description; replaces the prior text with facts from the record and the supplied wording.",
+      "items": [
+        {
+          "target": "AR-2102",
+          "field": "short_description",
+          "before": "36 removable ocean decals — a two-foot whale down to palm-size seahorses — that peel off clean.",
+          "after": "36 removable ocean decals, from a two-foot whale to palm-size seahorses. Matte finish; repositionable without damaging paint."
+        },
+        {
+          "target": "AR-2102",
+          "field": "short_description.zh",
+          "before": "36张可移除海洋贴纸——从两英尺的鲸鱼到手掌大小的海马——撕下不留痕。",
+          "after": "36张可移除海洋贴纸，从两英尺的鲸鱼到手掌大小的海马。哑光饰面；可重新放置而不损坏漆面。"
+        }
+      ],
+      "created_at": "2026-09-12T23:56:15.534118Z",
+      "created_by": "Avery",
+      "created_by_kind": "agent",
+      "guardrail_notes": []
+    }
+  ]
+}

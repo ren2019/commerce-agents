@@ -86,7 +86,14 @@ export function useMerchantChat<TChange extends ChangeRef>(
       const data = await api.post<{ change: TChange | null }>(
         `/changes/${encodeURIComponent(changeId)}/${action}`,
       );
-      const change = data?.change ?? null;
+      let change = data?.change ?? null;
+      if (!data) {
+        // A response can be lost after the write. Read the recorded outcome rather
+        // than treating the missing response as proof that nothing was applied.
+        const overview = await api.get<{ recent_changes: TChange[] }>("/overview");
+        const expected = action === "apply" ? "applied" : "discarded";
+        change = overview?.recent_changes.find((entry) => entry.change_id === changeId && entry.status === expected) ?? null;
+      }
       if (change) {
         onPortalRefresh();
         turn.setItems((items) => applyChangeUpdate(items, change));

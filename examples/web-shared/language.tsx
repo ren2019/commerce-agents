@@ -30,6 +30,8 @@ export function DemoLanguageProvider({ api, chinese, children }: { api: AgentApi
   function t(text: string): string {
     if (language !== "zh") return text;
     if (chinese[text]) return chinese[text];
+    const analysis = /^analysis: step (\d+) — (.+)$/.exec(text);
+    if (analysis) return `分析：第${analysis[1]}步 · ${analysis[2].split(", ").map((verb) => chinese[verb] ?? verb).join("、")}`;
     // Tool activity appends the user's query; translate its fixed label only.
     const query = /^(.*?) · (“.*”)$/.exec(text);
     if (query && chinese[`${query[1]}…`]) return `${chinese[`${query[1]}…`].replace(/…$/, "")} · ${query[2]}`;

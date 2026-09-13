@@ -139,3 +139,46 @@ Exact-window and English API checks:
 The attempted browser continuation encountered a locked Mac. No new browser pass
 is claimed while locked. English browser approval and final integrated rehearsal
 remain outstanding. API checks alone do not establish visual acceptance.
+
+Unlocked browser completion:
+
+- English browser morning, both staged changes, chat approval refusal and both
+  analyses ran with real DeepSeek. `english-browser-chat-held.json` records stock
+  3 and two pending changes before host approval. `english-browser-approved-views.json`
+  records stock 55 and the source-backed description in both languages afterwards.
+- The first generated description guessed six sheets from a buyer complaint. Its
+  staging failed; it was not applied. `english-browser-rejected-description.txt`
+  retains that failed attempt. The operator explicitly supplied only known facts
+  in `english-browser-corrected-preview.txt`. This is supervised demonstration
+  evidence, not a claim that model prose cannot invent details.
+- The initial English description approval lost its successful response: the
+  ledger was applied while the card still showed an error. The old `english-browser-approved.txt`
+  and `english-approval-fullscreen.jpg` preserve that failure. The client now reads
+  the ledger after a missing response and accepts only the same ID and expected
+  final status. Backend repeated application remains rejected.
+- `verify-approval-recovery.cjs` exercises the actual transpiled hook with mocked
+  transport and React hooks, covering normal success, lost response, mismatched ID,
+  wrong status and failed read. It asserts exactly one write per action. Run from
+  the repository root with Node after npm installation; results are in
+  `approval-recovery-checks.txt`. This is fault-injection evidence, not a live
+  network-loss simulation.
+- `english-approval-recovery-verified.txt` records a new real browser restock
+  55 to 56 whose card and recent-change ledger both show Approved.
+- `chinese-description-labels-final.txt` and `chinese-description-approved-final.*`
+  show the current readable bilingual field labels, actual approval and a fully
+  readable card. `final-approved-bilingual-readback.json` records both projected
+  descriptions, stock 56, unchanged price, and unknown material/wall coverage.
+- `chinese-analysis-browser-final.txt` and its two screenshots show a real Chinese
+  analysis with complete 14-day windows and source-matching 34393.86 / 32889.71
+  total sales and 4927.74 / 3170.96 children's-room sales. Charts and long text
+  were visually inspected. Historical English turns stay English after switching.
+- Browser transport intermittently rejected an initial request; retries are
+  recorded rather than counted as clean first-attempt passes. A later fresh
+  Chinese description turn and its approval succeeded without retries.
+
+All 1137 tests pass (one skipped, two existing warnings). The complete 14-step
+verification, including all eight production builds, passes. A final small
+translation for analysis progress has an additional merchant production build
+and all eight app TypeScript checks. React Doctor reports eight complexity
+warnings and no correctness warnings. Issue 5's machine/browser checks are
+complete; issue 8 still requires the operator's own review.
