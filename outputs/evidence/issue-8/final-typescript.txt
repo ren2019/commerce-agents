@@ -1,0 +1,10 @@
+After the final analysis-progress localization:
+retail merchant-web PASS
+retail storefront-web PASS
+travel merchant-web PASS
+travel storefront-web PASS
+telecom merchant-web PASS
+telecom storefront-web PASS
+entertainment merchant-web PASS
+entertainment storefront-web PASS
+Command: examples/node_modules/.bin/tsc --noEmit -p examples/<vertical>/<role>-web/tsconfig.json

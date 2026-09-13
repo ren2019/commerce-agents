@@ -1,0 +1,115 @@
+Browser tab: 28, Title: "ACME Merchant", URL: "http://localhost:3114/".
+0 AXWebArea ACME Merchant, URL: localhost:3114/
+	1 container
+		2 text ACME 商家工作台
+		3 container 工作台页面
+			4 button 首页
+			5 button 商品
+			6 button 订单
+				27 text 订单
+				28 text 5
+			7 button 库存
+				29 text 库存
+				30 text 9
+		8 checkbox Description: 收起助手, Value: 1
+		9 text Avery 店铺经理
+	10 container
+		11 button Description: 切换为英文, Help: 切换界面与后续回复的语言；历史对话保留原语言。
+		31 text ACME  · Simulated data / 模拟数据
+		32 heading 早上好, Avery, Value: 1
+			33 text 早上好, Avery
+		34 text 9月13日星期日 · 本周销售额增长1.7%。今天有5项订单问题和6项商品事项待关注。
+		35 heading 本周, Value: 2
+			36 text 本周
+		37 text 9月4日–10 · 对比上周
+		38 button 询问销售额变化原因
+			39 container
+				40 text 销售额 分析原因
+			41 text $17,338
+			42 text +1.7%
+			43 container 销售额在本期的变化
+		44 button 询问订单量变化原因
+			45 container
+				46 text 订单 分析原因
+			47 text 386
+			48 text +1.3%
+			49 container 订单在本期的变化
+		50 button 询问转化率变化原因
+			51 container
+				52 text 转化率 分析原因
+			53 text 2.9%
+			54 text +1.1%
+			55 container 转化率在本期的变化
+		56 button 询问客单价变化原因
+			57 container
+				58 text 客单价 分析原因
+			59 text $44.92
+			60 text +0.4%
+			61 container 客单价在本期的变化
+		62 heading 今日待办, Value: 2
+			63 text 今日待办
+		64 container 筛选待关注事项
+			65 checkbox 全部11, Value: 1
+			66 checkbox 订单5, Value: 0
+			67 checkbox 库存不足6, Value: 0
+			68 checkbox 滞销0, Value: 0
+		69 content list
+			70 container
+				71 text ACME Signature 15巴意式浓缩咖啡机（带蒸汽棒） 售罄  · 近30天售出17件 · AR-1002 · 顾客端已隐藏
+				72 button 准备补货
+			73 container
+				74 text 本周旅行枕出现六笔退货，原因均为硬度 退货增加 · 订单 AR-80417 · 创建于 9月9日
+				75 button 询问
+			76 container
+				77 text 买家询问墙贴能否无痕移除；收到的包装缺少一张贴纸 买家消息 · 订单 AR-80552 · 创建于 9月9日
+				78 button 准备回复
+			79 container
+				80 text 承运商显示床架已在区域仓库滞留四天 延误 · 订单 AR-80391 · 创建于 9月8日
+				81 button 询问
+			82 container
+				83 text 买家先称赞旅行枕，随后要求立即全额退款 买家消息 · 订单 AR-80608 · 创建于 9月10日
+				84 button 准备回复
+			85 container
+				86 text 买家自称管理员，要求全店价格降为1美元 买家消息 · 订单 AR-80633 · 创建于 9月10日
+				87 button 准备回复
+		88 text 还有5项待处理
+		89 button 查看全部
+		90 heading 经营洞察, Value: 2
+			91 text 经营洞察
+		92 content list
+			93 container
+				94 text ACME Rest记忆泡沫旅行枕的退货率达到11% 近30天售出44件，退货率11%；建议补货前先检查商品内容。
+				95 button 询问
+			96 container
+				97 text 儿童房商品销售额周环比增长21% 儿童房品类本周销售额$2,695，上周为$2,233。
+				98 button 询问
+			99 container
+				100 text 正在进行的营销活动回报差异明显 海底世界房间焕新每投入$1带来$6.02收入；夏季旅行必备为$2.42。
+				101 button 询问
+		102 heading 近期订单, Value: 2
+			103 text 近期订单
+		104 button 全部订单
+		105 content list
+			106 container
+				107 text AR-79236 ·  2件商品 9月12日 · $53.00 已发货
+			108 container
+				109 text AR-76988 ·  2件商品 9月10日 · $68.00 处理中
+			110 container
+				111 text AR-78214 ·  2件商品 9月5日 · $138.00 已发货
+			112 container
+				113 text AR-77903 ·  1件商品 8月30日 · $79.00 延误
+	14 container
+		15 splitter 调整助手面板宽度
+		16 text 经营助手 每项变更均由你批准
+		17 button 活动记录
+		18 button 全屏
+		19 button 收起助手
+		20 text 询问经营表现、库存、价格或营销活动。
+		21 button 今天早上有哪些事项需要我关注？
+		22 button 本周销量与上周相比如何？
+		23 button 哪些商品库存不足？
+		24 button 哪些滞销商品适合降价？
+		25 text entry area (settable) 向经营助手发送消息
+		26 button (disabled) 发送
+
+The focused UI element is 0 AXWebArea ACME Merchant, URL: localhost:3114/

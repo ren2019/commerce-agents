@@ -44,3 +44,37 @@ rejects both prior role tokens with 401; fresh carts, pending changes and resolv
 change lists are empty. The helper terminated its API process after the run.
 This is real process/API/model evidence; browser rendering during switching still
 requires the Mac to be unlocked.
+
+Final unlocked-browser integration:
+
+- `browser-A-shopper.*` shows full ACME retail before switching.
+- `browser-B-shopper.*`, `browser-B-merchant.txt`, and
+  `browser-B-merchant-detail.jpg` show the public Playroom sample after CLI switch
+  and API restart. The store name changes in both roles; the merchant catalog has
+  exactly two listings. The wood-block image appears with AR-1401 in both roles,
+  and the jigsaw image stays with AR-1407. No unrelated picture substitutes for
+  a missing image. Screenshots were visually inspected.
+- `browser-A-restored-merchant.txt` and `browser-A-restored-stock.jpg` show the
+  return to 87 products, original ACME branding and AR-2102 stock 3. Prior approval
+  state was cleared by the switch. The previously recorded real-model process
+  rehearsal separately establishes old-token invalidation and reset after writes.
+- `final-verify-all.txt` records all 14 checks passing on the latest functional
+  changes. The later small analysis-progress translation additionally passed the
+  merchant production build and all eight apps' TypeScript checks. There were
+  1137 passing Python tests, one skip and two existing warnings.
+- The independent public clone was fast-forwarded from 35f149a to 5d7a4b1 and the
+  approval-response fault-injection checks passed there. The earlier full public
+  clone install/build/startup and actual DeepSeek shopper proof remain applicable;
+  no dependency changes or customer files were introduced.
+
+Issue 5 is closed. Issue 8's human operation gate remains open. The final handoff
+uses loopback API 8014, shopper 3014 and merchant 3114, reset to full public retail.
+See the runbook for reproducible launch, data preparation and upstream handling.
+
+`final-reset-readback.json` confirms the final CLI reset after API startup:
+AR-2102 stock 3, empty shopper cart, no pending or recent changes. Reset startup
+was slow under concurrent desktop load; the initial connection-refused probe is
+not counted as a pass. Subsequent API readback and fresh browser pages succeeded.
+`browser-reset-shopper.txt` and `browser-reset-merchant.txt` record fresh role views.
+The local ignored `.env` provider selector is now deepseek; credentials were not
+changed or exposed. Standard runbook launch therefore uses the selected provider.

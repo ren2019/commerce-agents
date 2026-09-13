@@ -1,0 +1,950 @@
+Browser tab: 25, Title: "ACME Merchant", URL: "http://localhost:3114/".
+0 AXWebArea ACME Merchant, URL: localhost:3114/
+	1 container
+		2 text ACME 商家工作台
+		3 container 工作台页面
+			4 button 首页
+			5 button 商品
+			6 button 订单
+				7 text 订单
+				8 text 5
+			9 button 库存
+				10 text 库存
+				11 text 9
+		12 checkbox Description: 收起助手, Value: 1
+		13 text Avery 店铺经理
+	14 container
+		15 button Description: 切换为英文, Help: 切换界面与后续回复的语言；历史对话保留原语言。
+		16 text ACME  · Simulated data / 模拟数据
+		66 heading 商品, Value: 1
+			67 text 商品
+		68 text 87项商品 · 4项库存不足或售罄 · 2项内容待完善
+		69 button 询问商品情况
+		70 search text field (settable) 搜索商品
+		71 container 筛选商品
+			72 checkbox 全部87, Value: 1
+			73 checkbox 在售84, Value: 0
+			74 checkbox 库存不足4, Value: 0
+			75 checkbox 内容待完善2, Value: 0
+			76 checkbox 非在售3, Value: 0
+		77 heading 待关注事项, Value: 2
+			78 text 待关注事项
+		79 text 7项 · 售罄和库存不足优先
+		80 table
+			81 row
+				82 cell
+					83 text 商品
+				84 cell
+					85 text 库存
+				86 cell
+					87 text 价格
+				88 cell
+					89 text 状态
+			90 row 打开ACME Signature 15巴意式浓缩咖啡机（带蒸汽棒）
+				91 cell
+					92 text ACME Signature 15巴意式浓缩咖啡机（带蒸汽棒）
+					93 text AR-1002
+				94 cell
+					95 text 0
+					96 text 近30天售出17件
+				97 cell
+					98 text $329.00
+				99 cell
+					100 text 缺货
+			101 row 打开ACME Paws 10加仑水族箱入门套装
+				102 cell
+					103 text ACME Paws 10加仑水族箱入门套装
+					104 text AR-1508
+				105 cell
+					106 text 0
+					107 text 近30天售出11件
+				108 cell
+					109 text $99.00
+				110 cell
+					111 text 缺货
+			112 row 打开ACME 儿童即撕即贴海洋墙贴（36件）
+				113 cell
+					114 text ACME 儿童即撕即贴海洋墙贴（36件）
+					115 text AR-2102
+				116 cell
+					117 text 3
+					118 text 约可销售2天
+				119 cell
+					120 text $24.00
+				121 cell
+					122 text 在售
+			123 row 打开ACME 儿童玩具收纳箱（3件套）
+				124 cell
+					125 text ACME 儿童玩具收纳箱（3件套）
+					126 text AR-2106
+				127 cell
+					128 text 4
+					129 text 约可销售3天
+				130 cell
+					131 text $29.00
+				132 cell
+					133 text 在售
+			134 row 打开ACME Rest记忆泡沫旅行枕
+				135 cell
+					136 text ACME Rest记忆泡沫旅行枕
+					137 text AR-1804
+				138 cell
+					139 text 57
+				140 cell
+					141 text $32.00
+				142 cell
+					143 text 在售
+			144 row 打开ACME Journey 55L 徒步背包
+				145 cell
+					146 text ACME Journey 55L 徒步背包
+					147 container
+						148 text AR-1207  ·  滞销
+				149 cell
+					150 text 64
+				151 cell
+					152 text $159.00
+				153 cell
+					154 text 已暂停
+			155 row 打开ACME Sleep 水洗棉被套套装，Queen
+				156 cell
+					157 text ACME Sleep 水洗棉被套套装，Queen
+					158 container
+						159 text AR-1903  ·  滞销
+				160 cell
+					161 text 35
+				162 cell
+					163 text $89.00
+				164 cell
+					165 text 在售
+		166 heading 其他商品, Value: 2
+			167 text 其他商品
+		168 text 80
+		169 table
+			170 row
+				171 cell
+					172 text 商品
+				173 cell
+					174 text 库存
+				175 cell
+					176 text 价格
+				177 cell
+					178 text 状态
+			179 row 打开ACME Glow 快干吹风机
+				180 cell
+					181 text ACME Glow 快干吹风机
+					182 text AR-1601
+				183 cell
+					184 text 31
+				185 cell
+					186 text $89.00
+				187 cell
+					188 text 在售
+			189 row 打开ACME日常声波电动牙刷，2支装
+				190 cell
+					191 text ACME日常声波电动牙刷，2支装
+					192 text AR-1602
+				193 cell
+					194 text 40
+				195 cell
+					196 text $69.00
+				197 cell
+					198 text 在售
+			199 row 打开ACME Glow 维生素C亮肤精华双瓶装
+				200 cell
+					201 text ACME Glow 维生素C亮肤精华双瓶装
+					202 text AR-1603
+				203 cell
+					204 text 40
+				205 cell
+					206 text $48.00
+				207 cell
+					208 text 在售
+			209 row 打开ACME 日常精准胡须修剪器套装
+				210 cell
+					211 text ACME 日常精准胡须修剪器套装
+					212 text AR-1604
+				213 cell
+					214 text 40
+				215 cell
+					216 text $54.00
+				217 cell
+					218 text 在售
+			219 row 打开ACME Glow 矿物 SPF 50 防晒霜，3件装
+				220 cell
+					221 text ACME Glow 矿物 SPF 50 防晒霜，3件装
+					222 text AR-1605
+				223 cell
+					224 text 48
+				225 cell
+					226 text $36.00
+				227 cell
+					228 text 在售
+			229 row 打开ACME Rest 桑蚕丝枕套
+				230 cell
+					231 text ACME Rest 桑蚕丝枕套
+					232 container
+						233 text AR-1606  ·  标准尺寸 · 特大尺寸 / 象牙色 · 岩灰色 · 腮红粉 · 鼠尾草绿
+				234 cell
+					235 text 280
+				236 cell
+					237 text $29.00起
+				238 cell
+					239 text 在售
+			240 row 打开ACME 日常沙龙级美甲套装，18件
+				241 cell
+					242 text ACME 日常沙龙级美甲套装，18件
+					243 text AR-1607
+				244 cell
+					245 text 40
+				246 cell
+					247 text $25.00
+				248 cell
+					249 text 在售
+			250 row 打开ACME 美容眼影盘
+				251 cell
+					252 text ACME 美容眼影盘
+					253 text AR-1721
+				254 cell
+					255 text 40
+				256 cell
+					257 text $34.00
+				258 cell
+					259 text 在售
+			260 row 打开ACME 有色保湿霜 SPF 30
+				261 cell
+					262 text ACME 有色保湿霜 SPF 30
+					263 container
+						264 text AR-1722  ·  瓷白色 · 沙色 · 蜜糖色 · 琥珀色 · 栗棕色 · 深咖色
+				265 cell
+					266 text 240
+				267 cell
+					268 text $28.00起
+				269 cell
+					270 text 在售
+			271 row 打开ACME Beauty 持久睫毛膏
+				272 cell
+					273 text ACME Beauty 持久睫毛膏
+					274 text AR-1723
+				275 cell
+					276 text 40
+				277 cell
+					278 text $19.00
+				279 cell
+					280 text 在售
+			281 row 打开ACME Fit 6毫米防滑瑜伽垫
+				282 cell
+					283 text ACME Fit 6毫米防滑瑜伽垫
+					284 text AR-1301
+				285 cell
+					286 text 40
+				287 cell
+					288 text $42.00
+				289 cell
+					290 text 在售
+			291 row 打开ACME Fit 可调节哑铃，5-50 磅一对
+				292 cell
+					293 text ACME Fit 可调节哑铃，5-50 磅一对
+					294 text AR-1302
+				295 cell
+					296 text 40
+				297 cell
+					298 text $429.00
+				299 cell
+					300 text 在售
+			301 row 打开ACME Fit 铸铁壶铃，35 lb
+				302 cell
+					303 text ACME Fit 铸铁壶铃，35 lb
+					304 text AR-1303
+				305 cell
+					306 text 40
+				307 cell
+					308 text $54.00
+				309 cell
+					310 text 在售
+			311 row 打开ACME Fit 阻力带套装（含门锚）
+				312 cell
+					313 text ACME Fit 阻力带套装（含门锚）
+					314 text AR-1304
+				315 cell
+					316 text 40
+				317 cell
+					318 text $29.00
+				319 cell
+					320 text 在售
+			321 row 打开ACME Fit 高密度泡沫轴
+				322 cell
+					323 text ACME Fit 高密度泡沫轴
+					324 text AR-1305
+				325 cell
+					326 text 40
+				327 cell
+					328 text $24.00
+				329 cell
+					330 text 在售
+			331 row 打开ACME Fit 滚珠轴承跳绳
+				332 cell
+					333 text ACME Fit 滚珠轴承跳绳
+					334 text AR-1306
+				335 cell
+					336 text 40
+				337 cell
+					338 text $19.00
+				339 cell
+					340 text 在售
+			341 row 打开ACME Fit 室内健身自行车
+				342 cell
+					343 text ACME Fit 室内健身自行车
+					344 text AR-1307
+				345 cell
+					346 text 40
+				347 cell
+					348 text $549.00
+				349 cell
+					350 text 在售
+			351 row 打开ACME Fit 打击式按摩枪
+				352 cell
+					353 text ACME Fit 打击式按摩枪
+					354 text AR-1308
+				355 cell
+					356 text 40
+				357 cell
+					358 text $119.00
+				359 cell
+					360 text 在售
+			361 row 打开ACME Sleep 大号平台床架
+				362 cell
+					363 text ACME Sleep 大号平台床架
+					364 text AR-1901
+				365 cell
+					366 text 40
+				367 cell
+					368 text $379.00
+				369 cell
+					370 text 在售
+			371 row 打开ACME 混合床垫
+				372 cell
+					373 text ACME 混合床垫
+					374 container
+						375 text AR-1902  ·  单人尺寸 · 双人尺寸 · 大号尺寸 · 特大尺寸
+				376 cell
+					377 text 65
+				378 cell
+					379 text $349.00起
+				380 cell
+					381 text 在售
+			382 row 打开ACME 食品柜 大西洋鲑鱼柳（2 磅，冷冻）
+				383 cell
+					384 text ACME 食品柜 大西洋鲑鱼柳（2 磅，冷冻）
+					385 text AR-2001
+				386 cell
+					387 text 40
+				388 cell
+					389 text $18.00
+				390 cell
+					391 text 在售
+			392 row 打开ACME 食品储藏室柠檬香草腌料与釉料
+				393 cell
+					394 text ACME 食品储藏室柠檬香草腌料与釉料
+					395 text AR-2002
+				396 cell
+					397 text 40
+				398 cell
+					399 text $6.00
+				400 cell
+					401 text 在售
+			402 row 打开ACME 平日炒面晚餐套装
+				403 cell
+					404 text ACME 平日炒面晚餐套装
+					405 text AR-2003
+				406 cell
+					407 text 40
+				408 cell
+					409 text $12.00
+				410 cell
+					411 text 在售
+			412 row 打开ACME Pantry 90%瘦牛肉碎（1.5磅）
+				413 cell
+					414 text ACME Pantry 90%瘦牛肉碎（1.5磅）
+					415 text AR-2004
+				416 cell
+					417 text 40
+				418 cell
+					419 text $11.00
+				420 cell
+					421 text 在售
+			422 row 打开ACME 食品柜新鲜双款意面 — 通心粉与宽面
+				423 cell
+					424 text ACME 食品柜新鲜双款意面 — 通心粉与宽面
+					425 text AR-2005
+				426 cell
+					427 text 40
+				428 cell
+					429 text $9.00
+				430 cell
+					431 text 在售
+			432 row 打开ACME 食品柜慢炖番茄罗勒酱
+				433 cell
+					434 text ACME 食品柜慢炖番茄罗勒酱
+					435 text AR-2006
+				436 cell
+					437 text 40
+				438 cell
+					439 text $8.00
+				440 cell
+					441 text 在售
+			442 row 打开ACME 食品柜蒜香布里欧修晚餐小面包（8个装）
+				443 cell
+					444 text ACME 食品柜蒜香布里欧修晚餐小面包（8个装）
+					445 text AR-2007
+				446 cell
+					447 text 40
+				448 cell
+					449 text $5.00
+				450 cell
+					451 text 在售
+			452 row 打开ACME 食品柜彩虹蔬菜烘烤混合装（2 磅）
+				453 cell
+					454 text ACME 食品柜彩虹蔬菜烘烤混合装（2 磅）
+					455 text AR-2008
+				456 cell
+					457 text 40
+				458 cell
+					459 text $8.00
+				460 cell
+					461 text 在售
+			462 row 打开ACME 食品柜凯撒沙拉套装（家庭装）
+				463 cell
+					464 text ACME 食品柜凯撒沙拉套装（家庭装）
+					465 text AR-2009
+				466 cell
+					467 text 40
+				468 cell
+					469 text $7.00
+				470 cell
+					471 text 在售
+			472 row 打开ACME 储藏室周末布朗尼煎锅套装
+				473 cell
+					474 text ACME 储藏室周末布朗尼煎锅套装
+					475 text AR-2010
+				476 cell
+					477 text 40
+				478 cell
+					479 text $9.00
+				480 cell
+					481 text 在售
+			482 row 打开ACME Everyday 12杯可编程滴滤式咖啡机
+				483 cell
+					484 text ACME Everyday 12杯可编程滴滤式咖啡机
+					485 text AR-1001
+				486 cell
+					487 text 27
+				488 cell
+					489 text $79.00
+				490 cell
+					491 text 在售
+			492 row 打开ACME Signature 8英寸锻造厨师刀
+				493 cell
+					494 text ACME Signature 8英寸锻造厨师刀
+					495 text AR-1003
+				496 cell
+					497 text 40
+				498 cell
+					499 text $64.00
+				500 cell
+					501 text 在售
+			502 row 打开ACME Signature 6夸脱搪瓷铸铁荷兰锅
+				503 cell
+					504 text ACME Signature 6夸脱搪瓷铸铁荷兰锅
+					505 text AR-1004
+				506 cell
+					507 text 22
+				508 cell
+					509 text $89.00
+				510 cell
+					511 text 在售
+			512 row 打开ACME 日常陶瓷不粘10件套炊具套装
+				513 cell
+					514 text ACME 日常陶瓷不粘10件套炊具套装
+					515 text AR-1005
+				516 cell
+					517 text 40
+				518 cell
+					519 text $149.00
+				520 cell
+					521 text 在售
+			522 row 打开ACME 家用大房间 HEPA 空气净化器
+				523 cell
+					524 text ACME 家用大房间 HEPA 空气净化器
+					525 text AR-1006
+				526 cell
+					527 text 13
+				528 cell
+					529 text $189.00
+				530 cell
+					531 text 在售
+			532 row 打开ACME Everyday 自清空基站扫地机器人
+				533 cell
+					534 text ACME Everyday 自清空基站扫地机器人
+					535 text AR-1007
+				536 cell
+					537 text 40
+				538 cell
+					539 text $399.00
+				540 cell
+					541 text 在售
+			542 row 打开ACME Rest 加重毯，Queen
+				543 cell
+					544 text ACME Rest 加重毯，Queen
+					545 container
+						546 text AR-1008  ·  12磅 · 15磅 · 20磅
+				547 cell
+					548 text 120
+				549 cell
+					550 text $49.00起
+				551 cell
+					552 text 在售
+			553 row 打开ACME 儿童海底世界双人床寝具套装
+				554 cell
+					555 text ACME 儿童海底世界双人床寝具套装
+					556 text AR-2101
+				557 cell
+					558 text 21
+				559 cell
+					560 text $54.00
+				561 cell
+					562 text 在售
+			563 row 打开ACME 儿童潮池印花区域地毯 4x5 英尺
+				564 cell
+					565 text ACME 儿童潮池印花区域地毯 4x5 英尺
+					566 text AR-2103
+				567 cell
+					568 text 17
+				569 cell
+					570 text $49.00
+				571 cell
+					572 text 在售
+			573 row 打开ACME Makers 300片草甸拼图
+				574 cell
+					575 text ACME Makers 300片草甸拼图
+					576 text AR-2104
+				577 cell
+					578 text 26
+				579 cell
+					580 text $27.00
+				581 cell
+					582 text 在售
+			583 row 打开ACME游戏室故事书熊（14英寸）
+				584 cell
+					585 text ACME游戏室故事书熊（14英寸）
+					586 text AR-2105
+				587 cell
+					588 text 33
+				589 cell
+					590 text $32.00
+				591 cell
+					592 text 在售
+			593 row 打开ACME 儿童火箭台灯
+				594 cell
+					595 text ACME 儿童火箭台灯
+					596 text AR-2107
+				597 cell
+					598 text 19
+				599 cell
+					600 text $22.00
+				601 cell
+					602 text 在售
+			603 row 打开ACME 游戏室太阳系海报套装（4 张）
+				604 cell
+					605 text ACME 游戏室太阳系海报套装（4 张）
+					606 text AR-2108
+				607 cell
+					608 text 44
+				609 cell
+					610 text $18.00
+				611 cell
+					612 text 在售
+			613 row 打开ACME 儿童深海遮光窗帘（2片装）
+				614 cell
+					615 text ACME 儿童深海遮光窗帘（2片装）
+					616 text AR-2109
+				617 cell
+					618 text 23
+				619 cell
+					620 text $36.00
+				621 cell
+					622 text 在售
+			623 row 打开ACME Select 27" 4K IPS 显示器，带 USB-C
+				624 cell
+					625 text ACME Select 27" 4K IPS 显示器，带 USB-C
+					626 text AR-1101
+				627 cell
+					628 text 40
+				629 cell
+					630 text $349.00
+				631 cell
+					632 text 在售
+			633 row 打开ACME Studio 网布办公椅
+				634 cell
+					635 text ACME Studio 网布办公椅
+					636 text AR-1102
+				637 cell
+					638 text 40
+				639 cell
+					640 text $289.00
+				641 cell
+					642 text 在售
+			643 row 打开ACME Studio 48英寸电动站立办公桌
+				644 cell
+					645 text ACME Studio 48英寸电动站立办公桌
+					646 text AR-1103
+				647 cell
+					648 text 40
+				649 cell
+					650 text $379.00
+				651 cell
+					652 text 在售
+			653 row 打开ACME Select 低矮型机械键盘
+				654 cell
+					655 text ACME Select 低矮型机械键盘
+					656 text AR-1104
+				657 cell
+					658 text 40
+				659 cell
+					660 text $99.00
+				661 cell
+					662 text 在售
+			663 row 打开ACME Select 降噪耳机
+				664 cell
+					665 text ACME Select 降噪耳机
+					666 text AR-1105
+				667 cell
+					668 text 40
+				669 cell
+					670 text $249.00
+				671 cell
+					672 text 在售
+			673 row 打开ACME Select 1080p 自动取景网络摄像头
+				674 cell
+					675 text ACME Select 1080p 自动取景网络摄像头
+					676 text AR-1106
+				677 cell
+					678 text 40
+				679 cell
+					680 text $69.00
+				681 cell
+					682 text 在售
+			683 row 打开ACME Studio 可调节铝制笔记本电脑支架
+				684 cell
+					685 text ACME Studio 可调节铝制笔记本电脑支架
+					686 text AR-1107
+				687 cell
+					688 text 40
+				689 cell
+					690 text $39.00
+				691 cell
+					692 text 在售
+			693 row 打开ACME Select LED台灯带无线充电器
+				694 cell
+					695 text ACME Select LED台灯带无线充电器
+					696 text AR-1108
+				697 cell
+					698 text 40
+				699 cell
+					700 text $54.00
+				701 cell
+					702 text 在售
+			703 row 打开ACME Basecamp 双人背包帐篷
+				704 cell
+					705 text ACME Basecamp 双人背包帐篷
+					706 text AR-1201
+				707 cell
+					708 text 16
+				709 cell
+					710 text $149.00
+				711 cell
+					712 text 在售
+			713 row 打开ACME Basecamp 4人家庭帐篷
+				714 cell
+					715 text ACME Basecamp 4人家庭帐篷
+					716 text AR-1202
+				717 cell
+					718 text 40
+				719 cell
+					720 text $219.00
+				721 cell
+					722 text 在售
+			723 row 打开ACME Basecamp 20°F 保温睡袋
+				724 cell
+					725 text ACME Basecamp 20°F 保温睡袋
+					726 text AR-1203
+				727 cell
+					728 text 40
+				729 cell
+					730 text $89.00
+				731 cell
+					732 text 在售
+			733 row 打开ACME 签名双头露营炉
+				734 cell
+					735 text ACME 签名双头露营炉
+					736 text AR-1204
+				737 cell
+					738 text 40
+				739 cell
+					740 text $64.50
+				741 cell
+					742 text 在售
+			743 row 打开ACME Journey 45L 硬质保温箱
+				744 cell
+					745 text ACME Journey 45L 硬质保温箱
+					746 text AR-1205
+				747 cell
+					748 text 40
+				749 cell
+					750 text $199.00
+				751 cell
+					752 text 在售
+			753 row 打开ACME Basecamp 400流明充电式头灯
+				754 cell
+					755 text ACME Basecamp 400流明充电式头灯
+					756 text AR-1206
+				757 cell
+					758 text 52
+				759 cell
+					760 text $34.00
+				761 cell
+					762 text 在售
+			763 row 打开ACME Basecamp 重力式滤水器，3L
+				764 cell
+					765 text ACME Basecamp 重力式滤水器，3L
+					766 text AR-1208
+				767 cell
+					768 text 40
+				769 cell
+					770 text $74.00
+				771 cell
+					772 text 在售
+			773 row 打开ACME Paws 骨科记忆棉狗床，大号
+				774 cell
+					775 text ACME Paws 骨科记忆棉狗床，大号
+					776 text AR-1501
+				777 cell
+					778 text 40
+				779 cell
+					780 text $79.00
+				781 cell
+					782 text 在售
+			783 row 打开ACME Paws 五层带抓柱猫爬架
+				784 cell
+					785 text ACME Paws 五层带抓柱猫爬架
+					786 text AR-1502
+				787 cell
+					788 text 40
+				789 cell
+					790 text $119.00
+				791 cell
+					792 text 在售
+			793 row 打开ACME Paws 自动宠物喂食器
+				794 cell
+					795 text ACME Paws 自动宠物喂食器
+					796 text AR-1503
+				797 cell
+					798 text 40
+				799 cell
+					800 text $89.00
+				801 cell
+					802 text 在售
+			803 row 打开ACME Paws 可伸缩牵引绳，5 m
+				804 cell
+					805 text ACME Paws 可伸缩牵引绳，5 m
+					806 text AR-1504
+				807 cell
+					808 text 40
+				809 cell
+					810 text $24.00
+				811 cell
+					812 text 在售
+			813 row 打开ACME Paws 带碳滤芯封闭式猫砂盆
+				814 cell
+					815 text ACME Paws 带碳滤芯封闭式猫砂盆
+					816 text AR-1505
+				817 cell
+					818 text 40
+				819 cell
+					820 text $44.00
+				821 cell
+					822 text 在售
+			823 row 打开ACME Paws 保温狗夹克
+				824 cell
+					825 text ACME Paws 保温狗夹克
+					826 text AR-1506
+				827 cell
+					828 text 40
+				829 cell
+					830 text $39.00
+				831 cell
+					832 text 在售
+			833 row 打开ACME Paws 互动羽毛逗猫棒套装
+				834 cell
+					835 text ACME Paws 互动羽毛逗猫棒套装
+					836 text AR-1507
+				837 cell
+					838 text 40
+				839 cell
+					840 text $16.00
+				841 cell
+					842 text 在售
+			843 row 打开ACME游戏室堆叠木制积木套装（54件）
+				844 cell
+					845 text ACME游戏室堆叠木制积木套装（54件）
+					846 text AR-1401
+				847 cell
+					848 text 38
+				849 cell
+					850 text $34.00
+				851 cell
+					852 text 在售
+			853 row 打开ACME Makers 540片积木套装
+				854 cell
+					855 text ACME Makers 540片积木套装
+					856 text AR-1402
+				857 cell
+					858 text 40
+				859 cell
+					860 text $49.00
+				861 cell
+					862 text 在售
+			863 row 打开ACME Makers 编程机器人套件
+				864 cell
+					865 text ACME Makers 编程机器人套件
+					866 text AR-1403
+				867 cell
+					868 text 40
+				869 cell
+					870 text $89.00
+				871 cell
+					872 text 在售
+			873 row 打开ACME Playroom 家庭小径棋盘游戏
+				874 cell
+					875 text ACME Playroom 家庭小径棋盘游戏
+					876 text AR-1404
+				877 cell
+					878 text 40
+				879 cell
+					880 text $32.00
+				881 cell
+					882 text 在售
+			883 row 打开ACME Makers 86件艺术工作室套装
+				884 cell
+					885 text ACME Makers 86件艺术工作室套装
+					886 text AR-1405
+				887 cell
+					888 text 40
+				889 cell
+					890 text $27.00
+				891 cell
+					892 text 在售
+			893 row 打开ACME游戏室水獭毛绒玩具，40厘米
+				894 cell
+					895 text ACME游戏室水獭毛绒玩具，40厘米
+					896 text AR-1406
+				897 cell
+					898 text 40
+				899 cell
+					900 text $22.00
+				901 cell
+					902 text 在售
+			903 row 打开ACME 游戏室国家公园 1000 片拼图
+				904 cell
+					905 text ACME 游戏室国家公园 1000 片拼图
+					906 text AR-1407
+				907 cell
+					908 text 40
+				909 cell
+					910 text $19.00
+				911 cell
+					912 text 在售
+			913 row 打开ACME Makers 三轮儿童滑板车
+				914 cell
+					915 text ACME Makers 三轮儿童滑板车
+					916 text AR-1408
+				917 cell
+					918 text 40
+				919 cell
+					920 text $59.00
+				921 cell
+					922 text 在售
+			923 row 打开ACME Journey 22" 登机箱万向轮款
+				924 cell
+					925 text ACME Journey 22" 登机箱万向轮款
+					926 text AR-1801
+				927 cell
+					928 text 18
+				929 cell
+					930 text $179.00
+				931 cell
+					932 text 在售
+			933 row 打开ACME Journey 28英寸托运万向轮行李箱
+				934 cell
+					935 text ACME Journey 28英寸托运万向轮行李箱
+					936 text AR-1802
+				937 cell
+					938 text 40
+				939 cell
+					940 text $229.00
+				941 cell
+					942 text 在售
+			943 row 打开ACME Journey 压缩收纳袋套装，6件套
+				944 cell
+					945 text ACME Journey 压缩收纳袋套装，6件套
+					946 text AR-1803
+				947 cell
+					948 text 41
+				949 cell
+					950 text $39.00
+				951 cell
+					952 text 在售
+			953 row 打开ACME Select 通用旅行适配器，带65W GaN充电
+				954 cell
+					955 text ACME Select 通用旅行适配器，带65W GaN充电
+					956 text AR-1805
+				957 cell
+					958 text 40
+				959 cell
+					960 text $49.00
+				961 cell
+					962 text 在售
+			963 row 打开ACME Journey 悬挂式洗漱包
+				964 cell
+					965 text ACME Journey 悬挂式洗漱包
+					966 text AR-1806
+				967 cell
+					968 text 40
+				969 cell
+					970 text $27.00
+				971 cell
+					972 text 在售
+			973 row 打开ACME Select 物品追踪器，4件装
+				974 cell
+					975 text ACME Select 物品追踪器，4件装
+					976 text AR-1807
+				977 cell
+					978 text 40
+				979 cell
+					980 text $79.00
+				981 cell
+					982 text 在售
+	53 container
+		54 splitter 调整助手面板宽度
+		55 text 经营助手 每项变更均由你批准
+		56 button 活动记录
+		57 button 全屏
+		58 button 收起助手
+		59 text 询问经营表现、库存、价格或营销活动。
+		60 button 今天早上有哪些事项需要我关注？
+		61 button 本周销量与上周相比如何？
+		62 button 哪些商品库存不足？
+		63 button 哪些滞销商品适合降价？
+		64 text entry area (settable) 向经营助手发送消息
+		65 button (disabled) 发送
+
+The focused UI element is 5 button 商品

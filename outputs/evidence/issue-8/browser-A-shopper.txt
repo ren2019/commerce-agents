@@ -1,0 +1,93 @@
+Browser tab: 22, Title: "ACME", URL: "http://localhost:3014/".
+0 AXWebArea ACME, URL: localhost:3014/
+	1 container
+		2 text ACME Simulated data / 模拟数据
+		3 container 页面
+			4 button 购物助手
+			5 button 订单
+		6 button Description: 切换为英文, Help: 切换界面与后续回复的语言；历史对话保留原语言。
+		7 button 活动记录
+		8 button Priya：资料与记忆
+			9 text Priya
+			10 text ACME订阅会员
+	11 container
+		12 text 9月13日星期日
+		13 heading 早上好, Priya, Value: 1
+			14 text 早上好, Priya
+		15 text 可以询问商品、选购计划、订单或退货。
+		16 button 第一次家庭露营，想选一顶250美元以内的帐篷
+		17 button 用大约800美元，把一间小空房布置成家庭办公室
+		18 button 工作日早晨时间紧，选滴滤咖啡机还是意式咖啡机？
+		19 button 请记住：我住小公寓，没有室外储物空间，养了一只金毛犬
+		89 text 无法加载订单。
+		20 heading 热门商品, Value: 2
+			21 text 热门商品
+		22 text 畅销与新品；点开商品了解详情
+		23 button ACME游戏室堆叠木制积木套装（54件） ACME PLAYROOM ACME游戏室堆叠木制积木套装（54件） 54块积木+12张创意卡 山毛榉木，水性漆 4-10岁 $34.00 ★ 4.8 (2,940) 预计9月15日送达 30天退货
+			24 image ACME游戏室堆叠木制积木套装（54件）
+			25 text ACME PLAYROOM
+			26 text ACME游戏室堆叠木制积木套装（54件）
+			27 container
+				28 text 54块积木+12张创意卡 山毛榉木，水性漆 4-10岁
+			29 text $34.00
+			30 text ★
+			31 text 4.8
+			32 text  (
+			33 text 2,940
+			34 text )
+			35 text 预计9月15日送达
+			36 text 30天退货
+		37 button ACME Paws 骨科记忆棉狗床，大号 ACME PAWS ACME Paws 骨科记忆棉狗床，大号 大号（90 x 70 厘米） 10 厘米记忆棉 可拆卸，可水洗 $79.00 ★ 4.6 (2,380) 预计9月16日送达 30天退货
+			38 image ACME Paws 骨科记忆棉狗床，大号
+			39 text ACME PAWS
+			40 text ACME Paws 骨科记忆棉狗床，大号
+			41 container
+				42 text 大号（90 x 70 厘米） 10 厘米记忆棉 可拆卸，可水洗
+			43 text $79.00
+			44 text ★
+			45 text 4.6
+			46 text  (
+			47 text 2,380
+			48 text )
+			49 text 预计9月16日送达
+			50 text 30天退货
+		51 button ACME EVERYDAY ACME Everyday 12杯可编程滴滤式咖啡机 12杯 玻璃 可编程 $79.00 ★ 4.5 (2,841) 预计9月17日送达 30天退货
+			52 text ACME EVERYDAY
+			53 text ACME Everyday 12杯可编程滴滤式咖啡机
+			54 container
+				55 text 12杯 玻璃 可编程
+			56 text $79.00
+			57 text ★
+			58 text 4.5
+			59 text  (
+			60 text 2,841
+			61 text )
+			62 text 预计9月17日送达
+			63 text 30天退货
+		64 button ACME SIGNATURE ACME Signature 6夸脱搪瓷铸铁荷兰锅 6 qt 搪瓷铸铁 260 C $89.00 ★ 4.7 (5,102) 预计9月17日送达 30天退货
+			65 text ACME SIGNATURE
+			66 text ACME Signature 6夸脱搪瓷铸铁荷兰锅
+			67 container
+				68 text 6 qt 搪瓷铸铁 260 C
+			69 text $89.00
+			70 text ★
+			71 text 4.7
+			72 text  (
+			73 text 5,102
+			74 text )
+			75 text 预计9月17日送达
+			76 text 30天退货
+	77 container
+		78 text entry area (settable) 发送消息给ACME 购物助手
+		79 button (disabled) 发送
+	80 container 购物车
+		81 heading 购物车, Value: 2
+			82 text 购物车
+		83 text 0件商品
+		84 container
+			85 text 购物车还没有商品。
+			86 text 向购物助手询问店内的任何商品。
+		87 text 小计 $0.00
+		88 button (disabled) 结算
+
+The focused UI element is 0 AXWebArea ACME, URL: localhost:3014/

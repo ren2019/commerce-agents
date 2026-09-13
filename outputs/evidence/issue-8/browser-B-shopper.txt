@@ -1,0 +1,65 @@
+Browser tab: 23, Title: "ACME", URL: "http://localhost:3014/".
+0 AXWebArea ACME, URL: localhost:3014/
+	1 container
+		2 text ACME Playroom Sample Simulated data / 模拟数据
+		3 container 页面
+			4 button 购物助手
+			5 button 订单
+		6 button Description: 切换为英文, Help: 切换界面与后续回复的语言；历史对话保留原语言。
+		7 button 活动记录
+		8 button Priya：资料与记忆
+	9 container
+		10 text 9月13日星期日
+		11 heading 早上好, Priya, Value: 1
+			12 text 早上好, Priya
+		13 text 目前没有待收货订单。可以询问商品、选购计划或退货。
+		14 button 第一次家庭露营，想选一顶250美元以内的帐篷
+		15 button 用大约800美元，把一间小空房布置成家庭办公室
+		16 button 工作日早晨时间紧，选滴滤咖啡机还是意式咖啡机？
+		17 button 请记住：我住小公寓，没有室外储物空间，养了一只金毛犬
+		18 heading 待收货, Value: 2
+			19 text 待收货
+		20 text 暂无待收货订单
+		21 button 全部订单
+		22 content list
+			23 container
+				24 image ACME Playroom 木质叠搭积木套装（54 块）
+				25 text ACME Playroom 木质叠搭积木套装（54 块） 已送达 下单于 9月12日
+				26 button 咨询退货
+			27 container
+				28 image ACME Playroom 国家公园主题拼图（1000 片）
+				29 text ACME Playroom 国家公园主题拼图（1000 片） 已送达 下单于 9月12日
+				30 button 咨询退货
+		31 heading 热门商品, Value: 2
+			32 text 热门商品
+		33 text 畅销与新品；点开商品了解详情
+		34 button ACME Playroom 木质叠搭积木套装（54 块） 仅剩3件 ACME PLAYROOM ACME Playroom 木质叠搭积木套装（54 块） 54 块积木 + 12 张创意卡 山毛榉，水性涂料 4–10 岁 $34.00 ★ 4.8 (2,940) 预计9月15日送达 30天退货
+			35 container
+				36 image ACME Playroom 木质叠搭积木套装（54 块）
+				37 text 仅剩3件
+			38 text ACME PLAYROOM
+			39 text ACME Playroom 木质叠搭积木套装（54 块）
+			40 container
+				41 text 54 块积木 + 12 张创意卡 山毛榉，水性涂料 4–10 岁
+			42 text $34.00
+			43 text ★
+			44 text 4.8
+			45 text  (
+			46 text 2,940
+			47 text )
+			48 text 预计9月15日送达
+			49 text 30天退货
+	50 container
+		51 text entry area (settable) 发送消息给ACME Playroom Sample 购物助手
+		52 button (disabled) 发送
+	53 container 购物车
+		54 heading 购物车, Value: 2
+			55 text 购物车
+		56 text 0件商品
+		57 container
+			58 text 购物车还没有商品。
+			59 text 向购物助手询问店内的任何商品。
+		60 text 小计 $0.00
+		61 button (disabled) 结算
+
+The focused UI element is 0 AXWebArea ACME, URL: localhost:3014/

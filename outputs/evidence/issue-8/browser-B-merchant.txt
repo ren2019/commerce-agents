@@ -1,0 +1,89 @@
+Browser tab: 24, Title: "ACME Merchant", URL: "http://localhost:3114/".
+0 AXWebArea ACME Merchant, URL: localhost:3114/
+	1 container
+		2 text ACME Playroom Sample 商家工作台
+		3 container 工作台页面
+			4 button 首页
+			5 button 商品
+			6 button 订单
+			7 button 库存
+				8 text 库存
+				9 text 1
+		10 checkbox Description: 收起助手, Value: 1
+		11 text Avery 店铺经理
+	12 container
+		13 button Description: 切换为英文, Help: 切换界面与后续回复的语言；历史对话保留原语言。
+		14 text ACME Playroom Sample  · Simulated data / 模拟数据
+		45 heading 商品, Value: 1
+			46 text 商品
+		47 text 2项商品 · 1项库存不足或售罄 · 0项内容待完善
+		48 button 询问商品情况
+		49 search text field (settable) 搜索商品
+		50 container 筛选商品
+			51 checkbox 全部2, Value: 1
+			52 checkbox 在售2, Value: 0
+			53 checkbox 库存不足1, Value: 0
+			54 checkbox 内容待完善0, Value: 0
+			55 checkbox 非在售0, Value: 0
+		56 heading 待关注事项, Value: 2
+			57 text 待关注事项
+		58 text 1项 · 售罄和库存不足优先
+		59 table
+			60 row
+				61 cell
+					62 text 商品
+				63 cell
+					64 text 库存
+				65 cell
+					66 text 价格
+				67 cell
+					68 text 状态
+			69 row 打开ACME Playroom 木质叠搭积木套装（54 块）
+				70 cell
+					71 text ACME Playroom 木质叠搭积木套装（54 块）
+					72 text AR-1401
+				73 cell
+					74 text 3
+					75 text 约可销售3天
+				76 cell
+					77 text $34.00
+				78 cell
+					79 text 在售
+		80 heading 其他商品, Value: 2
+			81 text 其他商品
+		82 text 1
+		83 table
+			84 row
+				85 cell
+					86 text 商品
+				87 cell
+					88 text 库存
+				89 cell
+					90 text 价格
+				91 cell
+					92 text 状态
+			93 row 打开ACME Playroom 国家公园主题拼图（1000 片）
+				94 cell
+					95 text ACME Playroom 国家公园主题拼图（1000 片）
+					96 text AR-1407
+				97 cell
+					98 text 20
+				99 cell
+					100 text $19.00
+				101 cell
+					102 text 在售
+	32 container
+		33 splitter 调整助手面板宽度
+		34 text 经营助手 每项变更均由你批准
+		35 button 活动记录
+		36 button 全屏
+		37 button 收起助手
+		38 text 询问经营表现、库存、价格或营销活动。
+		39 button 今天早上有哪些事项需要我关注？
+		40 button 本周销量与上周相比如何？
+		41 button 哪些商品库存不足？
+		42 button 哪些滞销商品适合降价？
+		43 text entry area (settable) 向经营助手发送消息
+		44 button (disabled) 发送
+
+The focused UI element is 5 button 商品

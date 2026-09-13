@@ -1,0 +1,36 @@
+Browser tab: 27, Title: "ACME", URL: "http://localhost:3014/".
+0 AXWebArea ACME, URL: localhost:3014/
+	1 container
+		2 text ACME Simulated data / 模拟数据
+		3 container 页面
+			4 button 购物助手
+			5 button 订单
+		6 button Description: 切换为英文, Help: 切换界面与后续回复的语言；历史对话保留原语言。
+		7 button 活动记录
+		8 button Priya：资料与记忆
+			9 text Priya
+			10 text ACME订阅会员
+	11 container
+		12 text 9月13日星期日
+		13 heading 早上好, Priya, Value: 1
+			14 text 早上好, Priya
+		15 text 可以询问商品、选购计划、订单或退货。
+		16 button 第一次家庭露营，想选一顶250美元以内的帐篷
+		17 button 用大约800美元，把一间小空房布置成家庭办公室
+		18 button 工作日早晨时间紧，选滴滤咖啡机还是意式咖啡机？
+		19 button 请记住：我住小公寓，没有室外储物空间，养了一只金毛犬
+		32 text 无法加载订单。
+	20 container
+		21 text entry area (settable) 发送消息给ACME 购物助手
+		22 button (disabled) 发送
+	23 container 购物车
+		24 heading 购物车, Value: 2
+			25 text 购物车
+		26 text 0件商品
+		27 container
+			28 text 购物车还没有商品。
+			29 text 向购物助手询问店内的任何商品。
+		30 text 小计 $0.00
+		31 button (disabled) 结算
+
+The focused UI element is 0 AXWebArea ACME, URL: localhost:3014/

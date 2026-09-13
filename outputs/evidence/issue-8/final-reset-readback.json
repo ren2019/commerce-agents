@@ -1,0 +1,17 @@
+{
+  "code_commit": "5d7a4b1",
+  "dataset": {
+    "dataset_id": "full-retail-rehearsal",
+    "store_name": "ACME",
+    "logo": null,
+    "simulated": true,
+    "warnings": []
+  },
+  "stock": 3,
+  "cart_items": 0,
+  "pending_changes": 0,
+  "recent_changes": 0,
+  "api": "http://localhost:8014",
+  "shopper": "http://localhost:3014",
+  "merchant": "http://localhost:3114"
+}
